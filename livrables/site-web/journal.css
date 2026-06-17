@@ -1,0 +1,144 @@
+/* =========================================================
+   Tamari & Léo — JOURNAL (index / listing page)
+   Loaded after styles.css + dir-a.css. Editorial Luxury system.
+   ========================================================= */
+
+/* ---- Sub-page nav: always solid (no dark cover hero behind it) ---- */
+.page-journal .nav,
+.page-journal .nav.scrolled {
+  background: var(--ivory);
+  color: var(--charcoal);
+  box-shadow: 0 1px 0 var(--line-soft);
+}
+.page-journal { padding-top: 0; }
+
+/* =========================================================
+   JOURNAL HERO  (editorial masthead)
+   ========================================================= */
+.jhero { padding-top: clamp(124px, 17vh, 196px); padding-bottom: clamp(34px, 4.5vw, 60px); }
+.jhero__inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: end; }
+.jhero .eyebrow { margin-bottom: 24px; }
+.jhero h1 {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(56px, 9vw, 132px); line-height: 0.94; letter-spacing: -0.015em;
+}
+.jhero h1 em { font-family: var(--latin); font-style: italic; font-weight: 500; color: var(--taupe); }
+.jhero__lede { font-family: var(--serif); font-weight: 400; font-size: clamp(18px, 1.7vw, 22px); line-height: 1.55; color: var(--charcoal-70); margin: 0; }
+.jhero__count { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--charcoal-45); margin-top: 22px; display: block; }
+
+/* =========================================================
+   FEATURED ENTRY
+   ========================================================= */
+.jfeat {
+  display: grid; grid-template-columns: 2fr 1fr; gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  border-top: 1px solid var(--line); padding-top: clamp(40px, 5vw, 66px);
+}
+.jfeat__media { position: relative; display: block; }
+.jfeat__media .ph { aspect-ratio: 4 / 3.7; }
+.jfeat__ribbon {
+  position: absolute; top: 18px; left: 18px; z-index: 3;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--charcoal); background: var(--ivory); padding: 8px 15px; border-radius: 2px;
+}
+.jfeat__cat { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--taupe); margin-bottom: 18px; display: block; }
+.jfeat h2 { font-size: clamp(30px, 3.9vw, 54px); line-height: 1.08; margin-bottom: 20px; }
+.jfeat h2 a { transition: color .3s var(--ease); }
+.jfeat h2 a:hover { color: var(--taupe); }
+.jfeat__excerpt { font-size: clamp(17px, 1.4vw, 19px); line-height: 1.66; color: var(--charcoal-70); margin: 0 0 30px; max-width: 52ch; }
+.jfeat__foot { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+body.jf-feat-right .jfeat .jfeat__media { order: 2; }
+
+/* =========================================================
+   BYLINE (author mini-block)
+   ========================================================= */
+.byline { display: flex; align-items: center; gap: 13px; }
+.byline__av {
+  width: 42px; height: 42px; border-radius: 50%; flex: none;
+  display: grid; place-items: center;
+  background: var(--ivory-2); color: var(--charcoal);
+  font-family: var(--serif); font-size: 18px; font-weight: 600;
+  border: 1px solid var(--line);
+}
+.byline__meta { display: flex; flex-direction: column; gap: 2px; line-height: 1.2; }
+.byline__name { font-family: var(--sans); font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--charcoal); }
+.byline__sub { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; color: var(--charcoal-45); }
+
+/* =========================================================
+   FILTER BAR
+   ========================================================= */
+.jfilter-wrap { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: clamp(56px, 7vw, 92px); }
+.jfilter {
+  display: flex; flex-wrap: wrap; gap: 9px; align-items: center;
+  padding-block: clamp(20px, 2.4vw, 28px);
+}
+.jfilter__label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--charcoal-45); margin-right: 14px; }
+.jfilter__chip {
+  font-family: var(--sans); font-size: 13.5px; font-weight: 500; letter-spacing: 0.02em;
+  padding: 9px 19px; border: 1px solid var(--line); border-radius: 100px;
+  color: var(--charcoal-70); background: transparent; cursor: pointer;
+  transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+}
+.jfilter__chip:hover { border-color: var(--charcoal); color: var(--charcoal); }
+.jfilter__chip.is-active { background: var(--charcoal); color: var(--ivory); border-color: var(--charcoal); }
+
+/* =========================================================
+   ARTICLE GRID
+   ========================================================= */
+.jgrid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(40px, 4vw, 60px) clamp(26px, 3.2vw, 46px);
+  margin-top: clamp(40px, 4.5vw, 60px);
+}
+body.jf-grid-2 .jgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.jcard { display: flex; flex-direction: column; }
+.jcard[hidden] { display: none; }
+.jcard__media { position: relative; display: block; margin-bottom: 22px; overflow: hidden; }
+.jcard__media .ph { aspect-ratio: 3 / 2.1; transition: transform .7s var(--ease); }
+.jcard:hover .jcard__media .ph { transform: scale(1.045); }
+.jcard__cat { font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 12px; }
+.jcard h3 { font-size: clamp(21px, 2vw, 27px); line-height: 1.18; margin-bottom: 11px; transition: color .3s var(--ease); }
+.jcard:hover h3 { color: var(--taupe); }
+.jcard__excerpt { font-size: 15.5px; line-height: 1.62; color: var(--charcoal-70); margin: 0 0 20px; }
+.jcard__foot { margin-top: auto; }
+
+/* =========================================================
+   LOAD MORE / PAGER
+   ========================================================= */
+.jmore { display: flex; flex-direction: column; align-items: center; gap: 26px; margin-top: clamp(50px, 6vw, 84px); }
+.jmore__btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 15px 34px; border: 1px solid var(--charcoal); border-radius: 2px;
+  background: transparent; color: var(--charcoal); cursor: pointer;
+  transition: background .4s var(--ease), color .4s var(--ease);
+}
+.jmore__btn:hover { background: var(--charcoal); color: var(--ivory); }
+.jmore__btn[hidden] { display: none; }
+.jmore__progress { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--charcoal-45); }
+.jempty { text-align: center; padding: clamp(40px, 6vw, 80px) 0; color: var(--charcoal-45); font-family: var(--serif); font-size: clamp(20px, 2.2vw, 28px); }
+.jempty[hidden] { display: none; }
+
+/* =========================================================
+   HEADING STYLE TWEAK
+   ========================================================= */
+body.jf-head-sans .jhero h1,
+body.jf-head-sans .jfeat h2,
+body.jf-head-sans .jcard h3,
+body.jf-head-sans .section-head h2 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.01em; }
+body.jf-head-sans .jhero h1 em { font-family: var(--sans); font-style: normal; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1000px) {
+  .jhero__inner { grid-template-columns: 1fr; gap: 28px; align-items: start; }
+  .jfeat { grid-template-columns: 1fr; gap: 26px; }
+  body.jf-feat-right .jfeat .jfeat__media { order: 0; }
+  .jgrid, body.jf-grid-2 .jgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .jgrid, body.jf-grid-2 .jgrid { grid-template-columns: 1fr; }
+  .jfilter__label { width: 100%; margin-bottom: 6px; }
+}

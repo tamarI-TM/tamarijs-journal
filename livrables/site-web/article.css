@@ -1,0 +1,227 @@
+/* =========================================================
+   Tamari & Léo — ARTICLE (single post reading view)
+   Loaded after styles.css + dir-a.css. Editorial Luxury.
+   ========================================================= */
+
+/* ---- Sub-page nav: always solid ---- */
+.page-article .nav,
+.page-article .nav.scrolled {
+  background: var(--ivory);
+  color: var(--charcoal);
+  box-shadow: 0 1px 0 var(--line-soft);
+}
+
+/* =========================================================
+   ARTICLE HEADER
+   ========================================================= */
+.art-head { padding-top: clamp(122px, 16vh, 188px); padding-bottom: clamp(28px, 3.5vw, 48px); }
+/* flush under a full-cover hero — ~5mm gap after the caption */
+.art-head.art-head--flush { padding-top: 5mm; }
+.art-head__inner { max-width: 880px; margin: 0 auto; text-align: center; }
+.art-head .eyebrow { justify-content: center; margin-bottom: 26px; }
+.art-head h1 {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(34px, 5.2vw, 68px); line-height: 1.1; letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.art-head__dek {
+  font-family: var(--serif); font-weight: 400; font-style: italic;
+  font-size: clamp(19px, 2vw, 25px); line-height: 1.5; color: var(--charcoal-70);
+  margin: 22px auto 0; max-width: 60ch;
+}
+.art-head__meta {
+  display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;
+  margin-top: clamp(28px, 3vw, 40px);
+}
+.art-head__meta .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--taupe); }
+.art-head__meta .byline__sub { font-size: 12px; }
+
+/* =========================================================
+   HERO FIGURE
+   ========================================================= */
+.art-hero { margin: 0 auto clamp(40px, 5vw, 72px); }
+.art-hero .ph { aspect-ratio: 16 / 9; }
+.art-hero figcaption {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em;
+  color: var(--charcoal-45); margin-top: 14px; text-align: center;
+}
+/* Big home-style hero: taller, more presence */
+.art-hero--big .ph { aspect-ratio: 16 / 10; }
+@media (max-width: 880px) { .art-hero--big .ph { aspect-ratio: 4 / 3; } }
+
+/* Full-cover hero — same volume as the home page's first section */
+.art-hero--cover { margin: 0 0 0; }
+.art-hero--cover .ph { aspect-ratio: auto; height: 100vh; min-height: 620px; }
+.art-hero--cover figcaption { padding-inline: var(--gutter); }
+@media (max-width: 880px) { .art-hero--cover .ph { aspect-ratio: auto; height: 70vh; min-height: 460px; } }
+
+/* =========================================================
+   EDITORIAL SPLIT BLOCKS — big photo one side, text the other
+   ========================================================= */
+.art-split { padding-block: clamp(40px, 5.5vw, 86px); }
+.art-split__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(34px, 5vw, 80px); align-items: center;
+}
+.art-split__media { position: relative; }
+.art-split__media .ph { aspect-ratio: 4 / 5; }
+.art-split__media figcaption {
+  position: absolute; left: 16px; bottom: 14px; z-index: 2; margin: 0;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em;
+  background: rgba(20,18,16,.55); color: #fff; padding: 6px 12px; border-radius: 2px;
+  backdrop-filter: blur(2px);
+}
+.art-split__body { max-width: 46ch; }
+/* reversed: photo on the right */
+.art-split--rev .art-split__media { order: 2; }
+.art-split--rev .art-split__body { order: 1; justify-self: end; }
+
+/* text inside a split uses the same serif reading style as the body */
+.art-split__body p,
+.art-split__body .art-stanza {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(17px, 1.3vw, 20px); line-height: 1.82; color: var(--charcoal);
+  margin: 0 0 1.4em;
+}
+.art-split__body .art-stanza { line-height: 2.0; }
+.art-split__body .art-stanza--soft { color: var(--charcoal-70); }
+.art-split__body p:last-child,
+.art-split__body .art-stanza:last-child { margin-bottom: 0; }
+.art-split__body .art-kicker {
+  font-family: var(--sans); font-size: 11.5px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--taupe);
+  display: block; margin-bottom: 20px;
+}
+
+/* section kicker reused inside continuous passages */
+.art-passage .art-kicker {
+  font-family: var(--sans); font-size: 11.5px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--taupe);
+  display: block; margin-bottom: 18px;
+}
+
+/* a centered narrative passage between split blocks */
+.art-passage { max-width: 680px; margin: 0 auto; padding-block: clamp(20px, 3vw, 40px); }
+.art-passage p, .art-passage .art-stanza {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(18px, 1.35vw, 20px); line-height: 1.85; color: var(--charcoal);
+  margin: 0 0 1.5em;
+}
+.art-passage .art-stanza { line-height: 2.05; }
+.art-passage .art-stanza--soft { color: var(--charcoal-70); }
+.art-passage > :last-child { margin-bottom: 0; }
+
+@media (max-width: 880px) {
+  .art-split__grid { grid-template-columns: 1fr; gap: 28px; }
+  .art-split__media { order: 0 !important; }
+  .art-split__body { order: 0 !important; max-width: none; justify-self: stretch !important; }
+  .art-split__media .ph { aspect-ratio: 4 / 4.2; }
+}
+
+/* =========================================================
+   ARTICLE BODY — long-form reading
+   ========================================================= */
+.art-body { max-width: 680px; margin: 0 auto; }
+.art-body p {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(18px, 1.35vw, 20px); line-height: 1.85; letter-spacing: 0.002em;
+  color: var(--charcoal); margin: 0 0 1.5em;
+}
+.art-body .art-lede {
+  font-size: clamp(20px, 1.7vw, 24px); line-height: 1.68; color: var(--charcoal);
+}
+.art-body .art-lede .drop {
+  float: left; font-family: var(--latin); font-weight: 600;
+  font-size: 4.4em; line-height: 0.74; padding: 8px 16px 0 0; color: var(--taupe);
+}
+
+/* rhythmic short-line stanzas — keep the author's cadence, intentional spacing */
+.art-body .art-stanza {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(18px, 1.4vw, 21px); line-height: 2.05; color: var(--charcoal);
+  margin: 0 0 1.6em;
+}
+.art-body .art-stanza--soft { color: var(--charcoal-70); }
+
+/* section divider */
+.art-rule { display: flex; align-items: center; justify-content: center; gap: 10px; margin: clamp(36px, 4vw, 56px) 0; }
+.art-rule span { width: 5px; height: 5px; border-radius: 50%; background: var(--taupe); opacity: .7; }
+
+/* pull quote */
+.art-pull {
+  margin: clamp(40px, 5vw, 68px) 0; padding: 0; border: 0; text-align: center;
+}
+.art-pull p {
+  font-family: var(--serif); font-weight: 400; font-style: italic;
+  font-size: clamp(25px, 3.2vw, 40px); line-height: 1.32; letter-spacing: -0.01em;
+  color: var(--charcoal); margin: 0; max-width: 18ch; margin-inline: auto;
+}
+.art-pull::before {
+  content: "\201C"; display: block; font-family: var(--latin); font-size: 60px; line-height: 0.6;
+  color: var(--beige); margin-bottom: 18px;
+}
+
+/* inline figures inside the body — aligned flush with the text column */
+.art-fig { margin: clamp(40px, 5vw, 72px) 0; }
+.art-fig--wide { width: 100%; margin-inline: auto; transform: none; }
+.art-fig .ph { aspect-ratio: 3 / 2; }
+.art-fig figcaption {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em;
+  color: var(--charcoal-45); margin-top: 13px; text-align: center;
+}
+
+/* =========================================================
+   PHOTO GALLERY — 6-up grid
+   ========================================================= */
+.art-gallery {
+  padding-block: clamp(40px, 5vw, 76px);
+  border-top: 1px solid var(--line);
+}
+.art-gallery__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 1.1vw, 16px);
+}
+.art-gallery__grid .ph { aspect-ratio: 4 / 5; }
+@media (max-width: 720px) { .art-gallery__grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* =========================================================
+   ARTICLE FOOTER — author + share + back
+   ========================================================= */
+.art-foot { max-width: 680px; margin: clamp(48px, 6vw, 80px) auto 0; padding-top: clamp(32px, 4vw, 48px); border-top: 1px solid var(--line); }
+.art-author { display: flex; align-items: center; gap: 18px; }
+.art-author .byline__av { width: 60px; height: 60px; font-size: 26px; }
+.art-author__name { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--charcoal); }
+.art-author__bio { font-size: 14.5px; color: var(--charcoal-70); margin: 4px 0 0; line-height: 1.55; }
+.art-share { display: flex; align-items: center; gap: 16px; margin-top: clamp(28px, 3vw, 40px); }
+.art-share__label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--charcoal-45); }
+.art-share a {
+  display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--line); color: var(--charcoal-70);
+  transition: border-color .3s var(--ease), color .3s var(--ease), background .3s var(--ease);
+}
+.art-share a:hover { border-color: var(--charcoal); color: var(--charcoal); }
+.art-share svg { width: 17px; height: 17px; }
+.art-back { display: flex; justify-content: center; margin-top: clamp(36px, 4vw, 56px); }
+
+/* =========================================================
+   RELATED
+   ========================================================= */
+.art-related { border-top: 1px solid var(--line); }
+.art-related .section-head { text-align: center; margin: 0 auto; }
+.art-related .section-head .eyebrow { justify-content: center; }
+.art-related .jgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 880px) {
+  .art-related .jgrid { grid-template-columns: 1fr; }
+  .art-hero .ph { aspect-ratio: 4 / 3; }
+}
+
+/* =========================================================
+   ABOUT PAGE — shared styles
+   ========================================================= */
+.page-about .nav,
+.page-about .nav.scrolled {
+  background: var(--ivory);
+  color: var(--charcoal);
+  box-shadow: 0 1px 0 var(--line-soft);
+}

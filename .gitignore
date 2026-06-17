@@ -1,0 +1,13 @@
+# =============================================================================
+# Secrets et variables d'environnement — NE JAMAIS commiter
+# =============================================================================
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.*.local
+*.env
+
+# Dépendances
+node_modules/

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tamari's Journal — ისტორიები, იდეები, პროექტები</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="dir-a.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav nav--cover" data-nav>
+  <button class="nav__burger" data-burger aria-label="მენიუ"><span></span><span></span><span></span></button>
+  <a class="nav__brand" href="index.html" style="font-family: Nunito; font-size: 33px">TAMARI'S JOURNAL</a>
+  <div class="nav__right">
+    <div class="lang">
+      <a href="#" class="is-active">ქარ</a><span class="sep">/</span>
+      <a href="#" data-lang="fr">FR</a><span class="sep">/</span>
+      <a href="#" data-lang="en">EN</a>
+    </div>
+    <button class="nav__search" aria-label="ძებნა">⌕</button>
+  </div>
+  <div class="nav__menu" data-links>
+    <button class="menu__close" data-close aria-label="დახურვა"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <div class="menu__group">
+      <a href="index.html" class="is-active">მთავარი</a>
+      <a href="journal.html">ჟურნალი</a>
+      <a href="#videos">ვლოგი</a>
+      <a href="#projects">პროექტები</a>
+      <button class="menu__acc" aria-expanded="false">კატეგორიები <span class="chev">⌄</span></button>
+      <div class="menu__sub"><div class="menu__sub-in">
+        <a href="#">საფრანგეთი</a>
+        <a href="#">იმიგრაცია</a>
+        <a href="#">პიროვნული ზრდა</a>
+        <a href="#">ფსიქოლოგია</a>
+        <a href="#">ტექნოლოგია</a>
+        <a href="#">ხელოვნური ინტელექტი</a>
+      </div></div>
+    </div>
+    <div class="menu__group">
+      <a href="#">მაღაზია</a>
+    </div>
+    <div class="menu__group">
+      <a href="about.html">ჩვენ შესახებ</a>
+      <a href="#newsletter">კონტაქტი</a>
+      <a href="#">კონფიდენციალურობა</a>
+    </div>
+    <div class="menu__group">
+      <button class="menu__acc" aria-expanded="false">გამოგვეყევი <span class="chev">⌄</span></button>
+      <div class="menu__sub"><div class="menu__sub-in">
+        <a href="#" data-social="instagram">Instagram</a>
+        <a href="#" data-social="tiktok">TikTok</a>
+        <a href="#" data-social="youtube">YouTube</a>
+      </div></div>
+    </div>
+  </div>
+  <div class="menu__backdrop" data-close></div>
+</nav>
+
+<!-- HERO -->
+<header class="hero hero--cover">
+  <div class="ph ph--dark"><img src="images/hero-gardens.jpg" alt="ვერსალის ბაღები" class="slot-fill" style="object-fit:cover;object-position:center 42%" /></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__social">
+    <a href="#" data-social="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="#" data-social="tiktok" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 12.6a3.2 3.2 0 1 0 3.2 3.2V4.5c.6 2.6 2.3 4 4.8 4.2"/></svg></a>
+    <a href="#" data-social="youtube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="3.6"/><path d="M10.3 9.2l4.8 2.8-4.8 2.8z" fill="currentColor" stroke="none"/></svg></a>
+  </div>
+  <div class="wrap hero__inner">
+    <div class="hero__cover">
+      <span class="hero__script" style="font-size: 33px; line-height: 1.12; margin: 0 0 4px; font-family: 'Cormorant Garamond', serif">ორი თაობა — ორი განსხვავებული გზა — ერთი საერთო ისტორია</span>
+      <h1 class="hero__cover-title" style="font-size: clamp(14px, 1.4vw, 18px); letter-spacing: 0.22em; margin: 20px 0 0">ისტორიები • იდეები • პროექტები</h1>
+      <a href="#stories" class="hero__read" style="margin: 30px 0 0"><span class="line"></span> წაკითხვა</a>
+    </div>
+  </div>
+  <div class="hero__scroll">SCROLL<i></i></div>
+</header>
+
+<!-- PERSONAL INTRO -->
+<section class="section intro intro--split">
+  <div class="intro__grid">
+    <figure class="intro__img reveal">
+      <div class="ph"><image-slot id="t-intro" class="slot-fill" placeholder="პორტრეტი — თამარი და ლეო"></image-slot></div>
+      <figcaption>საქართველო, 2026</figcaption>
+    </figure>
+    <div class="intro__body reveal">
+      <span class="eyebrow">გამარჯობა</span>
+      <p class="intro__lead" style="font-size: 22px"><span style="font-size: 78px; color: #b8aa98; float: left; line-height: 0.78; margin: -6px 8px 0 0">თ</span>ამარი და ლეო — დედა და შვილი. ორი თაობა, ორი განსხვავებული გზა და ერთი საერთო რწმენა: რომ ცოდნას, განვითარებასა და შემოქმედებას შეუძლია ადამიანის ცხოვრება უკეთესობისკენ შეცვალოს.</p>
+      <p style="color: var(--charcoal-70); font-size: 17px">ეს არის ჩვენი ჟურნალი — სივრცე, სადაც ერთმანეთს ხვდება გამოცდილება და ინოვაცია, წარსული და მომავალი, ადამიანური ისტორია და ახალი იდეები.</p>
+      <div class="intro__actions">
+        <a href="about.html" class="link-more">ვინ ვართ ჩვენ →</a>
+        <span class="intro__sign">— თამარი &amp; ლეო</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED STORIES -->
+<section class="section" id="stories">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">ჟურნალი</span>
+      <h2 class="h-xl" style="font-size: 33px; font-family: 'Cormorant Garamond', serif">ერთი ფოტო, ერთი სურვილი და იტალიისკენ მიმავალი გზა</h2>
+    </div>
+
+    <div class="feature-lead reveal" style="margin-top: clamp(44px,6vw,84px)">
+      <div class="ph"><image-slot id="home-lead" class="slot-fill" placeholder="lead story — 4:3"></image-slot></div>
+      <div class="feature-lead__body">
+        <span class="eyebrow eyebrow--plain" style="color:var(--taupe); margin-bottom: 20px">ჟურნალი</span>
+        <p class="lede" style="font-size: 17px">ათასობით ადამიანის ისტორიის მოსმენამ და მრავალწლიანმა პრაქტიკამ მასწავლა, რომ სწორი ინფორმაცია ხშირად წყვეტს ადამიანის მომავალს.</p>
+        <p class="lede" style="font-size: 17px">სწორედ ამიტომ შევქმენი „ემიგრანტის გზამკვლევი" — პრაქტიკული რესურსი მათთვის, ვინც საფრანგეთში ახალი ცხოვრების დაწყებას გეგმავს.</p>
+        <a href="article-sanfruttuozo.html" class="link-more" style="margin-top: 8px">გაიგე მეტი →</a>
+      </div>
+    </div>
+
+    <div class="stories-grid">
+      <article class="story reveal">
+        <div class="ph"><image-slot id="t-story1" class="slot-fill" placeholder="ისტორიის ფოტო"></image-slot></div>
+        <div class="story__cat">ფსიქოლოგია</div>
+        <h3 class="h-md">სიმშვიდის ხელოვნება ცვლილების დროს</h3>
+        <p>შინაგანი წონასწორობის შენარჩუნება მაშინ, როცა ირგვლივ ყველაფერი იცვლება.</p>
+        <div class="meta">14 წუთი კითხვა</div>
+      </article>
+      <article class="story reveal">
+        <div class="ph"><image-slot id="t-story2" class="slot-fill" placeholder="ისტორიის ფოტო"></image-slot></div>
+        <div class="story__cat">ხელოვნური ინტელექტი</div>
+        <h3 class="h-md">ტექნოლოგია, რომელიც ცხოვრებას ამარტივებს</h3>
+        <p>როგორ ვაქციოთ ხელოვნური ინტელექტი ყოველდღიური შემოქმედების ნაწილად.</p>
+        <div class="meta">9 წუთი კითხვა</div>
+      </article>
+      <article class="story reveal">
+        <div class="ph"><image-slot id="t-story3" class="slot-fill" placeholder="ისტორიის ფოტო"></image-slot></div>
+        <div class="story__cat">პიროვნული ზრდა</div>
+        <h3 class="h-md">მცირე ნაბიჯების ძალა</h3>
+        <p>როგორ იქცევა ყოველდღიური მცირე ჩვევა დიდ ცვლილებად დროთა განმავლობაში.</p>
+        <div class="meta">7 წუთი კითხვა</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENT PROJECTS -->
+<section class="section band" id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">მიმდინარე პროექტები</span>
+      <h2 class="h-xl" style="font-size: 33px; font-family: 'Cormorant Garamond', serif">რას ვქმნით დღეს</h2>
+    </div>
+    <div class="projects-grid projects-grid--3" style="margin-top: clamp(44px,5vw,72px)">
+      <article class="project reveal">
+        <div class="ph"><image-slot id="t-proj1" class="slot-fill" placeholder="პროექტის ფოტო"></image-slot></div>
+        <div class="project__body" style="font-size: 33px">
+          <div class="project__tag">გზამკვლევი</div>
+          <h3 class="h-lg" style="font-size: 33px">იმიგრანტის გზამკვლევი საფრანგეთში</h3>
+          <p>სრული პრაქტიკული გზამკვლევი მათთვის, ვინც საფრანგეთში ახალ ცხოვრებას იწყებს — დოკუმენტებიდან და ბიუროკრატიიდან ყოველდღიურ ცხოვრებამდე.</p>
+          <a href="#" class="link-more" style="font-size: 12px">გაიგე მეტი →</a>
+        </div>
+      </article>
+      <article class="project reveal">
+        <div class="ph"><image-slot id="t-proj2" class="slot-fill" placeholder="პროექტის ფოტო"></image-slot></div>
+        <div class="project__body">
+          <div class="project__tag">ბრენდი</div>
+          <h3 class="h-lg" style="font-size: 33px">Ritualis</h3>
+          <p>ყოველდღიური რიტუალები, რომლებიც ცხოვრებას აზრსა და სილამაზეს მატებს. შენელების, ყურადღების და მოვლის ფილოსოფია.</p>
+          <a href="#" class="link-more" style="font-size: 12px">გაიგე მეტი →</a>
+        </div>
+      </article>
+      <article class="project reveal">
+        <div class="ph"><image-slot id="t-proj3" class="slot-fill" placeholder="პროექტის ფოტო"></image-slot></div>
+        <div class="project__body">
+          <div class="project__tag">მედია</div>
+          <h3 class="h-lg" style="font-size: 33px">გზა / La Voie</h3>
+          <p>ვიდეოები და ისტორიები გზის შესახებ — რეალური გამოცდილება იმისათვის, ვინც გზას ეძებს და გზაშია.</p>
+          <a href="#" class="link-more" style="font-size: 12px">გაიგე მეტი →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PULL-QUOTE BAND -->
+<section class="quote-band reveal">
+  <div class="ph ph--dark"><image-slot id="t-quote" class="slot-fill" placeholder="სრულეკრანიანი ფოტო"></image-slot></div>
+  <div class="quote-band__scrim"></div>
+  <div class="quote-band__inner wrap">
+    <span class="mark">"</span>
+    <blockquote style="font-size: 33px; font-family: 'Noto Serif Georgian', serif">„სამყარო უფრო დიდია, როცა მას ერთად აღმოვაჩენთ."</blockquote>
+    <cite>Tamari's Journal</cite>
+  </div>
+</section>
+
+<!-- LATEST VIDEOS -->
+<section class="section" id="videos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">ვიდეო</span>
+      <h2 class="h-xl" style="font-family: 'Cormorant Garamond', serif; font-size: 33px">უახლესი ვლოგები</h2>
+    </div>
+    <div class="videos-grid reveal">
+      <a href="#" class="video video--main" data-social="youtube">
+        <div class="ph ph--dark"><span class="ph__label">[ YouTube — featured vlog, 16:9 ]</span></div>
+        <span class="video__play"></span>
+      </a>
+      <div class="video__col">
+        <a href="#" class="video video--side" data-social="youtube">
+          <div class="ph ph--dark"><span class="ph__label">[ YouTube ]</span><span class="video__play"></span></div>
+          <div class="video__meta"><span class="video__tag">YouTube</span><h4>ერთი დღე პარიზში</h4><p>12:40</p></div>
+        </a>
+        <a href="#" class="video video--side" data-social="tiktok">
+          <div class="ph ph--dark"><span class="ph__label">[ TikTok ]</span><span class="video__play"></span></div>
+          <div class="video__meta"><span class="video__tag">TikTok</span><h4>კულისებში — Ritualis</h4><p>0:48</p></div>
+        </a>
+        <a href="#" class="video video--side" data-social="youtube">
+          <div class="ph ph--dark"><span class="ph__label">[ YouTube ]</span><span class="video__play"></span></div>
+          <div class="video__meta"><span class="video__tag">YouTube</span><h4>საუბარი ცვლილებაზე</h4><p>22:05</p></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL CATEGORIES -->
+<section class="section band">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">თემები</span>
+      <h2 class="h-xl" style="font-size: 33px; font-family: 'Cormorant Garamond', serif">ჟურნალი</h2>
+    </div>
+    <div class="cats reveal">
+      <a href="#" class="cat" style="font-size: 17px">მოგზაურობა</a>
+      <a href="#" class="cat" style="font-size: 17px">საფრანგეთი</a>
+      <a href="#" class="cat" style="font-size: 17px">პიროვნული ზრდა</a>
+      <a href="#" class="cat" style="font-size: 17px">ემიგრაცია</a>
+      <a href="#" class="cat" style="font-size: 17px">ტექნოლოგია</a>
+      <a href="#" class="cat" style="font-size: 17px">ხელოვნური ინტელექტი</a>
+      <a href="#" class="cat" style="font-size: 17px">ცხოვრებისეული გამოცდილება</a>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE PROJECTS -->
+<section class="section">
+  <div class="wrap future">
+    <div class="section-head reveal">
+      <span class="eyebrow">მომავალი</span>
+      <h2 class="h-xl" style="font-size: 36px; font-family: 'Cormorant Garamond', serif">მომავლის სივრცე</h2>
+      <p class="lede" style="margin-top: 18px; font-size: 17px">იდეები • გეგმები • მიზნები</p>
+    </div>
+    <div class="future-list reveal">
+      <div class="fp" style="font-size: 17px"><span class="num">01</span><h4 style="font-size: 17px">კოსმეტიკა</h4></div>
+      <div class="fp"><span class="num">02</span><h4 style="font-size: 17px">კანის მოვლა</h4></div>
+      <div class="fp" style="font-size: 17px"><span class="num">03</span><h4 style="font-size: 17px">ფოტოგრაფია</h4></div>
+      <div class="fp"><span class="num">04</span><h4 style="font-size: 17px">მედია</h4></div>
+      <div class="fp"><span class="num">05</span><h4 style="font-size: 17px">მოდა</h4></div>
+      <div class="fp"><span class="num">06</span><h4 style="font-size: 17px">წიგნები</h4></div>
+      <div class="fp" style="font-size: 17px"><span class="num">07</span><h4 style="font-size: 17px">კურსები</h4></div>
+      <div class="fp"><span class="num">08</span><h4 style="font-size: 17px">აპლიკაციები</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section newsletter newsletter--letters" id="newsletter" style="background-color:rgb(250,247,243)">
+  <div class="wrap">
+    <div class="news-inner reveal">
+      <span class="news-label">Journal Letters</span>
+      <h2 class="news-title" style="font-size:17px;font-family:Nunito">TAMARI &amp; LEO</h2>
+      <p class="news-sub" style="font-size:12px">მოგზაურობები, აღმოჩენები და ისტორიები, რომლებიც საიტზე ყოველთვის არ ქვეყნდება.</p>
+      <form class="news-form" data-newsletter>
+        <input type="email" placeholder="თქვენი ელფოსტა" aria-label="ელ. ფოსტა" required />
+        <button class="btn" type="submit">შემომიერთდი</button>
+      </form>
+      <p class="news-note" data-news-note>გამოწერის გაუქმება — ნებისმიერ დროს.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOLLOW + INSTAGRAM -->
+<section class="follow">
+  <div class="wrap follow__inner">
+    <span class="follow__script" style="font-family: 'Dancing Script', cursive">Suivre</span>
+    <a href="#" data-social="instagram" class="follow__handle">@tamara_maisashvili</a>
+    <span class="follow__line"></span>
+  </div>
+</section>
+<div class="ig-grid reveal">
+  <a href="#" class="ig" data-social="instagram"><div class="ph"><image-slot id="t-ig1" class="slot-fill" placeholder="Instagram"></image-slot></div><span class="ig__tag">Instagram</span></a>
+  <a href="#" class="ig" data-social="instagram"><div class="ph"><image-slot id="t-ig2" class="slot-fill" placeholder="Instagram"></image-slot></div><span class="ig__tag">Instagram</span></a>
+  <a href="#" class="ig" data-social="instagram"><div class="ph"><image-slot id="t-ig3" class="slot-fill" placeholder="Instagram"></image-slot></div><span class="ig__tag">Instagram</span></a>
+  <a href="#" class="ig" data-social="instagram"><div class="ph"><image-slot id="t-ig4" class="slot-fill" placeholder="Instagram"></image-slot></div><span class="ig__tag">Instagram</span></a>
+  <a href="#" class="ig" data-social="instagram"><div class="ph"><image-slot id="t-ig5" class="slot-fill" placeholder="Instagram"></image-slot></div><span class="ig__tag">Instagram</span></a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top" style="font-size: 12px">
+      <div>
+        <div class="footer__brand" style="font-family: Nunito; font-size: 15px">Tamari's Journal</div>
+        <p style="font-size: 12px">ცოცხალი ჟურნალი — ისტორიები, იდეები, პროექტები</p>
+      </div>
+      <div class="footer__col">
+        <h5>საიტი</h5>
+        <ul>
+          <li><a href="about.html" style="font-size: 12px">ჩვენ შესახებ</a></li>
+          <li><a href="#projects" style="font-size: 12px">პროექტები</a></li>
+          <li><a href="journal.html" style="font-size: 12px">ჟურნალი</a></li>
+          <li><a href="#newsletter" style="font-size: 12px">კონტაქტი</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>სოციალური</h5>
+        <ul>
+          <li><a href="#" data-social="instagram" style="font-size: 12px">Instagram</a></li>
+          <li><a href="#" data-social="tiktok" style="font-size: 12px">TikTok</a></li>
+          <li><a href="#" data-social="youtube" style="font-size: 12px">YouTube</a></li>
+          <li><a href="#" data-social="facebook" style="font-size: 12px">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>ენა</h5>
+        <ul>
+          <li><a href="#" class="is-active" style="font-size: 12px">ქართული</a></li>
+          <li><a href="#" data-lang="fr" style="font-size: 12px">Français <span class="dim">— მალე</span></a></li>
+          <li><a href="#" data-lang="en" style="font-size: 12px">English <span class="dim">— მალე</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="copy">© <span data-year>2026</span> Tamari's Journal — ყველა უფლება დაცულია</span>
+      <div class="footer__legal">
+        <a href="#">კონფიდენციალურობა</a>
+        <a href="#">წესები და პირობები</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
