@@ -12,13 +12,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap">
+<link id="gfont-Nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&amp;display=swap">
 </head>
 <body class="page-about">
 
   <!-- NAV -->
   <nav class="nav nav--cover scrolled" data-nav>
     <button class="nav__burger" data-burger aria-label="მენიუ"><span></span><span></span><span></span></button>
-    <a class="nav__brand" href="index.html">TAMARI &amp; LÉO</a>
+    <a class="nav__brand" href="index.html" style="font-family: Nunito; font-size: 33px">TAMARI'S JOURNAL</a>
     <div class="nav__right">
       <div class="lang">
         <a href="#" class="is-active">ქარ</a><span class="sep">/</span>
@@ -64,61 +65,50 @@
     <div class="menu__backdrop" data-close></div>
   </nav>
 
-  <!-- PAGE MASTHEAD -->
+  <!-- PAGE MASTHEAD — centered -->
   <header class="section abt-head">
     <div class="wrap">
       <div class="abt-head__inner reveal">
         <span class="eyebrow">ვინ ვართ ჩვენ</span>
-        <h1 style="font-size: 52px">თამარი <em>&amp;</em> ლეო</h1>
+        <h1 style="font-size: 52px; font-family: &quot;Cormorant Garamond&quot;; font-weight: 500; letter-spacing: 0.5px">თამარი <em>&amp;</em> ლეო</h1>
         <p class="abt-head__sub">ორი განსხვავებული ხედვა. ერთი საერთო მიმართულება.</p>
       </div>
     </div>
   </header>
 
-  <!-- HERO PHOTO -->
-  <div class="wrap">
-    <figure class="art-hero art-hero--big reveal">
-      <div class="ph"><image-slot id="abt-hero" class="slot-fill" placeholder="თამარი და ლეო — ოჯახური ფოტო"></image-slot></div>
-      <figcaption>თამარი &amp; ლეო · ვილერბანი, საფრანგეთი</figcaption>
-    </figure>
-  </div>
-
-  <!-- INTRO BAND -->
-  <section class="abt-band">
+  <!-- PHOTO LEFT + TEXT RIGHT -->
+  <section class="section" style="padding-top: clamp(24px,3vw,40px); font-weight: 500; letter-spacing: 0px">
     <div class="wrap">
-      <div class="abt-band__inner reveal">
-        <p>ვმუშაობთ იდეებსა და პროექტებზე, რომელთა მიზანია ადამიანებისთვის ღირებულების შექმნა.</p>
-        <p>ზოგჯერ ცხოვრება ერთხაზოვანი და პირდაპირი გზა არ არის. ის უფრო ჰგავს მოგზაურობას, რომლის მნიშვნელობასაც მხოლოდ წლების შემდეგ ვაცნობიერებთ. როდესაც უკან ვიხედებით, ვხვდებით, რომ შემთხვევითი არ ყოფილა არც ერთი შეხვედრა, არც ერთი სირთულე თუ წარმატება, არც ერთი ოცნება და არც ერთი გადაწყვეტილება.</p>
-        <p>ეს არის ჩვენი ისტორიაც.</p>
+      <div class="art-split__grid reveal" style="font-family: &quot;Noto Serif Georgian&quot;">
+        <figure class="art-split__media">
+          <div class="ph"><image-slot id="abt-hero" class="slot-fill" placeholder="თამარი და ლეო — ოჯახური ფოტო"></image-slot></div>
+        </figure>
+        <div class="art-split__body">
+          <p class="art-stanza" style="font-size: 16px">ჩვენ ვართ თამარი და ლეო — დედა და შვილი.
+ორი განსხვავებული თაობა,
+ორი განსხვავებული გამოცდილება,
+ორი განსხვავებული ხედვა,
+მაგრამ ერთი საერთო რწმენა, რომ ყოველი </p>
+          <p style="font-size: 16px">ადამიანი საკუთარ თავში ატარებს უნიკალურ შესაძლებლობას, შექმნას რაღაც ღირებული, და სასარგებლო როგორც საკუთარი თავისთვის ასევე სხვებისთვის და გერომოსთვის.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- WHO WE ARE PASSAGE -->
-  <section class="section art-body" style="padding-block: clamp(40px,5vw,72px)">
-    <div class="art-passage reveal">
-      <p class="art-stanza">ჩვენ ვართ თამარი და ლეო — დედა და შვილი.<br>ორი განსხვავებული თაობა.<br>ორი განსხვავებული გამოცდილება.<br>ორი განსხვავებული ხედვა.<br>მაგრამ ერთი საერთო რწმენა.</p>
-      <p>რომ ყოველი ადამიანი საკუთარ თავში ატარებს უნიკალურ შესაძლებლობას, შექმნას რაღაც ღირებული, სასარგებლო და ლამაზი. ზოგჯერ ეს შესაძლებლობა მაშინვე ვლინდება. ზოგჯერ კი წლების განმავლობაში სხვადასხვა გამოცდილების მიღმა იმალება და მხოლოდ მოგვიანებით იძენს ფორმას.</p>
-    </div>
-    <blockquote class="art-pull reveal">
-      <p>ყველაფერი ერთმანეთთან უხილავი ძაფებით ყოფილა დაკავშირებული და საბოლოოდ იმ ადამიანებად გვაქცევს, ვინც დღეს ვართ.</p>
-    </blockquote>
-  </section>
-
   <!-- ═══ TAMARI ═══ -->
   <section class="section">
-    <div class="wrap">
+    <div class="wrap" style="font-family: &quot;Cormorant Garamond&quot;">
       <p class="abt-profile-label reveal">თამარი <em>&amp;</em></p>
-      <div class="art-split__grid reveal">
+      <div class="art-split__grid art-split--rev art-split--lalign reveal">
         <figure class="art-split__media">
           <div class="ph"><image-slot id="abt-tamari" class="slot-fill" placeholder="თამარი — პორტრეტი"></image-slot></div>
           <figcaption>თამარი · ვილერბანი, 2026</figcaption>
         </figure>
         <div class="art-split__body">
           <span class="art-kicker">1978 · თბილისი → საფრანგეთი</span>
-          <p>დავიბადე ყოფილ საბჭოთა კავშირში და მქონდა ბედნიერი, თავისუფალი და სიყვარულით სავსე ბავშვობა. პატარაობიდანვე მაინტერესებდა ყველაფერი, რაც შემოქმედებას, აღმოჩენას და ადამიანების გაცნობას უკავშირდებოდა.</p>
-          <p class="art-stanza art-stanza--soft">მიყვარდა წიგნები, ისტორიები, ძველი ცივილიზაციები, ხელოვნება და ასტრონომია.<br>ვოცნებობდი ფოტოგრაფიაზე.<br>ვცდილობდი საკუთარი ხელით შემექმნა ტანსაცმელი.<br>მუდამ მაინტერესებდა, როგორ მუშაობს სამყარო და რა ამოძრავებს ადამიანს.</p>
-          <p>ცხოვრებამ სხვა მიმართულებით წამიყვანა. 1991 წელს საქართველოში მძიმე პერიოდი დაიწყო. 1994 წელს ჩვენი ოჯახი საქართველო დავტოვეთ — თავდაპირველად ბელგიაში ვიცხოვრეთ, შემდეგ, 1998 წელს, საფრანგეთში ჩამოვედით.</p>
+          <p style="font-size: 16px">დავიბადე თბილისში, ყოფილ საბჭოთა კავშირში - 1978 წლის 7 დეკემბერს, მქონდა ბედნიერი, ლაღი და სიყვარულით სავსე ბავშვობა. პატარაობიდანვე მაინტერესებდა ყველაფერი, რაც შემოქმედებას და აღმოჩენას უკავშირდებოდა.</p>
+          <p class="art-stanza art-stanza--soft" style="color: rgb(43, 43, 43); font-size: 16px">მიყვარდა წიგნები, ისტორია, ძველი ცივილიზაციები, ხელოვნება და ასტრონომია. ვოცნებობდი ფოტოგრაფიაზე. ვცდილობდი საკუთარი ხელით შემექმნა ტანსაცმელი. მუდამ მაინტერესებდა, როგორ მუშაობს სამყარო და რა ამოძრავებს ამ ყველაფერს.</p>
+          <p style="font-size: 16px">ცხოვრებამ სხვა მიმართულებით წამიყვანა. 1991 წელს საქართველოში მძიმე პერიოდი დაიწყო. 1994 წელს ჩვენმა ოჯახმა საქართველო დავტოვეთ — თავდაპირველად ბელგიაში ვიცხოვრეთ, შემდეგ, 1998 წელს, საფრანგეთში ჩამოვედით.</p>
         </div>
       </div>
     </div>
@@ -126,21 +116,26 @@
 
   <!-- TAMARI CONTINUED — passage -->
   <section class="section art-body" style="padding-top:0">
-    <div class="art-passage reveal">
-      <p class="art-stanza">ახალი ქვეყანა.<br>ახალი ენა.<br>ახალი კულტურა.<br>ახალი ცხოვრება.<br>ყველაფერი თავიდან უნდა ამეშენებინა.</p>
-      <p>სწორედ ამ გზამ მიმიყვანა თარჯიმნის პროფესიამდე. 15 წელზე მეტი გავატარე სასამართლო, ადმინისტრაციულ და თავშესაფრის სისტემაში მუშაობით. ამ წლების განმავლობაში ათასობით ადამიანის ისტორია მოვისმინე — სხვადასხვა ქვეყნიდან, სხვადასხვა ბედითა და განსხვავებული გამოცდილებით.</p>
-      <p>საქმიანობის პარალელურად არასოდეს შემიწყვეტია სწავლა და განვითარება. ვიკვლევდი ფსიქოლოგიას, ქოუჩინგს, ადამიანის შინაგან სამყაროს. თუმცა შინაგანად ყოველთვის ვიცოდი, რომ ჩემი პროფესია საბოლოო დანიშნულება არ იყო. ის იყო ხიდი — ხიდი, რომელმაც მომცა ცოდნა, გამოცდილება და ადამიანების უფრო ღრმად დანახვის უნარი.</p>
-      <p class="art-stanza art-stanza--soft">ამ გზაზე ვიხილე წარმატებაც და იმედგაცრუებაც.<br>გამბედაობაც და შიშიც.<br>დაკარგვაც და თავიდან დაწყების ძალაც.<br>და დიდი სიყვარულიც, რომელმაც ჩემი ცხოვრება სამუდამოდ შეცვალა.<br>ამ ყველაფერს ერთ დღეს აუცილებლად მოგიყვებით.</p>
+    <div class="art-passage art-passage--sm reveal">
+      <p class="art-stanza" style="font-size: 16px">ახალი ქვეყანა, ახალი ენა, ახალი კულტურა, ახალი ცხოვრება.
+ყველაფერი თავიდან უნდა დამეწყო.</p>
+      <p style="font-size: 16px">სწორედ ამ გზამ მიმიყვანა თარჯიმნის პროფესიამდე.
+15 წელზე მეტი გავატარე სასამართლო, ადმინისტრაციულ და თავშესაფრის სისტემაში ოფიციალურ თარჯიმნად. ამ წლების განმავლობაში ათასობით ადამიანის ისტორია მოვისმინე.</p>
+      <p style="font-size: 16px">საქმიანობის პარალელურად არასოდეს შემიწყვეტია სწავლა და განვითარება. ვიკვლევდი ფსიქოლოგიას, ქოუჩინგს, დაფარულ ცოდნებს რათა მცოდნოდა სიმართლე, ადამიანის შინაგან სამყაროს.  შინაგანად ყოველთვის ვიცოდი, რომ ჩემი პროფესია თარჯიმნობა საბოლოო დანიშნულება არ იყო. ის იყო ხიდი — რომელმაც მომცა ცოდნა, გამოცდილება, ადამიანების და მათი გასაჭირის უფრო ღრმად დანახვის უნარი.</p>
+      <p class="art-stanza art-stanza--soft" style="color: rgb(43, 43, 43); font-size: 16px">ამ გზაზე ვიხილე წარმატებაც და იმედგაცრუებაც.
+გამბედაობაც და შიშიც.
+საყვარელი მამის დაკარგვის ტკივილი და თავიდან დაწყების ძალაც, ასევე გავიცანი დიდი სიყვარულიც, რომელმაც ჩემი ცხოვრება სამუდამოდ შეცვალა.
+</p>
     </div>
     <blockquote class="art-pull reveal">
-      <p>ადამიანის ყველაზე დიდი სიმდიდრე მისი გავლილი ცხოვრება და პირადი გამოცდილებაა.</p>
+      <p style="font-size: 22px">ადამიანის ყველაზე დიდი სიმდიდრე მისი გავლილი ცხოვრება და პირადი გამოცდილებაა.</p>
     </blockquote>
   </section>
 
   <!-- ═══ LÉO ═══ -->
-  <section class="section">
+  <section class="section" style="padding-top:0">
     <div class="wrap">
-      <p class="abt-profile-label reveal"><em>&amp;</em> ლეო</p>
+      <p class="abt-profile-label reveal" style="font-family: &quot;Cormorant Garamond&quot;"><em>&amp;</em> ლეო</p>
       <div class="art-split__grid art-split--rev reveal">
         <figure class="art-split__media">
           <div class="ph"><image-slot id="abt-leo" class="slot-fill" placeholder="ლეო — პორტრეტი"></image-slot></div>
@@ -148,55 +143,40 @@
         </figure>
         <div class="art-split__body">
           <span class="art-kicker">2000 · საფრანგეთი · Builder</span>
-          <p>ლეო ბავშვობიდან გამოირჩეოდა ცნობისმოყვარეობით, დამოუკიდებელი აზროვნებითა და შექმნის სურვილით. მას ყოველთვის აინტერესებდა, როგორ მუშაობს ნივთები, სისტემები და მექანიზმები.</p>
-          <p>ბევრი მისი ასაკის ბავშვი ოცნებობდა უკვე არსებულ სამყაროზე. ლეო უფრო ხშირად ფიქრობდა იმაზე, თუ რა შეიძლებოდა შეექმნა თავად.</p>
-          <p class="art-stanza art-stanza--soft">ჯერ კიდევ 12 წლის ასაკში ცდილობდა საკუთარი ბრენდის შექმნას.<br>შექმნილი ჰქონდა ვიდეოთამაშების პლატფორმის პროტოტიპი.<br>მუშაობდა ელექტრო ტრანსპორტის გაქირავების კონცეფციაზე.</p>
-          <p>ტექნოლოგიები მისთვის მხოლოდ ინსტრუმენტები არასოდეს ყოფილა — ის მათ შესაძლებლობებად აღიქვამს. სჯერა, რომ სწორად გამოყენებულ ტექნოლოგიას შეუძლია ადამიანების ყოველდღიური ცხოვრების გამარტივება და ახალი შესაძლებლობების შექმნა. სწორედ ამ რწმენიდან იბადება მისი პროექტები.</p>
+          <p style="font-size: 16px">ლეო დაიბადა საფრანგეთში, ლიონთან ახლოს 2000 წლის 8 დეკემბერს. ბავშვობიდან გამოირჩეოდა ცნობისმოყვარეობით, დამოუკიდებელი აზროვნებითა და შექმნის სურვილით. მას ყოველთვის აინტერესებდა, როგორ მუშაობს ნივთები, სისტემები და მექანიზმები შიგნიდან.</p>
+          <p style="font-size: 16px">ბავშობიდან ჰქონდა სურვილი შეეცვალა ყველაფერი რაც არ მოსწონდა.
+6 წლიდან თამაშობდა ჩოგბურთს, იზრდებოდა ქართულად დედის, ბებია - ბაბუა და ბიძაშვილების გარემოცვაში.</p>
+          <p class="art-stanza art-stanza--soft" style="color: rgb(43, 43, 43); font-size: 16px">ჯერ კიდევ 12 წლის ასაკში ცდილობდა საკუთარი ბრენდის შექმნას.
+შექმნილი ჰქონდა ვიდეოთამაშების პლატფორმის პროტოტიპი.
+მუშაობდა ელექტრო ტრანსპორტის გაქირავების კონცეფციაზე, მაშინ როდესაც ეს ყველაფერი ჯერ არ არსებობდა.</p>
+          <p style="font-size: 16px">ტექნოლოგიები მისთვის მხოლოდ ინსტრუმენტები არასოდეს ყოფილა — ის მათ შესაძლებლობებად აღიქვამს. სჯერა, რომ სწორად გამოყენებულ ტექნოლოგიას შეუძლია ადამიანების ყოველდღიური ცხოვრების გამარტივება და ახალი შესაძლებლობების შექმნა. სწორედ ამ რწმენიდან იბადება მისი პროექტები.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══ RА GVAERTIANEBS ═══ -->
-  <section class="section art-body">
+  <section class="section art-body" style="padding-top: clamp(20px, 3vw, 48px)">
     <div class="wrap">
-      <div class="art-passage reveal">
+      <div class="art-passage art-passage--sm reveal">
         <span class="art-kicker" style="display:block;margin-bottom:28px;text-align:center">რა გვაერთიანებს</span>
-        <p>მიუხედავად ასაკის, გამოცდილებისა და ინტერესების განსხვავებისა, ბევრ რამეში ძალიან ვგავართ ერთმანეთს.</p>
-        <p class="art-stanza">გვიყვარს შემოქმედება.<br>გვიყვარს სწავლა.<br>გვიყვარს იდეებზე მუშაობა.<br>გვიყვარს განვითარება.<br>გვიყვარს ახალი გზების ძიება.</p>
-        <p>ჩვენ არ ვქმნით პროექტებს მხოლოდ ბიზნესისთვის. ვმუშაობთ მათზე იმიტომ, რომ გვჯერა — ყოველი იდეა, რომელსაც შეუძლია ადამიანის ცხოვრების გაუმჯობესება, იმსახურებს არსებობას.</p>
-        <p>ზოგი ჩვენი პროექტი ემიგრაციის თემას ეხება. ზოგი ტექნოლოგიას. ზოგი პიროვნულ განვითარებას. მაგრამ ყველა მათგანს ერთი საერთო საფუძველი აქვს — სურვილი, ავაშენოთ ნდობაზე, პასუხისმგებლობასა და რეალურ ღირებულებაზე დაფუძნებული ეკოსისტემა.</p>
-      </div>
-
-      <!-- PROJECTS GRID -->
-      <div class="abt-grid reveal">
-        <div class="abt-item">
-          <span class="abt-item__num">01</span>
-          <h3>ემიგრანტის გზამკვლევი</h3>
-          <p>თამარის ციფრული სახელმძღვანელო ქართველი ემიგრანტებისთვის — 25 წლის გამოცდილება ერთ გზამკვლევში.</p>
-        </div>
-        <div class="abt-item">
-          <span class="abt-item__num">02</span>
-          <h3>Ritualis</h3>
-          <p>ლეოს მობილური აპლიკაცია ჩვევების ჩამოყალიბებისთვის — მალე App Store-სა და Google Play-ზე.</p>
-        </div>
-        <div class="abt-item">
-          <span class="abt-item__num">03</span>
-          <h3>TrottiLink</h3>
-          <p>ერთობლივი ოცნება — P2P ელექტრო სკუტერების გაქირავების საერთაშორისო პლატფორმა. MVP დაგეგმვის პროცეშია.</p>
-        </div>
+        <p style="font-size: 16px">მიუხედავად ასაკის, გამოცდილებისა და ინტერესების განსხვავებისა, ბევრ რამეში ძალიან ვგავართ ერთმანეთს.</p>
+        <p class="art-stanza" style="font-size: 16px">გვიყვარს იდეებზე მუშაობა, განვითარება და ახალი გზების ძიება.</p>
+        <p style="font-size: 16px">ჩვენ არ ვქმნით პროექტებს მხოლოდ ბიზნესისთვის. არ გვსურს წარმატება ყველაფრის ფასად.</p>
+        <p style="font-size: 16px">ზოგი ჩვენი პროექტი ემიგრაციის თემას ეხება. ზოგი ტექნოლოგიას. ზოგი პიროვნულ განვითარებას. მაგრამ ყველა მათგანს ერთი საერთო საფუძველი აქვს — სურვილი, ავაშენოთ ნდობაზე, პასუხისმგებლობასა და რეალურ ღირებულებაზე დაფუძნებული ეკოსისტემა.</p>
       </div>
     </div>
   </section>
 
   <!-- ═══ PLATFORM PURPOSE ═══ -->
-  <section class="abt-band">
-    <div class="wrap">
+  <section class="abt-band" style="background-color: rgb(244, 239, 231)">
+    <div class="wrap" style="font-size: 16px">
       <div class="abt-band__inner reveal">
-        <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--taupe);margin-bottom:28px">რას ემსახურება ჩვენი პლატფორმა</p>
-        <p>ეს სივრცე შეიქმნა იმისთვის, რომ ადამიანებს გავუზიაროთ ჩვენი გამოცდილება, ცოდნა, პროექტები, აღმოჩენები და ცხოვრებისეული გაკვეთილები.</p>
-        <p class="art-stanza art-stanza--soft" style="font-size:clamp(15px,1.2vw,17px)">აქ შეხვდებით ისტორიებს.<br>სტატიებს.<br>ვიდეოებს.<br>იდეებს.<br>პროექტებს.<br>და ყველაფერს, რასაც გზად ვქმნით.</p>
-        <p>ეს არის ადგილი, სადაც ერთმანეთს ხვდება გამოცდილება და ინოვაცია. წარსული და მომავალი. ადამიანური ისტორია და ტექნოლოგია.</p>
+        <p style="font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 28px">რას ემსახურება ჩვენი პლატფორმა</p>
+        <p style="font-size: 16px">ეს სივრცე შეიქმნა იმისთვის, რომ ადამიანებს გავუზიაროთ ჩვენი გამოცდილება, ცოდნა, პროექტები, აღმოჩენები და ცხოვრებისეული გაკვეთილები.</p>
+        <p class="art-stanza art-stanza--soft" style="font-size: 16px; color: rgb(43, 43, 43)">აქ შეხვდებით ისტორიებს, სტატიებს, ვიდეოებს, იდეებს და ჩვენს პროექტებს.
+და ყველაფერს, რასაც გზად ვქმნით.</p>
+        <p style="font-size: 16px">ეს არის ადგილი, სადაც ერთმანეთს ხვდება გამოცდილება და ინოვაცია. წარსული და მომავალი, ადამიანური ისტორია და ტექნოლოგია, სადაც ადამიანურ ფასეულობას ცენტრალური ადგული უკავია.</p>
       </div>
     </div>
   </section>
@@ -205,26 +185,65 @@
   <section class="section art-body">
     <div class="art-passage reveal">
       <span class="art-kicker" style="display:block;margin-bottom:28px;text-align:center">ჩვენი პრინციპი</span>
-      <p>ჩვენთვის ნდობა ყველაზე დიდი პასუხისმგებლობაა. ვაცნობიერებთ, რომ ყოველი სიტყვა, რომელსაც ვწერთ, ყოველი იდეა, რომელსაც ვაზიარებთ და ყოველი რეკომენდაცია, რომელსაც ვიძლევით, გავლენას ახდენს ადამიანებზე.</p>
-      <p class="art-stanza art-stanza--soft">არ გვიყვარს ხმამაღალი დაპირებები.<br>არ გვიყვარს ადამიანების შეცდომაში შეყვანა.<br>არ გვიყვარს ისეთი რჩევების გაცემა, რომელთა სისწორეშიც თავად არ ვართ დარწმუნებული.</p>
-      <p>როდესაც ვსაუბრობთ გამოცდილებაზე, ვსაუბრობთ იმაზე, რაც თავად გამოვიარეთ. როდესაც ვაზიარებთ ცოდნას, ვცდილობთ, ის ეფუძნებოდეს რეალურ პრაქტიკას. ჩვენ არ ვეძებთ სრულყოფილებას — გვსურს ვიყოთ გულწრფელები.</p>
+      <p style="font-size: 16px">ჩვენთვის ნდობა ყველაზე დიდი პასუხისმგებლობაა. ვაცნობიერებთ, რომ ყოველი სიტყვა, რომელსაც ვწერთ, ყოველი იდეა, რომელსაც ვაზიარებთ და ყოველი რეკომენდაცია, რომელსაც ვიძლევით, გავლენას ახდენს ადამიანებზე.</p>
+      <p class="art-stanza art-stanza--soft" style="color: rgb(43, 43, 43); font-size: 16px">არ გვიყვარს ხმამაღალი დაპირებები.<br>არ გვიყვარს ადამიანების შეცდომაში შეყვანა.<br>არ გვიყვარს ისეთი რჩევების გაცემა, რომელთა სისწორეშიც თავად არ ვართ დარწმუნებული.</p>
+      <p style="font-size: 16px">როდესაც ვსაუბრობთ გამოცდილებაზე, ვსაუბრობთ იმაზე, რაც თავად გამოვიარეთ. როდესაც ვაზიარებთ ცოდნას, ვცდილობთ, ის ეფუძნებოდეს რეალურ პრაქტიკას. ჩვენ არ ვეძებთ სრულყოფილებას — გვსურს ვიყოთ გულწრფელები.</p>
     </div>
-    <blockquote class="art-pull reveal">
-      <p>ნდობა იქმნება თანმიმდევრული მოქმედებებით, დროთა განმავლობაში.</p>
-    </blockquote>
   </section>
 
   <!-- ═══ LEGACY — CLOSING ═══ -->
   <section class="section art-body" style="padding-top:0">
     <div class="art-passage reveal">
       <span class="art-kicker" style="display:block;margin-bottom:28px;text-align:center">რისი დატოვება გვინდა</span>
-      <p>ჩვენ არ ვიცით, რამდენად დიდი გახდება ჩვენი პროექტები. არ ვიცით, რამდენ ადამიანს მიაღწევს ჩვენი ხმა. მაგრამ ვიცით ერთი რამ — ადამიანს შეუძლია შექმნას ისეთი რამ, რაც საკუთარ სიცოცხლესაც გასცდება და სხვებისთვისაც ღირებული გახდება.</p>
-      <p class="art-stanza">გვსურს დავტოვოთ რაღაც, რაც ადამიანებს დაეხმარება.<br>რაღაც, რაც შთააგონებს.<br>რაღაც, რაც გაუმარტივებს მათ გზას.<br>რაღაც, რაც დაეხმარება საკუთარი შესაძლებლობების დანახვაში.</p>
-      <p>ეს არის გზა, რომელსაც დღეს გავდივართ. და მოხარული ვართ, რომ ამ გზაზე ჩვენთან ერთად ხართ.</p>
+      <p style="font-size: 16px">ჩვენ არ ვიცით, რამდენად დიდი გახდება ჩვენი პროექტები. არ ვიცით, რამდენ ადამიანს მიაღწევს ჩვენი ხმა. მაგრამ ვიცით ერთი რამ — ადამიანს შეუძლია შექმნას ისეთი რამ, რაც საკუთარ სიცოცხლესაც გასცდება და სხვებისთვისაც ღირებული გახდება.</p>
+      <p class="art-stanza" style="font-size: 16px">გვსურს დავტოვოთ რაღაც, რაც ადამიანებს დაეხმარება.<br>რაღაც, რაც შთააგონებს.<br>რაღაც, რაც გაუმარტივებს მათ გზას.<br>რაღაც, რაც დაეხმარება საკუთარი შესაძლებლობების დანახვაში.</p>
+      <p style="font-size: 16px">ეს არის გზა, რომელსაც დღეს გავდივართ და მოხარული ვართ, რომ ამ გზაზე ჩვენთან ერთად ხართ.</p>
     </div>
     <blockquote class="art-pull reveal">
-      <p>თუ ჩვენი გამოცდილება თუნდაც ერთ ადამიანს დაეხმარება საკუთარი ცხოვრების უკეთესად შექმნაში, ჩვენი შრომა უკვე ღირებული იქნება.</p>
+      <p style="font-size: 22px">თუ ჩვენი გამოცდილება თუნდაც ერთ ადამიანს დაეხმარება საკუთარი ცხოვრების უკეთესად შექმნაში, ჩვენი შრომა უკვე ღირებული იქნება.</p>
     </blockquote>
+  </section>
+
+  <!-- ═══ EXPLORE SECTION ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align:center; margin-bottom: clamp(36px,4vw,56px)">
+        <span class="eyebrow">ნახე მეტი</span>
+      </div>
+      <div class="jgrid" style="grid-template-columns: repeat(3,1fr)">
+
+        <article class="jcard reveal">
+          <a class="jcard__media" href="journal.html">
+            <div class="ph"><image-slot id="explore-journal" class="slot-fill" placeholder="ჟურნალი"></image-slot></div>
+          </a>
+          <span class="jcard__cat">სტატიები</span>
+          <h3><a href="journal.html">ჟურნალი</a></h3>
+          <p class="jcard__excerpt" style="font-size:16px">ისტორიები, მოგზაურობები, იდეები და ცხოვრებისეული გაკვეთილები — ჩვენი სიტყვით.</p>
+          <div class="jcard__foot"><a href="journal.html" class="btn-link" style="font-size:13px; font-family:var(--sans); letter-spacing:0.08em; text-transform:uppercase">გადადი →</a></div>
+        </article>
+
+        <article class="jcard reveal">
+          <a class="jcard__media" href="index.html#videos">
+            <div class="ph"><image-slot id="explore-vlog" class="slot-fill" placeholder="ვლოგი"></image-slot></div>
+          </a>
+          <span class="jcard__cat">ვიდეო</span>
+          <h3><a href="index.html#videos">ვლოგი</a></h3>
+          <p class="jcard__excerpt" style="font-size:16px">ყოველდღიური ცხოვრება, გამოცდილება და მომენტები, რომლებიც კამერამ დაიჭირა.</p>
+          <div class="jcard__foot"><a href="index.html#videos" class="btn-link" style="font-size:13px; font-family:var(--sans); letter-spacing:0.08em; text-transform:uppercase">გადადი →</a></div>
+        </article>
+
+        <article class="jcard reveal">
+          <a class="jcard__media" href="index.html#projects">
+            <div class="ph"><image-slot id="explore-projects" class="slot-fill" placeholder="პროექტები"></image-slot></div>
+          </a>
+          <span class="jcard__cat">პროექტები</span>
+          <h3><a href="index.html#projects">ჩვენი პროექტები</a></h3>
+          <p class="jcard__excerpt" style="font-size:16px">Ritualis, გზამკვლევი საფრანგეთში და სხვა — ყველაფერი, რასაც ვაშენებთ.</p>
+          <div class="jcard__foot"><a href="index.html#projects" class="btn-link" style="font-size:13px; font-family:var(--sans); letter-spacing:0.08em; text-transform:uppercase">გადადი →</a></div>
+        </article>
+
+      </div>
+    </div>
   </section>
 
   <!-- NEWSLETTER -->
@@ -232,7 +251,7 @@
     <div class="wrap">
       <div class="news-inner reveal">
         <span class="news-label">Journal Letters</span>
-        <h2 class="news-title" style="font-size:17px;font-family:Nunito">TAMARI &amp; LEO</h2>
+        <h2 class="news-title" style="font-size:17px;font-family:Nunito">TAMARI'S JOURNAL</h2>
         <p class="news-sub" style="font-size:12px">მოგზაურობები, აღმოჩენები და ისტორიები, რომლებიც საიტზე ყოველთვის არ ქვეყნდება.</p>
         <form class="news-form" data-newsletter>
           <input type="email" placeholder="თქვენი ელფოსტა" aria-label="ელ. ფოსტა" required />
@@ -244,36 +263,36 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" style="background-color: rgb(242, 238, 233)">
     <div class="wrap">
       <div class="footer__top">
         <div>
-          <div class="footer__brand">Tamari &amp; Léo</div>
+          <div class="footer__brand" style="font-family: Nunito; font-size: 15px">Tamari's Journal</div>
           <p>ცოცხალი ჟურნალი ორი შემოქმედის გზაზე — ისტორიები, პროექტები და ცხოვრება.</p>
         </div>
         <div class="footer__col">
           <h5>საიტი</h5>
           <ul>
-            <li><a href="about.html" class="is-active">ჩვენ შესახებ</a></li>
-            <li><a href="index.html#projects">პროექტები</a></li>
-            <li><a href="journal.html">ჟურნალი</a></li>
-            <li><a href="#newsletter">კონტაქტი</a></li>
+            <li><a href="about.html" class="is-active" style="font-size:12px">ჩვენ შესახებ</a></li>
+            <li><a href="index.html#projects" style="font-size:12px">პროექტები</a></li>
+            <li><a href="journal.html" style="font-size:12px">ჟურნალი</a></li>
+            <li><a href="#newsletter" style="font-size:12px">კონტაქტი</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h5>სოციალური</h5>
           <ul>
-            <li><a href="#" data-social="instagram">Instagram</a></li>
-            <li><a href="#" data-social="tiktok">TikTok</a></li>
-            <li><a href="#" data-social="youtube">YouTube</a></li>
+            <li><a href="#" data-social="instagram" style="font-size:12px">Instagram</a></li>
+            <li><a href="#" data-social="tiktok" style="font-size:12px">TikTok</a></li>
+            <li><a href="#" data-social="youtube" style="font-size:12px">YouTube</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h5>ენა</h5>
           <ul>
-            <li><a href="#" class="is-active">ქართული</a></li>
-            <li><a href="#" data-lang="fr">Français <span class="dim">— მალე</span></a></li>
-            <li><a href="#" data-lang="en">English <span class="dim">— მალე</span></a></li>
+            <li><a href="#" class="is-active" style="font-size:12px">ქართული</a></li>
+            <li><a href="#" data-lang="fr" style="font-size:12px">Français <span class="dim">— მალე</span></a></li>
+            <li><a href="#" data-lang="en" style="font-size:12px">English <span class="dim">— მალე</span></a></li>
           </ul>
         </div>
       </div>

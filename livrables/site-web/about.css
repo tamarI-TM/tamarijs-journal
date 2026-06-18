@@ -29,6 +29,34 @@
 }
 
 /* =========================================================
+   SPLIT HERO — text left, full-height photo right
+   ========================================================= */
+.abt-split-hero {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 88vh;
+  border-bottom: 1px solid var(--line);
+}
+.abt-split-hero__body {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: clamp(100px,14vh,148px) clamp(28px,4vw,60px) clamp(48px,7vh,80px) var(--gutter);
+}
+.abt-split-hero__body .eyebrow { margin-bottom: 24px; }
+.abt-split-hero__body h1 { font-family: var(--serif); font-weight: 500; line-height: 0.94; letter-spacing: -0.015em; }
+.abt-split-hero__body h1 em { font-family: var(--latin); font-style: italic; font-weight: 500; color: var(--taupe); }
+.abt-split-hero__sub {
+  font-family: var(--serif); font-size: clamp(16px,1.3vw,19px); line-height: 1.65;
+  color: var(--charcoal-70); margin-top: 22px; max-width: 42ch;
+}
+.abt-split-hero__media { position: relative; overflow: hidden; }
+.abt-split-hero__media .ph { position: absolute; inset: 0; height: 100%; }
+
+@media (max-width: 800px) {
+  .abt-split-hero { grid-template-columns: 1fr; min-height: auto; }
+  .abt-split-hero__body { padding-top: clamp(100px,14vh,140px); padding-right: var(--gutter); }
+  .abt-split-hero__media { height: 72vw; position: relative; }
+}
+
+/* =========================================================
    DUO INTRO BAND — beige background, centered
    ========================================================= */
 .abt-band {
@@ -74,6 +102,14 @@
 .abt-item p {
   font-size: 14.5px; line-height: 1.65; color: var(--charcoal-70);
 }
+
+/* ─── Consistent body text throughout the page ─── */
+.page-about .art-passage p,
+.page-about .art-passage .art-stanza,
+.page-about .art-body p,
+.page-about .art-body .art-stanza,
+.page-about .abt-band__inner p,
+.page-about .abt-band__inner .art-stanza { font-size: 16px; }
 
 /* Bigger photos in split blocks on this page */
 .page-about .art-split__grid {
