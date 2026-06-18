@@ -1,0 +1,428 @@
+/* =================================================================
+   guide.css — ემიგრანტის გზამკვლევი  Sales Funnel Page
+   ================================================================= */
+
+/* Nav is solid on this page (no full-bleed dark hero) */
+.guide-page .nav {
+  background: var(--ivory);
+  color: var(--charcoal);
+  padding-block: 16px;
+  box-shadow: 0 1px 0 var(--line-soft);
+}
+
+/* =================================================================
+   HERO
+   ================================================================= */
+.guide-hero {
+  padding-top: calc(90px + clamp(48px, 6vw, 80px));
+  padding-bottom: clamp(56px, 9vw, 110px);
+  background: var(--ivory);
+}
+.guide-hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+.guide-hero__text .eyebrow { margin-bottom: 22px; }
+.guide-hero__title {
+  font-family: var(--serif);
+  font-size: clamp(30px, 4.2vw, 54px);
+  line-height: 1.08;
+  font-weight: 600;
+  margin: 0 0 22px;
+}
+.guide-hero__sub {
+  font-size: clamp(16px, 1.45vw, 18px);
+  line-height: 1.78;
+  color: var(--charcoal-70);
+  max-width: 48ch;
+  margin: 0 0 34px;
+}
+.guide-hero__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.guide-cover-wrap {
+  max-width: 320px;
+  width: 100%;
+  position: relative;
+}
+.guide-cover-wrap img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+  box-shadow:
+    0 24px 64px rgba(43,43,43,.22),
+    0 6px 20px rgba(43,43,43,.10),
+    -8px 0 0 #c4b49a,
+    -16px 0 0 #b8a88e;
+  transform: perspective(900px) rotateY(-5deg);
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+}
+.guide-cover-wrap:hover img {
+  transform: perspective(900px) rotateY(-1deg);
+  box-shadow:
+    0 32px 80px rgba(43,43,43,.26),
+    0 8px 24px rgba(43,43,43,.12),
+    -8px 0 0 #c4b49a,
+    -16px 0 0 #b8a88e;
+}
+
+/* =================================================================
+   PROBLEMS
+   ================================================================= */
+.guide-problems { background: var(--ivory-2); }
+
+.guide-problems__lead {
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.72;
+  color: var(--charcoal-70);
+  max-width: 640px;
+  margin: 18px 0 clamp(28px, 4vw, 44px);
+}
+.guide-pain-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(12px, 2vw, 20px);
+  margin-bottom: clamp(28px, 3.5vw, 40px);
+}
+.guide-pain {
+  background: var(--ivory);
+  padding: clamp(20px, 2.2vw, 28px);
+  border-left: 3px solid var(--beige);
+}
+.guide-pain p { margin: 0; font-size: 16px; line-height: 1.65; }
+.guide-problems__bridge {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.72;
+  color: var(--charcoal-70);
+  max-width: 620px;
+  margin: 0;
+}
+
+/* =================================================================
+   WHY I CREATED
+   ================================================================= */
+.guide-why { background: var(--ivory); }
+
+.guide-why__inner { max-width: 820px; }
+.guide-why__inner .eyebrow { margin-bottom: 18px; }
+.guide-why__inner .guide-why__quote {
+  font-family: var(--latin);
+  font-style: italic;
+  font-size: clamp(22px, 2.6vw, 34px);
+  line-height: 1.28;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin: 16px 0 30px;
+}
+.guide-why__inner p {
+  font-size: 17.5px;
+  line-height: 1.82;
+  color: var(--charcoal-70);
+  margin: 0 0 18px;
+}
+.guide-why__inner p.guide-why__closing {
+  color: var(--charcoal);
+  font-weight: 500;
+}
+
+/* =================================================================
+   WHAT IS IT
+   ================================================================= */
+.guide-what { background: var(--ivory-2); }
+
+.guide-what__inner { max-width: 760px; }
+.guide-what__inner .eyebrow { margin-bottom: 18px; }
+.guide-what__inner h2 { margin: 14px 0 28px; }
+.guide-what__inner p {
+  font-size: 17px;
+  line-height: 1.82;
+  color: var(--charcoal-70);
+  margin: 0 0 18px;
+}
+.guide-what__inner p:last-child { margin-bottom: 0; }
+
+/* =================================================================
+   INSIDE  (cards)
+   ================================================================= */
+.guide-inside { background: var(--ivory); }
+
+.guide-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+  gap: clamp(12px, 1.8vw, 18px);
+  margin-top: clamp(36px, 5vw, 58px);
+}
+.guide-card {
+  background: var(--ivory-2);
+  border: 1px solid var(--line-soft);
+  border-top: 2px solid var(--beige);
+  padding: clamp(22px, 2.2vw, 30px);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.guide-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(43,43,43,.08);
+}
+.guide-card__title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+}
+.guide-card__desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--charcoal-70);
+  margin: 0;
+}
+
+/* =================================================================
+   AUTHOR
+   ================================================================= */
+.guide-author { background: var(--ivory-2); }
+
+.guide-author__grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: clamp(36px, 5.5vw, 84px);
+  align-items: start;
+}
+.guide-author__photo .ph { aspect-ratio: 3 / 4; border-radius: 2px; }
+.guide-author__body .eyebrow { margin-bottom: 14px; }
+.guide-author__name {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 500;
+  margin: 12px 0 6px;
+  color: var(--charcoal);
+}
+.guide-author__role {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin: 0 0 24px;
+}
+.guide-author__body p {
+  font-size: 16px;
+  line-height: 1.78;
+  color: var(--charcoal-70);
+  margin: 0 0 15px;
+}
+.guide-author__body p strong { color: var(--charcoal); }
+.guide-author__body p:last-of-type { margin-bottom: 0; }
+.guide-author__creds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+.guide-cred {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  padding: 6px 13px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+}
+
+/* =================================================================
+   REVIEWS  (placeholder)
+   ================================================================= */
+.guide-reviews { background: var(--ivory); }
+
+.guide-reviews__placeholder {
+  text-align: center;
+  padding: clamp(44px, 6vw, 68px);
+  border: 1px dashed var(--beige);
+  color: var(--charcoal-45);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .06em;
+  max-width: 420px;
+  margin: clamp(34px, 4vw, 50px) auto 0;
+  border-radius: 2px;
+}
+
+/* =================================================================
+   PRICING
+   ================================================================= */
+.guide-pricing {
+  background: var(--charcoal);
+  color: var(--ivory);
+}
+.guide-pricing .eyebrow { color: var(--taupe-soft); }
+.guide-pricing .eyebrow::before { background: rgba(214,195,165,.5); }
+
+.guide-pricing__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 7vw, 100px);
+  align-items: center;
+}
+.guide-pricing__lead h2 { color: var(--ivory); margin: 18px 0 22px; }
+.guide-pricing__lead p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(250,248,244,.66);
+  margin: 0;
+}
+.guide-price-card {
+  border: 1px solid rgba(250,248,244,.12);
+  border-radius: 3px;
+  padding: clamp(28px, 3.2vw, 46px);
+  background: rgba(250,248,244,.04);
+}
+.guide-price-tag {
+  font-family: var(--serif);
+  font-size: clamp(48px, 5.5vw, 76px);
+  font-weight: 600;
+  color: var(--ivory);
+  line-height: 1;
+  margin: 14px 0 6px;
+}
+.guide-price-format {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(250,248,244,.42);
+  margin-bottom: 26px;
+}
+.guide-price-list {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.guide-price-list li {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(250,248,244,.80);
+}
+.guide-price-list li::before {
+  content: "✓";
+  color: var(--beige);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.guide-price-list li em {
+  color: rgba(250,248,244,.42);
+  font-style: normal;
+  font-size: 13px;
+}
+.btn--buy {
+  width: 100%;
+  justify-content: center;
+  background: var(--ivory);
+  color: var(--charcoal);
+  border-color: var(--ivory);
+  font-size: 15px;
+  padding: 18px 30px;
+  letter-spacing: 0.08em;
+}
+.btn--buy:hover {
+  background: transparent;
+  color: var(--ivory);
+}
+.guide-price-note {
+  margin-top: 12px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .05em;
+  color: rgba(250,248,244,.32);
+}
+
+/* =================================================================
+   FAQ
+   ================================================================= */
+.guide-faq { background: var(--ivory-2); }
+
+.guide-faq-list {
+  max-width: 760px;
+  margin-top: clamp(34px, 5vw, 52px);
+}
+.guide-faq-item {
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(18px, 2.5vw, 26px);
+}
+.guide-faq-item:first-child { border-top: 1px solid var(--line); }
+.guide-faq-q {
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.6vw, 20px);
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+}
+.guide-faq-a {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--charcoal-70);
+  margin: 0;
+}
+
+/* =================================================================
+   FINAL CTA
+   ================================================================= */
+.guide-final-cta {
+  background: var(--ivory);
+  text-align: center;
+}
+.guide-final-cta__inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.guide-final-cta__inner .eyebrow { justify-content: center; margin-bottom: 24px; }
+.guide-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(22px, 2.8vw, 36px);
+  line-height: 1.32;
+  color: var(--charcoal);
+  margin: 0 0 24px;
+}
+.guide-final-cta__inner > p {
+  font-size: 17px;
+  line-height: 1.78;
+  color: var(--charcoal-70);
+  margin: 0 0 34px;
+}
+.guide-final-cta .btn {
+  font-size: 15px;
+  padding: 18px 44px;
+  letter-spacing: 0.08em;
+}
+
+/* =================================================================
+   Responsive
+   ================================================================= */
+@media (max-width: 900px) {
+  .guide-hero__inner { grid-template-columns: 1fr; gap: clamp(32px, 6vw, 52px); }
+  .guide-hero__img { order: -1; max-width: 220px; margin: 0 auto; }
+  .guide-cover-wrap img { transform: none; }
+  .guide-cover-wrap:hover img { transform: none; }
+  .guide-pricing__inner { grid-template-columns: 1fr; gap: clamp(32px, 5vw, 48px); }
+  .guide-author__grid { grid-template-columns: 1fr; }
+  .guide-author__photo { max-width: 200px; }
+}
+@media (max-width: 680px) {
+  .guide-pain-list { grid-template-columns: 1fr; }
+  .guide-cards { grid-template-columns: 1fr; }
+}
