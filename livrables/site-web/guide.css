@@ -2,7 +2,7 @@
    guide.css — ემიგრანტის გზამკვლევი  Sales Funnel Page
    ================================================================= */
 
-/* Nav is solid on this page (no full-bleed dark hero) */
+/* Nav is solid on this page */
 .guide-page .nav {
   background: var(--ivory);
   color: var(--charcoal);
@@ -24,7 +24,110 @@
   gap: clamp(40px, 6vw, 96px);
   align-items: center;
 }
+
 .guide-hero__text .eyebrow { margin-bottom: 22px; }
+
+/* Hero actions row */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--charcoal-70);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.hero-link:hover { color: var(--charcoal); }
+.hero-link--light { color: var(--charcoal-70); }
+.hero-link--light:hover { color: var(--charcoal); }
+
+/* Hero stats strip */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  padding-top: 26px;
+  border-top: 1px solid var(--line-soft);
+}
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-right: 28px;
+}
+.hero-stat + .hero-stat {
+  padding-left: 28px;
+  border-left: 1px solid var(--line-soft);
+}
+.hero-stat:last-child { padding-right: 0; }
+.hero-stat__num {
+  font-family: var(--serif);
+  font-size: clamp(26px, 2.6vw, 34px);
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1;
+}
+.hero-stat__label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--charcoal-45);
+}
+
+/* Circular badges on cover */
+.cover-circle {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
+.cover-circle--pages {
+  width: 90px;
+  height: 90px;
+  bottom: -20px;
+  right: -20px;
+  background: var(--ivory);
+  box-shadow: 0 8px 28px rgba(0,0,0,.32);
+}
+.cover-circle--exp {
+  width: 76px;
+  height: 76px;
+  top: -16px;
+  left: -16px;
+  background: var(--beige);
+  box-shadow: 0 6px 22px rgba(0,0,0,.26);
+}
+.cover-circle__num {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--charcoal);
+}
+.cover-circle__label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  margin-top: 3px;
+}
 .guide-hero__title {
   font-family: var(--serif);
   font-size: clamp(30px, 4.2vw, 54px);
@@ -351,7 +454,7 @@
 }
 
 /* =================================================================
-   FAQ
+   FAQ  (accordion)
    ================================================================= */
 .guide-faq { background: var(--ivory-2); }
 
@@ -361,21 +464,61 @@
 }
 .guide-faq-item {
   border-bottom: 1px solid var(--line);
-  padding-block: clamp(18px, 2.5vw, 26px);
 }
 .guide-faq-item:first-child { border-top: 1px solid var(--line); }
+
 .guide-faq-q {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
   font-family: var(--serif);
   font-size: clamp(17px, 1.6vw, 20px);
   font-weight: 500;
   color: var(--charcoal);
-  margin-bottom: 10px;
+  padding-block: clamp(18px, 2.5vw, 26px);
+  transition: color 0.2s ease;
 }
+.guide-faq-q:hover { color: var(--taupe); }
+.guide-faq-q:focus-visible {
+  outline: 2px solid var(--beige);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  color: var(--taupe);
+  transition: transform 0.35s ease;
+}
+.guide-faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.guide-faq-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.guide-faq-item.is-open .guide-faq-body {
+  grid-template-rows: 1fr;
+}
+.guide-faq-body > p {
+  overflow: hidden;
+}
+
 .guide-faq-a {
   font-size: 15.5px;
   line-height: 1.75;
   color: var(--charcoal-70);
   margin: 0;
+  padding-bottom: clamp(18px, 2.5vw, 26px);
 }
 
 /* =================================================================
@@ -418,6 +561,8 @@
   .guide-hero__img { order: -1; max-width: 220px; margin: 0 auto; }
   .guide-cover-wrap img { transform: none; }
   .guide-cover-wrap:hover img { transform: none; }
+  .cover-circle--pages { right: -10px; bottom: -10px; }
+  .cover-circle--exp { left: -10px; top: -10px; }
   .guide-pricing__inner { grid-template-columns: 1fr; gap: clamp(32px, 5vw, 48px); }
   .guide-author__grid { grid-template-columns: 1fr; }
   .guide-author__photo { max-width: 200px; }
@@ -425,4 +570,9 @@
 @media (max-width: 680px) {
   .guide-pain-list { grid-template-columns: 1fr; }
   .guide-cards { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .hero-stats { gap: 0; }
+  .hero-stat { padding-right: 20px; }
+  .hero-stat + .hero-stat { padding-left: 20px; }
+  .hero-stat__num { font-size: 24px; }
 }

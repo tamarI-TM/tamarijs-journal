@@ -3,8 +3,10 @@
   // Nav: transparent over hero → solid on scroll
   var nav = document.querySelector('[data-nav]');
   if (nav) {
+    var heroEl = document.querySelector('.guide-hero, .hero, header');
     var onScroll = function () {
-      if (window.scrollY > window.innerHeight * 0.72 - 80) nav.classList.add('scrolled');
+      var threshold = heroEl ? heroEl.offsetHeight - 80 : window.innerHeight * 0.72 - 80;
+      if (window.scrollY > threshold) nav.classList.add('scrolled');
       else nav.classList.remove('scrolled');
     };
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -59,6 +61,15 @@
       var note = form.parentNode.querySelector('[data-news-note]');
       if (note) note.textContent = 'მადლობა — მალე დაგიკავშირდებით.';
       form.reset();
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.guide-faq-q').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.guide-faq-item');
+      var isOpen = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   });
 

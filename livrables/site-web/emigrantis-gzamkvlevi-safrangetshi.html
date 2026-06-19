@@ -3,16 +3,213 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ემიგრანტის გზამკვლევი საფრანგეთში — თამარი მაისაშვილი</title>
-<meta name="description" content="პრაქტიკული ციფრული გზამკვლევი საფრანგეთში თავშესაფრის პროცედურის შესახებ. 94 გვერდი, მრავალწლიანი გამოცდილების საფუძველზე. PDF — 49€." />
+<title>ემიგრანტის გზამკვლევი საფრანგეთში — Tamari's Journal</title>
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="dir-a.css" />
-<link rel="stylesheet" href="guide.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="journal.css" />
+<link rel="stylesheet" href="article.css" />
+<link id="gfont-Nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap">
+<link id="gfont-NotoSansGe" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700&display=swap">
+<style>
+/* ===== Guide sales page — built on Charte Graphique tokens ===== */
+.guide-hero{
+  position:relative; background:var(--charcoal); color:var(--ivory);
+  padding-top:clamp(150px,18vh,210px); padding-bottom:clamp(72px,9vw,120px);
+  overflow:hidden;
+}
+.guide-hero::before{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(120% 90% at 78% 8%, rgba(214,195,165,.16), transparent 55%),
+    radial-gradient(90% 80% at 12% 100%, rgba(184,170,152,.12), transparent 60%);
+  pointer-events:none;
+}
+.guide-hero__grid{
+  position:relative; display:grid; grid-template-columns:1.08fr .92fr;
+  gap:clamp(40px,6vw,90px); align-items:center;
+}
+.guide-hero__eyebrow{
+  font-family:var(--sans); font-size:12.5px; font-weight:500; letter-spacing:.32em;
+  text-transform:uppercase; color:var(--taupe); display:inline-flex; align-items:center; gap:14px;
+  margin-bottom:30px;
+}
+.guide-hero__eyebrow::before{content:""; width:30px; height:1px; background:var(--beige);}
+.guide-hero h1{
+  font-family:var(--serif); font-weight:600; color:var(--ivory);
+  font-size:33px; line-height:1.12; letter-spacing:-.005em; margin:0;
+}
+.guide-hero__sub{
+  font-family:var(--sans); font-weight:300; font-size:16px; line-height:1.7;
+  color:rgba(250,248,244,.82); margin:26px 0 0; max-width:56ch;
+}
+.guide-hero__meta{
+  display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center;
+  margin-top:30px; font-family:var(--mono); font-size:11.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:rgba(250,248,244,.6);
+}
+.guide-hero__meta .dot{width:4px;height:4px;border-radius:50%;background:var(--taupe);}
+.guide-hero__cta{display:flex; flex-wrap:wrap; gap:18px; align-items:center; margin-top:40px;}
+.guide-hero .guide-hero__cta .btn{font-size:13px; padding:11px 22px; gap:9px;}
+.guide-hero .guide-hero__cta .btn--light:hover{color:#b8aa98; border-color:#b8aa98;}
+.price{display:flex; align-items:baseline; gap:12px;}
+.price__now{font-family:var(--serif); font-weight:600; font-size:22px; color:var(--ivory); line-height:1;}
+.price__tag{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--taupe);}
+
+/* ===== Book mockup ===== */
+.book-stage{display:flex; justify-content:center; perspective:1700px;}
+.book{position:relative; width:clamp(248px,30vw,360px);}
+.book__shell{
+  position:relative; aspect-ratio:1414/2000; transform-style:preserve-3d;
+  transform:rotateY(-17deg) rotateX(2deg); transition:transform .7s var(--ease);
+}
+.book:hover .book__shell{transform:rotateY(-7deg) rotateX(1deg);}
+.book__face{
+  position:absolute; inset:0; border-radius:3px 7px 7px 3px; overflow:hidden;
+  box-shadow:0 40px 80px -28px rgba(0,0,0,.7), 0 12px 28px -12px rgba(0,0,0,.55);
+}
+.book__face img{width:100%; height:100%; object-fit:cover;}
+.book__face::after{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:18px;
+  background:linear-gradient(90deg,rgba(0,0,0,.42),rgba(255,255,255,.14) 38%,rgba(0,0,0,.06) 60%,transparent);
+}
+.book__pages{
+  position:absolute; top:1.6%; right:-13px; width:14px; height:96.8%;
+  background:repeating-linear-gradient(180deg,#efe7da 0 1px,#cdbfa9 1px 3px);
+  border-radius:0 3px 3px 0; transform:rotateY(34deg); transform-origin:left center;
+  box-shadow:1px 0 2px rgba(0,0,0,.25);
+}
+.book__badge{
+  position:absolute; left:-26px; bottom:34px; z-index:5;
+  width:104px; height:104px; border-radius:50%;
+  background:var(--ivory-2); color:var(--charcoal);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+  box-shadow:0 16px 34px -12px rgba(0,0,0,.5); text-align:center;
+}
+.book__badge b{font-family:var(--serif); font-weight:600; font-size:30px; line-height:1;}
+.book__badge span{font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--charcoal-70);}
+
+/* ===== Included list (no emoji — thin book icon) ===== */
+.incl-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:clamp(40px,5vw,60px);}
+.incl{background:var(--ivory); padding:clamp(20px,2.2vw,28px); display:flex; gap:16px; align-items:flex-start;}
+.incl__ico{flex:0 0 auto; width:34px; height:34px; color:var(--taupe);}
+.incl__ico svg{width:34px; height:34px;}
+.incl h3{font-family:var(--serif); font-weight:500; font-size:16px; line-height:1.2; margin:0 0 8px;}
+.incl p{margin:0; font-size:13px; line-height:1.6; color:var(--charcoal-70);}
+
+/* ===== Accordion ===== */
+.acc-list{margin-top:clamp(36px,4vw,56px); border-top:1px solid var(--line);}
+.acc{border-bottom:1px solid var(--line);}
+.acc>summary{
+  list-style:none; cursor:pointer; display:flex; align-items:center; gap:22px;
+  padding:clamp(22px,2.4vw,30px) 0;
+}
+.acc>summary::-webkit-details-marker{display:none;}
+.acc__no{font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; color:var(--taupe); flex:0 0 auto; width:32px;}
+.acc__title{font-family:var(--serif); font-weight:500; font-size:clamp(20px,2vw,24px); line-height:1.25; color:var(--charcoal); flex:1;}
+.acc__chev{flex:0 0 auto; width:22px; height:22px; color:var(--charcoal-45); transition:transform .4s var(--ease);}
+.acc[open] .acc__chev{transform:rotate(45deg); color:var(--charcoal);}
+.acc__body{overflow:hidden;}
+.acc__body p{
+  margin:0; padding:0 0 clamp(24px,2.6vw,32px) 54px;
+  font-size:16px; line-height:1.75; color:var(--charcoal-70); max-width:74ch;
+}
+@media(max-width:640px){ .acc__body p{padding-left:0;} }
+
+/* ===== Offer card ===== */
+.offer{display:grid; grid-template-columns:1.25fr .75fr; gap:clamp(32px,5vw,72px); align-items:center;}
+.offer__list{list-style:none; margin:0; padding:0;}
+.offer__list li{display:flex; gap:16px; align-items:flex-start; padding:16px 0; border-top:1px solid var(--line);}
+.offer__list li:first-child{border-top:0;}
+.offer__check{flex:0 0 auto; width:22px; height:22px; color:var(--taupe); margin-top:2px;}
+.offer__list span{font-size:16px; line-height:1.6; color:var(--charcoal);}
+.offer__list b{font-weight:600;}
+.offer__box{
+  background:var(--charcoal); color:var(--ivory); padding:clamp(34px,3.4vw,46px); text-align:center;
+  border-radius:3px;
+}
+.offer__box .price__now{font-size:54px;}
+.offer__box .price__old{font-family:var(--mono); font-size:13px; color:rgba(250,248,244,.5); margin-top:6px;}
+.offer__box .btn{margin-top:26px; width:100%; justify-content:center; font-size:13px; padding:11px 22px; gap:9px;}
+.offer__box .btn--light:hover{color:#b8aa98; border-color:#b8aa98;}
+.offer__box .fineprint{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; color:rgba(250,248,244,.55); margin-top:18px; line-height:1.7;}
+
+/* ===== Author ===== */
+.author-split{display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(36px,5vw,72px); align-items:start;}
+.author-portrait{position:relative;}
+.author-portrait .ph{aspect-ratio:4/5;}
+.author-body p{font-family:var(--serif); font-weight:400; font-size:16px; line-height:1.85; color:var(--charcoal); margin:0 0 1.4em;}
+.author-body p:last-child{margin-bottom:0;}
+.author-more{display:none;}
+.author-more.open{display:block;}
+.author-toggle{
+  appearance:none; background:none; border:0; cursor:pointer; padding:0;
+  margin:0 0 1.4em; display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--taupe); transition:color .3s var(--ease);
+  border-bottom:1px solid var(--line); padding-bottom:6px;
+}
+.author-toggle:hover{color:var(--charcoal);}
+.author-toggle .chev{font-size:15px; transition:transform .35s var(--ease);}
+.author-toggle[aria-expanded="true"] .chev{transform:rotate(180deg);}
+.author-name{font-family:var(--serif); font-weight:600; font-size:22px; color:var(--charcoal); margin:0 0 4px;}
+.author-role{font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--taupe); margin:0 0 24px;}
+
+/* ===== Final CTA ===== */
+.final-cta{background:var(--charcoal); color:var(--ivory); text-align:center;}
+.final-cta h2{color:var(--ivory); font-size:33px; line-height:1.18; max-width:20ch; margin:0 auto;}
+.final-cta p{font-family:var(--serif); font-style:italic; font-size:21px; color:rgba(250,248,244,.78); max-width:46ch; margin:22px auto 0; line-height:1.55;}
+.final-cta .guide-hero__cta{justify-content:center; margin-top:40px;}
+.final-cta .btn--light:hover{color:#b8aa98; border-color:#b8aa98;}
+
+/* ===== Sticky buy bar ===== */
+.buybar{
+  position:fixed; left:0; right:0; bottom:0; z-index:60; transform:translateY(110%);
+  transition:transform .5s var(--ease); background:var(--ivory);
+  border-top:1px solid var(--line); box-shadow:0 -10px 30px rgba(43,43,43,.10);
+}
+.buybar.show{transform:none;}
+.buybar__in{
+  max-width:var(--maxw); margin:0 auto; padding:14px var(--gutter);
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+.buybar__t{display:flex; flex-direction:column; gap:2px; min-width:0;}
+.buybar__t b{font-family:var(--serif); font-weight:600; font-size:17px; color:var(--charcoal); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.buybar__t span{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--charcoal-45);}
+.buybar__r{display:flex; align-items:center; gap:18px; flex:0 0 auto;}
+.buybar__price{font-family:var(--serif); font-weight:600; font-size:24px; color:var(--charcoal);}
+
+@media(max-width:900px){
+  .guide-hero__grid{grid-template-columns:1fr; gap:clamp(48px,8vw,72px);}
+  .book-stage{order:-1;}
+  .incl-grid{grid-template-columns:1fr;}
+  .offer{grid-template-columns:1fr;}
+  .author-split{grid-template-columns:1fr;}
+  .buybar__t b{font-size:15px;}
+}
+@media(max-width:560px){
+  .buybar__price{font-size:20px;}
+  .buybar__in{padding:12px 18px;}
+}
+/* unify reading text at 16px (headings & subheadings untouched) */
+.art-passage p, .art-passage .art-lede{font-size:16px;}
+/* intro split — image left, text right */
+.intro-split{display:grid; grid-template-columns:1fr 1fr; gap:clamp(32px,5vw,72px); align-items:center;}
+.intro-figure{margin:0;}
+.intro-figure img{width:100%; height:auto; display:block; border-radius:3px;}
+.intro-body .art-passage{max-width:none;}
+@media(max-width:860px){
+  .intro-split{grid-template-columns:1fr; gap:clamp(28px,5vw,40px);}
+}
+/* შინაარსი section sizes */
+#inside .acc__title{font-size:16px;}
+#inside .acc__body p{font-size:13px;}
+#faq .acc__title{font-size:16px;}
+</style>
+<link id="gfont-Montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+<link id="gfont-Raleway" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap">
+<link id="gfont-Quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
 </head>
-<body class="guide-page">
+<body class="page-article" data-screen-label="გაყიდვების გვერდი — ემიგრანტის გზამკვლევი">
 
 <!-- NAV -->
 <nav class="nav nav--cover" data-nav>
@@ -29,20 +226,14 @@
   <div class="nav__menu" data-links>
     <button class="menu__close" data-close aria-label="დახურვა"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
     <div class="menu__group">
-      <a href="index.html">მთავარი</a>
+      <a href="home-a.html">მთავარი</a>
       <a href="journal.html">ჟურნალი</a>
-      <a href="index.html#videos">ვლოგი</a>
-      <a href="index.html#projects">პროექტები</a>
-    </div>
-    <div class="menu__group">
-      <a href="emigrantis-gzamkvlevi-safrangetshi.html" class="is-active">გზამკვლევი</a>
-    </div>
-    <div class="menu__group">
-      <a href="#">მაღაზია</a>
+      <a href="home-a.html#videos">ვლოგი</a>
+      <a href="home-a.html#projects">პროექტები</a>
     </div>
     <div class="menu__group">
       <a href="about.html">ჩვენ შესახებ</a>
-      <a href="index.html#newsletter">კონტაქტი</a>
+      <a href="#newsletter">კონტაქტი</a>
     </div>
     <div class="menu__group">
       <button class="menu__acc" aria-expanded="false">გამოგვეყევი <span class="chev">⌄</span></button>
@@ -56,292 +247,274 @@
   <div class="menu__backdrop" data-close></div>
 </nav>
 
-
-<!-- ① HERO -->
-<header class="guide-hero">
-  <div class="wrap">
-    <div class="guide-hero__inner">
-
-      <div class="guide-hero__text reveal">
-        <span class="eyebrow">ციფრული გზამკვლევი · PDF</span>
-        <h1 class="guide-hero__title">ემიგრანტის გზამკვლევი<br>საფრანგეთში</h1>
-        <p class="guide-hero__sub">ცოდნა, რომელიც დაგეხმარება თავიდან აირიდო ყველაზე გავრცელებული შეცდომები და უკეთ გაიგო ის პროცესი, რომელიც წინ გელოდება — მრავალწლიანი გამოცდილებისა და რეალური პრაქტიკის საფუძველზე შექმნილი გზამკვლევი.</p>
-        <a href="#pricing" class="btn">
-          შეძენა — 49€
-          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-
-      <div class="guide-hero__img reveal">
-        <div class="guide-cover-wrap">
-          <img src="images/guide-cover.jpg" alt="ემიგრანტის გზამკვლევი საფრანგეთში — გარეკანი" />
+<!-- ===== HERO ===== -->
+<header class="guide-hero" id="top">
+  <div class="wrap" style="font-family: &quot;Noto Serif Georgian&quot;; font-weight: 500; font-size: 6px; letter-spacing: 0.1px">
+    <div class="guide-hero__grid">
+      <div class="guide-hero__body reveal">
+        <span class="guide-hero__eyebrow">ციფრული გზამკვლევი · PDF</span>
+        <h1 style="font-family: &quot;Noto Serif Georgian&quot;; font-weight: 700">ემიგრანტის გზამკვლევი<br>საფრანგეთში</h1>
+        <p class="guide-hero__sub">საფრანგეთში თავშესაფრის პროცედურის, ადმინისტრაციული პროცესებისა და პრაქტიკული ცხოვრების შესახებ შექმნილი გზამკვლევი — რეალური გამოცდილების საფუძველზე.</p>
+        <div class="guide-hero__meta">
+          <span>94 გვერდი</span><span class="dot"></span>
+          <span>PDF ფორმატი</span><span class="dot"></span>
+          <span>მყისიერი წვდომა</span>
+        </div>
+        <div class="guide-hero__cta">
+          <a href="#offer" class="btn btn--light">შეიძინე გზამკვლევი <span class="arr">→</span></a>
+          <div class="price">
+            <span class="price__now">49€</span>
+            <span class="price__tag">ერთჯერადი გადახდა</span>
+          </div>
         </div>
       </div>
-
+      <div class="book-stage reveal">
+        <div class="book">
+          <div class="book__shell">
+            <div class="book__pages"></div>
+            <div class="book__face">
+              <img src="images/guide-cover.jpg" alt="ემიგრანტის გზამკვლევი საფრანგეთში — ყდა" />
+            </div>
+          </div>
+          <div class="book__badge"><b>94</b><span>გვერდი</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </header>
 
-
-<!-- ② PROBLEMS -->
-<section class="guide-problems section">
+<!-- ===== 01 — WHAT IS IT ===== -->
+<section class="section" data-screen-label="რა არის გზამკვლევი">
   <div class="wrap">
+    <div class="intro-split reveal">
+      <figure class="intro-figure">
+        <img src="images/intro-bonsai-book.jpg" alt="ემიგრანტის გზამკვლევი — წიგნი მაგიდაზე, ბონსაის გვერდით" />
+      </figure>
+      <div class="intro-body">
+        <div class="section-head">
+          <span class="eyebrow eyebrow--plain">შესავალი</span>
+          <h2 class="h-lg" style="font-size: 22px; margin-top: 18px">რა არის ემიგრანტის გზამკვლევი?</h2>
+        </div>
+        <div class="art-passage" style="margin-top:clamp(20px,2vw,28px);">
+          <p class="art-lede" style="font-family:var(--serif);"><span class="drop">„</span>ემიგრანტის გზამკვლევი საფრანგეთში" არის პრაქტიკული რესურსი, რომელიც შეიქმნა იმისთვის, რომ ადამიანებს დაეხმაროს უკეთ გაიგონ თავშესაფრის პროცესი, ადმინისტრაციული ნაბიჯები და ის რეალობა, რომელიც მათ საფრანგეთში ელოდებათ.</p>
+          <p>გზამკვლევი განკუთვნილია როგორც მათთვის, ვინც პროცესს ახლა იწყებს, ასევე მათთვის, ვინც უკვე საფრანგეთში იმყოფება და სურს უფრო ნათლად დაინახოს საკუთარი გზა.</p>
+          <button class="author-toggle" data-toggle aria-expanded="false">სრულად წაკითხვა <span class="chev">⌄</span></button>
+          <div class="author-more" data-more>
+          <p>ყველაზე მეტად ის დაეხმარება ადამიანებს, რომლებიც ეძებენ სანდო, პრაქტიკულ და გამოცდილებაზე დაფუძნებულ ინფორმაციას, რათა თავიდან აირიდონ ყველაზე გავრცელებული შეცდომები და უფრო თავდაჯერებულად მიიღონ გადაწყვეტილებები.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ===== 02 — WHAT'S INCLUDED ===== -->
+<section class="section band" data-screen-label="რა შედის">
+  <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">სიტუაცია</span>
-      <h2 class="h-lg" style="margin-top: 16px">იცნობ ამ სიტუაციას?</h2>
-      <p class="guide-problems__lead">საფრანგეთში ჩამოსვლის შემდეგ ხშირად უფრო მეტი კითხვა ჩნდება, ვიდრე პასუხი.</p>
+      <span class="eyebrow">შემადგენლობა</span>
+      <h2 class="h-lg" style="font-size:22px;">რა შედის გზამკვლევში</h2>
     </div>
-
-    <div class="guide-pain-list reveal">
-      <div class="guide-pain">
-        <p>დაბნეულობისგან შესაძლოა <strong>არ იცოდე, საიდან უნდა დაიწყო</strong></p>
+    <div class="incl-grid reveal">
+      <div class="incl">
+        <span class="incl__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg></span>
+        <div><h3>თავშესაფრის და სამკურნალო პროცედურა ეტაპობრივად</h3><p>გაიგე, რა ხდება რეგისტრაციიდან საბოლოო გადაწყვეტილებამდე.</p></div>
       </div>
-      <div class="guide-pain">
-        <p>სხვადასხვა ჯგუფში, ფორუმსა და სოციალურ ქსელში <strong>ურთიერთგამომრიცხავ ინფორმაციას</strong> აწყდები</p>
+      <div class="incl">
+        <span class="incl__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg></span>
+        <div><h3>OFPRA-ს ინტერვიუსთვის მომზადება</h3><p>რა კითხვებს უნდა ელოდო და როგორ წარადგინო საკუთარი ისტორია.</p></div>
       </div>
-      <div class="guide-pain">
-        <p>გაწუხებს <strong>შიში, რომ დაუშვებ შეცდომას</strong>, რომელიც დროს, ენერგიასა და მნიშვნელოვან შესაძლებლობებს დაგაკარგვინებს</p>
+      <div class="incl">
+        <span class="incl__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg></span>
+        <div><h3>ყველაზე გავრცელებული შეცდომები</h3><p>შეცდომები, რომლებიც ხშირად უარყოფითად მოქმედებს საქმეზე.</p></div>
       </div>
-      <div class="guide-pain">
-        <p>ხშირად <strong>არ იცი, რეალურად რა გელოდება</strong> წინ და როგორ განვითარდება პროცესი</p>
+      <div class="incl">
+        <span class="incl__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg></span>
+        <div><h3>ვადები და პროცედურები</h3><p>მნიშვნელოვანი თარიღები, რომლებიც აუცილებლად უნდა იცოდე.</p></div>
       </div>
-    </div>
-
-    <p class="guide-problems__bridge reveal">სწორედ ამიტომ შევქმენი ეს გზამკვლევი — იმისთვის, რომ ყველა საკვანძო ინფორმაცია ერთ სივრცეში მომექცია და შენთვის გზა უფრო გასაგები, ნათელი და პროგნოზირებადი გამეხადა.</p>
-
-  </div>
-</section>
-
-
-<!-- ③ WHY I CREATED -->
-<section class="guide-why section">
-  <div class="wrap">
-    <div class="guide-why__inner reveal">
-      <span class="eyebrow">ისტორია</span>
-      <h2 class="guide-why__quote">„სწორი ინფორმაცია ხშირად<br>ყველაზე მნიშვნელოვანი პირველი ნაბიჯია"</h2>
-      <p>საფრანგეთის სასამართლო, ადმინისტრაციული და თავშესაფრის სისტემაში მუშაობის განმავლობაში ასობით ადამიანის ისტორია მოვისმინე და ვნახე, რამდენად ხშირად ხდება შეცდომები მხოლოდ ინფორმაციის ნაკლებობის გამო.</p>
-      <p>წლების განმავლობაში დაგროვილმა გამოცდილებამ დამანახვა, რომ სწორი ინფორმაცია ხშირად ყველაზე მნიშვნელოვანი პირველი ნაბიჯია.</p>
-      <p class="guide-why__closing">სწორედ ამიტომ შევქმენი „ემიგრანტის გზამკვლევი" — პრაქტიკული რესურსი, რომელიც დაგეხმარება უკეთ გაიგო პროცესი, თავიდან აირიდო ყველაზე გავრცელებული შეცდომები და უფრო თავდაჯერებულად შეხვდე პროცესს.</p>
+      <div class="incl">
+        <span class="incl__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg></span>
+        <div><h3>უფლებები და პრაქტიკული ცხოვრება</h3><p>საცხოვრებელი, დახმარებები და ყოველდღიური საკითხები.</p></div>
+      </div>
+      <div class="incl">
+        <span class="incl__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg></span>
+        <div><h3>დეპორტი, OQTF, IRTF და შენგენში დაბრუნება</h3><p>ევროკავშირის ახალი მიგრაციული პაქტი 2026–2027.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- ④ WHAT IS IT -->
-<section class="guide-what section">
-  <div class="wrap">
-    <div class="guide-what__inner reveal">
-      <span class="eyebrow">გზამკვლევი</span>
-      <h2 class="h-lg">რა არის ემიგრანტის გზამკვლევი?</h2>
-      <p>„ემიგრანტის გზამკვლევი საფრანგეთში" არის პრაქტიკული რესურსი, რომელიც შეიქმნა იმისთვის, რომ ადამიანებს დაეხმაროს უკეთ გაიგონ თავშესაფრის პროცესი, ადმინისტრაციული ნაბიჯები და ის რეალობა, რომელიც მათ საფრანგეთში ელოდებათ.</p>
-      <p>გზამკვლევი განკუთვნილია როგორც მათთვის, ვინც პროცესს ახლა იწყებს, ასევე მათთვის, ვინც უკვე საფრანგეთში იმყოფება და სურს უფრო ნათლად დაინახოს საკუთარი გზა.</p>
-      <p>ყველაზე მეტად ის დაეხმარება ადამიანებს, რომლებიც ეძებენ სანდო, პრაქტიკულ და გამოცდილებაზე დაფუძნებულ ინფორმაციას, რათა თავიდან აირიდონ ყველაზე გავრცელებული შეცდომები და უფრო თავდაჯერებულად მიიღონ გადაწყვეტილებები.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ⑤ INSIDE -->
-<section class="guide-inside section">
+<!-- ===== 03 — WHAT'S INSIDE (accordion) ===== -->
+<section class="section" id="inside" data-screen-label="რა არის შიგნით">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">შინაარსი</span>
-      <h2 class="h-lg" style="margin-top: 16px">რა არის შიგნით?</h2>
+      <h2 class="h-lg" style="font-size:22px;">რას შეიცავს "ემიგრანტის გზამკვლევი "</h2>
+      <p class="lede" style="margin-top:16px;font-size:16px;">შვიდი თემა, ნაბიჯ-ნაბიჯ. გახსენი თითოეული, რომ ნახო, რას მოიცავს.</p>
     </div>
-    <div class="guide-cards">
-      <div class="guide-card reveal">
-        <div class="guide-card__title">OFPRA</div>
-        <p class="guide-card__desc">გაიგე, როგორ მიმდინარეობს თავშესაფრის პროცედურა და რას უნდა ელოდო თითოეულ ეტაპზე.</p>
-      </div>
-      <div class="guide-card reveal">
-        <div class="guide-card__title">CNDA</div>
-        <p class="guide-card__desc">შეიტყვე, რა ხდება უარის შემთხვევაში და როგორ მუშაობს გასაჩივრების პროცესი.</p>
-      </div>
-      <div class="guide-card reveal">
-        <div class="guide-card__title">ვადები</div>
-        <p class="guide-card__desc">ყველაზე მნიშვნელოვანი ვადები, რომელთა ცოდნაც აუცილებელია პროცესის სწორად წარმართვისთვის.</p>
-      </div>
-      <div class="guide-card reveal">
-        <div class="guide-card__title">ინტერვიუ</div>
-        <p class="guide-card__desc">პრაქტიკული რჩევები OFPRA-ს ინტერვიუსთვის მოსამზადებლად და საკუთარი ისტორიის უკეთ წარმოსადგენად.</p>
-      </div>
-      <div class="guide-card reveal">
-        <div class="guide-card__title">უფლებები</div>
-        <p class="guide-card__desc">შენი უფლებები, დახმარებები და მნიშვნელოვანი ინფორმაცია საფრანგეთში ცხოვრების პირველი ეტაპისთვის.</p>
-      </div>
-      <div class="guide-card reveal">
-        <div class="guide-card__title">ყველაზე გავრცელებული შეცდომები</div>
-        <p class="guide-card__desc">შეცდომები, რომლებიც ხშირად აფერხებს პროცესს და რომელთა თავიდან აცილებაც შესაძლებელია.</p>
-      </div>
-      <div class="guide-card reveal">
-        <div class="guide-card__title">პრაქტიკული რჩევები</div>
-        <p class="guide-card__desc">რეალური გამოცდილებიდან მიღებული რეკომენდაციები, რომლებიც დაგეხმარება უფრო თავდაჯერებულად იმოქმედო.</p>
+    <div class="acc-list reveal">
+      <details class="acc">
+        <summary><span class="acc__no">01</span><span class="acc__title">OFPRA</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>გაიგე, როგორ მიმდინარეობს თავშესაფრის პროცედურა და რას უნდა ელოდო თითოეულ ეტაპზე.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">02</span><span class="acc__title">საკურნალო პროცედურა</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>პრაქტიკული ინფორმაცია ჯანმრთელობის დაცვის სისტემის, სამედიცინო დახმარებისა და მკურნალობასთან დაკავშირებული ძირითადი პროცედურების შესახებ.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">03</span><span class="acc__title">CNDA</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>შეიტყვე, რა ხდება უარის შემთხვევაში და როგორ მუშაობს გასაჩივრების პროცესი.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">04</span><span class="acc__title">ვადები</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>ყველაზე მნიშვნელოვანი ვადები, რომელთა ცოდნაც აუცილებელია პროცესის სწორად წარმართვისთვის.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">05</span><span class="acc__title">ინტერვიუ</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>პრაქტიკული რჩევები OFPRA-ს ინტერვიუსთვის მოსამზადებლად და საკუთარი ისტორიის უკეთ წარმოსადგენად.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">06</span><span class="acc__title">უფლებები</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>შენი უფლებები, დახმარებები და მნიშვნელოვანი ინფორმაცია საფრანგეთში ცხოვრების პირველი ეტაპისთვის.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">07</span><span class="acc__title">ყველაზე გავრცელებული შეცდომები</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>შეცდომები, რომლებიც ხშირად აფერხებს პროცესს და რომელთა თავიდან აცილებაც შესაძლებელია.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">08</span><span class="acc__title">პრაქტიკული რჩევები</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>რეალური გამოცდილებიდან მიღებული რეკომენდაციები, რომლებიც დაგეხმარება უფრო თავდაჯერებულად იმოქმედო.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 — OFFER ===== -->
+<section class="section band" id="offer" data-screen-label="რას იღებ 49€-ად">
+  <div class="wrap">
+    <div class="section-head reveal" style="max-width:680px;">
+      <span class="eyebrow">შეთავაზება</span>
+      <h2 class="h-lg" style="font-size: 22px">რას იღებ შეძენის შემთხვევაში</h2>
+    </div>
+    <div class="offer reveal" style="margin-top:clamp(36px,4vw,56px);">
+      <ul class="offer__list">
+        <li><svg class="offer__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>„ემიგრანტის გზამკვლევი საფრანგეთში" — ციფრულ სახელმძვანელოს PDF ფორმატში + ბონუსი "დეპორტი, OQTF, IRTF და შენგენში დაბრუნების წესები, ევროკავშირის ახალი მიგრაციული პაქტი 2026–2027</span></li>
+        <li><svg class="offer__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>დეტალურად განხილული ძირითადი თემები: OFPRA, CNDA, ვადები, ინტერვიუ, უფლებები, ყველაზე გავრცელებული შეცდომები და პრაქტიკული რეკომენდაციები</span></li>
+        <li><svg class="offer__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>სტრუქტურირებული ინფორმაცია, რომელიც დაგეხმარება პროცესის უკეთ გაგებაში, შეცდომების თავიდან აცილებასა და შენი საქმის მაქსიმალურად ეფექტურად წარმართვაში</span></li>
+        <li><svg class="offer__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>მრავალწლიანი გამოცდილებისა და რეალური პრაქტიკის საფუძველზე შექმნილი რესურსი</span></li>
+        <li><svg class="offer__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>მყისიერი წვდომა შეძენის შემდეგ</span></li>
+      </ul>
+      <div class="offer__box">
+        <span class="price__tag" style="color:var(--taupe);">ერთჯერადი გადახდა</span>
+        <div class="price__now" style="margin-top: 10px; font-size: 33px">49€</div>
+        <a href="#" class="btn btn--light">შეიძინე გზამკვლევი →</a>
+        <p class="fineprint">გვერდების რაოდენობა: 94<br>ფორმატი: PDF · მყისიერი წვდომა</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ⑥ AUTHOR -->
-<section class="guide-author section">
+<!-- ===== 05 — AUTHOR ===== -->
+<section class="section" data-screen-label="ავტორის შესახებ">
   <div class="wrap">
-    <div class="guide-author__grid">
-
-      <div class="guide-author__photo reveal">
-        <img src="images/tamari-author.jpg" alt="თამარი მაისაშვილი-ციხელაშვილი" style="width:100%;border-radius:2px;display:block;" />
+    <div class="author-split">
+      <div class="author-portrait reveal">
+        <figure class="art-fig" style="margin:0">
+          <div class="ph"><image-slot id="guide-author" class="slot-fill" placeholder="თამარის ფოტო (4/5)"></image-slot></div>
+        </figure>
       </div>
-
-      <div class="guide-author__body reveal">
-        <span class="eyebrow eyebrow--plain">ავტორის შესახებ</span>
-        <h2 class="guide-author__name">თამარი მაისაშვილი-ციხელაშვილი</h2>
-        <p class="guide-author__role">პროფესიონალი თარჯიმანი · 15+ წლიანი გამოცდილება</p>
-        <p>მე ვარ თამარი — საფრანგეთში მცხოვრები პროფესიონალი თარჯიმანი, 15-წლიანი გამოცდილებით საფრანგეთის სასამართლო და ადმინისტრაციულ სისტემაში.</p>
-        <p>წლების განმავლობაში უშუალოდ ვმუშაობდი თავშესაფრის მაძიებელთა ასობით საქმეზე, რამაც მომცა რეალური, პრაქტიკული და ღრმა ცოდნა იმიგრაციის პროცესების შესახებ.</p>
-        <p>ამ გამოცდილებაზე დაყრდნობით თქვენთვის შევქმენი გზამკვლევი, რომელიც მარტივად და გასაგებად გიხსნით საფრანგეთში თავშესაფრის პროცესის ყველა ეტაპს.</p>
-        <p><strong>ეს არ არის უბრალოდ თეორიული ინფორმაცია.</strong> ეს არის პრაქტიკული, ნაბიჯ-ნაბიჯ გზამკვლევი, რომელიც დაფუძნებულია რეალურ ცოდნაზე და გამოცდილებაზე.</p>
-        <div class="guide-author__creds">
-          <span class="guide-cred">15+ წელი</span>
-          <span class="guide-cred">OFPRA</span>
-          <span class="guide-cred">CNDA</span>
-          <span class="guide-cred">სასამართლო</span>
-          <span class="guide-cred">ადმინ. სისტემა</span>
+      <div class="author-body reveal">
+        <span class="eyebrow">ავტორის შესახებ</span>
+        <p class="author-name" style="margin-top: 22px; font-size: 22px">თამარი მაისაშვილი ციხელაშვილი</p>
+        <p class="author-role">პროფესიონალი თარჯიმანი · 15 წლის გამოცდილება</p>
+        <p>მე ვარ თამარი — საფრანგეთში მცხოვრები პროფესიონალი თარჯიმანი, 15-წლიანი გამოცდილებით საფრანგეთის სასამართლო და ადმინისტრაციულ სისტემაში. წლების განმავლობაში უშუალოდ ვმუშაობდი თავშესაფრის მაძიებელთა ასობით საქმეზე, რამაც მომცა რეალური, პრაქტიკული და ღრმა ცოდნა იმიგრაციის პროცესების შესახებ.</p>
+        <button class="author-toggle" data-author-toggle aria-expanded="false">სრულად წაკითხვა <span class="chev">⌄</span></button>
+        <div class="author-more" data-author-more>
+        <p>ამ გამოცდილებაზე დაყრდნობით თქვენთვის შევქმენი გზამკვლევი, რომელიც მარტივად და გასაგებად გიხსნით საფრანგეთში თავშესაფრის პროცესის ყველა ეტაპს. ეს არ არის უბრალოდ თეორიული ინფორმაცია — ეს არის პრაქტიკული, ნაბიჯ-ნაბიჯ გზამკვლევი, რომელიც დაფუძნებულია რეალურ ცოდნაზე და გამოცდილებაზე.</p>
+        <p>ამ სახელმძღვანელოს საშუალებით თქვენ მიიღებთ ზუსტ ინსტრუქციებს, მკაფიო სტრატეგიას და იმ ცოდნას, რომელიც რეალურად ზრდის წარმატების შანსებს. თუ თქვენთვის მნიშვნელოვანია შედეგი — ეს გზამკვლევი გახდება თქვენი მთავარი ინსტრუმენტი, რომ პროცესში შეხვიდეთ მომზადებული და თავდაჯერებული.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-
-<!-- ⑦ REVIEWS  (placeholder — შევსება მოგვიანებით) -->
-<section class="guide-reviews section">
+<!-- ===== 06 — FAQ (accordion) ===== -->
+<section class="section band" id="faq" data-screen-label="FAQ">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">მოსაზრებები</span>
-      <h2 class="h-lg" style="margin-top: 16px">მკითხველების შეფასებები</h2>
+      <span class="eyebrow">კითხვა-პასუხი</span>
+      <h2 class="h-lg" style="font-size:22px;">ხშირად დასმული კითხვები</h2>
     </div>
-    <div class="guide-reviews__placeholder reveal">
-      გამოხმაურებები — მოგვიანებით
+    <div class="acc-list reveal">
+      <details class="acc">
+        <summary><span class="acc__no">01</span><span class="acc__title">ეს გზამკვლევი ვისთვის არის?</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>გზამკვლევი განკუთვნილია მათთვის, ვინც საფრანგეთში თავშესაფრის პროცესს იწყებს ან სურს უკეთ გაიგოს არსებული პროცედურები და მოთხოვნები.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">02</span><span class="acc__title">აუცილებელია თუ არა იურიდიული ცოდნა?</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>არა. გზამკვლევი დაწერილია მარტივი და გასაგები ენით.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">03</span><span class="acc__title">შეცვლის თუ არა ეს გზამკვლევი იურისტის ან ადვოკატის მომსახურებას?</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>არა. გზამკვლევის მიზანია ინფორმაციის მოწოდება და პროცესის უკეთ გაგებაში დახმარება.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">04</span><span class="acc__title">როდის მივიღებ გზამკვლევს?</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>გადახდის დასრულებისთანავე მიიღებ მყისიერ წვდომას ციფრულ ვერსიაზე.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">05</span><span class="acc__title">შემიძლია თუ არა გზამკვლევის ტელეფონიდან წაკითხვა?</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>დიახ. PDF ფაილის გახსნა შესაძლებელია როგორც ტელეფონიდან, ასევე კომპიუტერიდან და ტაბლეტიდან.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span class="acc__no">06</span><span class="acc__title">რამდენად აქტუალურია ინფორმაცია?</span><svg class="acc__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="acc__body"><p>გზამკვლევი ეფუძნება პრაქტიკულ გამოცდილებას და პერიოდულად ახლდება საჭიროების მიხედვით.</p></div>
+      </details>
     </div>
   </div>
 </section>
 
-
-<!-- ⑧ PRICING -->
-<section class="guide-pricing section" id="pricing">
+<!-- ===== 07 — FINAL CTA ===== -->
+<section class="section final-cta" data-screen-label="საბოლოო CTA">
   <div class="wrap">
-    <div class="guide-pricing__inner">
-
-      <div class="guide-pricing__lead reveal">
-        <span class="eyebrow">შეთავაზება</span>
-        <h2 class="h-lg">PDF Guide</h2>
-        <p>ციფრული გზამკვლევი PDF ფორმატში, მყისიერი წვდომით შეძენის შემდეგ. 94 გვერდი, 7 ძირითადი თემა — ყველაფერი ერთ სივრცეში.</p>
-      </div>
-
-      <div class="guide-price-card reveal">
-        <span class="eyebrow eyebrow--plain" style="color: var(--taupe-soft);">ვარიანტი 1</span>
-        <div class="guide-price-tag">49€</div>
-        <div class="guide-price-format">PDF · 94 გვერდი · მყისიერი წვდომა</div>
-        <ul class="guide-price-list">
-          <li>„ემიგრანტის გზამკვლევი საფრანგეთში" — ციფრული PDF ფორმატში</li>
-          <li>დეტალურად განხილული 7 ძირითადი თემა: OFPRA, CNDA, ვადები, ინტერვიუ, უფლებები, შეცდომები, პრაქტიკული რჩევები</li>
-          <li>სტრუქტურირებული ინფორმაცია — პროცესის უკეთ გაგებისთვის</li>
-          <li>15+ წლიანი პრაქტიკული გამოცდილების საფუძველზე შექმნილი</li>
-          <li>მყისიერი წვდომა შეძენის შემდეგ</li>
-        </ul>
-        <a href="#" class="btn btn--buy">
-          შეიძინე გზამკვლევი
-          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <p class="guide-price-note">ტელეფონიდან · კომპიუტერიდან · ტაბლეტიდან</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ⑨ FAQ -->
-<section class="guide-faq section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">კითხვები</span>
-      <h2 class="h-lg" style="margin-top: 16px">ხშირად დასმული კითხვები</h2>
-    </div>
-    <div class="guide-faq-list">
-      <div class="guide-faq-item reveal">
-        <div class="guide-faq-q">ეს გზამკვლევი ვისთვის არის?</div>
-        <p class="guide-faq-a">გზამკვლევი განკუთვნილია მათთვის, ვინც საფრანგეთში თავშესაფრის პროცესს იწყებს ან სურს უკეთ გაიგოს არსებული პროცედურები და მოთხოვნები.</p>
-      </div>
-      <div class="guide-faq-item reveal">
-        <div class="guide-faq-q">აუცილებელია თუ არა იურიდიული ცოდნა?</div>
-        <p class="guide-faq-a">არა. გზამკვლევი დაწერილია მარტივი და გასაგები ენით.</p>
-      </div>
-      <div class="guide-faq-item reveal">
-        <div class="guide-faq-q">შეცვლის თუ არა ეს გზამკვლევი იურისტის ან ადვოკატის მომსახურებას?</div>
-        <p class="guide-faq-a">არა. გზამკვლევის მიზანია ინფორმაციის მოწოდება და პროცესის უკეთ გაგებაში დახმარება.</p>
-      </div>
-      <div class="guide-faq-item reveal">
-        <div class="guide-faq-q">როდის მივიღებ გზამკვლევს?</div>
-        <p class="guide-faq-a">გადახდის დასრულებისთანავე მიიღებ მყისიერ წვდომას ციფრულ ვერსიაზე.</p>
-      </div>
-      <div class="guide-faq-item reveal">
-        <div class="guide-faq-q">შემიძლია თუ არა გზამკვლევის ტელეფონიდან წაკითხვა?</div>
-        <p class="guide-faq-a">დიახ. PDF ფაილის გახსნა შესაძლებელია როგორც ტელეფონიდან, ასევე კომპიუტერიდან და ტაბლეტიდან.</p>
-      </div>
-      <div class="guide-faq-item reveal">
-        <div class="guide-faq-q">რამდენად აქტუალურია ინფორმაცია?</div>
-        <p class="guide-faq-a">გზამკვლევი ეფუძნება პრაქტიკულ გამოცდილებას და პერიოდულად ახლდება საჭიროების მიხედვით.</p>
+    <div class="reveal">
+      <span class="eyebrow" style="justify-content:center;color:var(--taupe);">პირველი ნაბიჯი</span>
+      <h2 style="margin-top: 22px; font-size: 22px">სწორი ინფორმაცია ხშირად ყველაზე მნიშვნელოვანი პირველი ნაბიჯია.</h2>
+      <p style="font-size: 6px">თუ გსურს უკეთ გაიგო პროცესი, თავიდან აირიდო ყველაზე გავრცელებული შეცდომები და უფრო თავდაჯერებულად შეხვდე პროცესში, „ემიგრანტის გზამკვლევი საფრანგეთში" სწორედ შენთვისაა.</p>
+      <div class="guide-hero__cta">
+        <a href="#offer" class="btn btn--light">შეიძინე გზამკვლევი →</a>
       </div>
     </div>
   </div>
 </section>
-
-
-<!-- ⑩ FINAL CTA -->
-<section class="guide-final-cta section">
-  <div class="wrap">
-    <div class="guide-final-cta__inner reveal">
-      <span class="eyebrow">დაიწყე</span>
-      <blockquote class="guide-quote">„სწორი ინფორმაცია ხშირად ყველაზე მნიშვნელოვანი პირველი ნაბიჯია."</blockquote>
-      <p>თუ გსურს უკეთ გაიგო პროცესი, თავიდან აირიდო ყველაზე გავრცელებული შეცდომები და უფრო თავდაჯერებულად შეხვდე მომავალ ეტაპს, „ემიგრანტის გზამკვლევი საფრანგეთში" სწორედ შენთვის შეიქმნა.</p>
-      <a href="#pricing" class="btn">
-        შეიძინე გზამკვლევი — 49€
-        <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
-    <div class="footer__top" style="font-size: 12px">
+    <div class="footer__top">
       <div>
         <div class="footer__brand" style="font-family: Nunito; font-size: 15px">Tamari's Journal</div>
-        <p style="font-size: 12px">ცოცხალი ჟურნალი — ისტორიები, იდეები, პროექტები</p>
+        <p style="font-size: 12px">ცოცხალი ჟურნალი ორი შემოქმედის გზაზე — ისტორიები, პროექტები და ცხოვრება.</p>
       </div>
       <div class="footer__col">
         <h5>საიტი</h5>
         <ul>
-          <li><a href="about.html" style="font-size: 12px">ჩვენ შესახებ</a></li>
-          <li><a href="index.html#projects" style="font-size: 12px">პროექტები</a></li>
+          <li style="font-size: 12px"><a href="about.html" style="font-size: 12px">ჩვენ შესახებ</a></li>
+          <li><a href="home-a.html#projects" style="font-size: 12px">პროექტები</a></li>
           <li><a href="journal.html" style="font-size: 12px">ჟურნალი</a></li>
-          <li><a href="index.html#newsletter" style="font-size: 12px">კონტაქტი</a></li>
+          <li><a href="#newsletter" style="font-size: 12px">კონტაქტი</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h5>სოციალური</h5>
         <ul>
           <li><a href="#" data-social="instagram" style="font-size: 12px">Instagram</a></li>
+          <li><a href="#" data-social="facebook" style="font-size: 12px">Facebook</a></li>
           <li><a href="#" data-social="tiktok" style="font-size: 12px">TikTok</a></li>
           <li><a href="#" data-social="youtube" style="font-size: 12px">YouTube</a></li>
-          <li><a href="#" data-social="facebook" style="font-size: 12px">Facebook</a></li>
         </ul>
       </div>
-      <div class="footer__col">
+      <div class="footer__col" style="font-size: 12px">
         <h5>ენა</h5>
         <ul>
           <li><a href="#" class="is-active" style="font-size: 12px">ქართული</a></li>
@@ -360,7 +533,49 @@
   </div>
 </footer>
 
+<!-- STICKY BUY BAR -->
+<div class="buybar" data-buybar>
+  <div class="buybar__in">
+    <div class="buybar__t">
+      <b>ემიგრანტის გზამკვლევი საფრანგეთში</b>
+      <span>94 გვერდი · PDF · მყისიერი წვდომა</span>
+    </div>
+    <div class="buybar__r">
+      <span class="buybar__price">49€</span>
+      <a href="#offer" class="btn">შეძენა <span class="arr">→</span></a>
+    </div>
+  </div>
+</div>
+
 <script src="image-slot.js"></script>
 <script src="site.js"></script>
+<script>
+  // Sticky buy bar — show after hero, hide near the offer/footer
+  (function () {
+    var bar = document.querySelector('[data-buybar]');
+    var hero = document.getElementById('top');
+    if (!bar || !hero) return;
+    var onScroll = function () {
+      var past = window.scrollY > hero.offsetHeight - 120;
+      var nearBottom = (window.innerHeight + window.scrollY) > (document.body.offsetHeight - 240);
+      bar.classList.toggle('show', past && !nearBottom);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Collapsible "read more" toggles (author bio, intro, …)
+  (function () {
+    document.querySelectorAll('[data-author-toggle], [data-toggle]').forEach(function (btn) {
+      var more = btn.parentElement.querySelector('[data-author-more], [data-more]');
+      if (!more) return;
+      btn.addEventListener('click', function () {
+        var open = more.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.firstChild.textContent = open ? 'დამალვა ' : 'სრულად წაკითხვა ';
+      });
+    });
+  })();
+</script>
 </body>
 </html>
