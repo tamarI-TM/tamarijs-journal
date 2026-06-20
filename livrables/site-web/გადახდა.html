@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>გადახდა — ემიგრანტის გზამკვლევი საფრანგეთში</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="dir-a.css" />
+<link rel="stylesheet" href="journal.css" />
+<link rel="stylesheet" href="article.css" />
+<link id="gfont-Nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap">
+<link id="gfont-NotoSansGe" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700&display=swap">
+<style>
+/* ===== Checkout page — built on Charte Graphique tokens ===== */
+.co-head{
+  background:var(--charcoal); color:var(--ivory);
+  padding-top:clamp(120px,15vh,170px); padding-bottom:clamp(40px,6vw,70px);
+  position:relative; overflow:hidden;
+}
+.co-head::before{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(110% 90% at 85% 0%, rgba(214,195,165,.14), transparent 58%);
+  pointer-events:none;
+}
+.co-head__steps{display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin-bottom:24px;}
+.co-step{display:inline-flex; align-items:center; gap:9px; font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(250,248,244,.45);}
+.co-step b{width:22px; height:22px; border-radius:50%; border:1px solid rgba(250,248,244,.28); display:inline-flex; align-items:center; justify-content:center; font-weight:500;}
+.co-step.is-on{color:var(--ivory);}
+.co-step.is-on b{border-color:var(--taupe); background:var(--taupe); color:var(--charcoal);}
+.co-step .arr{color:rgba(250,248,244,.25);}
+.co-head h1{font-family:var(--serif); font-weight:600; color:var(--ivory); font-size:33px; line-height:1.12; margin:0;}
+.co-head p{font-family:var(--sans); font-weight:300; font-size:16px; color:rgba(250,248,244,.78); margin:16px 0 0; max-width:54ch;}
+
+/* layout */
+.co-grid{display:grid; grid-template-columns:1.4fr .9fr; gap:clamp(32px,5vw,68px); align-items:start;}
+.co-main{min-width:0;}
+.co-block{margin-bottom:clamp(40px,5vw,60px);}
+.co-block__head{display:flex; align-items:baseline; gap:14px; margin-bottom:22px;}
+.co-block__no{font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; color:var(--taupe);}
+.co-block__head h2{font-family:var(--serif); font-weight:500; font-size:22px; line-height:1.2; color:var(--charcoal); margin:0;}
+
+/* packages */
+.pkgs{display:flex; flex-direction:column; gap:14px;}
+.pkg{position:relative; display:block; cursor:pointer;}
+.pkg input{position:absolute; opacity:0; pointer-events:none;}
+.pkg__card{
+  display:grid; grid-template-columns:26px 1fr auto; gap:18px; align-items:start;
+  padding:clamp(20px,2.4vw,28px); border:1px solid var(--line); background:var(--ivory);
+  border-radius:3px; transition:border-color .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease);
+}
+.pkg:hover .pkg__card{border-color:var(--taupe);}
+.pkg input:checked + .pkg__card{border-color:var(--charcoal); box-shadow:0 0 0 1px var(--charcoal); background:#fff;}
+.pkg__radio{width:20px; height:20px; border-radius:50%; border:1.5px solid var(--charcoal-45); margin-top:3px; position:relative; transition:border-color .3s var(--ease);}
+.pkg input:checked + .pkg__card .pkg__radio{border-color:var(--charcoal);}
+.pkg input:checked + .pkg__card .pkg__radio::after{content:""; position:absolute; inset:3px; border-radius:50%; background:var(--charcoal);}
+.pkg__name{font-family:var(--serif); font-weight:600; font-size:18px; color:var(--charcoal); margin:0 0 6px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+.pkg__tag{font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--charcoal); background:var(--beige); padding:3px 9px; border-radius:100px;}
+.pkg__desc{font-size:13px; line-height:1.6; color:var(--charcoal-70); margin:0;}
+.pkg__price{text-align:right; white-space:nowrap;}
+.pkg__price b{font-family:var(--serif); font-weight:600; font-size:24px; color:var(--charcoal); display:block; line-height:1;}
+.pkg__price span{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--charcoal-45);}
+
+/* form */
+.co-fields{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+.co-field{display:flex; flex-direction:column; gap:8px;}
+.co-field.full{grid-column:1 / -1;}
+.co-field label{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--charcoal-70);}
+.co-field input, .co-field select{
+  font-family:var(--sans); font-size:16px; color:var(--charcoal); background:#fff;
+  border:1px solid var(--line); border-radius:3px; padding:14px 16px; width:100%;
+  transition:border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.co-field input:focus, .co-field select:focus{outline:none; border-color:var(--charcoal); box-shadow:0 0 0 1px var(--charcoal);}
+.co-field input::placeholder{color:var(--charcoal-45);}
+.co-field.err input, .co-field.err select{border-color:#b4503f; box-shadow:0 0 0 1px #b4503f;}
+.co-field__msg{font-size:11.5px; color:#b4503f; display:none;}
+.co-field.err .co-field__msg{display:block;}
+
+/* payment method */
+.pay-tabs{display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
+.pay-tab{
+  flex:1; min-width:140px; cursor:pointer; display:flex; align-items:center; gap:12px;
+  padding:14px 18px; border:1px solid var(--line); border-radius:3px; background:var(--ivory);
+  font-family:var(--sans); font-size:14px; color:var(--charcoal); transition:border-color .3s var(--ease), background .3s var(--ease);
+}
+.pay-tab input{position:absolute; opacity:0; pointer-events:none;}
+.pay-tab .dot{width:16px; height:16px; border-radius:50%; border:1.5px solid var(--charcoal-45); position:relative; flex:0 0 auto;}
+.pay-tab:has(input:checked){border-color:var(--charcoal); box-shadow:0 0 0 1px var(--charcoal); background:#fff;}
+.pay-tab:has(input:checked) .dot{border-color:var(--charcoal);}
+.pay-tab:has(input:checked) .dot::after{content:""; position:absolute; inset:3px; border-radius:50%; background:var(--charcoal);}
+.pay-tab .pmlabel{display:flex; flex-direction:column; gap:1px;}
+.pay-tab .pmlabel small{font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--charcoal-45);}
+.pay-panel{display:none;}
+.pay-panel.is-on{display:block;}
+.pay-paypal{padding:20px; border:1px dashed var(--line); border-radius:3px; font-size:14px; color:var(--charcoal-70); text-align:center; line-height:1.7;}
+
+/* summary */
+.co-summary{position:sticky; top:96px;}
+.sum-card{background:var(--charcoal); color:var(--ivory); border-radius:4px; padding:clamp(26px,3vw,34px);}
+.sum-card h3{font-family:var(--serif); font-weight:500; font-size:16px; color:var(--ivory); margin:0 0 20px; display:flex; align-items:center; justify-content:space-between;}
+.sum-card h3 span{font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--taupe);}
+.sum-item{display:flex; gap:16px; align-items:flex-start; padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid rgba(250,248,244,.14);}
+.sum-thumb{flex:0 0 auto; width:54px; height:74px; border-radius:2px; overflow:hidden; box-shadow:0 8px 18px -8px rgba(0,0,0,.6);}
+.sum-thumb img{width:100%; height:100%; object-fit:cover;}
+.sum-item__t{flex:1; min-width:0;}
+.sum-item__t b{font-family:var(--serif); font-weight:600; font-size:15px; color:var(--ivory); display:block; margin-bottom:4px;}
+.sum-item__t small{font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:rgba(250,248,244,.55); line-height:1.6; display:block;}
+.sum-row{display:flex; justify-content:space-between; align-items:baseline; font-size:14px; color:rgba(250,248,244,.78); margin-bottom:12px;}
+.sum-row.total{margin:18px 0 0; padding-top:18px; border-top:1px solid rgba(250,248,244,.14);}
+.sum-row.total b{font-family:var(--serif); font-weight:600; font-size:28px; color:var(--ivory);}
+.sum-row.total span{font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--taupe);}
+.sum-btn{margin-top:24px; width:100%; justify-content:center; font-size:13px; padding:15px 22px; gap:9px;}
+.sum-btn.btn--light:hover{color:#b8aa98; border-color:#b8aa98;}
+.sum-secure{margin-top:16px; text-align:center; font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:rgba(250,248,244,.5); display:flex; align-items:center; justify-content:center; gap:8px;}
+.sum-secure svg{width:13px; height:13px;}
+
+/* trust strip */
+.trust{margin-top:20px; display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden;}
+.trust__row{background:var(--ivory); padding:16px 20px; display:flex; gap:14px; align-items:center;}
+.trust__ico{flex:0 0 auto; width:24px; height:24px; color:var(--taupe);}
+.trust__row b{font-family:var(--serif); font-weight:600; font-size:14px; color:var(--charcoal); display:block; margin-bottom:2px;}
+.trust__row p{margin:0; font-size:12px; color:var(--charcoal-70); line-height:1.5;}
+
+/* success overlay */
+.co-success{position:fixed; inset:0; z-index:80; background:rgba(43,43,43,.55); display:none; align-items:center; justify-content:center; padding:24px;}
+.co-success.show{display:flex;}
+.co-success__card{background:var(--ivory); border-radius:5px; max-width:440px; width:100%; padding:clamp(34px,5vw,52px); text-align:center; box-shadow:0 30px 70px -20px rgba(0,0,0,.5);}
+.co-success__tick{width:64px; height:64px; border-radius:50%; background:var(--charcoal); color:var(--ivory); display:flex; align-items:center; justify-content:center; margin:0 auto 24px;}
+.co-success__tick svg{width:30px; height:30px;}
+.co-success h3{font-family:var(--serif); font-weight:600; font-size:24px; color:var(--charcoal); margin:0 0 12px;}
+.co-success p{font-size:15px; line-height:1.7; color:var(--charcoal-70); margin:0 0 26px;}
+.co-success .btn{justify-content:center; font-size:13px; padding:13px 26px;}
+
+@media(max-width:920px){
+  .co-grid{grid-template-columns:1fr; gap:clamp(36px,7vw,52px);}
+  .co-summary{position:static;}
+}
+@media(max-width:560px){
+  .co-fields{grid-template-columns:1fr;}
+  .pkg__card{grid-template-columns:22px 1fr; }
+  .pkg__price{grid-column:2; text-align:left; margin-top:6px;}
+}
+</style>
+</head>
+<body class="page-article" data-screen-label="გადახდის გვერდი — ემიგრანტის გზამკვლევი">
+
+<!-- NAV -->
+<nav class="nav nav--cover" data-nav>
+  <button class="nav__burger" data-burger aria-label="მენიუ"><span></span><span></span><span></span></button>
+  <a class="nav__brand" href="index.html" style="font-family: Nunito; font-size: 33px">TAMARI'S JOURNAL</a>
+  <div class="nav__right">
+    <div class="lang">
+      <a href="#" class="is-active">ქარ</a><span class="sep">/</span>
+      <a href="#" data-lang="fr">FR</a><span class="sep">/</span>
+      <a href="#" data-lang="en">EN</a>
+    </div>
+    <button class="nav__search" aria-label="ძებნა">⌕</button>
+  </div>
+  <div class="nav__menu" data-links>
+    <button class="menu__close" data-close aria-label="დახურვა"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <div class="menu__group">
+      <a href="index.html">მთავარი</a>
+      <a href="journal.html">ჟურნალი</a>
+      <a href="index.html#videos">ვლოგი</a>
+      <a href="index.html#projects">პროექტები</a>
+    </div>
+    <div class="menu__group">
+      <a href="about.html">ჩვენ შესახებ</a>
+      <a href="#newsletter">კონტაქტი</a>
+    </div>
+    <div class="menu__group">
+      <button class="menu__acc" aria-expanded="false">გამოგვეყევი <span class="chev">⌄</span></button>
+      <div class="menu__sub"><div class="menu__sub-in">
+        <a href="#" data-social="instagram">Instagram</a>
+        <a href="#" data-social="tiktok">TikTok</a>
+        <a href="#" data-social="youtube">YouTube</a>
+      </div></div>
+    </div>
+  </div>
+  <div class="menu__backdrop" data-close></div>
+</nav>
+
+<!-- ===== HEADER ===== -->
+<header class="co-head">
+  <div class="wrap">
+    <div class="co-head__steps">
+      <span class="co-step is-on"><b>1</b>შეკვეთა</span>
+      <span class="arr">→</span>
+      <span class="co-step is-on"><b>2</b>გადახდა</span>
+      <span class="arr">→</span>
+      <span class="co-step"><b>3</b>წვდომა</span>
+    </div>
+    <h1>გადახდის დასრულება</h1>
+    <p>აირჩიე პაკეტი, შეავსე მონაცემები და მიიღე გზამკვლევზე მყისიერი წვდომა გადახდისთანავე.</p>
+  </div>
+</header>
+
+<!-- ===== CHECKOUT ===== -->
+<section class="section" style="padding-top:clamp(48px,6vw,80px);">
+  <div class="wrap">
+    <form class="co-grid" id="checkout" novalidate>
+
+      <!-- LEFT -->
+      <div class="co-main">
+
+        <!-- packages -->
+        <div class="co-block">
+          <div class="co-block__head"><span class="co-block__no">01</span><h2>აირჩიე პაკეტი</h2></div>
+          <div class="pkgs">
+            <label class="pkg">
+              <input type="radio" name="pkg" value="basic" data-price="49" data-name="გზამკვლევი — PDF" data-desc="ციფრული წიგნი, 94 გვერდი" checked />
+              <div class="pkg__card">
+                <span class="pkg__radio"></span>
+                <div>
+                  <p class="pkg__name">გზამკვლევი + ბონუსი</p>
+                  <p class="pkg__desc">„ემიგრანტის გზამკვლევი საფრანგეთში" —  PDF, 94 გვერდი + „ევროკავშირის ახალი მიგრაციული პაქტი 2026–2027". მყისიერი წვდომა.</p>
+                </div>
+                <div class="pkg__price"><b>49€</b><span>ერთჯერადი</span></div>
+              </div>
+            </label>
+
+            <label class="pkg">
+              <input type="radio" name="pkg" value="plus" data-price="69" data-name="გზამკვლევი + სამუშაო ფურცლები" data-desc="PDF + ჩეკლისტები და შაბლონები" />
+              <div class="pkg__card">
+                <span class="pkg__radio"></span>
+                <div>
+                  <p class="pkg__name">გზამკვლევი + ბონუსი + 5 ვიდეო ლექცია <span class="pkg__tag">პოპულარული</span></p>
+                  <p class="pkg__desc">„ემიგრანტის გზამკვლევი საფრანგეთში" — PDF, 94 გვერდი + „ევროკავშირის ახალი მიგრაციული პაქტი 2026–2027" + 5 ვიდეო ლექცია, მყისიერი წვდომა — ერთ კომპლექტში.</p>
+                </div>
+                <div class="pkg__price"><b>69€</b><span>ერთჯერადი</span></div>
+              </div>
+            </label>
+
+            <label class="pkg">
+              <input type="radio" name="pkg" value="premium" data-price="119" data-name="გზამკვლევი + კონსულტაცია" data-desc="PDF + 45 წთ ინდივიდუალური კონსულტაცია" />
+              <div class="pkg__card">
+                <span class="pkg__radio"></span>
+                <div>
+                  <p class="pkg__name">გზამკვლევი + ბონუსი + 5 ვიდეო ლექცია+ ონლაინ კონსულტაცია</p>
+                  <p class="pkg__desc">მათთვის, ვისაც სურს არა მხოლოდ სწორი ინფორმაციის მიღება, არამედ ინდივიდუალური მხარდაჭერაც — გზამკვლევი, ბონუს მასალები, 5 ვიდეო ლექცია და 45-წუთიანი ონლაინ კონსულტაცია თამართან.</p>
+                </div>
+                <div class="pkg__price"><b>119€</b><span>ერთჯერადი</span></div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- contact -->
+        <div class="co-block">
+          <div class="co-block__head"><span class="co-block__no">02</span><h2>შენი მონაცემები</h2></div>
+          <div class="co-fields">
+            <div class="co-field">
+              <label for="fname">სახელი</label>
+              <input id="fname" name="fname" type="text" placeholder="სახელი" autocomplete="given-name" />
+              <span class="co-field__msg">შეავსე ეს ველი</span>
+            </div>
+            <div class="co-field">
+              <label for="lname">გვარი</label>
+              <input id="lname" name="lname" type="text" placeholder="გვარი" autocomplete="family-name" />
+              <span class="co-field__msg">შეავსე ეს ველი</span>
+            </div>
+            <div class="co-field full">
+              <label for="email">ელ-ფოსტა</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" />
+              <span class="co-field__msg">შეიყვანე სწორი ელ-ფოსტა</span>
+            </div>
+            <div class="co-field full">
+              <label for="country">ქვეყანა</label>
+              <select id="country" name="country">
+                <option value="">აირჩიე ქვეყანა</option>
+                <option>საფრანგეთი</option>
+                <option>საქართველო</option>
+                <option>გერმანია</option>
+                <option>ბელგია</option>
+                <option>ნიდერლანდები</option>
+                <option>ესპანეთი</option>
+                <option>იტალია</option>
+                <option>შვეიცარია</option>
+                <option>სხვა</option>
+              </select>
+              <span class="co-field__msg">აირჩიე ქვეყანა</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- payment -->
+        <div class="co-block">
+          <div class="co-block__head"><span class="co-block__no">03</span><h2>გადახდის მეთოდი</h2></div>
+          <div class="pay-tabs">
+            <label class="pay-tab">
+              <input type="radio" name="pm" value="card" checked />
+              <span class="dot"></span>
+              <span class="pmlabel">ბანკის ბარათი <small>Visa · Mastercard</small></span>
+            </label>
+            <label class="pay-tab">
+              <input type="radio" name="pm" value="paypal" />
+              <span class="dot"></span>
+              <span class="pmlabel">PayPal <small>ანგარიშით</small></span>
+            </label>
+          </div>
+
+          <div class="pay-panel is-on" data-panel="card">
+            <div class="co-fields">
+              <div class="co-field full">
+                <label for="card">ბარათის ნომერი</label>
+                <input id="card" name="card" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" />
+                <span class="co-field__msg">შეიყვანე ბარათის ნომერი</span>
+              </div>
+              <div class="co-field">
+                <label for="exp">ვადა</label>
+                <input id="exp" name="exp" type="text" inputmode="numeric" placeholder="თთ / წწ" maxlength="7" />
+                <span class="co-field__msg">შეავსე ვადა</span>
+              </div>
+              <div class="co-field">
+                <label for="cvv">CVV</label>
+                <input id="cvv" name="cvv" type="text" inputmode="numeric" placeholder="123" maxlength="4" />
+                <span class="co-field__msg">CVV</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pay-panel" data-panel="paypal">
+            <div class="pay-paypal">გადახდის დასადასტურებლად გადამისამართდები PayPal-ის უსაფრთხო გვერდზე.<br>დაბრუნების შემდეგ მიიღებ მყისიერ წვდომას.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — SUMMARY -->
+      <aside class="co-summary">
+        <div class="sum-card">
+          <h3>შენი შეკვეთა <span>Summary</span></h3>
+          <div class="sum-item">
+            <div class="sum-thumb"><img src="images/guide-cover.jpg" alt="გზამკვლევის ყდა" /></div>
+            <div class="sum-item__t">
+              <b data-sum-name>გზამკვლევი — PDF</b>
+              <small data-sum-desc>ციფრული წიგნი, 94 გვერდი</small>
+            </div>
+          </div>
+          <div class="sum-row"><span>პროდუქტი</span><span data-sum-price>49€</span></div>
+          <div class="sum-row"><span>დღგ</span><span>შედის ფასში</span></div>
+          <div class="sum-row total"><span>სულ</span><b data-sum-total>49€</b></div>
+          <button type="submit" class="btn btn--light sum-btn">გადახდა <span data-sum-btnprice>49€</span> →</button>
+          <div class="sum-secure">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            უსაფრთხო და დაშიფრული გადახდა
+          </div>
+        </div>
+
+        <!-- trust -->
+        <div class="trust">
+          <div class="trust__row">
+            <span class="trust__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div><b>უსაფრთხო გადახდა</b><p>დაცული, დაშიფრული ტრანზაქცია</p></div>
+          </div>
+          <div class="trust__row">
+            <span class="trust__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></span>
+            <div><b>მყისიერი წვდომა</b><p>PDF გადახდისთანავე, ელ-ფოსტაზე</p></div>
+          </div>
+          <div class="trust__row">
+            <span class="trust__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div><b>14 დღის გარანტია</b><p>ფულის დაბრუნება უპირობოდ</p></div>
+          </div>
+        </div>
+      </aside>
+
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand" style="font-family: Nunito; font-size: 15px">Tamari's Journal</div>
+        <p style="font-size: 12px">ცოცხალი ჟურნალი ორი შემოქმედის გზაზე — ისტორიები, პროექტები და ცხოვრება.</p>
+      </div>
+      <div class="footer__col">
+        <h5>საიტი</h5>
+        <ul>
+          <li style="font-size: 12px"><a href="about.html" style="font-size: 12px">ჩვენ შესახებ</a></li>
+          <li><a href="index.html#projects" style="font-size: 12px">პროექტები</a></li>
+          <li><a href="journal.html" style="font-size: 12px">ჟურნალი</a></li>
+          <li><a href="#newsletter" style="font-size: 12px">კონტაქტი</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>სოციალური</h5>
+        <ul>
+          <li><a href="#" data-social="instagram" style="font-size: 12px">Instagram</a></li>
+          <li><a href="#" data-social="facebook" style="font-size: 12px">Facebook</a></li>
+          <li><a href="#" data-social="tiktok" style="font-size: 12px">TikTok</a></li>
+          <li><a href="#" data-social="youtube" style="font-size: 12px">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer__col" style="font-size: 12px">
+        <h5>ენა</h5>
+        <ul>
+          <li><a href="#" class="is-active" style="font-size: 12px">ქართული</a></li>
+          <li><a href="#" data-lang="fr" style="font-size: 12px">Français <span class="dim">— მალე</span></a></li>
+          <li><a href="#" data-lang="en" style="font-size: 12px">English <span class="dim">— მალე</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="copy">© <span data-year>2026</span> Tamari's Journal — ყველა უფლება დაცულია</span>
+      <div class="footer__legal">
+        <a href="#">კონფიდენციალურობა</a>
+        <a href="#">წესები და პირობები</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- SUCCESS -->
+<div class="co-success" data-success>
+  <div class="co-success__card">
+    <div class="co-success__tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+    <h3>გადახდა წარმატებულია</h3>
+    <p>გმადლობთ შეძენისთვის! გზამკვლევზე წვდომის ბმული გამოგზავნილია შენს ელ-ფოსტაზე.</p>
+    <button class="btn" type="button" data-success-close>დახურვა</button>
+  </div>
+</div>
+
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('checkout');
+  if (!form) return;
+  var fmt = function (n) { return n + '€'; };
+
+  // package → summary
+  function syncPkg() {
+    var sel = form.querySelector('input[name="pkg"]:checked');
+    if (!sel) return;
+    var price = parseInt(sel.dataset.price, 10);
+    form.querySelector('[data-sum-name]').textContent = sel.dataset.name;
+    form.querySelector('[data-sum-desc]').textContent = sel.dataset.desc;
+    form.querySelector('[data-sum-price]').textContent = fmt(price);
+    form.querySelector('[data-sum-total]').textContent = fmt(price);
+    form.querySelector('[data-sum-btnprice]').textContent = fmt(price);
+  }
+  form.querySelectorAll('input[name="pkg"]').forEach(function (r) {
+    r.addEventListener('change', syncPkg);
+  });
+  syncPkg();
+
+  // payment method panels
+  form.querySelectorAll('input[name="pm"]').forEach(function (r) {
+    r.addEventListener('change', function () {
+      form.querySelectorAll('.pay-panel').forEach(function (p) {
+        p.classList.toggle('is-on', p.dataset.panel === r.value);
+      });
+    });
+  });
+
+  // light formatting
+  var card = document.getElementById('card');
+  if (card) card.addEventListener('input', function () {
+    var v = this.value.replace(/\D/g, '').slice(0, 16);
+    this.value = v.replace(/(.{4})/g, '$1 ').trim();
+  });
+  var exp = document.getElementById('exp');
+  if (exp) exp.addEventListener('input', function () {
+    var v = this.value.replace(/\D/g, '').slice(0, 4);
+    this.value = v.length > 2 ? v.slice(0, 2) + ' / ' + v.slice(2) : v;
+  });
+  var cvv = document.getElementById('cvv');
+  if (cvv) cvv.addEventListener('input', function () { this.value = this.value.replace(/\D/g, '').slice(0, 4); });
+
+  // validation + submit
+  function setErr(id, bad) {
+    var f = document.getElementById(id);
+    if (f) f.closest('.co-field').classList.toggle('err', bad);
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var ok = true;
+    var req = ['fname', 'lname'];
+    req.forEach(function (id) { var bad = !document.getElementById(id).value.trim(); setErr(id, bad); if (bad) ok = false; });
+    var em = document.getElementById('email'); var emBad = !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value.trim()); setErr('email', emBad); if (emBad) ok = false;
+    var co = document.getElementById('country'); var coBad = !co.value; setErr('country', coBad); if (coBad) ok = false;
+    if (form.querySelector('input[name="pm"]:checked').value === 'card') {
+      var cBad = document.getElementById('card').value.replace(/\s/g, '').length < 12; setErr('card', cBad); if (cBad) ok = false;
+      var xBad = document.getElementById('exp').value.replace(/\D/g, '').length < 4; setErr('exp', xBad); if (xBad) ok = false;
+      var vBad = document.getElementById('cvv').value.length < 3; setErr('cvv', vBad); if (vBad) ok = false;
+    }
+    if (!ok) {
+      var first = form.querySelector('.co-field.err');
+      if (first) window.scrollTo({ top: first.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
+      return;
+    }
+    document.querySelector('[data-success]').classList.add('show');
+  });
+
+  // clear error on input
+  form.querySelectorAll('.co-field input, .co-field select').forEach(function (el) {
+    el.addEventListener('input', function () { el.closest('.co-field').classList.remove('err'); });
+    el.addEventListener('change', function () { el.closest('.co-field').classList.remove('err'); });
+  });
+
+  var sc = document.querySelector('[data-success-close]');
+  if (sc) sc.addEventListener('click', function () { document.querySelector('[data-success]').classList.remove('show'); });
+})();
+</script>
+</body>
+</html>
