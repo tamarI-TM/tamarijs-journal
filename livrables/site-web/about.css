@@ -128,7 +128,7 @@
 @media (max-width: 880px) {
   .page-about .art-split__grid,
   .page-about .art-split__grid.art-split--rev { grid-template-columns: 1fr; }
-  .page-about .art-split__media .ph { aspect-ratio: 4 / 3.2; }
+  .page-about .art-split__media .ph { aspect-ratio: 3 / 4; }
   .page-about .art-hero--big .ph { aspect-ratio: 4 / 3; }
 }
 
