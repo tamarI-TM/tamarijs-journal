@@ -113,7 +113,7 @@
 
 /* Bigger photos in split blocks on this page */
 .page-about .art-split__grid {
-  grid-template-columns: 1.45fr 1fr;
+  grid-template-columns: 1.8fr 1fr;
   gap: clamp(28px, 4vw, 60px);
 }
 .page-about .art-split--rev.art-split__grid,
