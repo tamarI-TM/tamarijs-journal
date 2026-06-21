@@ -68,6 +68,16 @@
   }
 }
 
+/* ── ART PASSAGE / ART BODY : padding horizontal sur mobile ── */
+@media (max-width: 680px) {
+  .art-passage,
+  .art-body > .art-passage,
+  section.art-body > .art-passage {
+    padding-left: clamp(18px, 5vw, 28px) !important;
+    padding-right: clamp(18px, 5vw, 28px) !important;
+  }
+}
+
 /* ── FOOTER très petits écrans ── */
 @media (max-width: 440px) {
   .footer__top {
