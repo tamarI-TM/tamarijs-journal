@@ -5,6 +5,30 @@
 
 ---
 
+## 2026-06-19 / 2026-06-20
+
+### Tamari's Journal ვებსაიტი — სრული Sales Funnel
+
+**გაკეთდა:**
+- სრული სტატიკური ვებსაიტი აიგო `livrables/site-web/`-ში: `index.html`, `about.html`, `journal.html`, სტატიების გვერდები
+- `emigrantis-gzamkvlevi-safrangetshi.html` — "ემიგრანტის გზამკვლევი საფრანგეთში"-ის გაყიდვების გვერდი Claude Design-იდან სკრუპულუზურად გადმოტანილია: dark hero, 3D წიგნის მოდელი, კონტენტის accordion, შეთავაზება, ავტორი, FAQ, sticky buy bar
+- `გადახდა.html` — გადახდის გვერდი Claude Design-იდან გადმოტანილია: 3 პაკეტი (49€ / 69€ / 119€), კონტაქტის ფორმა, ბარათი/PayPal, შეკვეთის summary, trust strip
+- CSS/JS ინტეგრაცია: `guide.css` FAQ accordion სტილებით, `site.js` accordion ლოგიკით
+- `index.html`-ზე გზამკვლევის პრომო სექცია დაემატა (ტექსტი მარცხნივ + წიგნის ყდა მარჯვნივ)
+- ყველა CTA ღილაკი (`შეიძინე`, sticky bar) `გადახდა.html`-ზე მიბმულია
+- სურათები Claude Design-იდან ჩამოტვირთულია: `guide-cover.jpg`, `intro-bonsai-book.jpg`
+
+**ტექნიკური გადაწყვეტილებები:**
+- ყველა inline სტილი Design-ის bundle-იდან verbatim დაკოპირდა
+- CSS `grid-template-rows: 0fr → 1fr` ხრიკი FAQ accordion-ის სიმრბილისთვის
+- Nav scroll threshold hero-ს სიმაღლეზე (`heroEl.offsetHeight`) მორგებულია
+
+**GitHub-ზე ატვირთვის გეგმა:**
+- თამარს GitHub-ის უფასო ანგარიში აქვს, repo ჯერ შექმნილი არ არის
+- გეგმა: public repo → GitHub Pages უფასოდ → `livrables/site-web/` ან root-ზე გადატანა
+
+---
+
 ## 2026-06-09
 
 ### Jarvis-ის საწყისი ინსტალაცია
