@@ -1,0 +1,128 @@
+/* =====================================================
+   responsive.css — adaptations mobile et tablette
+   Chargé sur : index.html, about.html, journal.html,
+                article-sanfruttuozo.html
+   ===================================================== */
+
+/* ── NAV brand : taille fixe trop grande sur mobile ── */
+@media (max-width: 680px) {
+  .nav__brand { font-size: clamp(15px, 4.2vw, 22px) !important; }
+}
+
+/* ── GUIDE PROMO (index.html) ──
+   La grille 1.2fr/0.8fr doit passer en colonne unique sur tablette/mobile. */
+.guide-promo-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(40px, 6vw, 90px);
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .guide-promo-grid {
+    grid-template-columns: 1fr !important;
+    gap: clamp(36px, 6vw, 56px) !important;
+  }
+  .guide-promo-grid > div:last-child {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* ── JGRID avec inline style (about.html section explorer) ──
+   L'inline style="grid-template-columns:repeat(3,1fr)" bloque la cascade normale.
+   On surcharge avec !important dans les breakpoints. */
+@media (max-width: 1000px) {
+  .jgrid[style] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 640px) {
+  .jgrid[style] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── TITRES H1 à taille fixe (about.html, journal.html) ──
+   Les inline style="font-size:52px" bloquent les clamp() du CSS.
+   On ramène à une taille lisible sur mobile. */
+@media (max-width: 640px) {
+  .abt-head h1,
+  .jhero__inner h1 {
+    font-size: clamp(30px, 8vw, 44px) !important;
+    line-height: 1.08 !important;
+  }
+}
+
+/* ── FEATURE LEAD (index.html) ──
+   Déjà géré à 1000px, on s'assure que le texte est correctement espacé. */
+@media (max-width: 680px) {
+  .feature-lead__body { padding-top: 0; }
+}
+
+/* ── VIDEOS GRID (index.html) ──
+   Les vidéos "side" peuvent déborder sur très petits écrans. */
+@media (max-width: 480px) {
+  .video--side {
+    grid-template-columns: 90px 1fr !important;
+    gap: 10px !important;
+  }
+}
+
+/* ── FOOTER très petits écrans ── */
+@media (max-width: 440px) {
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer__brand { grid-column: 1 / -1; }
+  .footer__bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .footer__legal { justify-content: center; }
+}
+@media (max-width: 320px) {
+  .footer__top { grid-template-columns: 1fr !important; }
+}
+
+/* ── NEWSLETTER form sur petits écrans ── */
+@media (max-width: 480px) {
+  .news-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .news-form input,
+  .news-form .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── ARTICLE HERO trop haute sur mobile ── */
+@media (max-width: 560px) {
+  .art-hero--cover .ph {
+    height: 60vh !important;
+    min-height: 320px !important;
+  }
+}
+
+/* ── CATS (topics, index.html) ── */
+.cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: clamp(28px, 3.5vw, 48px);
+}
+.cat {
+  display: inline-flex;
+  padding: 9px 18px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  font-size: 13.5px;
+  transition: background .3s var(--ease), border-color .3s var(--ease);
+}
+.cat:hover {
+  background: var(--charcoal);
+  color: var(--ivory);
+  border-color: var(--charcoal);
+}
