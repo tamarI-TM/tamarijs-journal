@@ -116,6 +116,68 @@
   }
 }
 
+/* ── INDEX.HTML — typographie mobile (inline font-size overrides) ── */
+@media (max-width: 640px) {
+
+  /* Hero script "ორი თაობა..." */
+  .hero__script {
+    font-size: clamp(18px, 5.5vw, 26px) !important;
+    line-height: 1.28 !important;
+  }
+
+  /* Intro drop cap */
+  .intro__lead span[style*="78px"] {
+    font-size: clamp(44px, 13vw, 64px) !important;
+    line-height: 0.78 !important;
+  }
+
+  /* Intro lead text */
+  .intro__lead {
+    font-size: clamp(16px, 4.5vw, 19px) !important;
+  }
+
+  /* All section h2 with inline font-size: 33-36px */
+  .h-xl,
+  .section-head h2 {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.18 !important;
+  }
+
+  /* Project cards h3 + parent body font-size */
+  .project__body {
+    font-size: 15px !important;
+  }
+  .project h3.h-lg,
+  .project h3 {
+    font-size: clamp(17px, 5vw, 22px) !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Pull-quote band */
+  .quote-band__inner blockquote {
+    font-size: clamp(18px, 5.5vw, 26px) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Guide promo stats (94 / 15+ / 7) */
+  .guide-promo-grid [style*="font-size:28px"],
+  .guide-promo-grid [style*="font-size: 28px"] {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+  }
+
+  /* Guide promo price */
+  .guide-promo-grid [style*="font-size:26px"],
+  .guide-promo-grid [style*="font-size: 26px"] {
+    font-size: clamp(18px, 5vw, 24px) !important;
+  }
+
+  /* Category chips */
+  .cat {
+    font-size: 14px !important;
+    padding: 7px 14px !important;
+  }
+}
+
 /* ── ARTICLE HEADER : titres trop grands sur mobile ── */
 @media (max-width: 640px) {
   .page-article .art-head__inner h1 {
