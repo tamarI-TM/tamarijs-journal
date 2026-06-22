@@ -77,4 +77,24 @@
   document.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
+
+  // Journal filter
+  var filterWrap = document.querySelector('[data-jfilter]');
+  var grid = document.querySelector('[data-jgrid]');
+  if (filterWrap && grid) {
+    filterWrap.querySelectorAll('.jfilter__chip').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        filterWrap.querySelectorAll('.jfilter__chip').forEach(function (c) { c.classList.remove('is-active'); });
+        chip.classList.add('is-active');
+        var cat = chip.getAttribute('data-cat');
+        grid.querySelectorAll('.jcard').forEach(function (card) {
+          if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
 })();
