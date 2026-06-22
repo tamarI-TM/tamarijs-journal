@@ -1,0 +1,77 @@
+/* =====================================================
+   article-mogzauroba.css
+   Responsive overrides for travel blog articles.
+   Loaded after article.css.
+   ===================================================== */
+
+/* Gallery: 1 col on very small screens */
+@media (max-width: 480px) {
+  .art-gallery__grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Pull quote: smaller on mobile */
+@media (max-width: 640px) {
+  .art-pull p {
+    font-size: clamp(20px, 6vw, 28px) !important;
+    max-width: 24ch !important;
+  }
+}
+
+/* Art stanza: adjust line-height on mobile */
+@media (max-width: 640px) {
+  .art-body .art-stanza,
+  .art-passage .art-stanza {
+    line-height: 1.85 !important;
+    font-size: clamp(17px, 4.5vw, 20px) !important;
+  }
+}
+
+/* Art lede + drop cap on mobile */
+@media (max-width: 640px) {
+  .art-body .art-lede {
+    font-size: clamp(18px, 5vw, 22px) !important;
+  }
+  .art-body .art-lede .drop {
+    font-size: 3.6em !important;
+  }
+}
+
+/* Art foot: stack on mobile */
+@media (max-width: 600px) {
+  .art-author {
+    gap: 14px !important;
+  }
+  .art-author .byline__av {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 20px !important;
+  }
+  .art-author__name {
+    font-size: 18px !important;
+  }
+}
+
+/* Related grid: 1 col on tablet and below */
+@media (max-width: 880px) {
+  .art-related .jgrid {
+    grid-template-columns: 1fr !important;
+    max-width: 540px;
+    margin-inline: auto;
+  }
+}
+
+/* Featured photo: smaller aspect-ratio on mobile */
+@media (max-width: 560px) {
+  .wrap > .art-fig > .ph[style*="aspect-ratio:4/5"] {
+    aspect-ratio: 3 / 4 !important;
+  }
+}
+
+/* Nav brand size on mobile */
+@media (max-width: 480px) {
+  .nav__brand {
+    font-size: clamp(16px, 5vw, 24px) !important;
+  }
+}
