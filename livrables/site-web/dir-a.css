@@ -215,7 +215,7 @@ html, body { overflow-x: clip; }
   letter-spacing: 0.05em; color: var(--charcoal); white-space: nowrap;
   border-bottom: 1px solid transparent; transition: border-color .4s var(--ease);
 }
-.follow__handle:hover { border-color: var(--charcoal); }
+.follow__handle:hover { border-color: var(--taupe); }
 .follow__line { flex: 1; height: 1px; background: var(--charcoal); opacity: .45; }
 
 .ig-grid { display: grid; grid-template-columns: repeat(5, 1fr); background: var(--ivory-2); align-items: start; }
@@ -240,7 +240,7 @@ html, body { overflow-x: clip; }
    ========================================================= */
 .footer { background: var(--ivory-2); color: var(--charcoal); }
 .footer a { color: var(--charcoal-70); }
-.footer a:hover { color: var(--charcoal); }
+.footer a:hover { color: var(--taupe); }
 .footer__brand { color: var(--charcoal); }
 .footer__brand + p { color: var(--charcoal-70); }
 .footer__col h5 { color: var(--charcoal-45); }
