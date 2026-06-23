@@ -92,6 +92,21 @@
     flex-wrap: wrap;
     margin-top: 32px;
   }
+  .byline { display: flex; align-items: center; gap: 13px; }
+  .byline__av {
+    width: 42px; height: 42px; border-radius: 50%; flex: none;
+    display: grid; place-items: center;
+    background: var(--taupe, #8C7B6B); color: #fff;
+    font-family: var(--serif); font-size: 18px; font-weight: 600;
+    border: 1px solid transparent;
+  }
+  .byline__meta { display: flex; flex-direction: column; gap: 2px; line-height: 1.2; }
+  .byline__name { font-family: var(--sans); font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--charcoal); }
+  .byline__sub { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; color: var(--charcoal-45); }
+  .art-author { display: flex; align-items: center; gap: 18px; }
+  .art-author .byline__av { width: 60px; height: 60px; font-size: 26px; }
+  .art-author__name { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--charcoal); }
+  .art-author__bio { font-size: 14.5px; color: var(--charcoal-70); margin: 4px 0 0; line-height: 1.55; }
 </style>
 </head>
 <body class="page-ritualis" data-screen-label="Ritualis">
@@ -142,7 +157,7 @@
       <span class="byline__av">ლ</span>
       <span class="byline__meta">
         <span class="byline__name">ლეო</span>
-        <span class="byline__sub">ავტორი</span>
+        <span class="byline__sub">Indie Developer · ავტორი</span>
       </span>
     </div>
   </div>
