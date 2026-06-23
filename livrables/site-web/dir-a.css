@@ -220,7 +220,7 @@ html, body { overflow-x: clip; }
 
 .ig-grid { display: grid; grid-template-columns: repeat(5, 1fr); background: var(--ivory-2); }
 .ig { position: relative; display: block; overflow: hidden; }
-.ig .ph { aspect-ratio: 1 / 1; transition: transform .7s var(--ease); }
+.ig .ph { aspect-ratio: 1 / 1; position: relative; overflow: hidden; transition: transform .7s var(--ease); }
 .ig::after {
   content: ""; position: absolute; inset: 0; background: rgba(28,24,20,.28);
   opacity: 0; transition: opacity .4s var(--ease);
