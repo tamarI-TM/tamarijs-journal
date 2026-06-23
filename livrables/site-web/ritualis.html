@@ -7,10 +7,14 @@
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="dir-a.css" />
 <link rel="stylesheet" href="responsive.css" />
+<link rel="stylesheet" href="journal.css" />
+<link rel="stylesheet" href="article.css" />
+<link rel="stylesheet" href="article-mogzauroba.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap">
 <style>
+  /* Hero — custom project brand hero */
   .rit-hero {
     min-height: 60vh;
     display: flex;
@@ -37,61 +41,8 @@
     max-width: 44ch;
     margin: 0 auto;
   }
-  .rit-section {
-    padding: clamp(60px, 8vw, 100px) 24px;
-  }
-  .rit-block {
-    max-width: 760px;
-    margin: 0 auto;
-    display: grid;
-    gap: clamp(36px, 5vw, 60px);
-  }
-  .rit-block--split {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: clamp(36px, 5vw, 72px);
-  }
-  @media (max-width: 640px) {
-    .rit-block--split { grid-template-columns: 1fr; }
-  }
-  .rit-photo { position: relative; border-radius: 4px; overflow: hidden; }
-  .rit-photo .ph { aspect-ratio: 4/5; position: relative; overflow: hidden; }
-  .rit-photo .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-  .rit-text h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(26px, 4vw, 38px);
-    font-weight: 500;
-    color: var(--charcoal);
-    margin: 0 0 20px;
-    line-height: 1.2;
-  }
-  .rit-text p {
-    font-size: clamp(15px, 1.8vw, 17px);
-    color: var(--charcoal-70);
-    line-height: 1.8;
-    margin: 0 0 16px;
-  }
-  .rit-photo2 {
-    max-width: 560px;
-    margin: 0 auto;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-  }
-  .rit-photo2 .ph { aspect-ratio: 3/2; position: relative; overflow: hidden; }
-  .rit-photo2 .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-  .rit-cta {
-    text-align: center;
-    padding: clamp(60px, 8vw, 100px) 24px;
-    background: var(--ivory-2);
-  }
-  .rit-cta__links {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 32px;
-  }
+
+  /* Byline — Ritualis-specific avatar tuning (36px, beige) */
   .byline { display: flex; align-items: center; gap: 9px; }
   .byline__av {
     width: 36px; height: 36px; border-radius: 50%; flex: none;
@@ -103,10 +54,27 @@
   .byline__meta { display: flex; flex-direction: column; gap: 2px; line-height: 1.2; }
   .byline__name { font-family: var(--sans); font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--charcoal); }
   .byline__sub { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; color: var(--charcoal-45); }
-  .art-author { display: flex; align-items: center; gap: 18px; }
-  .art-author .byline__av { width: 60px; height: 60px; font-size: 26px; }
-  .art-author__name { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--charcoal); }
-  .art-author__bio { font-size: 14.5px; color: var(--charcoal-70); margin: 4px 0 0; line-height: 1.55; }
+
+  /* Closing CTA */
+  .rit-cta {
+    text-align: center;
+    padding: clamp(60px, 8vw, 100px) 24px;
+    background: var(--ivory-2);
+  }
+  .rit-cta__links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+
+  /* Body reading text capped at max 16px (titles, subtitles & lede left unchanged for now) */
+  .art-passage p,
+  .art-split__body p { font-size: 16px; }
+
+  /* Pull-quote text capped at max 22px, forced onto 2 lines via <br> */
+  .art-pull p { font-size: 22px !important; max-width: none !important; }
 </style>
 </head>
 <body class="page-ritualis" data-screen-label="Ritualis">
@@ -152,70 +120,103 @@
   <div class="rit-hero__inner reveal">
     <span class="eyebrow">ლეოს პროექტი</span>
     <h1 class="rit-hero__logo">Ritualis</h1>
-    <p class="rit-hero__sub">მოტივაცია ზეწოლისგან არ იბადება — ის პროგრესიდან მოდის.</p>
+    <p class="rit-hero__sub">გადააქციე შენი დრო ხილულ პროგრესად.</p>
     <div class="byline" style="justify-content:center; margin-top:28px">
       <span class="byline__av">ლ</span>
       <span class="byline__meta">
         <span class="byline__name">ლეო</span>
-        <span class="byline__sub">Indie Developer · ავტორი</span>
+        <span class="byline__sub">ავტორი</span>
       </span>
     </div>
   </div>
 </header>
 
-<!-- BLOCK 1 — ფოტო + ტექსტი -->
-<section class="rit-section">
-  <div class="rit-block rit-block--split reveal">
-    <div class="rit-photo">
-      <div class="ph"><img src="images/ritualis-1.jpg" alt="Ritualis" style="object-fit:cover" /></div>
-    </div>
-    <div class="rit-text">
-      <h2>რატომ შევქმენი Ritualis</h2>
-      <p>რამდენიმე კვირის წინ ერთი მნიშვნელოვანი რამ გავაცნობიერე.</p>
-      <p>მინდოდა ცხოვრების რამდენიმე მიმართულებით წინსვლა: უფრო ეფექტურად მუშაობა, მეტი კითხვა, სპორტით დაკავება, ინგლისურის სწავლა.</p>
-      <p>მაგრამ, როგორც ბევრ ადამიანს, მეც დიდი მოტივაციით ვიწყებდი — შემდეგ კი ვჩერდებოდი.</p>
-      <p>ვცადე ჩვევების მართვის არაერთი აპლიკაცია. ზოგი ზედმეტად რთული იყო. ზოგი კი თავს დამნაშავედ მაგრძნობინებდა, თუ ერთი დღეც გამომრჩებოდა.</p>
-      <p>ამიტომ გადავწყვიტე შემექმნა ჩემი საკუთარი სისტემა. მარტივი სისტემა. ზეწოლის გარეშე. დაწესებული საათებისა და მკაცრი გრაფიკის გარეშე. უბრალოდ გზა, რომელიც საშუალებას მაძლევს ყოველდღიურად დავინახო ჩემი პროგრესი.</p>
-    </div>
+<!-- INTRO — story opening with drop-cap lede -->
+<article class="section art-body">
+  <div class="art-passage reveal">
+    <span class="art-kicker">რატომ შევქმენი Ritualis</span>
+    <p class="art-lede"><span class="drop">რ</span>ამდენიმე კვირის წინ ერთი მნიშვნელოვანი რამ გავაცნობიერე.</p>
+    <p>მინდოდა ცხოვრების რამდენიმე მიმართულებით წინსვლა: უფრო ეფექტურად მუშაობა, მეტი კითხვა, სპორტით დაკავება, ინგლისურის სწავლა.</p>
+    <p>მაგრამ, როგორც ბევრ ადამიანს, მეც დიდი მოტივაციით ვიწყებდი — შემდეგ კი ვჩერდებოდი.</p>
+    <p>ვცადე ჩვევების მართვის არაერთი აპლიკაცია. ზოგი ზედმეტად რთული იყო. ზოგი კი თავს დამნაშავედ მაგრძნობინებდა, თუ ერთი დღეც გამომრჩებოდა.</p>
+    <p>ამიტომ გადავწყვიტე შემექმნა ჩემი საკუთარი სისტემა. მარტივი სისტემა. ზეწოლის გარეშე. დაწესებული საათებისა და მკაცრი გრაფიკის გარეშე. უბრალოდ გზა, რომელიც საშუალებას მაძლევს ყოველდღიურად დავინახო ჩემი პროგრესი.</p>
+  </div>
+</article>
+
+<!-- FULL-WIDTH PHOTO 1 -->
+<section class="section">
+  <div class="wrap">
+    <figure class="reveal" style="margin:0; border-radius:4px; overflow:hidden">
+      <img src="images/ritualis-1.jpg" alt="Ritualis — build better habits, one ritual at a time" style="width:100%; height:auto; display:block" />
+    </figure>
   </div>
 </section>
 
-<!-- BLOCK 2 — მეორე ფოტო + ფილოსოფია -->
-<section class="rit-section" style="padding-top:0">
-  <div class="rit-block reveal">
-    <div class="rit-photo2">
-      <div class="ph"><img src="images/ritualis-2.jpg" alt="Ritualis" style="object-fit:cover" /></div>
-    </div>
-    <div class="rit-text" style="max-width:56ch; margin:0 auto">
-      <p>დღეს ზუსტად ვხედავ, სად მიდის ჩემი დრო: რამდენ საათს ვუთმობ კონცენტრირებულ მუშაობას, კითხვას, სწავლას, ან ფიზიკურ აქტივობას.</p>
-      <p>ამ პროექტს Ritualis დავარქვი.</p>
-      <p>პროდუქტიულობის აპლიკაციების უმეტესობა მუდმივად გახსენებს იმას, რაც არ გაგიკეთებია. მე კი მინდოდა შემექმნა აპლიკაცია, რომელიც გაჩვენებს ყველაფერს, რაც უკვე გააკეთე.</p>
-      <p>რადგან საბოლოოდ, მოტივაცია ზეწოლისგან არ იბადება. ის პროგრესიდან მოდის. კონცენტრაციის ყოველი წუთიდან. ყოველი დასრულებული სესიიდან. ყოველი პატარა გამარჯვებიდან.</p>
-      <p>Ritualis არ არის იმისთვის, რომ განგსაჯოს. ის არსებობს იმისთვის, რომ გაჩვენოს, რამდენად შორს შეგიძლია წასვლა.</p>
-      <p><strong>გადააქციე შენი დრო ხილულ პროგრესად.</strong></p>
-    </div>
+<!-- PASSAGE — naming and purpose -->
+<section class="section art-body" style="padding-block:0">
+  <div class="art-passage reveal">
+    <p>დღეს ზუსტად ვხედავ, სად მიდის ჩემი დრო: რამდენ საათს ვუთმობ კონცენტრირებულ მუშაობას, კითხვას, სწავლას, ან ფიზიკურ აქტივობას.</p>
+    <p>ამ პროექტს Ritualis დავარქვი.</p>
+    <p>პროდუქტიულობის აპლიკაციების უმეტესობა მუდმივად გახსენებს იმას, რაც არ გაგიკეთებია. მე კი მინდოდა შემექმნა აპლიკაცია, რომელიც გაჩვენებს ყველაფერს, რაც უკვე გააკეთე.</p>
+    <p>რადგან საბოლოოდ, მოტივაცია ზეწოლისგან არ იბადება. ის პროგრესიდან მოდის. კონცენტრაციის ყოველი წუთიდან. ყოველი დასრულებული სესიიდან. ყოველი პატარა გამარჯვებიდან.</p>
+    <p>Ritualis არ არის იმისთვის, რომ განგსაჯოს. ის არსებობს იმისთვის, რომ გაჩვენოს, რამდენად შორს შეგიძლია წასვლა.</p>
   </div>
 </section>
 
-<!-- AUTHOR -->
-<div style="max-width:760px; margin:0 auto; padding:0 24px clamp(40px,6vw,72px)">
-  <div class="art-author reveal">
-    <span class="byline__av">ლ</span>
-    <div>
-      <div class="art-author__name">ლეო</div>
-      <p class="art-author__bio" style="font-size:12px">Indie developer და მეწარმე. Ritualis-ის შემქმნელი, AI/SaaS პროდუქტების მკვლევარი, ვებ და მობილური აპლიკაციების დეველოპერი.</p>
+<!-- FULL-WIDTH PHOTO 2 -->
+<section class="section">
+  <div class="wrap">
+    <figure class="reveal" style="margin:0; border-radius:4px; overflow:hidden">
+      <img src="images/ritualis-2.jpg" alt="Ritualis — small actions, big results" style="width:100%; height:auto; display:block" />
+    </figure>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<article class="section art-body" style="padding-top:0">
+  <blockquote class="art-pull reveal">
+    <p>მოტივაცია ზეწოლისგან არ იბადება —<br>ის პროგრესიდან მოდის.</p>
+  </blockquote>
+</article>
+
+<!-- AUTHOR FOOT -->
+<article class="section art-body" style="padding-top:0">
+  <div class="art-foot">
+    <div class="art-author reveal">
+      <span class="byline__av">ლ</span>
+      <div>
+        <div class="art-author__name">ლეო</div>
+        <p class="art-author__bio" style="font-size:12px">Indie developer და მეწარმე. Ritualis-ის შემქმნელი, AI/SaaS პროდუქტების მკვლევარი, ვებ და მობილური აპლიკაციების დეველოპერი.</p>
+      </div>
+    </div>
+    <div class="art-back">
+      <a href="index.html#projects" class="link-more">← პროექტებში დაბრუნება</a>
     </div>
   </div>
-</div>
+</article>
 
 <!-- CTA -->
 <section class="rit-cta">
   <div class="reveal">
-    <span class="eyebrow">გამოიყვანე მეტი</span>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(24px,3vw,36px); margin:16px 0 0; color:var(--charcoal)">გზა გრძელდება</h2>
     <div class="rit-cta__links">
       <a href="journal.html" class="btn">ჟურნალი</a>
       <a href="index.html" class="link-more" style="align-self:center">მთავარი გვერდი →</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section newsletter newsletter--letters" id="newsletter" style="background-color:rgb(250,247,243)">
+  <div class="wrap">
+    <div class="news-inner reveal">
+      <span class="news-label">Journal Letters</span>
+      <h2 class="news-title" style="font-size:17px;font-family:Nunito">Tamari's Journal</h2>
+      <p class="news-sub" style="font-size:12px">მოგზაურობები, აღმოჩენები და ისტორიები, რომლებიც საიტზე ყოველთვის არ ქვეყნდება.</p>
+      <form class="news-form" data-newsletter>
+        <input type="email" placeholder="თქვენი ელფოსტა" aria-label="ელ. ფოსტა" required />
+        <button class="btn" type="submit">შემომიერთდი</button>
+      </form>
+      <p class="news-note" data-news-note>გამოწერის გაუქმება — ნებისმიერ დროს.</p>
     </div>
   </div>
 </section>
