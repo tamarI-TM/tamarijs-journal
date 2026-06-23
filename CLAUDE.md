@@ -12,6 +12,14 @@ Ce workspace est le Jarvis personnel de [VOTRE NOM]. Il a été créé avec le J
 
 ---
 
+## ვებსაიტი — დიზაინ-სისტემა (Tamari's Journal)
+
+**ვებსაიტზე (`livrables/site-web/`) მუშაობის დაწყებამდე ყოველთვის წაიკითხე [`livrables/site-web/DESIGN-SYSTEM.md`](livrables/site-web/DESIGN-SYSTEM.md).**
+
+ეს არის ვებსაიტის ვიზუალური იდენტობის ერთადერთი წყარო: ფერები, ფონტები, ტექსტის ზომები, hover ეფექტები (#B8AA98), სტრუქტურა, კომპონენტები და ახალი გვერდის შაბლონი. ყოველი ახალი გვერდი ამ წესებით აიგება, ნულიდან კი არა. ახალი ეფექტის, ზომის ან წესის დადგენისას, **განაახლე `DESIGN-SYSTEM.md`**, რომ თამარს ერთი და იგივე ორჯერ არ მოუწიოს თქმა.
+
+---
+
 ## Who I Am
 
 ამ workspace-ს იყენებენ თამარი მაისაშვილი-ციხელაშვილი და მისი შვილი ლეო ჟასარევიჩი — დედა-შვილის გუნდი, რომლებიც ერთობლივად და დამოუკიდებლად მუშაობენ ციფრულ პროექტებზე.
@@ -113,6 +121,12 @@ Une fois que je confirme, Claude met à jour le fichier en question et ajoute un
 **Objectif :** Démarrer ma journée avec une veille personnalisée en 30 secondes.
 
 Claude va effectuer une veille des actualités du jour, filtrée selon mon contexte personnel (mes objectifs, mes projets), et me proposer un focus pour la journée. Cette commande utilise la skill `recherche-actualites-contextualisees`.
+
+### /Tamari
+
+**Objectif :** Enregistrer une règle de design permanente pour le site web.
+
+Quand je lance `/Tamari <règle>`, Claude comprend que ce n'est pas un changement ponctuel sur une seule page, mais une règle permanente pour tout le site. Il l'inscrit d'abord dans `livrables/site-web/DESIGN-SYSTEM.md`, puis l'applique si nécessaire. Comme ça, je n'ai jamais à répéter la même consigne deux fois.
 
 ---
 
