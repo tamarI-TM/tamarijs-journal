@@ -128,6 +128,12 @@ Claude va effectuer une veille des actualités du jour, filtrée selon mon conte
 
 Quand je lance `/Tamari <règle>`, Claude comprend que ce n'est pas un changement ponctuel sur une seule page, mais une règle permanente pour tout le site. Il l'inscrit d'abord dans `livrables/site-web/DESIGN-SYSTEM.md`, puis l'applique si nécessaire. Comme ça, je n'ai jamais à répéter la même consigne deux fois.
 
+### /gverdi
+
+**Objectif :** Créer ou modifier une page du site en suivant strictement DESIGN-SYSTEM.md.
+
+Quand je lance `/gverdi` (avec une tâche de page), Claude lit d'abord `livrables/site-web/DESIGN-SYSTEM.md` en entier, puis construit ou modifie la page en respectant exactement ses règles (tokens, typographie, composants, boilerplate, squelettes, responsive), et vérifie sur 3 tailles (Desktop / iPad / iPhone). Jamais à partir de zéro. Complément de `/Tamari` : `/Tamari` enregistre les règles, `/gverdi` les applique.
+
 ---
 
 ## Skills disponibles
