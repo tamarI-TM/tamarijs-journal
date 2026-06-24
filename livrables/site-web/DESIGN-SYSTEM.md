@@ -260,3 +260,14 @@
 - **სტატიის თავის meta** (`.art-head__meta`): byline + სეპარატორი „•" + „X წთ საკითხავი" (mono) + თარიღი (mono).
 - ავატარი **ყოველთვის სრულად მრგვალი** (`border-radius: 50%`), ინიციალი ცენტრში (`display:grid; place-items:center`). ფონი: ivory-2 (ან beige ლეოსთვის), ტექსტი charcoal.
 - **მკაცრად დაიცავი ეს ზომები** ყველა გვერდზე, სადაც byline გამოჩნდება.
+
+### 12.9 Drop cap (დიდი ასო აბზაცის დასაწყისში) — ზუსტი სპეცი
+ინგ. **drop cap** / ფრ. *lettrine* / ქართ. „ინიციალი". აბზაცის **პირველი ასო გადიდებული**, `float: left`. ფერი ყოველთვის **taupe #B8AA98**. გამოიყენე მხოლოდ **შესავლის პირველ აბზაცზე** (ერთხელ გვერდზე).
+
+| ვარიანტი | ფონტი | ზომა | დეტალები |
+|---|---|---|---|
+| **Article lede** (`.art-lede .drop`) | **`--latin`** (Cormorant; ქართულისთვის Noto Serif Georgian fallback) | **4.4em** (≈90–105px lede-ის მიმართ); მობილურზე 3.6em | weight 600, line-height 0.74, padding 8px 16px 0 0, **color taupe**, float left |
+| **მთავარი გვერდის intro** (`.intro__lead` span, inline) | serif (default) | **78px** | color **#b8aa98**, float left, line-height 0.78, margin -6px 8px 0 0 |
+
+- მასპინძელი ტექსტი (`.art-lede`): clamp(20–24px), line-height 1.68 (მობილურზე 18–22px).
+- drop cap ფლანგავს ~3 ხაზს. ერთ აბზაცზე ერთი ასო, არასდროს ორი.
