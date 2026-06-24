@@ -90,7 +90,7 @@
 | ღილაკი `.btn` | taupe outline: `background: transparent; color: var(--taupe); border-color: var(--taupe)` |
 | `.btn--ghost` / `.link-more` | taupe ტექსტი + taupe ბორდერი |
 | ჩიპი `.cat` | taupe **fill**: `background: var(--taupe); color: var(--ivory); border-color: var(--taupe)` |
-| ფოტო (`.jcard__media`, `.ig`) | მსუბუქი zoom: `transform: scale(1.045–1.055)` |
+| ბარათების ფოტო (`.jcard`, `.story`, `.project`, `.ig`) | მსუბუქი zoom: `transform: scale(1.045)` (img-ზე; `.ph { overflow:hidden }`) |
 
 **მასშტაბი:** ეს #B8AA98 hover ვრცელდება **რედაქციულ გვერდებზე** (მთავარი, ჟურნალი, სტატიები, about). **გაყიდვების გვერდები** (გზამკვლევი, გადახდა — Claude Design verbatim port) ინარჩუნებენ თავიანთ designed CTA-ს (მაგ. `.btn--buy` ivory outline, `.guide-card` lift), მხოლოდ მცირე ბმულები (hero-links, FAQ) გადავიდა taupe-ზე.
 

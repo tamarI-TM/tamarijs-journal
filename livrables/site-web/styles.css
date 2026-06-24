@@ -214,6 +214,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; margin: 0; letter-
 .story h3 { margin-bottom: 12px; transition: color .3s var(--ease); }
 .story p { margin: 0 0 18px; color: var(--charcoal-70); font-size: 16px; }
 .story:hover h3 { color: var(--taupe); }
+.story .ph img { transition: transform .7s var(--ease); }
+.story:hover .ph img { transform: scale(1.045); }
 .story .meta { margin-top: auto; font-family: var(--mono); font-size: 11px; letter-spacing: .05em; color: var(--charcoal-45); }
 
 /* =========================================================
@@ -233,6 +235,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; margin: 0; letter-
 .project h3 { margin-bottom: 14px; transition: color .3s var(--ease); }
 .project h3 a { color: inherit; text-decoration: none; }
 .project:hover h3 { color: var(--taupe); }
+.project .ph img { transition: transform .7s var(--ease); }
+.project:hover .ph img { transform: scale(1.045); }
 .project p { color: var(--charcoal-70); margin: 0 0 28px; }
 .project .link-more { margin-top: auto; align-self: flex-start; }
 
