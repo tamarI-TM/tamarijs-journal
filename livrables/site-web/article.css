@@ -199,7 +199,7 @@
   border: 1px solid var(--line); color: var(--charcoal-70);
   transition: border-color .3s var(--ease), color .3s var(--ease), background .3s var(--ease);
 }
-.art-share a:hover { border-color: var(--charcoal); color: var(--charcoal); }
+.art-share a:hover { border-color: var(--taupe); color: var(--taupe); }
 .art-share svg { width: 17px; height: 17px; }
 .art-back { display: flex; justify-content: center; margin-top: clamp(36px, 4vw, 56px); }
 

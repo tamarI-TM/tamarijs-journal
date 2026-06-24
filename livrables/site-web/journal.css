@@ -79,7 +79,7 @@ body.jf-feat-right .jfeat .jfeat__media { order: 2; }
   color: var(--charcoal-70); background: transparent; cursor: pointer;
   transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
 }
-.jfilter__chip:hover { border-color: var(--charcoal); color: var(--charcoal); }
+.jfilter__chip:hover { border-color: var(--taupe); color: var(--taupe); }
 .jfilter__chip.is-active { background: var(--charcoal); color: var(--ivory); border-color: var(--charcoal); }
 
 /* =========================================================
@@ -114,7 +114,7 @@ body.jf-grid-2 .jgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   background: transparent; color: var(--charcoal); cursor: pointer;
   transition: background .4s var(--ease), color .4s var(--ease);
 }
-.jmore__btn:hover { background: var(--charcoal); color: var(--ivory); }
+.jmore__btn:hover { background: transparent; color: var(--taupe); border-color: var(--taupe); }
 .jmore__btn[hidden] { display: none; }
 .jmore__progress { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--charcoal-45); }
 .jempty { text-align: center; padding: clamp(40px, 6vw, 80px) 0; color: var(--charcoal-45); font-family: var(--serif); font-size: clamp(20px, 2.2vw, 28px); }

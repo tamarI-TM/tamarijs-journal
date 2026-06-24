@@ -47,9 +47,9 @@
   text-decoration: none;
   transition: color 0.2s ease;
 }
-.hero-link:hover { color: var(--charcoal); }
+.hero-link:hover { color: var(--taupe); }
 .hero-link--light { color: var(--charcoal-70); }
-.hero-link--light:hover { color: var(--charcoal); }
+.hero-link--light:hover { color: var(--taupe); }
 
 /* Hero stats strip */
 .hero-stats {
