@@ -271,3 +271,77 @@
 
 - მასპინძელი ტექსტი (`.art-lede`): clamp(20–24px), line-height 1.68 (მობილურზე 18–22px).
 - drop cap ფლანგავს ~3 ხაზს. ერთ აბზაცზე ერთი ასო, არასდროს ორი.
+
+---
+
+## 13. ღილაკები და ბმულები (ზუსტი სპეცი)
+| ელემენტი | base | hover |
+|---|---|---|
+| **`.btn`** (მთავარი) | inline-flex, gap 12px, **sans 14px / 500**, ls 0.06em, padding **16px 30px**, radius **2px**, border 1px charcoal, **ფონი charcoal, ტექსტი ivory** | transparent ფონი, **taupe** ტექსტი + ბორდერი; ისარი `.arr` → translateX(4px) |
+| **`.btn--ghost`** | transparent, charcoal ტექსტი, border `--line` | taupe ბორდერი + ტექსტი |
+| **`.btn--light`** (მუქ სექციებზე) | ivory ფონი, charcoal ტექსტი | transparent, ivory ტექსტი |
+| **`.link-more`** | **sans 12px / 500**, UPPERCASE, ls 0.14em, charcoal, border-bottom 1px `--line`, gap 9px | **taupe** ტექსტი + ბორდერი, gap → 13px |
+
+## 14. ფოტოები (`.ph` + `.slot-fill`)
+**პატერნი:** `<div class="ph" style="aspect-ratio:X"><img class="slot-fill" src="..." alt="..." style="object-fit:cover"></div>`
+- **`.ph`**: position relative, overflow hidden, beige placeholder texture (`#E7DFD2` + დიაგონალური ხაზები). `.ph--dark` (`#45403A`) — hero/video. `.ph__label` ("ფოტო", mono 11.5px) — ცარიელი სლოტი.
+- **`.slot-fill`**: `position:absolute; inset:0; width:100%; height:100%` + `object-fit:cover` (inline) → ფოტო ავსებს და იჭრება კონტეინერზე.
+
+**Aspect-ratio ცხრილი (კონტექსტის მიხედვით):**
+| კონტექსტი | aspect-ratio |
+|---|---|
+| hero cover (`.art-hero--cover`) | 100vh (min 620px) |
+| hero figure (`.art-hero`) | 16/9 |
+| story ბარათი (`.story .ph`) | 3/3.6 |
+| jcard (`.jcard__media .ph`) | 3/2.1 |
+| project (`.project .ph`) | 16/10 |
+| art-split media | 4/5 |
+| art-fig (inline) | 3/2 |
+| feature-lead | 4/3.05 |
+| video main / side | 16/9 · 16/11 |
+| instagram (`.ig`) | 4/5 |
+
+- **სრულ სიგანის banner** (მაგ. Ritualis-ის ფოტოები): aspect-ratio არ აიძულო, `width:100%; height:auto` (მოჭრის გარეშე, ბუნებრივი პროპორცია).
+
+## 15. `<head>` boilerplate + ფერის იერარქია
+**ყველა გვერდის `<head>` (copy-paste მზად):**
+```html
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>... · Tamari's Journal</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="dir-a.css" />
+<link rel="stylesheet" href="responsive.css" />
+<!-- content/article გვერდზე დამატებით: -->
+<link rel="stylesheet" href="journal.css" />
+<link rel="stylesheet" href="article.css" />
+<link rel="stylesheet" href="article-mogzauroba.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap">
+```
+`<body>`-ის ბოლოს: `<script src="site.js"></script>`. (Dancing Script მხოლოდ „Suivre" follow სექციისთვის.)
+
+**ფერის იერარქია — რომელი ფერი რომელ ტექსტს:**
+| ფერი | გამოყენება |
+|---|---|
+| `--charcoal` | სათაურები, ძლიერი ტექსტი |
+| `--charcoal-70` | ძირითადი body ტექსტი, აღწერები |
+| `--charcoal-45` | meta, caption, თარიღი, dim |
+| `--taupe` | eyebrow, tag, აქცენტი, **hover**, drop cap |
+| `--line` / `--line-soft` | ბორდერები, გამყოფები |
+| `--ivory` / `--ivory-2` | ფონები |
+
+## 16. გვერდის skeleton-ები
+**Content / article გვერდი:**
+```
+head → NAV (verbatim) → art-hero--cover (ფოტო) → art-head (eyebrow + h1 + dek + meta byline)
+→ art-fig (featured) → art-body: art-lede (drop-cap) + art-passage (p) → art-split (ფოტო/ტექსტი)
+→ art-pull (ციტატა) → art-foot (byline + back) → Newsletter (verbatim) → Footer (verbatim) → site.js
+```
+**მარტივი content / პროექტის გვერდი:**
+```
+head → NAV → ტექსტური hero (.rit-hero: eyebrow + სათაური + ქვესათაური + byline)
+→ art-passage / art-split (ტექსტი + ფოტო) → art-pull → art-foot → Newsletter → Footer → site.js
+```
+- ყოველთვის: `reveal` მთავარ ბლოკებზე, responsive შემოწმება 3 ზომაზე, ცვლილება Edge InPrivate-ში.
