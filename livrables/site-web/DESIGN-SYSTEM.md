@@ -160,3 +160,30 @@
 - nav → burger მენიუ მობილურზე.
 - ფოტოები — ყოველთვის `width:100%` (არ გადაიჭიმოს / არ გადმოვარდეს).
 - **ყოველი ცვლილება შეამოწმე ვიწრო ეკრანზეც** (ბრაუზერის ფანჯრის შევიწროება ან DevTools device mode: iPhone / iPad / Desktop).
+
+---
+
+## 11. კომპონენტების ზუსტი სპეცი (rendered values)
+> ⚠️ ბევრი ზომა inline HTML override-ით განისაზღვრება (CSS base ≠ რენდერი). ქვემოთ მითითებულია **რეალური რენდერი**. ახალ გვერდზე ეს ბლოკები **verbatim დააკოპირე index.html-დან**.
+
+### Newsletter (`.newsletter newsletter--letters`, `id="newsletter"`)
+- **ფონი:** `rgb(250,247,243)` (inline HTML; `.newsletter--letters` base = `#F4EFE7`)
+- **padding-block:** clamp(46px, 6vw, 84px) · `.news-inner` max-width 720px, ცენტრში
+- **`.news-label`** („JOURNAL LETTERS"): sans, **12px**, weight 500, letter-spacing 0.34em, UPPERCASE, **taupe**, margin-bottom 24px
+- **`.news-title`** („Tamari's Journal"): რენდერი = **Nunito 17px** (inline; base = serif clamp 33–56px)
+- **`.news-sub`** (ქვესათაური): რენდერი = **12px** serif, charcoal-70, max-width 46ch
+- **`.news-form`**: max-width 500px, flex, gap 10px · input: თეთრი ფონი (#fff), border `--line`, radius 4px, padding 15px 18px, sans 15px · focus: taupe border + glow `rgba(184,170,152,.16)`
+- **`.btn`** („შემომიერთდი"): charcoal fill, radius 4px, padding 15px 30px · hover: translateY(-1px)
+- **`.news-note`** („გამოწერის გაუქმება"): **12.5px**, charcoal-45
+- მობილური (≤560px): ფორმა ვერტიკალურად
+
+### Footer (`.footer`) — ⚠️ ღია (light) ვერსია `dir-a.css`-ით
+- **მნიშვნელოვანი:** `styles.css`-ში footer **მუქია** (charcoal ფონი), მაგრამ `dir-a.css` ფარავს **ღია ვერსიით:** ფონი `--ivory-2`, ტექსტი charcoal, ბმულები charcoal-70 → **hover taupe**.
+- **padding-block:** clamp(64px, 8vw, 110px) 40px
+- **`.footer__top`**: grid `1.6fr repeat(3, 1fr)`, gap clamp(30–64px), ქვედა ბორდერი `--line`
+- **`.footer__brand`** („TAMARI'S JOURNAL"): რენდერი = **Nunito 15px**, weight 500, letter-spacing 0.18em, UPPERCASE (inline + dir-a; base = latin 34px)
+- **brand tagline** (`.footer__brand + p`): რენდერი = **12px**, charcoal-70, max-width 320px
+- **`.footer__col h5`** (სვეტის სათაური: საიტი / სოციალური / ენა): sans, **12px**, weight 600, letter-spacing 0.2em, UPPERCASE, charcoal-45
+- **`.footer__col a`** (ბმულები): რენდერი = **12px** (base 15px)
+- **`.footer__bottom`**: flex, space-between · `.copy` (© 2026): mono 11.5px, charcoal-45 · `.footer__legal`: 12px, gap 26px
+- მობილური (≤640px): `.footer__top` → 2 სვეტი, brand სრულ სიგანეზე
