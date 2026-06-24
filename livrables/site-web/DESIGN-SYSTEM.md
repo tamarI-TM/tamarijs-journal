@@ -187,3 +187,61 @@
 - **`.footer__col a`** (ბმულები): რენდერი = **12px** (base 15px)
 - **`.footer__bottom`**: flex, space-between · `.copy` (© 2026): mono 11.5px, charcoal-45 · `.footer__legal`: 12px, gap 26px
 - მობილური (≤640px): `.footer__top` → 2 სვეტი, brand სრულ სიგანეზე
+
+---
+
+## 12. ⭐⭐ ზუსტი ტიპოგრაფია და კომპონენტები (მთავარი გვერდის მოდელი)
+> სავალდებულო, მკაცრი სტანდარტი. **ყველა გვერდზე, ყველა სექციაში ერთნაირად დაიცავი.** მთავარი გვერდი (`index.html`) არის ზუსტი მოდელი. ახალი გვერდი ავტომატურად სამ ფორმატზე (ლეპტოპი / ტაბლეტი / მობილური).
+
+### 12.1 ფონტების როლები — რომელი ფონტი რისთვის (მკაცრი წესი)
+| როლი | ფონტი | სტილი |
+|---|---|---|
+| **სათაური** (h1 / h2 / h3) | **Noto Serif Georgian** (serif) | weight 500–600, line-height 1.1–1.2 |
+| **ლათინური დისფლეი** (ბრენდი, „Ritualis", ფასი 49€) | **Cormorant Garamond**; nav brand = **Nunito** | weight 400–600 |
+| **ქვესათაური / lede / dek** | Noto Sans Georgian (article-ში serif italic) | charcoal-70 |
+| **ძირითადი ტექსტი** (p) | **Noto Sans Georgian** (sans) | line-height 1.75 |
+| **Eyebrow / სექციის იარლიყი** | Noto Sans Georgian | UPPERCASE, ls 0.32em, **taupe** |
+| **Meta / tag / თარიღი** | mono (ui-monospace) | UPPERCASE, ls, taupe / charcoal-45 |
+
+### 12.2 ზომების მკაცრი მასშტაბი (რენდერი მთავარ გვერდზე)
+| ელემენტი | ფონტი | ზომა |
+|---|---|---|
+| სექციის სათაური (h2) | serif | **33px** (დიდი სექცია 36px), lh ~1.1 |
+| Hero tagline (`.hero__script`) | serif | 33px, lh 1.12 |
+| Hero ქვე-იარლიყი (`.hero__cover-title`) | sans | clamp(14px, 1.4vw, 18px), ls 0.22em |
+| ბარათის სათაური — story (`.h-md`) | serif | clamp(21px, 2.1vw, 28px) |
+| ბარათის სათაური — project (h3) | serif | 33px |
+| Intro lead (drop-cap-ით) | sans | **22px**; drop-cap ასო 78px, taupe |
+| ქვესათაური / lede / dek | sans | **17px** (article dek 19–25px italic) |
+| **ძირითადი ტექსტი (p)** | **sans** | **17px**, lh 1.75 — *article-ის წამკითხავი ტექსტი: 16px* |
+| ფასი / სტატის რიცხვი | Cormorant | 26–28px, weight 600 |
+| სტატის იარლიყი | sans | 10px, UPPERCASE, ls 0.14em, charcoal-45 |
+| Meta („8 წუთი კითხვა") | mono | ~11px |
+
+> ⚠️ ერთი წესი: **სათაური ყოველთვის serif, ტექსტი ყოველთვის sans, იარლიყი/meta mono.** ზომა არ გადაუხვიო ამ მასშტაბს ცალკეული გვერდის ახირებით.
+
+### 12.3 NAV (`.nav`)
+- `.nav__brand` („TAMARI'S JOURNAL"): **Nunito 33px**, inline.
+- ვარიანტები: `nav--cover` (hero-ზე გამჭვირვალე, ღია ტექსტი), `scrolled` (ჩამოსქროლვისას მუქი ფონი); ქვე-გვერდზე `nav--cover scrolled` თავიდანვე.
+- შიგთავსი: burger (მობილური), lang (ქარ / FR / EN), search ⌕, `nav__menu` ჯგუფებით.
+- მენიუს ბმულები: hover → **taupe**.
+- responsive: ≤600px lang იმალება, ნავიგაცია burger-ით.
+
+### 12.4 HERO
+- **Cover hero** (`.hero hero--cover`): სრული ფოტო (`.ph ph--dark` + `slot-fill`) + `hero__scrim` + ქვედა-მარცხნივ ტექსტი.
+  - `.hero__script` — 33px serif tagline; `.hero__cover-title` — clamp(14–18px) ls 0.22em; `.hero__read` — ხაზიანი ბმული; `.hero__social` (მარჯვნივ), `.hero__scroll`.
+- **ტექსტური hero** (პროექტის გვერდი, `.rit-hero`): ცენტრში eyebrow + დიდი Cormorant სათაური + ქვესათაური + byline.
+
+### 12.5 ბარათები (cards) — ერთიანი შაბლონი
+ყველა ბარათი: ფოტო (`.ph` + `slot-fill`) + tag + **სათაური-ბმული** + ტექსტი. **სათაური hover → taupe** (ბარათის hover-ზე).
+- **`.story`** (მთავარი, 3 სვეტი): მთლიანი ბარათი `<a>`-ში; `story__cat` (12px taupe UPPERCASE) · h3 `.h-md` · p (17px) · `.meta` (mono).
+- **`.project`** (3 სვეტი): ფოტო + tag + **h3-ბმული (33px)** + p; „გაიგე მეტი" ღილაკი მოხსნილია, ნავიგაცია სათაურზე.
+- **`.jcard`** (ჟურნალის გვერდი): ფოტო-ბმული (**hover zoom** scale 1.045) + cat + h3-ბმული + excerpt + byline foot.
+
+### 12.6 Article სისტემა (content-გვერდის შაბლონი)
+დეტალები: სექციები 3 და 7. მოკლედ: `art-head` (h1 34–68px serif, dek 19–25px serif italic), `art-body`/`art-passage` (p **16px**), `art-pull` (**22px** italic), `art-kicker` (11.5px taupe), `art-split` (ფოტო/ტექსტი, `--rev`), `art-foot` (ავტორი + back).
+
+### 12.7 Responsive — თითო კომპონენტი
+- NAV → burger ≤680px; HERO → ფოტო/ტექსტი ეწყობა, სიმაღლე მცირდება.
+- ბარათების grid (3 სვეტი) → 2 (≤900px) → 1 (≤640px); `art-split` → 1 სვეტი (≤880px).
+- ⚠️ მთავარ გვერდზე სათაურები **ფლეტ 33px**-ია (inline), არა clamp. `responsive.css` არეგულირებს მობილურს. **ახალ გვერდზე სათაურებზე ჯობს clamp() (მაგ. `.h-xl` = clamp(32–60px)), რომ ავტომატურად მოერგოს**, და ყოველთვის შეამოწმე 3 ზომაზე (Desktop / iPad / iPhone).
