@@ -14,32 +14,53 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap">
 <style>
-  /* Hero — custom project brand hero */
-  .rit-hero {
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: clamp(80px, 12vw, 140px) 24px clamp(60px, 8vw, 100px);
-    background: var(--ivory-2);
+  /* Dark split hero — app landing (modeled on guide hero) */
+  .app-hero {
+    position: relative; background: var(--charcoal); color: var(--ivory);
+    padding-top: clamp(140px, 17vh, 200px); padding-bottom: clamp(64px, 8vw, 110px);
+    overflow: hidden;
   }
-  .rit-hero__inner { max-width: 640px; margin: 0 auto; }
-  .rit-hero__logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 8vw, 88px);
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    color: var(--charcoal);
-    line-height: 1;
-    margin: 0 0 20px;
+  .app-hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(120% 90% at 78% 8%, rgba(214,195,165,.16), transparent 55%),
+      radial-gradient(90% 80% at 12% 100%, rgba(184,170,152,.12), transparent 60%);
   }
-  .rit-hero__sub {
-    font-size: clamp(14px, 2vw, 17px);
-    color: var(--charcoal-70);
-    line-height: 1.7;
-    max-width: 44ch;
-    margin: 0 auto;
+  .app-hero__grid {
+    position: relative; display: grid; grid-template-columns: 1fr 1.05fr;
+    gap: clamp(40px, 6vw, 80px); align-items: center;
+  }
+  .app-hero__eyebrow {
+    font-family: var(--sans); font-size: 12.5px; font-weight: 500; letter-spacing: .32em;
+    text-transform: uppercase; color: var(--taupe); display: inline-flex; align-items: center; gap: 14px;
+    margin-bottom: 28px;
+  }
+  .app-hero__eyebrow::before { content: ""; width: 30px; height: 1px; background: var(--beige); }
+  .app-hero h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600; color: var(--ivory);
+    font-size: clamp(52px, 7vw, 92px); line-height: 1; letter-spacing: .04em; margin: 0;
+  }
+  .app-hero__sub {
+    font-family: var(--sans); font-weight: 300; font-size: 16px; line-height: 1.7;
+    color: rgba(250,248,244,.82); margin: 24px 0 0; max-width: 46ch;
+  }
+  .app-hero__meta {
+    display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-top: 28px;
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: rgba(250,248,244,.6);
+  }
+  .app-hero__meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--taupe); }
+  .app-hero__cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 38px; }
+  .app-hero__soon {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: .04em;
+    padding: 13px 26px; border-radius: 4px; border: 1px solid rgba(250,248,244,.38); color: var(--ivory);
+  }
+  .app-hero__soon-tag { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(250,248,244,.55); }
+  .app-hero__visual { position: relative; }
+  .app-hero__visual img { width: 100%; height: auto; display: block; border-radius: 10px; box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+  @media (max-width: 880px) {
+    .app-hero__grid { grid-template-columns: 1fr; gap: clamp(40px, 8vw, 56px); }
+    .app-hero h1 { font-size: clamp(46px, 13vw, 76px); }
   }
 
   /* Byline — Ritualis-specific avatar tuning (36px, beige) */
@@ -75,12 +96,33 @@
 
   /* Pull-quote text capped at max 22px, forced onto 2 lines via <br> */
   .art-pull p { font-size: 22px !important; max-width: none !important; }
+
+  /* Features grid (app) */
+  .rit-features {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: clamp(30px, 3.4vw, 50px);
+    margin-top: clamp(44px, 5vw, 68px);
+  }
+  .rit-feature__ic {
+    display: inline-flex; width: 46px; height: 46px; border-radius: 50%;
+    align-items: center; justify-content: center;
+    background: var(--ivory); border: 1px solid var(--line);
+    color: var(--taupe); margin-bottom: 18px;
+  }
+  .rit-feature__ic svg { width: 22px; height: 22px; }
+  .rit-feature h3 {
+    font-family: var(--serif); font-size: 20px; font-weight: 600;
+    color: var(--charcoal); margin: 0 0 8px; line-height: 1.25;
+  }
+  .rit-feature p { font-size: 16px; line-height: 1.7; color: var(--charcoal-70); margin: 0; }
+  @media (max-width: 880px) { .rit-features { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .rit-features { grid-template-columns: 1fr; gap: 32px; } }
 </style>
 </head>
 <body class="page-ritualis" data-screen-label="Ritualis">
 
 <!-- NAV -->
-<nav class="nav nav--cover scrolled" data-nav>
+<nav class="nav nav--cover" data-nav>
   <button class="nav__burger" data-burger aria-label="მენიუ"><span></span><span></span><span></span></button>
   <a class="nav__brand" href="index.html" style="font-family: Nunito; font-size: 33px">TAMARI'S JOURNAL</a>
   <div class="nav__right">
@@ -115,18 +157,27 @@
   <div class="menu__backdrop" data-close></div>
 </nav>
 
-<!-- HERO -->
-<header class="rit-hero">
-  <div class="rit-hero__inner reveal">
-    <span class="eyebrow">ლეოს პროექტი</span>
-    <h1 class="rit-hero__logo">Ritualis</h1>
-    <p class="rit-hero__sub">გადააქციე შენი დრო ხილულ პროგრესად.</p>
-    <div class="byline" style="justify-content:center; margin-top:28px">
-      <span class="byline__av">ლ</span>
-      <span class="byline__meta">
-        <span class="byline__name">ლეო</span>
-        <span class="byline__sub">ავტორი</span>
-      </span>
+<!-- HERO — dark split (app landing) -->
+<header class="app-hero">
+  <div class="wrap">
+    <div class="app-hero__grid">
+      <div class="app-hero__body reveal">
+        <span class="app-hero__eyebrow">ლეოს პროექტი · აპლიკაცია</span>
+        <h1>Ritualis</h1>
+        <p class="app-hero__sub">ჩვევებისა და პროდუქტიულობის აპლიკაცია, რომელიც გაჩვენებს პროგრესს და არ განგსჯის. გადააქციე შენი დრო ხილულ პროგრესად.</p>
+        <div class="app-hero__meta">
+          <span>ჩვევები</span><span class="dot"></span>
+          <span>პროდუქტიულობა</span><span class="dot"></span>
+          <span>გეიმიფიკაცია</span>
+        </div>
+        <div class="app-hero__cta">
+          <span class="app-hero__soon">App Store · Google Play</span>
+          <span class="app-hero__soon-tag">მალე</span>
+        </div>
+      </div>
+      <div class="app-hero__visual reveal">
+        <img src="images/ritualis-hero.png" alt="Ritualis — build better habits" />
+      </div>
     </div>
   </div>
 </header>
@@ -143,11 +194,53 @@
   </div>
 </article>
 
-<!-- FULL-WIDTH PHOTO 1 -->
+<!-- FEATURES -->
+<section class="section band">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align:center; max-width:680px; margin:0 auto">
+      <span class="eyebrow" style="justify-content:center">ფუნქციები</span>
+      <h2 class="h-xl" style="font-size:33px; font-family:'Cormorant Garamond',serif; margin-top:14px">რას გთავაზობს Ritualis</h2>
+    </div>
+    <div class="rit-features reveal">
+      <div class="rit-feature">
+        <span class="rit-feature__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+        <h3>ბუსტ-რეჟიმი</h3>
+        <p>განსაკუთრებული გამოწვევა, რომ უფრო სწრაფად აიწიო დონეზე და მოტივირებული დარჩე.</p>
+      </div>
+      <div class="rit-feature">
+        <span class="rit-feature__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 21h18M7 21v-7M12 21V8M17 21v-4"/></svg></span>
+        <h3>თვალყური ადევნე ყველაფერს</h3>
+        <p>აკონტროლე შენი პროგრესი და დარჩი ნათელი, მშვიდი და თანმიმდევრული.</p>
+      </div>
+      <div class="rit-feature">
+        <span class="rit-feature__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/></svg></span>
+        <h3>ყოველდღიური გამოწვევა</h3>
+        <p>შეასრულე გამოწვევები და დააგროვე დამატებითი XP.</p>
+      </div>
+      <div class="rit-feature">
+        <span class="rit-feature__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L4.5 9.6l5.9-.8z"/></svg></span>
+        <h3>დააგროვე და აიწიე დონეზე</h3>
+        <p>შეასრულე რიტუალები, დააგროვე XP და აიწიე ახალ დონეზე.</p>
+      </div>
+      <div class="rit-feature">
+        <span class="rit-feature__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2C9 6 7 8 7 12a5 5 0 0 0 10 0c0-2-1-3.5-2-5-.5 1.2-1.5 1.7-2 1-.6-.9 0-3-1-6z"/></svg></span>
+        <h3>სერიის ძალა</h3>
+        <p>შექმენი გაუტეხელი სერიები და შეინარჩუნე იმპულსი.</p>
+      </div>
+      <div class="rit-feature">
+        <span class="rit-feature__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 5H4v1a3 3 0 0 0 3 3M17 5h3v1a3 3 0 0 1-3 3M9 18h6M12 14v4M8 21h8"/></svg></span>
+        <h3>იზეიმე გამარჯვებები</h3>
+        <p>იზეიმე ყოველი მიღწევა და შეინარჩუნე მოტივაცია.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL-WIDTH PHOTO (features visual) -->
 <section class="section">
   <div class="wrap">
     <figure class="reveal" style="margin:0; border-radius:4px; overflow:hidden">
-      <img src="images/ritualis-1.jpg" alt="Ritualis — build better habits, one ritual at a time" style="width:100%; height:auto; display:block" />
+      <img src="images/ritualis-features.png" alt="Ritualis — ფუნქციები" style="width:100%; height:auto; display:block" />
     </figure>
   </div>
 </section>
@@ -160,15 +253,6 @@
     <p>პროდუქტიულობის აპლიკაციების უმეტესობა მუდმივად გახსენებს იმას, რაც არ გაგიკეთებია. მე კი მინდოდა შემექმნა აპლიკაცია, რომელიც გაჩვენებს ყველაფერს, რაც უკვე გააკეთე.</p>
     <p>რადგან საბოლოოდ, მოტივაცია ზეწოლისგან არ იბადება. ის პროგრესიდან მოდის. კონცენტრაციის ყოველი წუთიდან. ყოველი დასრულებული სესიიდან. ყოველი პატარა გამარჯვებიდან.</p>
     <p>Ritualis არ არის იმისთვის, რომ განგსაჯოს. ის არსებობს იმისთვის, რომ გაჩვენოს, რამდენად შორს შეგიძლია წასვლა.</p>
-  </div>
-</section>
-
-<!-- FULL-WIDTH PHOTO 2 -->
-<section class="section">
-  <div class="wrap">
-    <figure class="reveal" style="margin:0; border-radius:4px; overflow:hidden">
-      <img src="images/ritualis-2.jpg" alt="Ritualis — small actions, big results" style="width:100%; height:auto; display:block" />
-    </figure>
   </div>
 </section>
 
