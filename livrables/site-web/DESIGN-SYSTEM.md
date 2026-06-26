@@ -272,6 +272,27 @@
 - მასპინძელი ტექსტი (`.art-lede`): clamp(20–24px), line-height 1.68 (მობილურზე 18–22px).
 - drop cap ფლანგავს ~3 ხაზს. ერთ აბზაცზე ერთი ასო, არასდროს ორი.
 
+### 12.10 App-hero — მუქი split hero (აპლიკაციის გვერდი)
+> პროდუქტის/აპლიკაციის გვერდის hero. მუქი, ორ სვეტად: ტექსტი მარცხნივ + ვიზუალი მარჯვნივ. მოდელი: გზამკვლევის hero.
+- **`.app-hero`**: `background: var(--charcoal)`, ivory ტექსტი, padding-top clamp(140px,17vh,200px), padding-bottom clamp(64–110px), overflow hidden. `::before` — რბილი radial glow (taupe/beige, `rgba(214,195,165,.16)` + `rgba(184,170,152,.12)`).
+- **`.app-hero__grid`**: grid `1fr 1.05fr` (ტექსტი / ვიზუალი), gap clamp(40–80px), align center.
+- **`.app-hero__eyebrow`**: sans 12.5px, ls .32em, UPPERCASE, **taupe**, + beige ხაზი (30px), margin-bottom 28px.
+- **`.app-hero h1`**: **Cormorant Garamond**, weight 600, ivory, **clamp(52px,7vw,92px)**, ls .04em (ლათინური ბრენდი, მაგ. „Ritualis").
+- **`.app-hero__sub`**: sans 300, **16px**, lh 1.7, `rgba(250,248,244,.82)`, max-width 46ch.
+- **`.app-hero__meta`**: mono 11.5px, UPPERCASE, ls .1em, `rgba(250,248,244,.6)`, `.dot` taupe (3 ფაქტი წერტილებით).
+- **`.app-hero__cta`**: `.app-hero__soon` (bordered „App Store · Google Play", ivory ტექსტი, `border: 1px solid rgba(250,248,244,.38)`, radius 4px) + `.app-hero__soon-tag` („მალე", mono 11px). გაუშვებელი აპლიკაცია = coming soon.
+- **`.app-hero__visual img`**: width 100%, height auto, radius 10px, shadow `0 30px 80px rgba(0,0,0,.45)`.
+- **nav**: `nav nav--cover` (გამჭვირვალე, ღია ტექსტი მუქ hero-ზე; scroll-ზე გამყარდება `site.js`-ით, `header`-ის სიმაღლეზე). `scrolled` HTML-ში არ ჩასვა.
+- **responsive** ≤880px: grid 1 სვეტი (ტექსტი → ვიზუალი), h1 clamp(46px,13vw,76px).
+
+### 12.11 Features grid (ფუნქციების ბადე)
+> აპლიკაციის ფუნქციების სია ბარათებად. ფონი `.band` (ivory-2), თავი `.section-head` ცენტრში (eyebrow + h2 33px serif).
+- **`.rit-features`**: grid `repeat(3, 1fr)`, gap clamp(30–50px), margin-top clamp(44–68px).
+- **`.rit-feature__ic`**: 46px წრე, ფონი ivory, border `--line`, **taupe** ხატულა (inline SVG, stroke 1.6, 22px), margin-bottom 18px.
+- **`.rit-feature h3`**: **serif 20px / 600**, charcoal, lh 1.25.
+- **`.rit-feature p`**: sans **16px**, lh 1.7, **charcoal-70**.
+- **responsive**: 3 სვეტი → 2 (≤880px) → 1 (≤560px).
+
 ---
 
 ## 13. ღილაკები და ბმულები (ზუსტი სპეცი)
