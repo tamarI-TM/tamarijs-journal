@@ -2,7 +2,7 @@
 
 > ვებსაიტის ერთიანი ვიზუალური იდენტობა: ფერები, ფონტები, ზომები, ეფექტები, სტრუქტურა.
 > **ეს არის ერთადერთი წყარო (single source of truth).** ყოველი ახალი გვერდი ამ წესებით აიგება, ნულიდან კი არა.
-> ფაილების ადგილი: `livrables/site-web/` · ცოცხალი საიტი: tamarijs-journal.vercel.app
+> ფაილების ადგილი: `livrables/site-web/` · ცოცხალი საიტი: **tamarisjournal.com** (+ tamarijs-journal.vercel.app)
 
 ---
 
