@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>საფრანგეთში ჩამოსვლის პირველი 30 დღე · Tamari's Journal</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="dir-a.css" />
+<link rel="stylesheet" href="responsive.css" />
+<link rel="stylesheet" href="journal.css" />
+<link rel="stylesheet" href="article.css" />
+<link rel="stylesheet" href="article-mogzauroba.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap">
+<style>
+  /* ---- ტექსტი ერთგვაროვანი 16px, ერთი მუქი ფერი ---- */
+  .art-body p, .art-passage p,
+  .art-body li, .art-passage li,
+  .art-body .art-stanza, .art-passage .art-stanza { font-size: 16px !important; line-height: 1.85; }
+  .art-body .art-stanza, .art-passage .art-stanza { line-height: 1.95; }
+  .art-body p, .art-passage p, .art-body li, .art-passage li,
+  .art-body .art-stanza, .art-passage .art-stanza,
+  .art-body .art-stanza--soft, .art-passage .art-stanza--soft { color: var(--charcoal); }
+
+  /* ლეტრინი (drop cap) — პირველი აბზაცის პირველი ასო, საიტის სტილი */
+  .intro-drop::first-letter {
+    float: left; font-family: 'Noto Serif Georgian', serif; font-weight: 600;
+    font-size: 3.4em; line-height: 0.82; padding: 4px 12px 0 0; color: var(--taupe);
+  }
+
+  /* ---- განსხვავებული: სათაური / ქვესათაური / სექციის სათაური / ციტატა ---- */
+  .art-head h1  { font-size: clamp(26px, 3.4vw, 40px); line-height: 1.18; }
+  .art-head__dek { font-size: clamp(16px, 1.6vw, 20px); }
+  .art-body h2, .art-passage h2 { font-size: clamp(21px, 2.2vw, 26px); }
+  .art-pull p { font-size: 22px; max-width: 32ch; }
+
+  /* ---- HERO — შენობის ფოტო დიდად, ცენტრში, სრულად (წარწერა იკითხება) ---- */
+  .hero-photo { display:block; width:auto; height:auto; max-width:min(780px,94%); max-height:80vh; margin:0 auto; border-radius:4px; }
+  @media (max-width: 640px) { .hero-photo { max-width:100%; max-height:none; } }
+</style>
+</head>
+<body class="page-article" data-screen-label="Article — პირველი 30 დღე">
+
+<!-- NAV -->
+<nav class="nav nav--cover scrolled" data-nav>
+  <button class="nav__burger" data-burger aria-label="მენიუ"><span></span><span></span><span></span></button>
+  <a class="nav__brand" href="index.html" style="font-family: Nunito; font-size: 33px">TAMARI'S JOURNAL</a>
+  <div class="nav__right">
+    <div class="lang">
+      <a href="#" class="is-active">ქარ</a><span class="sep">/</span>
+      <a href="#" data-lang="fr">FR</a><span class="sep">/</span>
+      <a href="#" data-lang="en">EN</a>
+    </div>
+    <button class="nav__search" aria-label="ძებნა">⌕</button>
+  </div>
+  <div class="nav__menu" data-links>
+    <button class="menu__close" data-close aria-label="დახურვა"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <div class="menu__group">
+      <a href="index.html">მთავარი</a>
+      <a href="journal.html">ჟურნალი</a>
+      <a href="index.html#videos">ვლოგი</a>
+      <a href="index.html#projects">პროექტები</a>
+    </div>
+    <div class="menu__group">
+      <a href="emigrantis-gzamkvlevi-safrangetshi.html">გზამკვლევი</a>
+      <a href="emigrantis-gzamkvlevi-safrangetshi.html">მაღაზია</a>
+    </div>
+    <div class="menu__group">
+      <a href="about.html">ჩვენ შესახებ</a>
+      <a href="#newsletter">კონტაქტი</a>
+    </div>
+    <div class="menu__group">
+      <button class="menu__acc" aria-expanded="false">გამოგვეყევი <span class="chev">⌄</span></button>
+      <div class="menu__sub"><div class="menu__sub-in">
+        <a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="tiktok">TikTok</a>
+        <a href="https://www.youtube.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="youtube">YouTube</a>
+        <a href="https://www.facebook.com/tam.maisashvili" target="_blank" rel="noopener" data-social="facebook">Facebook</a>
+      </div></div>
+    </div>
+  </div>
+  <div class="menu__backdrop" data-close></div>
+</nav>
+
+<!-- HERO (CNDA building, Paris) -->
+<figure class="art-hero reveal" style="margin:0;padding:clamp(96px,12vh,132px) var(--gutter) 0;background:var(--ivory);text-align:center">
+  <img src="images/pirveli-30-hero.jpg" class="hero-photo" alt="Cour Nationale du Droit d'Asile — პარიზი">
+  <figcaption style="margin-top:14px">Cour Nationale du Droit d'Asile · პარიზი</figcaption>
+</figure>
+
+<!-- ARTICLE HEADER -->
+<header class="section art-head art-head--flush">
+  <div class="wrap">
+    <div class="art-head__inner reveal">
+      <span class="eyebrow">ემიგრაცია</span>
+      <h1 style="font-family:'Noto Serif Georgian',serif; letter-spacing:0">საფრანგეთში ჩამოსვლის პირველი 30 დღე</h1>
+      <p class="art-head__dek">რა უნდა მოასწრო, რომ შემდეგ არ ინანო</p>
+      <div class="art-head__meta">
+        <div class="byline">
+          <span class="byline__av">თ</span>
+          <span class="byline__meta">
+            <span class="byline__name">თამარი</span>
+            <span class="byline__sub">ავტორი</span>
+          </span>
+        </div>
+        <span class="sep"></span>
+        <span class="byline__sub" style="font-family:var(--mono)">8 წთ საკითხავი</span>
+        <span class="sep"></span>
+        <span class="byline__sub" style="font-family:var(--mono)">3 ივლისი, 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<article class="section art-body" style="padding-top:clamp(8px,2vw,24px);padding-bottom:0">
+  <div class="art-passage reveal">
+    <p class="intro-drop">საფრანგეთში ჩამოსვლის პირველი დღეები ხშირად ქაოსურია. ახალი გარემო, ენის ბარიერი, დროებითი საცხოვრებელი, დოკუმენტები, უამრავი კითხვა — და შიში, რომ რაიმე მნიშვნელოვანი არ გამოგრჩეს.</p>
+    <p>ამ პერიოდში მთავარი არ არის ყველაფრის ერთ დღეში მოგვარება. მთავარი არის, რომ სწორად დაალაგო პრიორიტეტები.</p>
+  </div>
+</article>
+
+<!-- SECTIONS -->
+<section class="section art-body" style="padding-block:0">
+  <div class="art-passage reveal">
+    <h2>1. შეინახე ყველა დოკუმენტი და დააფიქსირე შენი მისამართი</h2>
+    <p>პასპორტი, ვიზა, საზღვარზე მიღებული დოკუმენტები, დაბადების მოწმობა, ქორწინების ან განქორწინების საბუთები, სამედიცინო დოკუმენტები, დიპლომები, სამუშაო გამოცდილების დამადასტურებელი ცნობები — ყველაფერი შეინახე უსაფრთხოდ.</p>
+    <p>გააკეთე ასლები და, შესაძლებლობის შემთხვევაში, გადაიღე ფოტოებიც. წერილები და ოფიციალური შეტყობინებები არასოდეს გადადო „მერე წავიკითხავ" პრინციპით.</p>
+    <p>თუ მისამართს იცვლი, აუცილებლად გაარკვიე, ვის უნდა აცნობო ეს ცვლილება. ბინადრობის დოკუმენტის მქონე უცხოელმა საცხოვრებლის შეცვლა შესაბამის ორგანოებს განსაზღვრულ ვადაში უნდა შეატყობინოს.</p>
+
+    <h2>2. პირველ რიგში გაარკვიე, რა სტატუსით ხარ საფრანგეთში</h2>
+    <p>ყველასთვის ერთი და იგივე პროცედურა არ არსებობს.</p>
+    <p>შენი შემდეგი ნაბიჯები დამოკიდებულია იმაზე, რა საფუძვლით ხარ საფრანგეთში: ვიზით, სასწავლებლად, სამუშაოდ, ოჯახთან გაერთიანებით, ტურისტულად, თავშესაფრის მოთხოვნის მიზნით თუ სხვა სტატუსით.</p>
+    <p>ნუ დაეყრდნობი მხოლოდ სხვის გამოცდილებას. ის, რაც ერთ ადამიანს დაეხმარა, შენს საქმეს შეიძლება საერთოდ არ შეესაბამებოდეს.</p>
+    <p>სანამ რაიმე განცხადებას შეავსებ ან ადმინისტრაციაში მიხვალ, შეამოწმე ოფიციალური ინფორმაცია შენს კონკრეტულ მდგომარეობასთან დაკავშირებით.</p>
+
+    <h2>3. თუ თავშესაფრის მოთხოვნას აპირებ, არ გადადო პროცედურის დაწყება</h2>
+    <p>თავშესაფრის პროცესი კონკრეტულ ეტაპებსა და ვადებს მოიცავს. რეგისტრაციის შემდეგ ადამიანი ხვდება თავშესაფრის მაძიებელთა ერთიან მომსახურების პუნქტში — GUDA-ში, სადაც პროცესში მონაწილეობენ როგორც პრეფექტურის, ისე OFII-ის წარმომადგენლები.</p>
+    <p>თავშესაფრის მაძიებლის მოწმობის მიღების შემდეგ OFPRA-ში დოსიეს გაგზავნისთვის, როგორც წესი, 21 დღეა განსაზღვრული. განმეორებითი მოთხოვნის შემთხვევაში ვადა შეიძლება მნიშვნელოვნად მოკლე იყოს — ოფიციალური წესით, სრული დოსიე OFPRA-ს 8 დღეში უნდა გაეგზავნოს.</p>
+    <p>ვადების გადადება ამ სფეროში განსაკუთრებით სახიფათოა. თუ დახმარება გჭირდება, მოძებნე შესაბამისი ასოციაცია, იურისტი ან სანდო სპეციალისტი დროულად.</p>
+
+    <h2>4. იზრუნე ჯანმრთელობის საკითხზე, მაგრამ არ ივარაუდო, რომ ყველას ერთნაირი უფლება აქვს</h2>
+    <p>საფრანგეთში ჯანმრთელობის დაზღვევის წესები განსხვავდება ადამიანის ეროვნების, საცხოვრებელი საფუძვლისა და სტატუსის მიხედვით. PUMa-ს ფარგლებში ჯანმრთელობის ხარჯების დაფარვა შესაძლებელია მათთვის, ვინც საფრანგეთში სტაბილურად და კანონიერად ცხოვრობს ან მუშაობს, თუმცა პირობები კონკრეტული სიტუაციის მიხედვით იცვლება.</p>
+    <p>ამიტომ, პირველივე თვეში გადაამოწმე შენი მდგომარეობა Assurance Maladie-ს ან CPAM-ის მეშვეობით. ნუ დაელოდები პრობლემის წარმოშობას, განსაკუთრებით თუ გაქვს ქრონიკული დაავადება, იღებ მუდმივ მკურნალობას ან ბავშვებთან ერთად ხარ.</p>
+
+    <h2>5. დაიწყე ფრანგულის სწავლა პირველივე კვირიდან</h2>
+    <p>არ დაელოდო იმ მომენტს, როცა „ყველაფერი დალაგდება".</p>
+    <p>ფრანგული ენა მხოლოდ სამსახურისთვის არ არის საჭირო. ის გჭირდება წერილების გასაგებად, ექიმთან, სკოლაში, პრეფექტურაში, ბანკში, ტრანსპორტში და ყოველდღიურ ცხოვრებაში.</p>
+    <p>არ არის აუცილებელი პირველივე დღიდან რთულ კურსზე ჩაწერა. დაიწყე პატარა ნაბიჯებით: ყოველდღე რამდენიმე სიტყვა, ადმინისტრაციული ტერმინები, მისამართის თქმა, შეხვედრის დაჯავშნა, მარტივი წერილის კითხვა.</p>
+    <p>ენა ნელ-ნელა გაძლევს დამოუკიდებლობას.</p>
+
+    <h2>6. არ გააკეთო მნიშვნელოვანი ნაბიჯები მხოლოდ Facebook ჯგუფის რჩევით</h2>
+    <p>ემიგრანტების ჯგუფები ხშირად სასარგებლოა: იქ შეიძლება გაიგო სად არის ასოციაცია, რომელი დოკუმენტი მოითხოვეს კონკრეტულ ადგილზე ან როგორ დაჯავშნო შეხვედრა.</p>
+    <p>მაგრამ ჯგუფში დაწერილი ინფორმაცია ყოველთვის არ არის სრულყოფილი, განახლებული ან შენს საქმეზე მორგებული.</p>
+    <p>ვიღაცის სტატუსი, შემოსვლის გზა, ოჯახური მდგომარეობა, დოკუმენტები და წინა პროცედურები შეიძლება სრულიად განსხვავდებოდეს შენისგან.</p>
+    <p>ინფორმაცია გამოიყენე როგორც საწყისი ორიენტირი, მაგრამ საბოლოოდ გადაამოწმე ოფიციალურ წყაროსთან ან კომპეტენტურ სპეციალისტთან.</p>
+
+    <h2>7. შექმენი შენი ადმინისტრაციული საქაღალდე</h2>
+    <p>პირველი 30 დღის განმავლობაში გააკეთე ერთი ფიზიკური საქაღალდე და ერთი ციფრული საქაღალდე ტელეფონში ან ელფოსტაზე.</p>
+    <p>დაალაგე ცალკე:</p>
+    <ul>
+      <li>პირადობისა და სამგზავრო დოკუმენტები;</li>
+      <li>მისამართის დამადასტურებელი საბუთები;</li>
+      <li>მიღებული წერილები;</li>
+      <li>შეხვედრების თარიღები;</li>
+      <li>გაგზავნილი განცხადებები;</li>
+      <li>სამედიცინო დოკუმენტები;</li>
+      <li>თარგმანები;</li>
+      <li>ყველა მნიშვნელოვანი ნომერი და საკონტაქტო ინფორმაცია.</li>
+    </ul>
+    <p>ეს პატარა ჩვევა მომავალში ბევრ სტრესს აგარიდებს.</p>
+
+    <h2>8. არ ეცადო ყველაფრის მარტო გადაწყვეტას</h2>
+    <p>საფრანგეთში ადმინისტრაციული პროცედურები ზოგჯერ რთულია თვით ფრანგულად მოლაპარაკე ადამიანისთვისაც კი.</p>
+    <p>დახმარების თხოვნა სისუსტე არ არის.</p>
+    <p>მთავარია, სწორ ადგილას მოითხოვო დახმარება და არ მისცე სხვა ადამიანს უფლება, შენი საქმე ისე მართოს, რომ შენ თვითონ ვერ ხვდებოდე, რა ხდება.</p>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<article class="section art-body" style="padding-top:clamp(20px,3vw,40px)">
+  <div class="art-passage reveal">
+    <p>პირველი 30 დღე შეიძლება გადამწყვეტი არ იყოს მხოლოდ დოკუმენტებისთვის. ეს არის პერიოდი, როდესაც საფუძველს უყრი შენს მომავალ ცხოვრებას ახალ ქვეყანაში.</p>
+    <p class="art-stanza">შეინახე ყველაფერი.<br>დაიცავი ვადები.<br>გადაამოწმე ინფორმაცია.<br>ისწავლე ენა.<br>და რაც მთავარია — ნუ იფიქრებ, რომ კითხვების დასმა გვიან არის.</p>
+  </div>
+
+  <blockquote class="art-pull reveal">
+    <p>სწორი ინფორმაცია და დროული მოქმედება ხშირად ყველაზე ძლიერი დასაწყისია.</p>
+  </blockquote>
+
+  <!-- CTA to the guide -->
+  <div class="art-back" style="margin-top:clamp(20px,3vw,36px)">
+    <a href="emigrantis-gzamkvlevi-safrangetshi.html" class="link-more">იხილე გზამკვლევი →</a>
+  </div>
+
+  <!-- AUTHOR + SHARE + BACK -->
+  <div class="art-foot">
+    <div class="art-author">
+      <span class="byline__av">თ</span>
+      <div>
+        <div class="art-author__name">თამარი</div>
+        <p class="art-author__bio" style="font-size:12px">ფრანგულ-ქართული თარჯიმანი (სამართლებრივი და საიმიგრაციო სფერო), „ემიგრანტის გზამკვლევი საფრანგეთში"-ის ავტორი. საფრანგეთში ცხოვრობს 1998 წლიდან.</p>
+      </div>
+    </div>
+    <div class="art-share">
+      <span class="art-share__label">გააზიარე</span>
+      <a href="https://www.facebook.com/tam.maisashvili" target="_blank" rel="noopener" data-social="facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 8h-2.2c-.6 0-1 .5-1 1v2H15l-.4 2.7h-2.8V21"/><rect x="3" y="3" width="18" height="18" rx="5"/></svg></a>
+      <a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="#" aria-label="ბმულის კოპირება"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 12h6M10.5 8.5H8a3.5 3.5 0 0 0 0 7h2.5M13.5 8.5H16a3.5 3.5 0 0 1 0 7h-2.5"/></svg></a>
+    </div>
+    <div class="art-back">
+      <a href="journal.html" class="link-more">← ჟურნალში დაბრუნება</a>
+    </div>
+  </div>
+</article>
+
+<!-- NEWSLETTER -->
+<section class="section newsletter newsletter--letters" id="newsletter" style="background-color:rgb(250,247,243)">
+  <div class="wrap">
+    <div class="news-inner reveal">
+      <span class="news-label">Journal Letters</span>
+      <h2 class="news-title" style="font-size:17px;font-family:Nunito">Tamari's Journal</h2>
+      <p class="news-sub" style="font-size:12px">იდეები, ჩვევები და ისტორიები, რომლებიც საიტზე ყოველთვის არ ქვეყნდება.</p>
+      <form class="news-form" data-newsletter>
+        <input type="email" placeholder="თქვენი ელფოსტა" aria-label="ელ. ფოსტა" required />
+        <button class="btn" type="submit">შემომიერთდი</button>
+      </form>
+      <p class="news-note" data-news-note>გამოწერის გაუქმება — ნებისმიერ დროს.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap" style="font-size:12px">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand" style="font-family:Nunito;font-size:15px">Tamari's Journal</div>
+        <p style="font-size:12px">ცოცხალი ჟურნალი — ისტორიები, იდეები, პროექტები</p>
+      </div>
+      <div class="footer__col">
+        <h5>საიტი</h5>
+        <ul>
+          <li><a href="about.html" style="font-size:12px">ჩვენ შესახებ</a></li>
+          <li><a href="index.html#projects" style="font-size:12px">პროექტები</a></li>
+          <li><a href="journal.html" style="font-size:12px">ჟურნალი</a></li>
+          <li><a href="#newsletter" style="font-size:12px">კონტაქტი</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>სოციალური</h5>
+        <ul>
+          <li><a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram" style="font-size:12px">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="tiktok" style="font-size:12px">TikTok</a></li>
+          <li><a href="https://www.youtube.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="youtube" style="font-size:12px">YouTube</a></li>
+          <li><a href="https://www.facebook.com/tam.maisashvili" target="_blank" rel="noopener" data-social="facebook" style="font-size:12px">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>ენა</h5>
+        <ul>
+          <li><a href="#" class="is-active" style="font-size:12px">ქართული</a></li>
+          <li><a href="#" data-lang="fr" style="font-size:12px">Français <span class="dim">— მალე</span></a></li>
+          <li><a href="#" data-lang="en" style="font-size:12px">English <span class="dim">— მალე</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="copy">© <span data-year>2026</span> Tamari's Journal — ყველა უფლება დაცულია</span>
+      <div class="footer__legal">
+        <a href="#">კონფიდენციალურობა</a>
+        <a href="#">წესები და პირობები</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight) el.classList.add('in');
+      });
+    }, 1400);
+  });
+</script>
+</body>
+</html>

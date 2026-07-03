@@ -18,16 +18,16 @@
   .art-body p, .art-passage p,
   .art-body li, .art-passage li,
   .art-body .art-lede,
-  .art-body .art-stanza, .art-passage .art-stanza { font-size: 16px; line-height: 1.85; }
+  .art-body .art-stanza, .art-passage .art-stanza { font-size: 16px !important; line-height: 1.85; }
   .art-body .art-stanza, .art-passage .art-stanza { line-height: 1.95; }
   /* ტექსტის ფერი ერთგვაროვანი — „რბილი" ღია ფერი აღარ იყოს */
   .art-body p, .art-passage p, .art-body .art-lede,
   .art-body .art-stanza, .art-passage .art-stanza,
   .art-body .art-stanza--soft, .art-passage .art-stanza--soft { color: var(--charcoal); }
-  /* დიდი საწყისი ასო (drop cap) გავაუქმოთ — არ იყოს ძალიან დიდი ასოები */
+  /* ლეტრინი (drop cap) — taupe ფერის, საიტის სტილი */
   .art-body .art-lede .drop {
-    float: none; font-family: inherit; font-weight: inherit;
-    font-size: inherit; line-height: inherit; padding: 0; color: inherit;
+    float: left; font-family: 'Noto Serif Georgian', serif; font-weight: 600;
+    font-size: 3.4em; line-height: 0.82; padding: 4px 12px 0 0; color: var(--taupe);
   }
 
   /* ---- განსხვავებული: სათაური / ქვესათაური / ციტატა ---- */

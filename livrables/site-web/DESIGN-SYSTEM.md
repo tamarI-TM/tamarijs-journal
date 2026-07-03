@@ -304,6 +304,43 @@
 - ავტორი: **თამარი** (თ), მაგრამ ტექნიკური/AI თემა — **ლეო** (ლ).
 - responsive ავტომატური (clamp), ისევე როგორც სხვა სტატიები.
 
+### 12.13 ⭐⭐ თამარის სტანდარტული article `<head>` `<style>` (ყოველ ახალ სტატიაზე დააკოპირე)
+> თამარის დადგენილი პრეფერენცია სტატიებისთვის (`article-ratom-gzamkvlevi.html`, `article-pirveli-30-dge.html`, `article-nabijebi.html`). **ყოველ ახალ სტატიაზე ჩასვი ეს ბლოკი `<head>`-ში**, რომ იგივე ცვლილებები აღარ დაგვჭირდეს.
+
+**წესები:**
+1. **წამკითხავი ტექსტი ერთგვაროვანი 16px** — აბზაცი, `li`, `art-stanza` **და** `art-lede` ერთი ზომაა. **ერთი მუქი ფერი** (`--charcoal`), „რბილი" ღია ფერი (`--stanza--soft`) არ იყოს.
+2. ⚠️ **`!important` სავალდებულოა font-size-ზე.** `article-mogzauroba.css`-ს აქვს `@media(max-width:640px)` `!important` წესები, რომლებიც მობილურზე `.art-stanza`-სა და `.art-lede`-ს ზომას ზრდის (17–22px). თუ `!important` არ დაწერ, **მობილურზე ტექსტი სხვადასხვა ზომის გახდება**.
+3. **ლეტრინი (drop cap) = `--taupe`**, ზომიერი **3.4em** (არა გადაჭარბებული), მხოლოდ პირველ აბზაცზე. თხრობით სტატიაში `<span class="drop">` `art-lede`-ში; how-to-ში `.intro-drop::first-letter` ჩვეულებრივ `<p>`-ზე. ქართული ასოსთვის ფონტი `'Noto Serif Georgian'`.
+4. **განსხვავებული (განზრახ):** სათაური `h1`, ქვესათაური `dek`, სექციის სათაური `h2`, ციტატა `art-pull` — უფრო დიდი/serif/italic. ტექსტი „ძალიან დიდი ასოებით" არ იყოს: h1 ≈ clamp(26–40px), h2 ≈ clamp(21–26px).
+5. **Hero ფოტო** — ვერტიკალური პორტრეტი ან შენობა: ცენტრში, ivory ფონზე, **სრულად (მოჭრის გარეშე)**, არა full-cover crop. კლასი `.hero-photo`/`.hero-portrait` (`max-width`, `max-height:~78vh`). **ფოტო შეკუმშე** (JPG ~1400px, <600KB) images-ში ჩასმამდე.
+
+```html
+<style>
+  /* ტექსტი ერთგვაროვანი 16px + ერთი მუქი ფერი (!important — მობილურის გამო) */
+  .art-body p, .art-passage p, .art-body li, .art-passage li,
+  .art-body .art-lede, .art-body .art-stanza, .art-passage .art-stanza { font-size: 16px !important; line-height: 1.85; }
+  .art-body .art-stanza, .art-passage .art-stanza { line-height: 1.95; }
+  .art-body p, .art-passage p, .art-body li, .art-passage li, .art-body .art-lede,
+  .art-body .art-stanza, .art-passage .art-stanza,
+  .art-body .art-stanza--soft, .art-passage .art-stanza--soft { color: var(--charcoal); }
+  /* ლეტრინი — taupe. თხრობითში: .art-lede .drop | how-to-ში: .intro-drop::first-letter */
+  .art-body .art-lede .drop, .intro-drop::first-letter {
+    float: left; font-family: 'Noto Serif Georgian', serif; font-weight: 600;
+    font-size: 3.4em; line-height: 0.82; padding: 4px 12px 0 0; color: var(--taupe);
+  }
+  /* განსხვავებული: სათაური / ქვესათაური / სექცია / ციტატა */
+  .art-head h1 { font-size: clamp(26px, 3.4vw, 40px); line-height: 1.18; }
+  .art-head__dek { font-size: clamp(16px, 1.6vw, 20px); }
+  .art-body h2, .art-passage h2 { font-size: clamp(21px, 2.2vw, 26px); }
+  .art-pull p { font-size: 22px; max-width: 32ch; }
+  /* Hero ფოტო — ცენტრში, სრულად */
+  .hero-photo { display:block; width:auto; height:auto; max-width:min(780px,94%); max-height:80vh; margin:0 auto; border-radius:4px; }
+  @media (max-width: 640px) { .hero-photo { max-width:100%; max-height:none; } }
+</style>
+```
+- ბოლოს CTA (ემიგრაცია/გზამკვლევი თემაზე): `<a class="link-more" href="emigrantis-gzamkvlevi-safrangetshi.html">იხილე გზამკვლევი →</a>`.
+- ყოველ ახალ სტატიას დაუმატე **ჟურნალის ბარათი** (`journal.html`, ყველაზე ზემოთ) + სწორი `data-cat`.
+
 ## 13. ღილაკები და ბმულები (ზუსტი სპეცი)
 | ელემენტი | base | hover |
 |---|---|---|
