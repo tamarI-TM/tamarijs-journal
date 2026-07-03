@@ -82,19 +82,24 @@
   var filterWrap = document.querySelector('[data-jfilter]');
   var grid = document.querySelector('[data-jgrid]');
   if (filterWrap && grid) {
-    filterWrap.querySelectorAll('.jfilter__chip').forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        filterWrap.querySelectorAll('.jfilter__chip').forEach(function (c) { c.classList.remove('is-active'); });
-        chip.classList.add('is-active');
-        var cat = chip.getAttribute('data-cat');
-        grid.querySelectorAll('.jcard').forEach(function (card) {
-          if (cat === 'all' || card.getAttribute('data-cat') === cat) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+    var chips = filterWrap.querySelectorAll('.jfilter__chip');
+    function applyFilter(cat) {
+      chips.forEach(function (c) { c.classList.toggle('is-active', c.getAttribute('data-cat') === cat); });
+      grid.querySelectorAll('.jcard').forEach(function (card) {
+        card.style.display = (cat === 'all' || card.getAttribute('data-cat') === cat) ? '' : 'none';
       });
+    }
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () { applyFilter(chip.getAttribute('data-cat')); });
     });
+    // deep-link: journal.html#immigration → activate that topic on load
+    var valid = {};
+    chips.forEach(function (c) { valid[c.getAttribute('data-cat')] = true; });
+    function fromHash() {
+      var h = (location.hash || '').replace('#', '');
+      if (h && valid[h]) { applyFilter(h); }
+    }
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
   }
 })();
