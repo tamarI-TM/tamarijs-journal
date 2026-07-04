@@ -102,4 +102,35 @@
     fromHash();
     window.addEventListener('hashchange', fromHash);
   }
+
+  // Lightbox — click a photo to enlarge it (front, dark overlay)
+  var lbSel = '.art-gallery__grid img, .art-fig img, .art-split__media img, .art-hero img, .hero-photo, .hero-portrait';
+  if (document.querySelector(lbSel)) {
+    var lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.innerHTML = '<button class="lightbox__close" aria-label="დახურვა">×</button><img alt="">';
+    document.body.appendChild(lb);
+    var lbImg = lb.querySelector('img');
+    function lbClose() {
+      lb.classList.remove('is-open');
+      document.body.style.overflow = '';
+      setTimeout(function () { if (!lb.classList.contains('is-open')) lbImg.removeAttribute('src'); }, 300);
+    }
+    function lbOpen(img) {
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt || '';
+      lb.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    lb.addEventListener('click', lbClose);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lbClose(); });
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t || t.tagName !== 'IMG') return;
+      if (t.closest('.lightbox')) return;
+      if (!t.matches(lbSel)) return;
+      e.preventDefault();
+      lbOpen(t);
+    });
+  }
 })();
