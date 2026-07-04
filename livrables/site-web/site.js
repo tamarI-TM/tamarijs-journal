@@ -54,12 +54,39 @@
     document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
   }
 
-  // Newsletter placeholder (future integration)
+  // Newsletter → MailerLite (Journal Letters, group). Keeps the custom form design.
+  var ML_ACCOUNT = '2490090';
+  var ML_FORM = '192097670564676934';
+  var mlIframe = null;
+  function ensureMlIframe() {
+    if (mlIframe) return;
+    mlIframe = document.createElement('iframe');
+    mlIframe.name = 'ml_newsletter_iframe';
+    mlIframe.title = 'MailerLite';
+    mlIframe.setAttribute('aria-hidden', 'true');
+    mlIframe.style.display = 'none';
+    document.body.appendChild(mlIframe);
+  }
   document.querySelectorAll('[data-newsletter]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      var input = form.querySelector('input[type="email"]');
+      var email = input ? input.value.trim() : '';
+      if (!email) return;
+      ensureMlIframe();
+      var hidden = document.createElement('form');
+      hidden.action = 'https://assets.mailerlite.com/jsonp/' + ML_ACCOUNT + '/forms/' + ML_FORM + '/subscribe';
+      hidden.method = 'post';
+      hidden.target = 'ml_newsletter_iframe';
+      hidden.style.display = 'none';
+      var fe = document.createElement('input'); fe.type = 'text'; fe.name = 'fields[email]'; fe.value = email; hidden.appendChild(fe);
+      var fs = document.createElement('input'); fs.type = 'hidden'; fs.name = 'ml-submit'; fs.value = '1'; hidden.appendChild(fs);
+      var fa = document.createElement('input'); fa.type = 'hidden'; fa.name = 'anticsrf'; fa.value = 'true'; hidden.appendChild(fa);
+      document.body.appendChild(hidden);
+      hidden.submit();
+      setTimeout(function () { hidden.remove(); }, 2000);
       var note = form.parentNode.querySelector('[data-news-note]');
-      if (note) note.textContent = 'მადლობა — მალე დაგიკავშირდებით.';
+      if (note) note.textContent = 'მადლობა! გთხოვთ, ელფოსტაზე მიღებული ბმულით დაადასტუროთ გამოწერა.';
       form.reset();
     });
   });
