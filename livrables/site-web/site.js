@@ -1,5 +1,13 @@
 /* Tamari & Léo — shared behaviour (all directions) */
 (function () {
+  // Vercel Web Analytics (static site — tracks page views automatically)
+  (function () {
+    var va = document.createElement('script');
+    va.defer = true;
+    va.src = '/_vercel/insights/script.js';
+    document.head.appendChild(va);
+  })();
+
   // Nav: transparent over hero → solid on scroll
   var nav = document.querySelector('[data-nav]');
   if (nav) {
