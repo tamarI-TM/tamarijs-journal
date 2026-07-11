@@ -5,6 +5,34 @@
 
 ---
 
+## 2026-07-11
+
+### SEO / référencement Google — tamarisjournal.com
+
+**მიზანი:** საიტი Google-მა იპოვოს, დააინდექსოს და სახელით/ბრენდით ძებნისას გამოჩნდეს.
+
+**ტექნიკური საფუძველი (გაკეთდა):**
+- meta description + Open Graph + canonical დაემატა 4 მთავარ გვერდზე (მთავარი, ჟურნალი, about, გზამკვლევის გაყიდვის გვ.). 16 სტატიას უკვე ჰქონდა.
+- `sitemap.xml` შეიქმნა (20 საჯარო გვერდი); `robots.txt` შეიქმნა (Allow + sitemap).
+- გადახდის გვერდი (`გადახდა.html`) → `noindex`.
+- schema.org სტრუქტურული მონაცემები (JSON-LD: Person + WebSite) მთავარ გვერდზე — „Tamari Maisashvili" + sameAs (Instagram/TikTok/YouTube/Facebook).
+- commits: `919bdd9` (meta/sitemap/robots), `58070d5` (verification file), `1d04f65` (schema.org).
+
+**Google Search Console:**
+- property დაემატა: `https://tamarisjournal.com` (URL prefix).
+- დადასტურდა **Fichier HTML** მეთოდით (`googleb44d31740f065856.html` root-ში). ⚠️ **ეს ფაილი არ წაიშალოს** (თორემ დადასტურება დაიკარგება).
+- `sitemap.xml` გაიგზავნა → „Opération effectuée", **20 გვერდი აღმოჩენილი**.
+
+**რჩება / შემდეგ:**
+- დაინდექსება რამდენიმე დღე/კვირას სჭირდება (ახალი property).
+- ~1 კვირაში შემოწმდეს Search Console → Pages (რამდენი დაინდექსდა).
+- (არჩევითი) მთავარი გვერდის ხელით ინდექსაცია: „Inspection de l'URL → Demander l'indexation".
+- სოც. ბიო-ბმულები `tamarisjournal.com`-ზე — თამარს უკვე დამატებული აქვს.
+
+**📌 წესი:** ახალი გვერდის დამატებისას — დაუმატე meta description + OG და ჩაამატე `sitemap.xml`-ში.
+
+---
+
 ## 2026-07-09
 
 ### Git-ის ინსტალაცია მეორე კომპიუტერზე + Ritualis-ის გვერდის დროებით მოხსნა
