@@ -68,8 +68,8 @@
   /* HERO გახსნის ანიმაცია — ღია ივუარის ფარდა (78%) მუქი სლოგანით, ~2წმ, მერე ქრება */
   .hero-intro{ position:fixed; inset:0; z-index:99999; display:flex; align-items:center; justify-content:center; text-align:center; background:rgba(250,248,244,.78); padding:0 clamp(22px,5vw,60px); pointer-events:none; animation:heroIntroFade 2.9s cubic-bezier(.22,.61,.36,1) forwards; }
   .hero-intro__quote{ display:flex; flex-direction:column; align-items:center; animation:heroIntroText 1.3s ease both; }
-  .hero-intro__mark{ font-family:'Cormorant Garamond',serif; color:#B8AA98; font-size:clamp(48px,7vw,100px); line-height:.5; margin-bottom:clamp(4px,1.2vw,14px); }
-  .hero-intro__slogan{ display:flex; flex-direction:column; gap:clamp(2px,.5vw,8px); font-family:'Cormorant Garamond',serif; font-weight:500; color:#2B2B2B; text-transform:uppercase; letter-spacing:clamp(.08em,1vw,.22em); line-height:1.16; font-size:clamp(30px,6.5vw,74px); margin:0; }
+  .hero-intro__mark{ font-family:'Nunito',sans-serif; color:#B8AA98; font-size:clamp(30px,4vw,48px); line-height:.6; margin-bottom:clamp(6px,1.4vw,16px); }
+  .hero-intro__slogan{ display:flex; flex-direction:column; gap:clamp(4px,.8vw,10px); font-family:'Nunito',sans-serif; font-weight:500; color:#2B2B2B; text-transform:uppercase; letter-spacing:.3em; line-height:1.4; font-size:clamp(19px,3vw,30px); margin:0; }
   @keyframes heroIntroFade{ 0%,68%{ opacity:1; visibility:visible; } 100%{ opacity:0; visibility:hidden; } }
   @keyframes heroIntroText{ 0%{ opacity:0; transform:translateY(12px); } 100%{ opacity:1; transform:translateY(0); } }
   @media (prefers-reduced-motion: reduce){ .hero-intro{ display:none; } }
@@ -81,7 +81,7 @@
 <div class="hero-intro" aria-hidden="true">
   <div class="hero-intro__quote">
     <span class="hero-intro__mark">&laquo;</span>
-    <p class="hero-intro__slogan"><span>Traduire</span><span>&Eacute;crire</span><span>Entreprendre</span></p>
+    <p class="hero-intro__slogan"><span>Dream</span><span>Believe</span><span>Achieve</span></p>
   </div>
 </div>
 
