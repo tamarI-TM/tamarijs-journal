@@ -64,8 +64,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap">
+<style>
+  /* HERO გახსნის ანიმაცია — ღია ივუარის ფარდა (78%) მუქი სლოგანით, ~2წმ, მერე ქრება */
+  .hero-intro{ position:fixed; inset:0; z-index:99999; display:flex; align-items:center; justify-content:center; text-align:center; background:rgba(250,248,244,.78); padding:0 clamp(22px,5vw,60px); pointer-events:none; animation:heroIntroFade 2.9s cubic-bezier(.22,.61,.36,1) forwards; }
+  .hero-intro__slogan{ font-family:'Cormorant Garamond',serif; font-weight:500; color:#2B2B2B; text-transform:uppercase; letter-spacing:clamp(.06em,.9vw,.2em); line-height:1.08; font-size:clamp(34px,8.5vw,108px); margin:0; animation:heroIntroText 1.3s ease both; }
+  .hero-intro__slogan .dot{ color:#B8AA98; font-weight:400; margin:0 .12em; }
+  @keyframes heroIntroFade{ 0%,68%{ opacity:1; visibility:visible; } 100%{ opacity:0; visibility:hidden; } }
+  @keyframes heroIntroText{ 0%{ opacity:0; transform:translateY(12px); } 100%{ opacity:1; transform:translateY(0); } }
+  @media (prefers-reduced-motion: reduce){ .hero-intro{ display:none; } }
+</style>
 </head>
 <body>
+
+<!-- HERO გახსნის ანიმაცია (ღია ფარდა + ქრებადი სლოგანი) -->
+<div class="hero-intro" aria-hidden="true">
+  <p class="hero-intro__slogan">Rêve<span class="dot">·</span>Crois<span class="dot">·</span>Accomplis</p>
+</div>
 
 <!-- NAV -->
 <nav class="nav nav--cover" data-nav>
