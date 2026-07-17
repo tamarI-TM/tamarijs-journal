@@ -5,6 +5,26 @@
 
 ---
 
+## 2026-07-13
+
+### მთავარი გვერდის დახვეწა — favicon, Google site name, hero intro ანიმაცია
+
+**კონტექსტი:** ინსპირაცია — **sincerelyjules.com** (თამარმა მოიწონა მისი გახსნის სტილი და Google-ის შედეგის იერი).
+
+**გაკეთდა:**
+- **favicon** შეიქმნა (`favicon.svg`) — თეთრი წრე, თხელი მუქი კიდე, შავი „T" ინიციალი. დაემატა **ყველა გვერდზე** (ბრაუზერის ჩანართი + Google). commits `6e1ef05`, `87daa27`, `a6fb0c3`.
+- **Google site name → „Tamari Maisashvili"** (`og:site_name` + schema WebSite `name`; ბრენდი „Tamari's Journal" → `alternateName`). მიზანი: Google-ის შედეგში ზედა ხაზზე თამარის სახელი + წრე „T"-თი. commit `981816f`.
+- Search Console-ში **მთავარი გვერდის ხელახლა ინდექსაცია** მოთხოვნილი (ცვლილებების დასაჩქარებლად).
+- **Hero intro ანიმაცია (splash)** — გვერდის გახსნისას:
+  - ღია ივუარის ფარდა (`rgba(250,248,244,.87)` = 87%) მთელ ეკრანზე.
+  - ცენტrში: **«** ბრჭyali (charcoal) + **DREAM / BELIEVE / ACHIEVE** ერთმანეთის ქვეშ (Cormorant Garamond serif, taupe, uppercase).
+  - **~3 წამში** ნაზად ქრება და hero (ვერსალის ბაღები) ჩანს; `prefers-reduced-motion` პატივსცემული.
+  - CSS-only: page-scoped `<style>` + overlay `<body>`-ს თავში. ჩნდება ყოველ გახსნაზე. commits `27716f9` → `9aeeeec`.
+  - ⚙️ ადვილი შესაცვლელი: სიტყვები, ფერი, ზომა, ხანგრძლივობა, opacity — ყველა ერთ `<style>` ბლოკშია `index.html`-ში.
+- ⚠️ ძველი hero-ტექსტი („ორი თაობა...") **არ შეცვლილა** — intro ცალკე ფენაა ზემოთ, ადვილად მოსახსნელი.
+
+---
+
 ## 2026-07-11
 
 ### SEO / référencement Google — tamarisjournal.com
