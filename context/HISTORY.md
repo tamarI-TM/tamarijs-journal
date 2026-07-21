@@ -5,6 +5,29 @@
 
 ---
 
+## 2026-07-21 / 2026-07-22
+
+### Smokido v2 — Home + Onboarding სრული premium redesign
+
+**კონტექსტი:** ლეომ Lovable-ში ბაგები გაასწორა, თამარმა ახალი კოდი გადმოწერა. **Lovable პაუზაზე**, მუშაობა პირდაპირ კოდში (`livrables/SMOKIDO/smokido`, `npm run dev` → localhost:8081). ცვლილებები ცოცხლად მოწმდება ტელეფონზეც (192.168.1.170:8081, იმავე WiFi). ⚠️ PWA service worker ქეშავს — ტელეფონზე „clear site data" საჭიroა განახლებისთვის.
+
+**გარემო + git:** დაყენდა **Node.js LTS v24** + npm; skill-ები (**shadcn/ui**, Anthropic **frontend-design**). სმოკიდოს შეექმნა **საკუთარი git-repo** → GitHub **`tamarI-TM/smokido` (private)**. commit-ები: `e6cc68e` (base+home), `9a551e8` (home tweaks+stats), `ddcd2c6` (onboarding).
+
+**Home ეკრანი v2:** glassmorphism, ცის გრადიენტი, პალიტრა #22C55E/#B8F3CF/#FFE99A; წრიული progress ring; streak (3D ალის PNG იკონი, ფონი #FAF5F5); „Tu peux fumer maintenant" ნაზი ციმციმი; ბრენდის ფერი **#006B54** (ღილაკი/ring/ციფრი); „J'ai fumé" ↔ „Remplacer" გადანაცვლდა; „J'ai fumé"-ს ახალი 3D სიგარეტის PNG (თეთრი ფონი flood-fill-ით მოცილდა). დაემატა **4-ბარათიანი WeeklyStats სექცია** (Remplacées/Santé/Argent/Temps) reusable `MiniSparkline`-ით (placeholder მონაცემები, მოგვიანებით რეალურს დაუკავშირდება).
+
+**Onboarding v2 — ოთხივე ეკრანი:**
+- საერთო: premium ატმოსფერული ფონი (ერთიანი mint გრადიენტი, ღრუბლები, ფოთლები Puff-თან ახლოს, ნაწილაკები); reusable **`OnboardingButton`** (mint→green, disabled/active, ისრით, light+dark).
+- ეკრანი 1 (სახელი): გადიდებული Puff, name field custom profile icon-ით.
+- ეკრანი 2 (სიგარეტები/დღე): premium number ბარათი **−/+ ღილაკებით**, დახვეწილი slider, encouragement ბარათი.
+- ეკრანი 3 (ინტერვალი): **2×2 selection ბარათები** checkmark-ით; achievement summary ბარათი; **Puff-ის რეაქციები** (30min→ღიმილი, 1h→wink, 1h30→cheer, 2h→ოქროს ✨ 0.7წმ).
+- ეკრანი 4 (celebration): journey dashboard (Rythme/Durée ფერად icon-ებით), motivation ბარათი (coral), და **„ritual" ანიმაცია** „Commencer"-ზე (ფოთლების აფრქვევა + „✨ Bienvenue dans Smokido" → რბილი გადასვლა მთავარ ეკრანზე).
+
+**⚠️ ღია (მასკოტი):** ღრუბელი ჯერ **SVG Puff-ია** (placeholder). თამარის reference-ებზე 3D Pixar ღრუბელია — საჭიroა **გამჭვირვალე PNG** ჩასანაცვლებლად (Claude 3D რენდერს SVG-ით ვერ აკეთებს). ერთდროულად გააუმჯობესებს Home-საც და Onboarding-საც.
+
+**რჩება:** 3D Puff PNG; WeeklyStats-ის რეალურ მონაცემებზე მიბმა (სიგარეტის ფასი + „ჯანმრთელობის ქულის" ფორმულა); v2-ის გავრცელება დანარჩენ ეკრანებზე (Progrès/Conseils/Réglages/Profil); მონეტიზაცია (ერთჯერადი unlock = In-App Purchase).
+
+---
+
 ## 2026-07-19
 
 ### სმოკიდო — ლეოს აპლიკაცია: ანალიზი და სტორებისთვის სტრატეგია
