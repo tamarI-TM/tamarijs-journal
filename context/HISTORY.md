@@ -7,6 +7,19 @@
 
 ## 2026-07-22
 
+### Smokido — 📌 მუდმივი წესი: MULTILINGUAL-FIRST
+
+**პერმანენტული სტანდარტი** (ასევე `livrables/SMOKIDO/smokido/DEVELOPMENT.md`-ში):
+- ყოველი ახალი ეკრანი თავიდანვე i18n-ით იგება. **არასდროს** hardcoded ტექსტი კომპონენტში.
+- ყველა label, title, button, message, toast, notification, empty state, error → **`t("...")`**.
+- ყოველი ახალი key ემატება **ყველა** locale ფაილს: fr, en, es, de, it, ru, ka. დროებითი placeholder ნებადართულია, **გამოტოვებული key არა**.
+- ეკრანი დასრულებულად არ ითვლება, სანამ მთელი ხილული ტექსტი i18n-ზე არ არის მიბმული.
+- არსებული hardcoded ეკრანები თანდათან მიგრირდება. ეხება ყველა ეკრანს, modal-ს, onboarding ნაბიჯს, notification-ს, reusable კომპონენტს.
+
+---
+
+## 2026-07-22
+
 ### Smokido — i18n foundation განხორციელდა ✅
 
 **ბიბლიოთეკა:** **i18next + react-i18next** (React-ის სტანდარტი; pluralization, ცვლადები, Intl date/number/currency, ზედმეტი dependency-ის გარეშე). TanStack/Vite-თან იდეალურად ჯდება.
