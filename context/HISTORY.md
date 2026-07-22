@@ -7,6 +7,32 @@
 
 ## 2026-07-22
 
+### Smokido — i18n foundation განხორციელდა ✅
+
+**ბიბლიოთეკა:** **i18next + react-i18next** (React-ის სტანდარტი; pluralization, ცვლადები, Intl date/number/currency, ზედმეტი dependency-ის გარეშე). TanStack/Vite-თან იდეალურად ჯდება.
+
+**შექმნილი ფაილები:**
+- `src/i18n/config.ts` — i18next init + persistence + device detection helpers
+- `src/i18n/languages.ts` — ცენტrალური კონფიგი (code, nativeName, flag, enabled, DEFAULT=fr)
+- `src/i18n/locales/{fr,en,es,de,it,ru,ka}.json` — იდენტური keys; **FR + EN ნამდვილი**, დანარჩენი დროებით FR-ის ასლი
+- `src/components/LanguageScreen.tsx` — ენის არჩევის premium ეკრანი (first-launch + Réglages)
+
+**გამართული:**
+- პირველ გაშვებაზე: device-language detection (fallback FR) → ენის ეკრანი → onboarding (`routes/index.tsx`)
+- persistence: `localStorage` (`smokido:lang` + `smokido:langChosen`), restart-ზე აღდგება
+- **Réglages → „🌍 Language"** ხელახლა ხსნის; ცვლილება მთელ აპლიკაციას მაშინვე ანახლებს (restart-ის გარეშე)
+- ახალი ენა = მხოლოდ ახალი JSON + 1 ხაზი `languages.ts`/`config.ts`-ში (UI-ს ცვლილების გარეშე)
+
+**მიგრირებული t()-ზე (hardcoded strings აღარაა):** BottomNav, HomeScreen, Onboarding (4 ეკრანი), WeeklyStats, LanguageScreen.
+
+**ჯერ მიგრირებელი (hardcoded დარჩა):** ConseilsScreen, ProgressionScreen, SettingsScreen (Language ღილაკის გარდა), ReplaceModal, ActivityTimer, AppShell (notifications).
+
+**⚠️ თარგმანი ჯერ არ კეთდება** — მხოლოდ არქიტექტura; ნამდვილი თარგმანები UI-ს დასრულების შემდეგ. სესია ერთხელ გაითიშა მუშაობისას, მაგრამ ფაილები შენარჩუნდა და აღდგა (HTTP 200, კომპილაცია სუფთა).
+
+---
+
+## 2026-07-22
+
 ### Smokido — i18n (მრავალენოვანი) არქიტექტურის გეგმა 📋
 
 **სტატუსი:** გეგმა/spec — **ჯer არ ხორციელდება.** თამარმა მოიტანა დეტალური პრომპტი Smokido 2.0-ის internationalization-ისთვis.
