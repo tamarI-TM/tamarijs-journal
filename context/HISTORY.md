@@ -5,6 +5,16 @@
 
 ---
 
+## 2026-07-23
+
+### Smokido — ეკრანი „Remplacer" (route /remplacer) + 4 საძირკვლის დოკუმენტი
+
+**დოკუმენტაცია (მუდმივი, GitHub-ზე):** შეიქმნა `README.md` (შესასვლელი კარი), `SMOKIDO_PRODUCT_BIBLE.md` (სული/ფილოსოფია), `SMOKIDO_ARCHITECTURE.md` (ჩონჩხი: Home/Progress/Wellness/Profile), `SMOKIDO_DESIGN_SYSTEM.md` (24 სექცია ვიზუალი), `SMOKIDO_ENGINEERING_GUIDELINES.md` **v2.0** (Part II: workflow, git, review, AI collab...). პრიორიტეტი კონფლიქტისას: Bible > Architecture > Design System > Engineering.
+
+**„Remplacer" ეკრანი (`commit c5ae3ff`):** გადაკეთდა modal-იდან **სრულ ეკრანად** — route `/remplacer` (AppShell-ში). ⚠️ **მთავარი: reference mockup-ის ცენტrალური „+" ნავიგაცია არასწორი იყო** → გამოყენებულია **არსებული `BottomNav`** (4 tab, „+"-ის გარეშე), Accueil რჩება აქტიური `/remplacer`-ზე. შიგთავsi: header, კითხვა, segmented control (Tous/Favoris/Récents), 3×3 აქტივობის ბადე (reference-ის 9 აქტივობა + იკონები `icons/replace.tsx`), „Ajouter ma propre activité". სრული i18n (7 ენა), light+dark tokens. Home CTA → navigate `/remplacer`; ძველი ReplaceModal წაიშალა. აქტივობის არჩევა → timer Accueil-ზე (flow უცვლელი).
+
+---
+
 ## 2026-07-22
 
 ### Smokido — 📌 მუდმივი წესი: MULTILINGUAL-FIRST
