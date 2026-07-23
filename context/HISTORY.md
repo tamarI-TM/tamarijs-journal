@@ -13,6 +13,8 @@
 
 **„Remplacer" ეკრანი (`commit c5ae3ff`):** გადაკეთდა modal-იდან **სრულ ეკრანად** — route `/remplacer` (AppShell-ში). ⚠️ **მთავარი: reference mockup-ის ცენტrალური „+" ნავიგაცია არასწორი იყო** → გამოყენებულია **არსებული `BottomNav`** (4 tab, „+"-ის გარეშე), Accueil რჩება აქტიური `/remplacer`-ზე. შიგთავsi: header, კითხვა, segmented control (Tous/Favoris/Récents), 3×3 აქტივობის ბადე (reference-ის 9 აქტივობა + იკონები `icons/replace.tsx`), „Ajouter ma propre activité". სრული i18n (7 ენა), light+dark tokens. Home CTA → navigate `/remplacer`; ძველი ReplaceModal წაიშალა. აქტივობის არჩევა → timer Accueil-ზე (flow უცვლელი).
 
+**„Créer ta propre activité" ეკrani (`commit 05b59ca`):** მეორადი flow „Remplacer"-იდan („+ Ajouter ma propre activité"). route `/activite` **AppShell-ის გარეშe → BottomNav არ არის** (მხოლოდ back arrow → /remplacer), არა tab, არა „+". სრული ფორმა: სახელი (max 40), 3×3 კატეგორიის იკონები (single select), ხანგრძლივობა (dropdown 2-60წთ), მიზეზი (textarea max 120), სიხშირe (segmented), Puff message, „Enregistrer mon activité". Home-ის ვიზუალი (theme tokens, light+dark), სრული i18n (createActivity.* 7 ენა), ლოკალურ storage-ში ინახება (`smokido:customActivities`).
+
 ---
 
 ## 2026-07-22
