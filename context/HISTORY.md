@@ -5,6 +5,20 @@
 
 ---
 
+## 2026-07-24
+
+### Smokido — „Remplacer" v2 (mockup) + Parcours Santé + AI Coach (`commits 2b6f9f5, ca1859d, e0952c6`, push-ული)
+
+**„Remplacer cette cigarette" redesign (`2b6f9f5`):** ეკრანი გადაკეთდა თამარის mockup-ზე (light v2): header „cigarette" მწვანე აქცენტით + subtitle + Puff მასკოტი; **„Ton envie va passer" ბარათი** ცოცხალი წრიული მინუტორით **5:00→0:00**; „Choisis une activité saine"; მთავარი ღილაკი **„J'ai résisté à cette envie"** (logs resisted + confetti + Home); მოტივაციური ბარათი. **შენარჩუნდა:** ჩვენი 3D იკონები, „Ajouter ma propre activité", bottom nav. **მოშორდა** ძველი tabs (Tous/Favoris/Récents). ასევე გასწორდა custom აქტივობის ⋮ მენიუს bug (slide-up stacking context → z-index backdrop-ზე მაღლა).
+
+**Parcours Santé ეკrani (`ca1859d`, route `/sante`):** health recovery ეკრანი — Puff ბარათი, **Temps sans cigarette** (რეალური „X jours, Y heures" appStartDate-იდan), 4 ორგანოს აღდგენა (Cœur/Poumons/Cerveau/Sommeil, რეალური % progressStats-იდan) პროგრეს-ბარებით, დასაკეცი **timeline** (20min→1an ✓-ებით), Prochaines étapes (1/3/12 თვე). ⚠️ **არქიტექტura: 4 tab უცვლელი** — ეკრანი Progrès-ის „Récupération santé → Tout voir"-იდan იხსნება (არა მე-5 tab).
+
+**AI Coach ეკrani (`e0952c6`, route `/coach`):** chat UI — მისალმების ბარათი, 4 action (Motivation/Conseils/Plan/Analyse), საუბრის bubbles (Coach/user + typing ანიმაცia), quick chips, შეყვანის ველი. **📌 გადაწყვეტილება: UI + მართული პასუხები** (არა ნამდვილი API ჯერ) — keyword-ით ცნობს თემას (envie/stress/motivation/plan), მოგვიანებით გადავა Claude API-ზე (მხოლოდ `coachReply`). იხსნება „Conseils" ეკრანის ზედა ბარათიდან. **4 tab უცვლელი** (არა მე-5 „Coach" tab).
+
+**📌 პერმანენტული:** თამარი აგზავნის reference mockup-ებს ეკრანებისთვის; ჩვენ light-first (dark mode გადადებული); ყოველი ახალი ეკრანი = route + AppShell (4 tab) + სრული i18n (FR+EN real, 5 = FR ასლი); სექციები რომლებიც mockup-ზე მე-5 tab-ია (Santé, Coach) → ქვე-გვერდებად, ღილაკიდan (არქიტექტურის „max 4 tab" წესი).
+
+---
+
 ## 2026-07-23
 
 ### Smokido — ეკრანი „Remplacer" (route /remplacer) + 4 საძირკვლის დოკუმენტი
@@ -14,6 +28,16 @@
 **„Remplacer" ეკრანი (`commit c5ae3ff`):** გადაკეთდა modal-იდან **სრულ ეკრანად** — route `/remplacer` (AppShell-ში). ⚠️ **მთავარი: reference mockup-ის ცენტrალური „+" ნავიგაცია არასწორი იყო** → გამოყენებულია **არსებული `BottomNav`** (4 tab, „+"-ის გარეშე), Accueil რჩება აქტიური `/remplacer`-ზე. შიგთავsi: header, კითხვა, segmented control (Tous/Favoris/Récents), 3×3 აქტივობის ბადე (reference-ის 9 აქტივობა + იკონები `icons/replace.tsx`), „Ajouter ma propre activité". სრული i18n (7 ენა), light+dark tokens. Home CTA → navigate `/remplacer`; ძველი ReplaceModal წაიშალა. აქტივობის არჩევა → timer Accueil-ზე (flow უცვლელი).
 
 **„Créer ta propre activité" ეკrani (`commit 05b59ca`):** მეორადი flow „Remplacer"-იდan („+ Ajouter ma propre activité"). route `/activite` **AppShell-ის გარეშe → BottomNav არ არის** (მხოლოდ back arrow → /remplacer), არა tab, არა „+". სრული ფორმა: სახელი (max 40), 3×3 კატეგორიის იკონები (single select), ხანგრძლივობა (dropdown 2-60წთ), მიზეზი (textarea max 120), სიხშირe (segmented), Puff message, „Enregistrer mon activité". Home-ის ვიზუალი (theme tokens, light+dark), სრული i18n (createActivity.* 7 ენა), ლოკალურ storage-ში ინახება (`smokido:customActivities`).
+
+### Smokido — Progress ეკრანის სრული premium redesign + activity 3D იკონები (`commits e3c658c, 550ca27`, push-ული)
+
+**Progress ეკრანი (`e3c658c`):** ავიგო Apple Health-ის სტილის **Hero dashboard** (`ProgressHero.tsx`) — % sans tabac რგოლი (#006B54), „Ton parcours" (4 tile), კვირის AreaChart (gradient fill + ღია წერტილები), achievement (ერთადერთი Puff), Récupération santé (Cœur/Poumons/Cerveau/Sommeil), Temps de vie regagné, Résumé du mois. **ყველა მეტრიკა რეალურ ფორმულაზეა** (`progressStats.ts`): cig évitées, argent (packPrice/20), temps de vie (11წთ/cig), health recovery (saturating curves — გული 3დღე, ძილი 14, ტვინი 30, ფილტვები 90), health score. დაემატა **სიგარეტის კოლოფის ფასის პარამეტრი** Réglages-ში (default 12€). ქვედა ნაწილი გადაკეთდა v2-ზე (8 stat ბარათი lucide იკონებით, Moments de la journée იკონებით) + **ახალი Calendrier** (`ProgressCalendar.tsx`, tracked/partiel/aucun). ⚠️ **გადაწყვეტილება: light-first** (dark mode გადაიდო, Home-ის მსგავსად). მთელი ეკრანის ფონი — ნაზი vertical gradient.
+
+**Détail semaine (`/progres-semaine`) + activités (`550ca27`):** week detail გვerდი გადაკეთდა v2 + სრული i18n. **ActivityTimer** — v2 premium (glass tile, იისფერი პასტელ რგოლი #D6CCFB→#B7A6F7, Puff, i18n); ⚠️ რგოლის გეომეტრია და მინუტორი უცვლელი (თამარის მოთხოვნა). **9 activity იკონი → პრემიუმ 3D PNG** (თეთრი ფონი flood-fill-ით მოშორებული sharp-ით): eau, marche, respiration, lotus, lecture, musique + 3 ახალი აქტივობა (chewing-gum→**fruit**, appeler→**sport**, étirements→**tisane**). **Créer une activité: 9 ახალი კატეგორია** (cardio/dessin/rangement/douche/relaxation/jardinage/cuisine/appel/étudier, `icons/categories.tsx` საერთო მოდული).
+
+**🐞 Bug fix (`550ca27`):** custom აქტივობები ინახებოდა localStorage-ში მაგრამ **არსად იკითხებოდა** → ახლა ჩანს „Remplacer" ბადეზე + დაემატა **რედაქტირება/წაშლა** (⋮ მენიუ, edit → prefill).
+
+**📌 workflow:** node `C:\Program Files\nodejs\node.exe` (bash PATH-ში არ არის); asset detour = sharp flood-fill სკრიპტი; ყოველი ცვლ. მოწმდება `tsc --noEmit` + `npm run build`; locale-ები node-ით ივსება (FR+EN real, სხვა 5 = FR ასლი).
 
 ---
 
