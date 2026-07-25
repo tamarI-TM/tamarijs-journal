@@ -5,7 +5,35 @@
 
 ---
 
+## 2026-07-25
+
+### Smokido — კვირის ბაგის ფიქსი, „Recommencer" ღილაკი, მთავარი ბარათები ცოცხალი, Hero მუქი მწვანე (`commit 544bf6d`, push-ული)
+
+**🐛 კვირის გამოთვლის ბაგი (`544bf6d`):** „argent économisé cette semaine", „temps regagné" და კვირის მრუდი ითვლიდნენ **დაწყების თარიღამდე** დღეებსაც (სადაც ჩანაწერი არ არის → baseline „დაზოგილად" ემატებოდა) → კვირა > total (მაგ. 104€ vs 14€, რაც შეუძლებელია). გასწორდა: გამოთვლა შემოისაზღვრა `journeyStart`-ით; დაწყებამდე დღეები მრუდზე `null` (აღარ ჩანს ყალბი 100%). თამარმა შენიშნა reset-ის შემდეგ.
+
+**🔵 „Recommencer mon parcours" (Réglages):** ახალი `storage.resetProgress()` — შლის ჩანაწერებს (logs) + აქტიურ აქტივობას, აყენებს dateDebut/appStartDate = დღეს, ანულებს streak-ს, **პარამეტრებს ინახავს** (სახელი, ღერების რაოდ., ფასი). ძველი „Réinitialiser" (სრული wipe → onboarding) ცალკე რჩება. ორივე ცალკე ღილაკი, confirm-ით.
+
+**📊 მთავარი ეკრანის 4 ბარათი ცოცხალი (`WeeklyStats`):** hardcoded ("47/87%/73€/5h42m") → რეალური მონაცემი (remplacées semaine, healthScore, moneySavedWeek, lifeRegainedWeek). ⚠️ **ფერადი sparkline მრუდი ფიქსირებული/დეკორაციად დარჩა** (თამარის მკაფიო მოთხოვნა — ციფრი ცოცხალი, მრუდი უცვლელი). თითო ბარათი დაჭერადი → Progrès/Santé/Économies.
+
+**🎨 Progrès Hero რგოლი:** „sans tabac aujourd'hui" ბარათი მუქ მწვანე გრადიენტად (#0B6E54→#033D2C), ციფრები თეთრი, რგოლი პიტნისფერი (mint) მუქ ფონზე; % ზომა 42→36px.
+
+**🔗 Home „Temps" ბარათი → Résumé du mois:** „Temps" ბარათი ახლა `/progression#resume-mois`-ს ხსნის და პირდაპირ „Résumé du mois" სექციაზე ჩამოასქროლებს (section `id` + `scroll-mt-24`; ProgressionScreen mount-ზე კითხულობს hash-ს, 250ms დაყოვნებით recharts განლაგებისთვის).
+
+---
+
 ## 2026-07-24
+
+### Smokido — Économies + Santé (refonte) + Insights/Déclencheurs (`commits a74974a, 12a06bd`, push-ული)
+
+**💰 Économies ეკრანი (`a74974a`, route `/economies`):** დანაზოგის ეკრანი — „Argent économisé cette semaine" + „Total économisé" + „paquets non achetés", 2 transparent 3D იკონი (ქილა მონეტებით + piggy bank). იხსნება Progrès-ის „Argent économisé" tile-იდან (`›` chevron ნიშნით). დაემატა `moneySavedWeek` progressStats-ში.
+
+**❤️ Santé ეკრანი refonte (`a74974a`, route `/sante`):** mockup-ზე გადაკეთდა — „Tes bénéfices actuels" (5 ბენეფიტი, სტატუსი Amélioré/En cours ავტომატურად დროზე დამოკიდებული: 20min/8h/48h/3j/2sem) + „Économie de santé" ბარათი. **6 transparent 3D იკონი** (გული, oxygénation, ფილტვები, goût/odorat, énergie, გული+ECG). ძველი richer ვერსია (organs progress-bars, timeline) ჩაანაცვლა.
+
+**✨ Insights/Déclencheurs ეკრანი (`12a06bd`, route `/insights`):** **ცოცხალი `raison` მონაცემი** (რომელიც აქამდე იწერებოდა „J'ai fumé"-ში, მაგრამ არსად ჩანდა) → Déclencheurs tab (8 იკონი ყოველთვის ჩანს, სიხშირით დალაგებული) + **Conseil personnalisé** (auto №1 trigger-ზე) + Moments tab (რისკის საათები, 30დღ). შესასვლელი ბარათი Progrès-ში (წრესა და „Ton parcours"-ს შორის, 3D დიაგრამის იკონით). ⚠️ Progrès-იდან ძველი „Moments" სექცია მოშორდა (დუბლიკატი). **Émotions tab გადაიდო** (ჯერ ემოციის ველი არ გვაქვს). არქიტექტura: 4 tab უცვლელი.
+
+**🎮 მინუტორი — custom აქტივობის იკონები:** ActivityTimer ახლა „Créer ton activité"-ის 9 კატეგორიის 3D იკონს აჩვენებს (ახალი `iconId` ველი `ActiveActivity`-ში), ემოჯის ნაცვლად.
+
+**🎨 ვიზუალური დახვეწა:** „Bravo!" streak badge-ში 🏆 3D თასი (თეთრი ფონი flood-fill-ით მოშორებული); ათვლის წრიდან 3 ფოთოლი მოშორდა; მასკოტის ფოთლები halo-დ დაბალანსდა (მარცხ./თავზე/მარჯ.).
 
 ### Smokido — „Remplacer" v2 (mockup) + Parcours Santé + AI Coach (`commits 2b6f9f5, ca1859d, e0952c6`, push-ული)
 
