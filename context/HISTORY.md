@@ -19,6 +19,10 @@
 
 **🔗 Home „Temps" ბარათი → Résumé du mois:** „Temps" ბარათი ახლა `/progression#resume-mois`-ს ხსნის და პირდაპირ „Résumé du mois" სექციაზე ჩამოასქროლებს (section `id` + `scroll-mt-24`; ProgressionScreen mount-ზე კითხულობს hash-ს, 250ms დაყოვნებით recharts განლაგებისთვის).
 
+**🌳 „Temps regagné" → „Habitudes" (ფილოსოფია: მავნე ჩვევა → კარგი ჩვევა):** ორივე ადგილას გადაკეთდა — Home-ის მე-4 ბარათი და „Résumé du mois"-ის tile. **ვიზუალი/იისფერი უცვლელი**, მხოლოდ შინაარსი: label „Habitudes", value = განსხვავებული ჯანსაღი აქტივობების რაოდენობა (Home = კვირა, tile = თვე; `progressStats.month.habits` დაემატა), პიქტოგრამა **ხე** (Trees, იისფერი — მავნე ჩვევის ჩანაცვლების მეტაფორა). Home ბარათი „Résumé du mois"-ის Habitudes tile-ს უკავშირდება.
+
+**🎨 Santé იკონების გასუფთავება:** 6-ვე health იკონს (Rythme cardiaque, Oxygénation, Fonction pulmonaire, Goût et odorat, Énergie, Économie de santé) ჰქონდა თეთრი ფონი → flood-fill + morphological close-ით მოშორდა (ორიგინალი ფაილებიდან, transparent).
+
 ---
 
 ## 2026-07-24
