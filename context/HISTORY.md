@@ -23,6 +23,10 @@
 
 **🎨 Santé იკონების გასუფთავება:** 6-ვე health იკონს (Rythme cardiaque, Oxygénation, Fonction pulmonaire, Goût et odorat, Énergie, Économie de santé) ჰქონდა თეთრი ფონი → flood-fill + morphological close-ით მოშორდა (ორიგინალი ფაილებიდან, transparent).
 
+**🎨 „J'ai fumé" trigger იკონები (ზომა/ცენტრირება):** sm-stress-ს მარცხენა კიდეზე თეთრი ზოლი ჰქონდა → flood-fill; sm-coffee/sm-meal/sm-alcohol/sm-other ვიზუალურად პატარად ჩანდა (თხელი ელემენტები, ცარიელი ზღვარი) → trim + display scale (`ICON_SCALE`: meal/coffee/alcohol ×1.22, habitude ×1.08) SmokedScreen + Insights-ში.
+
+**☁️ „J'ai fumé" ახალი მასკოტი:** SVG Puff (sad) → **3D transparent PNG ღრუბელი** (ყლორტით, sad). 📌 გაკვეთილი: თეთრი-ფონიანი export **ვერ გასუფთავდება** ავტომატურად (თეთრი მასკოტი თეთრ ფონზე — ღრუბელი „იჭმევა", ქვედა მწვანე ფონი გამოსჭვივის). საჭიროა **ნამდვილი transparent PNG** (fotor bg-remover მუშაობს). SVG Puff sad გამომეტყველებაც დაიხვეწა (fallback).
+
 ---
 
 ## 2026-07-24
