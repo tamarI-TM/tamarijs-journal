@@ -7,6 +7,20 @@
 
 ## 2026-07-25
 
+### Smokido — Onboarding refonte + Habitudes გვერდი + კვირის კურბი (navigable) + 3D header მასკოტები + Language ეკრანი (`commits 444a020…41d2e36`, push-ული)
+
+**☁️ 3D header მასკოტები (`444a020`):** ყველა გვერდის თავში 3D transparent ღრუბელი — Accueil/Progrès/Remplacer/Créer activité (happy), Wellness „Prends soin de toi" (wink), J'ai fumé (sad). ბარათების პატარა მასკოტები SVG cartoon-ად რჩება. 📌 წესი: header = 3D, cards = SVG. Transparent PNG-ს fotor bg-remover-ით ვამზადებთ (თეთრი-ფონიანი export არ გამოდგება).
+
+**🎨 Onboarding სრული refonte (`128ae34`):** 4-ვე ეკ­რანზე 3D მასკოტი (ზომა/პოზიცია ჰარმონიზებული — კონტენტი `justify-start`, მასკოტი ერთ სიმაღლეზე); „Continuer" ღილაკი, prénom-ის კანti, progress bar (ერთი გლუვი bar წყვეტილების ნაცვლად), interval ეკრანი → **მუქი მწვანე** (#006B54); interval ეკრანი კომპაქტური; **უკან ღილაკი** დაემატა; ღია ფონი; 🌱 მოშორდა „Tu vas y arriver".
+
+**📈 „Progression de la semaine" (`128ae34`):** ღია ბაცი მწვანე კურბი, **სავსე** (დაწყებამდე დღეები = 0%, „ადრე ვეწეოდი", ფულში არ ითვლება); **გადიდებადი modal** (tap → enlarge, X/backdrop); **‹ › კვირის ნავიგაცია** (კალენდარზე გადაადგილება, თარიღების დიაპაზონი, logs-იდან რეალური). ცრუ „Cette semaine" ღილაკი და „objectif" სექცია მოშორდა.
+
+**🌿 Habitudes გვერდი (`eeb72c3`, route `/habitudes`):** Insights-ის სტილში, ღია იისფერი ფონი — ჯანსაღი აქტივობები (30დღ) სიხშირით დალაგებული, 🥇🥈🥉, trophy იკონი. შესასვლელი: Home „Habitudes" ბარათი + Résumé du mois tile.
+
+**💸 Économies + finitions:** „Argent dépensé" rose ბარათი (`7f74b6e`); Santé/Économies **კონტექსტური უკან-დაბრუნება** (Home ↔ Progrès history-ით, `704a719`); Home „victoire" trophy იკონი; html/body base ღია ნეიტრალური (მომწვანო ხაზი ბოლოში მოშორდა).
+
+**🌍 Language ეკრანი (`41d2e36`):** 3D მასკოტი, ღია ფონი (სახელის ეკრანივით), „Smokido" მუქი მწვანე, **უდროშო თანამედროვე ენების სია** (კოდ-ბეჯები FR/EN/…, მუქი მწვანე აქცენტი).
+
 ### Smokido — კვირის ბაგის ფიქსი, „Recommencer" ღილაკი, მთავარი ბარათები ცოცხალი, Hero მუქი მწვანე (`commit 544bf6d`, push-ული)
 
 **🐛 კვირის გამოთვლის ბაგი (`544bf6d`):** „argent économisé cette semaine", „temps regagné" და კვირის მრუდი ითვლიდნენ **დაწყების თარიღამდე** დღეებსაც (სადაც ჩანაწერი არ არის → baseline „დაზოგილად" ემატებოდა) → კვირა > total (მაგ. 104€ vs 14€, რაც შეუძლებელია). გასწორდა: გამოთვლა შემოისაზღვრა `journeyStart`-ით; დაწყებამდე დღეები მრუდზე `null` (აღარ ჩანს ყალბი 100%). თამარმა შენიშნა reset-ის შემდეგ.
