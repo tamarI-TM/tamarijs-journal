@@ -5,6 +5,26 @@
 
 ---
 
+## 2026-07-26
+
+### Smokido — Web notifications (რეალური) + shared settings sync bug fix + permission-denied UX + Playwright regression suite (`commit 5365db2`)
+
+**🔔 Web notification service + reminder logic:** ახალი `src/lib/notifications.ts` — ერთი აბსტრაქციის ფენა ყველა notification-ისთვის (web ახლა, Capacitor-ready `window.Capacitor.Plugins` bridge-ით, npm-პაკეტის დაყენების გარეშე). AppShell-ის watcher-ები (interval, encouragements, **ახალი rappelSoir საღამოს შეჯამება 21:00**) refactor-დ სერვისზე. Settings-ში დაემატა master toggle + „Envoyer un test" ღილაკი. dev-only debug ლოგები + `?testreminder` (2წთ ტესტი), production bundle-იდან grep-ით დადასტურებულად ამოღებული (`import.meta.env.DEV`).
+
+**🌍 7-ენოვანი i18n:** notification-ის ყველა ტექსტი (activityDone/interval/encouragements/rappelSoir/test/blocked) გატანილი fr/en/es/it/de/ru/ka-ში. hardcoded ფრანგული (ძველი `ENCOURAGEMENTS` მასივი) აღმოიფხვრა — მრავალენოვნების წესი დაცული.
+
+**🐛 Shared settings synchronization bug (აღმოჩნდა Playwright-ით, გასწორდა):** `useSmokidoData()` თითო კომპონენტს ცალკე `useState` ჰქონდა — Settings-ში toggle-ის გამორთვა watcher-ს **ვერ სწვდებოდა**, notification-ები reload-მდე გრძელდებოდა. გასწორდა module-level listener registry-ით (SSR-safe: მხოლოდ React setters, server-ზე ცარიელი, useEffect-ით client-only). + `initLanguage` გადავიდა `__root`-ში (deep-link ენა).
+
+**🚫 Permission-denied UX:** denied ან master-off → child toggles + test ღილაకი disabled (reduced opacity, არჩევანი შენარჩუნებული); მუდმივი წითელი „Notifications bloquées" panel + მოკლე toast „Permission refusée"; denied-ზე `requestPermission()` აღარ იძახება (ბრაუზერი დიალოგს არ ხსნის).
+
+**✅ ხარისხის gate:** Playwright **14/14 PASS** (8 notif + 3 SSR-safety + 4 UX; devDependency-ად, prod deps უცვლელი). TypeScript `--noEmit` PASS, production `build` PASS. **Blocked UX ხელით ვიზუალურად დადასტურდა (PASS).**
+
+**⚠️ ხელით არ დადასტურებულა (3 OS-level ტესტი):** რეალური OS notification-ის გამოჩენა, 2-წუთიანი reminder-ის ხილული მიღება, master-OFF-ის შემდეგ reminder-ის არმოსვლა — dev-server-ზე ხელით ვერ ჩატარდა.
+
+**🔜 ღია ამოცანები (store-wrap ეტაპისთვის):** native Capacitor notifications (npm install + cap sync + real device); **SSR/static index.html ბლოკერი** — აპი TanStack Start + Cloudflare SSR-ია, static `index.html` არ გამოაქვს, Capacitor webDir-ს კი სჭირდება → ცალკე native-build ამოცანა.
+
+---
+
 ## 2026-07-25
 
 ### Smokido — Onboarding refonte + Habitudes გვერდი + კვირის კურბი (navigable) + 3D header მასკოტები + Language ეკრანი (`commits 444a020…41d2e36`, push-ული)
