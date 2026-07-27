@@ -5,6 +5,20 @@
 
 ---
 
+## 2026-07-28
+
+### Smokido — აქტივობის timer-ის Mini-lecteur (მთავარ გვერდზე წვდომა აქტივობის დროს) (`commit 2417603`, push-ული)
+
+**პრობლემა:** როცა აქტივობა (კითხვა/სეირნობა…) აქტიური იყო, Accueil tab მხოლოდ სრულ timer-ს აჩვენებდა — მთავარ კონტენტს ვერ ხვდებოდი.
+
+**გადაწყვეტა (music-player-ის სტილში):** timer ეკრანზე **„Réduire" ღილაკი** (ChevronDown, ზედა-მარცხნივ) → იკეცება, ჩანს მთავარი გვერდი. **Mini-ბარი** bottom nav-ის ზემოთ (აქტივობის იკონი + სახელი + პროგრესის ზოლი + დარჩენილი დრო), ხილული **ყველა tab-ზე** სანამ აქტივობა მიდის; **დაჭერით** ისევ იშლება სრულ ეკრანად.
+
+**არქიტექტურა:** 🆕 `useTimerMinimized.ts` (module-level global store, `useSyncExternalStore`, SSR-safe) · 🆕 `useActivitySession.ts` (`useActivityComplete` — logReplaced+clearActivity+confetti+toast, გამოყენებული ორივე რეჟიმში) · 🆕 `MiniTimer.tsx`. AppShell-ში `showMini = activeActivity && !(pathname==="/" && !minimized)` — ზუსტად ერთი ticker აქტიურია (double-completion-ის გარეშე). ახალი აქტივობის დაწყებაზე `minimized=false`. Timer/countdown/navigation ლოგიკა უცვლელი.
+
+**ხარისხი:** tsc + build + Playwright (Réduire→mini→expand→tab-switch→**completion minimized-ში**→no-overlap 320/390/430, mini↔nav 10px) PASS, console 0.
+
+---
+
 ## 2026-07-27
 
 ### Smokido — Onboarding polish + Ton parcours გვერდები + Session/Timer premium redesign + 24 ახალი აქტივობის იკონი (`commits 5e8bd4f…388b00d`, push-ული)
