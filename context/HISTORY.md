@@ -5,6 +5,24 @@
 
 ---
 
+## 2026-07-27
+
+### Smokido — Onboarding polish + Ton parcours გვერდები + Session/Timer premium redesign + 24 ახალი აქტივობის იკონი (`commits 5e8bd4f…388b00d`, push-ული)
+
+**🚀 Onboarding საბოლოო ეკრანი:** ყველა ბლოკი ერთ ეკრანზე დაეტია (min-h-0 flexbox fix მობილურ Safari-სთვის, ღილაკი ბოლომდე; spacing-ის კომპაქტიზაცია; მასკოტი 196px→150px ოთხივე გვერდზე ერთნაირად). სათაურების **ერთიანი typography** — ახალი shared `.onb-title` class (reference: „Intervalle entre chaque cigarette ?", 22px/800/1.14), ოთხივე main title-ზე. CTA fade დაემატა და მერე მოიხსნა (თამარს არ მოეწონა).
+
+**📊 „Ton parcours" ჰარმონიზაცია:** 4 ფილიდან მხოლოდ Économies-ს ჰქონდა გვერდი → ახლა **ოთხივე clickable**. 2 ახალი გვერდი: **Cigarettes évitées** (`/evitees` — დიდი რიცხვი, ეკვივალენტები, 7-დღიანი bar-გრაფიკი) და **Ta série** (`/serie` — მიმდინარე+საუკეთესო streak, 4-კვირიანი კალენდარი). Santé → არსებული `/sante`. „Ton parcours" + „Résumé du mois" ბარათები **თანაბარი სიმაღლის** (h-full + auto-rows-fr).
+
+**⏱️ Session/Timer ეკრანის premium redesign** (`ActivityTimer.tsx`): დიდი activity ბარათი (ილუსტრაცია დიდი ფორმატით, მწვანე ფოთოლ-chip + „N წუთი" badge), ბარათი+წრე+Puff ერთ ჯგუფად ბოლოში, დახვეწილი წრე (თხელი ღია track + lavender arc), sparkles + ფოთლები + ყლორტი, refined encouragement capsule, ghost `Abandonner`. Timer/countdown ლოგიკა **უცვლელი**. mockup-ს ზუსტად მოერგო (თამარის light ვერსია; dark ცალკე task-ად გადაიდო).
+
+**🎨 აქტივობის იკონები:** 4 preset იკონი შეიცვალა (წყალი/რესპირაცია/ხილი/წიგნი). „Créer ma propre activité" — **9 → 33 კატეგორია** (24 ახალი: yoga×2, meditation, stretching, musculation, music, swim, nap, coffee, selfcare, goals, footing, todo, knitting, teeth, laptop, favorite, dogwalk, baking, gaming, writing, ინსპ. და სხვ.). ყველა იკონი ChatGPT-დან: ქართული-პათი→ASCII (PowerShell -LiteralPath), თეთრი ფონი edge flood-fill-ით გამჭვირვალე, trim+resize+palette-compress (sharp), 46-133KB.
+
+**⚠️ ცნობილი ხარვეზები (მომავალი გასაწმენდი):** labels „décalé"-ს გამო ზოგი შიდა id/asset-სახელი შეუსაბამო (label სწორია, უხილავია); „Yoga" 2-ჯერ ჩანს; ვიზუალურად იკონები ვერ დამემოწმებინა (image-ლიმიტი) → თამარმა ტელეფონზე ამოწმებდა.
+
+**✅ ხარისხი:** ყოველ ეტაპზე `tsc --noEmit` + `build` + Playwright (responsive 320/375/390/430, overlap/clipping/console-clean gates) PASS. ყველა ცვლილება ეტაპობრივად თამარის დადასტურებით და push-ით.
+
+---
+
 ## 2026-07-26
 
 ### Smokido — Web notifications (რეალური) + shared settings sync bug fix + permission-denied UX + Playwright regression suite (`commit 5365db2`)
