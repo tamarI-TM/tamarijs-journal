@@ -5,6 +5,26 @@
 
 ---
 
+## 2026-07-31
+
+### Smokido — Activités éditables + 21 nouvelles catégories + thème vert foncé + fix série + carillon de fin (`commits eb0b1e2…6a426d9`, push-ული)
+
+**⋮ მენიუ preset აქტივობებზე** (`ReplaceScreen.tsx`): 9 ინტეგრირებულ აქტივობას დაემატა „Modifier la durée" (5-45წთ picker) · „Supprimer" · „Restaurer les activités". **i18n-safe** — preset-ის სახელი/იკონი i18n-ში რჩება, მხოლოდ დრო/დამალვა ცალკე localStorage-ში (`presetDurations`, `hiddenPresets`). წაშლა ყოველთვის შექცევადია.
+
+**9 preset-იკონი „Créer ma propre activité" picker-ში** — მომხმარებელს არჩევანი (გოგო/ბიჭი/სხვა ვიზუალი). „music" id-კონფლიქტი → „music2".
+
+**21 ახალი აქტივობის კატეგორია** (54 cat-იკონი სულ): Plage, Faire de la musique, Routine beauté, Balade nature, Vélo, Sortie entre amis, Un verre entre amis, Jeux de société, S'occuper des fleurs, Vacances, Ski, Pizza, Sushi, Croissant, Petit-déjeuner, Khatchapouri, Khinkali, Tennis, Fête, Anniversaire, Mariage — ChatGPT იკონები, flood-fill გამჭვირვალობა, sharp compress.
+
+**მუქი მწვანე თემა** (#006B54) Remplacer + Créer ეკრანებზე: სიტყვა „cigarette", envie-წრის ზოლი, „Ajouter"-ის ტექსტი/პლიუსი/კონტური, „J'ai résisté" ღილაკი, Créer-ის accent-ები + save ღილაკი + title accent „activité". ღია mint ფონები/დეკორ. ფოთლები უცვლელი.
+
+**🐛 „Série actuelle" fix** (`HomeScreen.tsx`): მთავარი გვერდი settings-ზე დაფუძნებულ streak-ს ითვლიდა (მხოლოდ ყოველდღიური „j'ai fumé"-ზე იზრდებოდა, გამოტოვებაზე 1-ზე ბრუნდებოდა). ახლა იყენებს log-ზე დაფუძნებულ `currentStreak`-ს (ზედიზედ დღეები მიზნის ქვემოთ) — Progrès-თან თანხვედრილი, სწორად იზრდება.
+
+**🔔 ტაიმერის დასრულების ჩაიმი**: ნაზი 2-ნოტიანი „cloche zen" (Web Audio, ფაილის გარეშე — 🆕 `sound.ts`), expanded+mini ორივე რეჟიმში (`useActivityComplete`). Settings toggle „Son de fin d'activité" (default on). **iOS fix:** `unlockAudio()` აქტივობის გაშვების tap-ზე (Web Audio მხოლოდ gesture-ში იხსნება) — ტელეფონზე დადასტურდა რომ ისმის.
+
+**ხარისხი:** ყოველ ეტაპზე tsc + build + Playwright (⋮ edit/delete/restore, streak 1/3/5j, sound toggle+completion, no-overlap, console-clean) PASS. ეტაპობრივი commit+push თამარის დადასტურებით.
+
+---
+
 ## 2026-07-28
 
 ### Smokido — აქტივობის timer-ის Mini-lecteur (მთავარ გვერდზე წვდომა აქტივობის დროს) (`commit 2417603`, push-ული)
