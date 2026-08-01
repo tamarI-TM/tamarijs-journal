@@ -5,6 +5,27 @@
 
 ---
 
+## 2026-08-01
+
+### Smokido — MILESTONE: მრავალენოვანი ლოკალიზაცია სრულია (EN master → ES/IT/RU native) (`commits …4b6231f`, push-ული)
+
+**კონცეფცია:** ინგლისური გახდა **MASTER ენა** — დაწერილია მშობლიურად, US UX-writing სტილში (Headspace/Calm/Duolingo/Apple Health), არა ფრანგულიდან თარგმნილი. ყოველი სხვა ენა EN-master-იდან გამოდის, მაგრამ **მშობლიურად**, არა სიტყვასიტყვით — თითოეული ენა ცალკე პროდუქტივით.
+
+**დასრულებული ენები (18 მოდული თითო):**
+- 🇬🇧 **English (master)** — Style Guide v1.0 გაყინული COPY-SYSTEM.md §5-ში. Signature: *ride it out · every win counts · keep going · one step at a time · smoke-free · swap · break the link*. წესი „less I" (Puff = თანამგზავრი, არა chatbot).
+- 🇪🇸 **Español (Castilian)** — signature „Déjalo pasar", „Cada día sin fumar cuenta", „Sigue así".
+- 🇮🇹 **Italiano** — signature „Lasciala passare", „Ogni giorno senza fumo conta", „Continua così", „Ce la fai".
+- 🇷🇺 **Русский** — **735/735 key, 0 ფრანგული ნარჩენი.** „ты" informal; signature „Пусть пройдёт" (არა „Переживи это"); brand „Каждый день без сигарет — это победа", „Так держать", „Решать тебе". **მთავარი ტექნიკა: სქესობრივად ნეიტრალური** მომხმარებლის ზმნებისთვის (იმპერსონალური „выполнено {{pct}}%", „Случайное нажатие?" და არა გენდერული „Нажал").
+- 🇫🇷 **Français** — voix polish უკვე დასრულებული (source). 🇬🇪 **ქართული** — 746/746 სინქრონი დადასტურებული.
+
+**🇩🇪 გერმანული გამორთულია** picker-იდან (`languages.ts` `enabled:false`) თამარის თხოვნით.
+
+**workflow:** Claude drafts native screen-by-screen → Tamari reviews table-ში (თითო მოდული 10/10 მიკრო-tweak-ებით) → apply Node script-ით → build → commit+push. Signature „ride out" თითო ენაზე ცალკე: EN „Ride it out" · ES „Déjalo pasar" · IT „Lasciala passare" · RU „Пусть пройдёт". „AI Coach" title ყველა ენაში შენარჩუნებულია.
+
+**ხარისხი:** ყოველ ბატჩზე build PASS; ბოლოს EN↔RU key-parity script (735=735, missing/extra 0, non-Cyrillic leak scan) PASS.
+
+---
+
 ## 2026-07-31
 
 ### Smokido — Activités éditables + 21 nouvelles catégories + thème vert foncé + fix série + carillon de fin (`commits eb0b1e2…6a426d9`, push-ული)
