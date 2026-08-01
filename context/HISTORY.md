@@ -5,6 +5,24 @@
 
 ---
 
+## 2026-08-02
+
+### Smokido — Mode sombre (infra + Accueil + Progression) + système de micro-célébrations + polish premium (`commits …6522247`, push-ული)
+
+**🌘 Dark mode — ინფრასტრუქტურა (ერთხელ, ყველა ეკრანს):** ახალი **`--sk-*` სემანტიკური ტოკენების ფენა** `styles.css`-ში (light + dark = „თბილი ნახშირისფერი-მწვანე", თამარის არჩევანი). 🆕 `useTheme.ts` (module-store, `.dark` კლასი `<html>`-ზე, `localStorage 'smokido-theme'`). Pre-paint script `__root.tsx`-ში (ღიას ციმციმის გარეშე). Settings-ის toggle ამუშავდა (ადრე „Скоро"). `.dark` base ნეიტრალები navy→მწვანე hue 155. AppShell/BottomNav უკვე ტოკენებზე იყო.
+
+**კონვერტირებული ეკრანები:** ✅ **Accueil** (+ WeeklyStats, StickyTopBar) · ✅ **Progression** (ProgressionScreen, ProgressHero, ProgressCalendar). Recharts გრაფიკები თემაზე ადაპტირებული (SVG-ში CSS var არ მუშაობს → `useTheme`-ით კონკრეტული ფერი). ⏳ **დარჩა: Conseils, Paramètres, + ქვე-ეკრანები** (Économies, Santé, Habitudes, Évitées, Série, Insights, Remplacer, Fume, Coach, Créer, Partage) — იგივე ტოკენებით.
+
+**🚬 ახალი სიგარეტის აიქონი** — რეალისტური, ანთებული (თამარმა მოაწოდა); თეთრი ფონი flood-fill-ით (threshold 237). Accueil/Économies/Évitées.
+
+**✨ Premium polish:** Puff სუნთქვა+თვალის დახამხამება; Accueil+Progression Progress Ring = **Apple Fitness glow + endpoint dot**; Progression: „Tes activités"=ლურჯი vs „Insights"=იისფერი; Ton parcours ფერადი glow თითო tile; Weekly graph მიმდინარე დღის halo; Health recovery თითო ორგანო ცოცხალი (pulse/lent/glow/fade); „Temps de vie regagné" → **victory moment** (დიდი ხე+halo+ციფრი); Calendar **„journée parfaite"** (0 სიგარეტი, ორმაგი რგოლი); 30-day graph **goal line** ეტიკეტით; Puff mood ყოველ დღე იცვლება.
+
+**🎉 Micro-celebrations სისტემა (ცალკე UX ქვესისტემა):** 🆕 `lib/celebrations.ts` (store + priority 1-4 + once/day guard + baseline anti-retroactif + haptic tiers soft/medium/rigid + reduced-motion respect) · 🆕 `CelebrationOverlay.tsx` (ფოთლები/ნაპერწკლები/glow, ~1.4წმ) · `CelebrationWatcher` (AppShell) action-ზე ისვრის. Triggers: პირველი Replace, streak 3/7/14/30/90/180/365, ახალი record (მხოლოდ reset-ის შემდეგ, არა spam), 100% day (end-of-day, გუშინდელი გახსნაზე). 🆕 `CelebrationDebug` პანელი `?celeb` URL-ით (prod-ზეც). ტექსტები 7 ენაზე (`celebrations.*`).
+
+**ხარისხი:** ყოველ პარტიაზე tsc + build PASS, ეტაპობრივი commit+push თამარის დადასტურებით. თამარის შეფასება: „Premium Wellness app", „App Store Featured დონე".
+
+---
+
 ## 2026-08-01
 
 ### Smokido — MILESTONE: მრავალენოვანი ლოკალიზაცია სრულია (EN master → ES/IT/RU native) (`commits …4b6231f`, push-ული)
