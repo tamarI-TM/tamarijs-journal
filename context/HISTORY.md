@@ -5,6 +5,28 @@
 
 ---
 
+## 2026-08-02 (გაგრძელება — dark mode სრული + premium polish)
+
+### Smokido — Dark mode 100% (ყველა ეკრანი) + ერთიანი ატმოსფერო + ბრენდული დახვეწა (`commits 63aea73…5e228ed`, push-ული)
+
+**🌘 Dark mode — სრულად დასრულდა (ყველა ეკრანი):** Conseils, Paramètres, Language, Économies, Santé, Habitudes, Évitées, Série, Insights, Remplacer, J'ai fumé, Coach, Créer, Partage, ActivityTimer, MiniTimer, „Détail de la semaine". მეთოდი: თითო ეკრანის `const C={}` hex + Tailwind `bg-white`/`text-neutral-*`/`bg-[#pastel]` → `--sk-*` ტოკენებზე (Node სკრიპტებით). Recharts SVG ღერძები `useTheme()`-ით. Partage სისტემის თემიდან → აპის toggle-ზე. **შენარჩუნებული accent-ები ორივე თემაზე:** მწვანე CTA gradient-ები, ოქროს Premium, წითელი destructive, chart ფერები.
+
+**🌫️ ერთიანი ატმოსფერული ფონი (Apple Weather/Health):** dark `--sk-bg` = ვერტიკალური subtle gradient (ზედა ~30% ნაზი მწვანე glow → base #14201A). 🆕 `AmbientGlow` კომპონენტი (dark-only ზედა მწვანე halo) ყველა ეკრანზე. `--sk-sky` dark = glow (Home/Progression/Timer). „depth without a visible background."
+
+**💛 Money → ოქრო:** ნარინჯისფრიდან #EAB308/#F6C945 (Apple Wallet), WeeklyStats + Progress tile + Économies.
+
+**✨ Premium polish:** Premium ბარათი რბილი ოქრო + „✨ À vie" badge; MiniTimer dark elevated card; Wellness category chip-ები Smokido-ს ფერებზე (🟩🟡🩷🟦🟣 პასტელი, `--sk-cat-*`); Wellness featured tip; ActivityTimer 7 დეტალი (dynamic Puff phrases, „Bravo" completion, breathe/blink/leaf-spin, softer particles) + „Abandonner" → „Quitter la session" (ნეიტრალური); Remplacer touchable cards (gradient+glow+haptic), duration pill, „Respire" ring breathe+glow; Créer name card + touchable icon tiles + **ასაკეცი icon grid** („Voir plus/moins") + `music2` დუბლიკატის მოშორება; „Cette semaine" + craving card = მუქ-მწვანე ბრენდული ბარათები.
+
+**🎨 ახალი 3D იკონები:** სიგარეტი (ანთებული, 2×), ყავა, კუჭი (après repas), მონეტების ქილა, გოჭი, ლოტოსი (Méditer), ყურსასმენი (Écouter, ×2 asset). თითოს flood-fill/trim/square, გამჭვირვალე.
+
+**🎉 Micro-celebrations გაძლიერდა:** priority 1-4, haptic tiers (soft/medium/rigid), paliers 90/180/365, 100% day (end-of-day), `?celeb` test panel (7 ენა).
+
+**Puff სტანდარტიზაცია:** 🆕 `HeaderMascot` — Home-ის ზუსტი პოზიცია/ზომა Progress + Wellness-ზე.
+
+**ხარისხი:** ყოველ ცვლილებაზე tsc + build PASS, ცალკე commit+push. თამარის შეფასება: „ზღაპრული და გენიალური აპი".
+
+---
+
 ## 2026-08-02
 
 ### Smokido — Mode sombre (infra + Accueil + Progression) + système de micro-célébrations + polish premium (`commits …6522247`, push-ული)
