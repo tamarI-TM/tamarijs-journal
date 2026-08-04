@@ -5,6 +5,32 @@
 
 ---
 
+## 2026-08-03/04 (Smokido — ცოცხალი მასკოტები + ნავიგაციის fluidity)
+
+### Smokido — Puff-ის დახამხამება ყველა ეკრანზე + ნავიგაცია/resume fix (ყველა commit push-ული, ბოლო `de5084c`)
+
+**🙂 მასკოტების გასწორება (Remplacer + Créer):** ორივე ეკრანზე Puff გადავიდა ერთიან `HeaderMascot`-ზე — მთავარი გვერდის ზუსტი ზომა/პოზიცია (`absolute right-12 top-0`, `w-[104px]`) + breathing. მთავარი გვერდიც იმავე კომპონენტზე გაერთიანდა.
+
+**👁️ ნამდვილი დახამხამების სისტემა (frame-swap, PNG 3D-ს „ქუთუთო" არ აქვს):** `HeaderMascot`-ს დაემატა `animate` პროპი — `"blink"` (ორთვალა), `"wink"` (ცალთვალა), `"none"`. ყოველ ~6 წმ მოკლედ (150/220ms) გადადის თვალდახუჭულ კადრზე, **იგივე ჩარჩოზე** (256×199, fit:fill) რომ არ „ახტეს".
+- 🆕 `puff-blink.png` — თამარის მოწოდებული 3D კადრი (ორივე თვალი დახუჭული), trim + ნორმალიზება. Home/Remplacer/Créer = ორთვალა blink.
+- **Conseil:** სტატიკური wink → ცოცხალი **ცალთვალა (მარჯვენა) wink**; `puff-wink.png` 256×199-ზე ნორმალიზდა.
+- **J'ai fumé (SmokedScreen):** სევდიანი Puff ახლა ახამხამებს — 🆕 `puff-sad.png` (გახელილი, base) + `puff-sad-blink.png` (დახუჭული), ორივე თამარის კადრებიდან, ერთ ჩარჩოზე.
+- **mon profil (Settings):** განიერი `smokido-3d` → სტანდარტული Puff (happy↔blink), თანმიმდევრული დანარჩენ აპთან.
+- AI Coach: **განზრახ დავტოვეთ დახამხამების გარეშე** (smokido-3d სხვა რენდერია, თვალდახუჭული twin არ იყო; თამარმა თქვა „არ გვინდა").
+
+**🔀 Créer ta propre activité:** „Enregistrer mon activité" ღილაკი აიწია (Combien de temps-ის მიყოლებით), სამოტივაციო Puff-ბარათი ჩავიდა გვერდის ბოლოში.
+
+**🚀 ნავიგაცია „très fluide" + resume fix (2 მთავარი საკითხი, თამარმა დააყენა):**
+- **preload:** router `defaultPreload:"intent"` (+delay 0) → route იტვირთება შეხებისთანავე, თითქმის მყისიერი გადასვლა.
+- **resume-ზე ბოლო ეკრანი:** iOS standalone PWA გაღვიძებაზე `start_url`-ზე („/") ბრუნდებოდა → `__root.tsx` ინახავს ბოლო path-ს (`smokido:lastPath`) და აბრუნებს იქ, სადაც იყო (12სთ ფანჯარა).
+- **თეთრი ფლაშის fix (Profile→Accueil):** `index.tsx` `null`-ს აბრუნებდა phase-ის დადგენამდე (ცარიელი კადრი) → ახლა თემის ფონიანი placeholder + phase სინქრონულად (hydration-ის შემდეგ). SSR/hydration დაცული.
+
+**რჩება (შემოთავაზებული, თამარის გადასაწყვეტი):** მუდმივი გარსი (AppShell layout-route რეფაქტორი, სრული fluidity) + Service Worker (მყისიერი offline გახსნა, gaghვიძების თეთრი ციმციმის მოსპობა).
+
+**ხარისხი:** ყოველ ცვლილებაზე build PASS, ცალკე commit+push. თამარის შეფასებები: „ძააან კარგია", „გენიალურია".
+
+---
+
 ## 2026-08-02 (გაგრძელება — dark mode სრული + premium polish)
 
 ### Smokido — Dark mode 100% (ყველა ეკრანი) + ერთიანი ატმოსფერო + ბრენდული დახვეწა (`commits 63aea73…5e228ed`, push-ული)
