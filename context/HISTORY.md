@@ -5,6 +5,19 @@
 
 ---
 
+## 2026-08-04
+
+### Smokido — Onboarding refonte premium + dark mode სრული + projections გვerდი
+
+- **ცოცხალი მასკოტი (blink)** ენის არჩევისა და onboarding-ის ყველა ეკrანზე. საერთო `usePuffBlink` hook + `BlinkingPuff` / `OnbHeaderMascot` კომპონენტები (დუბლიკატის გარეშე).
+- **ახალი ეკრანები (11-ბიჯიანი flow):** „კოლოფის ზომა" + „ფასი" ციფრული კლავიატурით → ახალი `cigarettesParPaquet` პარამეტrი (default 20) ჩაანაცვლა hardcoded `/20` ფულის გამოთვლებში (Progrès/Économies/Coach), Réglages-შიც შესწორებადი; „Si tu arrêtes complètement" projection; 4 ამბავი-ეკრანი (Et si tu arrêtais autrement / Change à ton rythme / J'ai fumé / Remplacer).
+- **UI premium/minimal:** prénom + ველები უბორდერო/გამჭვირვალე (iOS თეთრი მართკუთხედის fix), ცარიელი საწყისი მნიშვნელობა, ერთიანი ტიპოგრაფიული იერარქია (prénom 22px = ეტალონი, არცერთი რიცხვი მასზე დიდი), ერთგვაროვანი ფონი (თეთრი ზოლის გარეშე), ენების სია iOS-ისებურ minimal სტრიქონებად (ბარათების/ბორდერების გარეშე).
+- **Dark mode სრული:** `--onb-*` ტოკენების ფენა (light უცვლელი, dark ეკვივალენტი) — ფონი, ტექსტი, მასკოტი, ველები, კლავიატура, ბარათები, footer, safe area, ფინალი, welcome რიტუალი. ახალი **„Système / Clair / Sombre" თემა** (default Système, ტელეფონს მიჰყვება; pre-paint flash-ის გარეშე), Réglages → „Apparence" სექცia. Dark კონტroლები (ღილაკი/progress/ისარი) ბრენდის მუქ მწვანეზე.
+- **Progrès:** „Regarde le chemin parcouru" ბარათი ეკ­რანის ბოლოში; ახალი **/projections** გვერდი (Cigarettes évitées / Argent économisé / Temps récupéré, per jour/semaine/mois/an), **რეალური სტატისტიკისგან მკაფიოდ გამიჯნული**.
+- **ხარისხი:** ყოველ ცვლილებაზე tsc + build + i18n parity (7 ენა) PASS, ეტაპობრივი commit+push. თამარის შეფასება: „ძაააან კარგია".
+
+---
+
 ## 2026-08-03/04 (Smokido — ცოცხალი მასკოტები + ნავიგაციის fluidity)
 
 ### Smokido — Puff-ის დახამხამება ყველა ეკრანზე + ნავიგაცია/resume fix (ყველა commit push-ული, ბოლო `de5084c`)

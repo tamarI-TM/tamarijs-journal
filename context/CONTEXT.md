@@ -92,7 +92,7 @@
 
 ### ლეოს პროექტები
 5. **Ritualis** — ჩვევებისა და პიროვნული განვითარების აპლიკაცია. UX/UI ოპტიმიზაცია, App Store-ისა და Google Play-ისთვის მომზადება.
-6. **Smokido** — ლეოს სიგარეტის თანდათანობითი შემცირების აპლიკაცია (React/Lovable). მიმდინარეობს ოპტიმიზაცია (დიზაინი + ფუნქციები), მონეტიზაცია ერთჯერადი unlock-ით (Apple/Google In-App Purchase, არა Stripe), მიზანი — App Store + Google Play (Capacitor-ით). მასკოტი „Puff" + ერთსტილიანი SVG იკონკების ოჯახი. Lovable პაუზაზე, მუშაობა პირდაპირ კოდში (`livrables/SMOKIDO/smokido/`).
+6. **Smokido** — ლეოს სიგარეტის თანდათანობითი შემცირების აპლიკაცია (React/Lovable). მიმდინარეობს ოპტიმიზაცია (დიზაინი + ფუნქციები), მონეტიზაცია ერთჯერადი unlock-ით (Apple/Google In-App Purchase, არა Stripe), მიზანი — App Store + Google Play (Capacitor-ით). მასკოტი „Puff" + ერთსტილიანი SVG იკონკების ოჯახი. Lovable პაუზაზე, მუშაობა პირდაპირ კოდში (`livrables/SMOKIDO/smokido/`). სტატუსი (2026-08): onboarding refonte premium (11-ბიჯიანი, ცოცხალი მასკოტი, projections), სრული dark mode + „Système/Clair/Sombre" თემა, მრავალენოვნება 7 ენაზე — დასრულებული. შემდეგი დიდი ეტაპი: Capacitor wrap + In-App Purchase.
 7. **AI და SaaS კვლევა** — ახალი ტექნოლოგიური პროდუქტების კონცეფციების შემუშავება.
 
 ### ერთობლივი პროექტები
