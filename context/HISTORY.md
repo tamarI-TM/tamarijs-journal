@@ -5,6 +5,21 @@
 
 ---
 
+## 2026-08-06
+
+### Smokido — ახალი monetization სტრატეგია: subscription + Premium ეკრანი
+
+- **სტრატეგიული გადაწყვეტილება:** Smokido გადავიდა **ერთჯერადი შესყიდვიდან (ძველი 14,90 € „à vie") auto-renewable subscription-ზე**. სამი ფორმულა, ყველა **7-დღიანი უფასო საცდელი პერიოდით**, ავტომატური განახლებით (თუ საცდელის დასრულებამდე არ გააუქმებ):
+  - თვიური: **5,99 €/თვე**
+  - ტრიმესტრული: **9,99 €/3 თვე** (≈3,33 €/თვე) — ლურჯი badge „Le plus populaire", **default-ად არ არის არჩეული**
+  - წლიური: **29,99 €/წელი** (≈2,50 €/თვე) — **მთავარი ფორმულა**: ოქროსფერი კონტური, badge „Meilleure offre", **default არჩეული**, აქტიური coche
+- **ახალი Premium ეკრანი** (`PremiumScreen.tsx`, route `/premium`), იხსნება Profil-ის Premium ბარათიდან. CTA „Essayer gratuitement pendant 7 jours" ბრენდის მუქ მწვანეში; ღილაკის ქვეშ trial-mentions. სრული clear/dark, `--sk-*` ტოკენებით. i18n `premiumScreen.*` 7-ვე ენაზე.
+- **ძველი ცნობების წაშლა:** 14,90 € / „paiement unique" / „accès à vie" ამოღებულია Settings-ის ბარათიდან, i18n-იდან და `SMOKIDO_ARCHITECTURE.md`-იდან.
+- **Coach:** მისალმების ბარათი (მასკოტით) გადავიდა ბრენდის მუქ მწვანეზე, თეთრი ტექსტით.
+- **ჯერ სად ვართ:** რეალური IAP flow ჯერ არ არის (CTA toast-ს აჩვენებს). შემდეგი: App Store subscription group + Google Play subscriptions (Capacitor).
+
+---
+
 ## 2026-08-04
 
 ### Smokido — Onboarding refonte premium + dark mode სრული + projections გვerდი
