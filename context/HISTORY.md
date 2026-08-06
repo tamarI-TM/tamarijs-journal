@@ -7,6 +7,19 @@
 
 ## 2026-08-06
 
+### Smokido — Partage-ის refonte („Ma semaine" ბარათი) + Progrès/icon polish
+
+- **ახალი გაზიარების ბარათი „Ma semaine avec Smokido":** კვირის 4 რეალური სტატისტიკა (cigarettes évitées · économies · envies remplacées · série), export **Story 9:16 + Carré 1:1** clear/dark, სუფთა Canvas-რენდერით (aperçu = რეალურად ექსპორტირებული სურათი). Story/Carré + „Ma semaine"/„Ma victoire" selector-ები; ძველი milestone ბარათი შენარჩუნებულია.
+- **ერთიანი icon system** (lucide monoline, ბრენდის ფერებში): cigarette-off · **ფულის ტომარა €-ით** (გოჭის ნაცვლად) · leaf · flame. ერთი ფოთოლი „Smokido"-ს გვერდით. მინუსის ნიშანი მოხსნილი („105 cigarettes évitées").
+- **i18n:** `share.weekly` 7-ვე ენაზე (მრავლობითი one/few/many, RU/KA სწორად), COPY-SYSTEM-ის ტონით.
+- **Progrès:** „Regarde le chemin parcouru" ბარათი → ბრენდის მუქი მწვანე, ღია (თეთრი) წარწერებით; „Tes bénéfices après l'arrêt complet" → subtle ცისფერი დეგრადე; 🌱 emoji მოხსნილი share-სათაურიდან (7 ენა).
+- **App icon:** `public/icon-512.png` თავიდან შეიქმნა — ბრენდის მუქი მწვანე „შუშისებრი" ფონი (reflets/vignette), Puff უცვლელი. Generator: `scripts/gen-app-icon.mjs`.
+- **ტესტები:** `partage-shots.mjs` (18 checks), `weekly-i18n-check.mjs`. Commit `73f013b` (smokido repo).
+
+---
+
+## 2026-08-06
+
 ### Smokido — ახალი monetization სტრატეგია: subscription + Premium ეკრანი
 
 - **სტრატეგიული გადაწყვეტილება:** Smokido გადავიდა **ერთჯერადი შესყიდვიდან (ძველი 14,90 € „à vie") auto-renewable subscription-ზე**. სამი ფორმულა, ყველა **7-დღიანი უფასო საცდელი პერიოდით**, ავტომატური განახლებით (თუ საცდელის დასრულებამდე არ გააუქმებ):
