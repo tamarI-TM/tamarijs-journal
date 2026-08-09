@@ -21,9 +21,9 @@
 .tj-consent__box {
   width: 100%;
   max-width: 720px;
-  background: rgba(255,255,255,0.62);
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,0.45);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   color: var(--charcoal, #2B2B2B);
   border: 1px solid rgba(120,105,85,.16);
   border-radius: 12px;
@@ -47,7 +47,7 @@
 }
 .tj-consent__btn {
   flex: 1 1 160px;
-  padding: 13px 20px;
+  padding: 7px 16px;
   font-family: var(--sans, system-ui, sans-serif);
   font-size: 13px;
   font-weight: 600;
