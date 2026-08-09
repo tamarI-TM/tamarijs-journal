@@ -78,7 +78,7 @@
     el.setAttribute('aria-label', 'ქუქი-ფაილების მართვა');
     el.innerHTML =
       '<div class="tj-consent__box">' +
-        '<p class="tj-consent__text">საიტი იყენებს აუცილებელ ქუქი-ფაილებს გამართული მუშაობისთვის და, თქვენი თანხმობით, მარკეტინგულ ქუქი-ფაილებს (Meta Pixel) რეკლამის გასაზომად. თანხმობის გარეშე მარკეტინგული ტრეკერები არ ჩაირთვება. არჩევანის შეცვლა შესაძლებელია ნებისმიერ დროს, ფუტერის „ქუქიების მართვა" ბმულით.</p>' +
+        '<p class="tj-consent__text">საიტი იყენებს აუცილებელ ქუქი-ფაილებს გამართული მუშაობისთვის და, თქვენი თანხმობით, მარკეტინგულ ქუქი-ფაილებს (Meta Pixel) რეკლამის გასაზომად.</p>' +
         '<div class="tj-consent__actions">' +
           '<button type="button" class="tj-consent__btn tj-consent__btn--refuse" data-tj="refuse">უარის თქმა</button>' +
           '<button type="button" class="tj-consent__btn tj-consent__btn--accept" data-tj="accept">თანხმობა</button>' +

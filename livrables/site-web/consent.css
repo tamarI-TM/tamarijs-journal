@@ -21,9 +21,9 @@
 .tj-consent__box {
   width: 100%;
   max-width: 720px;
-  background: rgba(255,255,255,0.84);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.62);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
   color: var(--charcoal, #2B2B2B);
   border: 1px solid rgba(120,105,85,.16);
   border-radius: 12px;
