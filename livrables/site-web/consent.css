@@ -1,0 +1,88 @@
+/* Tamari's Journal — consent banner (Meta Pixel gate). Uses the site's existing design tokens. */
+.tj-consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  padding: 18px clamp(16px, 4vw, 32px);
+  transform: translateY(120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .5s cubic-bezier(0.22, 0.61, 0.36, 1), opacity .5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.tj-consent.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.tj-consent__box {
+  width: 100%;
+  max-width: 720px;
+  background: var(--ivory, #FAF8F4);
+  color: var(--charcoal, #2B2B2B);
+  border: 1px solid var(--line, rgba(43,43,43,.12));
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(20,18,16,.16);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--sans, system-ui, sans-serif);
+}
+.tj-consent__text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--charcoal-70, rgba(43,43,43,.7));
+}
+.tj-consent__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.tj-consent__btn {
+  flex: 1 1 160px;
+  padding: 13px 20px;
+  font-family: var(--sans, system-ui, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background .3s cubic-bezier(0.22, 0.61, 0.36, 1), color .3s cubic-bezier(0.22, 0.61, 0.36, 1), border-color .3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.tj-consent__btn--refuse {
+  background: transparent;
+  color: var(--charcoal, #2B2B2B);
+  border: 1px solid var(--charcoal, #2B2B2B);
+}
+.tj-consent__btn--refuse:hover {
+  background: var(--charcoal, #2B2B2B);
+  color: var(--ivory, #FAF8F4);
+}
+.tj-consent__btn--accept {
+  background: var(--taupe, #B8AA98);
+  color: var(--ivory, #FAF8F4);
+  border: 1px solid var(--taupe, #B8AA98);
+}
+.tj-consent__btn--accept:hover {
+  background: var(--taupe-soft, #C9BCA9);
+  border-color: var(--taupe-soft, #C9BCA9);
+}
+[data-tj-manage] {
+  cursor: pointer;
+}
+
+@media (max-width: 560px) {
+  .tj-consent__box { padding: 18px; }
+  .tj-consent__actions { flex-direction: column; }
+  .tj-consent__btn { flex: 1 1 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tj-consent { transition: none; }
+}
