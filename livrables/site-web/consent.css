@@ -83,6 +83,7 @@
   .tj-consent__box { padding: 14px 16px; }
   .tj-consent__actions { flex-direction: column; }
   .tj-consent__btn { flex: 1 1 auto; }
+  .tj-consent__btn--accept { order: -1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
