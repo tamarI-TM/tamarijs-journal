@@ -15,12 +15,12 @@
 
   function render() {
     var matches = cards.filter(function (c) {
-      return activeCat === 'all' || c.getAttribute('data-cat') === activeCat;
+      return activeCat === 'all' || (c.getAttribute('data-cat') || '').split(/\s+/).indexOf(activeCat) !== -1;
     });
 
     var shown = 0;
     cards.forEach(function (c) {
-      var isMatch = activeCat === 'all' || c.getAttribute('data-cat') === activeCat;
+      var isMatch = activeCat === 'all' || (c.getAttribute('data-cat') || '').split(/\s+/).indexOf(activeCat) !== -1;
       // When filtering by a category, show every match. On "all", respect the batch.
       var visible = isMatch && (activeCat !== 'all' || expanded || shown < BATCH);
       c.hidden = !visible;

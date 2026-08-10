@@ -121,7 +121,8 @@
     function applyFilter(cat) {
       chips.forEach(function (c) { c.classList.toggle('is-active', c.getAttribute('data-cat') === cat); });
       grid.querySelectorAll('.jcard').forEach(function (card) {
-        card.style.display = (cat === 'all' || card.getAttribute('data-cat') === cat) ? '' : 'none';
+        var cardCats = (card.getAttribute('data-cat') || '').split(/\s+/);
+        card.style.display = (cat === 'all' || cardCats.indexOf(cat) !== -1) ? '' : 'none';
       });
     }
     chips.forEach(function (chip) {
