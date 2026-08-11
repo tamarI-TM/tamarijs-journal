@@ -9,6 +9,32 @@
   var pixelState = 'idle'; /* idle -> loading -> loaded, guards against double init/PageView */
   var bannerEl = null;
 
+  var I18N = {
+    ka: {
+      ariaLabel: 'ქუქი-ფაილების მართვა',
+      text: 'საიტი იყენებს აუცილებელ ქუქი-ფაილებს გამართული მუშაობისთვის და, თქვენი თანხმობით, მარკეტინგულ ქუქი-ფაილებს (Meta Pixel) რეკლამის გასაზომად.',
+      refuse: 'უარის თქმა',
+      accept: 'თანხმობა',
+      manage: 'ქუქიების მართვა'
+    },
+    en: {
+      ariaLabel: 'Cookie preferences',
+      text: 'This site uses cookies required for it to work properly and, with your consent, marketing cookies (Meta Pixel) to measure advertising.',
+      refuse: 'Decline',
+      accept: 'Accept',
+      manage: 'Manage cookies'
+    },
+    fr: {
+      ariaLabel: 'Gestion des cookies',
+      text: 'Ce site utilise des cookies nécessaires à son bon fonctionnement et, avec votre consentement, des cookies marketing (Meta Pixel) pour mesurer la publicité.',
+      refuse: 'Refuser',
+      accept: 'Accepter',
+      manage: 'Gérer les cookies'
+    }
+  };
+  var LANG = I18N[document.documentElement.lang] ? document.documentElement.lang : 'ka';
+  var T = I18N[LANG];
+
   function readConsent() {
     try {
       var raw = window.localStorage.getItem(STORAGE_KEY);
@@ -75,13 +101,13 @@
     el.className = 'tj-consent';
     el.setAttribute('role', 'dialog');
     el.setAttribute('aria-live', 'polite');
-    el.setAttribute('aria-label', 'ქუქი-ფაილების მართვა');
+    el.setAttribute('aria-label', T.ariaLabel);
     el.innerHTML =
       '<div class="tj-consent__box">' +
-        '<p class="tj-consent__text">საიტი იყენებს აუცილებელ ქუქი-ფაილებს გამართული მუშაობისთვის და, თქვენი თანხმობით, მარკეტინგულ ქუქი-ფაილებს (Meta Pixel) რეკლამის გასაზომად.</p>' +
+        '<p class="tj-consent__text">' + T.text + '</p>' +
         '<div class="tj-consent__actions">' +
-          '<button type="button" class="tj-consent__btn tj-consent__btn--refuse" data-tj="refuse">უარის თქმა</button>' +
-          '<button type="button" class="tj-consent__btn tj-consent__btn--accept" data-tj="accept">თანხმობა</button>' +
+          '<button type="button" class="tj-consent__btn tj-consent__btn--refuse" data-tj="refuse">' + T.refuse + '</button>' +
+          '<button type="button" class="tj-consent__btn tj-consent__btn--accept" data-tj="accept">' + T.accept + '</button>' +
         '</div>' +
       '</div>';
     document.body.appendChild(el);
@@ -122,7 +148,7 @@
       var a = document.createElement('a');
       a.href = '#';
       a.setAttribute('data-tj-manage', '');
-      a.textContent = 'ქუქიების მართვა';
+      a.textContent = T.manage;
       a.addEventListener('click', function (ev) {
         ev.preventDefault();
         showBanner();

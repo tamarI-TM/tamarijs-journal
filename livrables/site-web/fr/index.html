@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<title>Tamari's Journal — Histoires, Idées, Projets</title>
+<meta name="description" content="Le journal de Tamari — des histoires sur la France, l'immigration et le développement personnel. Un guide, une expérience réelle et des conseils pratiques pour les Géorgiens qui construisent leur vie en France." />
+<link rel="canonical" href="https://tamarisjournal.com/fr/" />
+<link rel="alternate" hreflang="ka" href="https://tamarisjournal.com/" />
+<link rel="alternate" hreflang="en" href="https://tamarisjournal.com/en/" />
+<link rel="alternate" hreflang="fr" href="https://tamarisjournal.com/fr/" />
+<link rel="alternate" hreflang="x-default" href="https://tamarisjournal.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Tamari Maisashvili" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:title" content="Tamari's Journal — Histoires, Idées, Projets" />
+<meta property="og:description" content="Des histoires sur la France, l'immigration et le développement personnel. Un guide et des conseils pratiques d'une Géorgienne en France." />
+<meta property="og:url" content="https://tamarisjournal.com/fr/" />
+<meta property="og:image" content="https://tamarisjournal.com/images/hero-tamari.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://tamarisjournal.com/fr/#website",
+      "url": "https://tamarisjournal.com/fr/",
+      "name": "Tamari Maisashvili",
+      "alternateName": "Tamari's Journal",
+      "inLanguage": "fr",
+      "publisher": { "@id": "https://tamarisjournal.com/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tamarisjournal.com/#person",
+      "name": "Tamari Maisashvili",
+      "url": "https://tamarisjournal.com/",
+      "jobTitle": "Traductrice, autrice, entrepreneuse digitale",
+      "description": "Traductrice professionnelle franco-géorgienne, autrice du « Guide de l'émigrant en France » et entrepreneuse digitale.",
+      "image": "https://tamarisjournal.com/images/hero-tamari.jpg",
+      "sameAs": [
+        "https://www.instagram.com/tamara_maisashvili/",
+        "https://www.tiktok.com/@tamarimaisashvili1",
+        "https://www.youtube.com/@tamarimaisashvili1",
+        "https://www.facebook.com/tam.maisashvili"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tamarisjournal.com/#leo",
+      "name": "Léo Jasarevic",
+      "url": "https://tamarisjournal.com/fr/about.html",
+      "jobTitle": "Développeur, entrepreneur",
+      "description": "Développeur indépendant et entrepreneur, créateur de Ritualis ; développeur web et mobile.",
+      "parent": { "@id": "https://tamarisjournal.com/#person" }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/styles.css" />
+<link rel="stylesheet" href="/consent.css" />
+<link rel="stylesheet" href="/dir-a.css?v=4" />
+<link rel="stylesheet" href="/responsive.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap">
+<style>
+  .hero-intro{ position:fixed; inset:0; z-index:99999; display:flex; align-items:center; justify-content:center; text-align:center; background:rgba(250,248,244,.87); padding:0 clamp(22px,5vw,60px); pointer-events:none; animation:heroIntroFade 3s cubic-bezier(.22,.61,.36,1) forwards; }
+  .hero-intro__quote{ display:flex; flex-direction:column; align-items:center; animation:heroIntroText 1.3s ease both; }
+  .hero-intro__mark{ font-family:'Cormorant Garamond',serif; color:#2B2B2B; font-size:clamp(42px,5.5vw,82px); line-height:.5; margin-bottom:clamp(2px,1vw,10px); }
+  .hero-intro__slogan{ display:flex; flex-direction:column; gap:clamp(2px,.6vw,8px); font-family:'Cormorant Garamond',serif; font-weight:500; color:#B8AA98; text-transform:uppercase; letter-spacing:.08em; line-height:1.14; font-size:clamp(30px,5.5vw,64px); margin:0; }
+  @keyframes heroIntroFade{ 0%,66.67%{ opacity:1; visibility:visible; } 100%{ opacity:0; visibility:hidden; } }
+  @keyframes heroIntroText{ 0%{ opacity:0; transform:translateY(12px); } 100%{ opacity:1; transform:translateY(0); } }
+  @media (prefers-reduced-motion: reduce){ .hero-intro{ display:none; } }
+</style>
+</head>
+<body>
+
+<!-- HERO opening animation -->
+<div class="hero-intro" aria-hidden="true">
+  <div class="hero-intro__quote">
+    <span class="hero-intro__mark">&laquo;</span>
+    <p class="hero-intro__slogan"><span>Dream</span><span>Believe</span><span>Achieve</span></p>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav nav--cover" data-nav>
+  <button class="nav__burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+  <a class="nav__brand" href="/fr/index.html" style="font-family: Nunito; font-size: 33px">TAMARI'S JOURNAL</a>
+  <div class="nav__right">
+    <div class="lang">
+      <a href="/index.html">KA</a><span class="sep">/</span>
+      <a href="#" class="is-active">FR</a><span class="sep">/</span>
+      <a href="/en/index.html">EN</a>
+    </div>
+    <button class="nav__search" aria-label="Rechercher">⌕</button>
+  </div>
+  <div class="nav__menu" data-links>
+    <button class="menu__close" data-close aria-label="Fermer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <div class="menu__group">
+      <a href="/fr/index.html" class="is-active">Accueil</a>
+      <a href="/fr/journal.html">Journal</a>
+      <a href="#videos">Vlog</a>
+      <a href="#projects">Projets</a>
+      <button class="menu__acc" aria-expanded="false">Catégories <span class="chev">⌄</span></button>
+      <div class="menu__sub"><div class="menu__sub-in">
+        <a href="/fr/journal.html#france">France</a>
+        <a href="/fr/journal.html#immigration">Immigration</a>
+        <a href="/fr/journal.html#growth">Développement personnel</a>
+        <a href="/fr/journal.html">Psychologie</a>
+        <a href="/fr/journal.html#tech">Technologie</a>
+        <a href="/fr/journal.html#ai">Intelligence artificielle</a>
+      </div></div>
+    </div>
+    <div class="menu__group">
+      <a href="/emigrantis-gzamkvlevi-safrangetshi.html">Guide</a>
+      <a href="/emigrantis-gzamkvlevi-safrangetshi.html">Boutique</a>
+    </div>
+    <div class="menu__group">
+      <a href="/fr/about.html">À propos</a>
+      <a href="#newsletter">Contact</a>
+      <a href="/privacy.html">Confidentialité</a>
+    </div>
+    <div class="menu__group">
+      <button class="menu__acc" aria-expanded="false">Nous suivre <span class="chev">⌄</span></button>
+      <div class="menu__sub"><div class="menu__sub-in">
+        <a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="tiktok">TikTok</a>
+        <a href="https://www.youtube.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="youtube">YouTube</a>
+      </div></div>
+    </div>
+  </div>
+  <div class="menu__backdrop" data-close></div>
+</nav>
+
+<!-- HERO -->
+<header class="hero hero--cover">
+  <div class="ph ph--dark"><img src="/images/hero-gardens.jpg" alt="Jardins de Versailles" class="slot-fill" style="object-fit:cover;object-position:center 42%" /></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__social">
+    <a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://www.tiktok.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="tiktok" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 12.6a3.2 3.2 0 1 0 3.2 3.2V4.5c.6 2.6 2.3 4 4.8 4.2"/></svg></a>
+    <a href="https://www.youtube.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="youtube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="3.6"/><path d="M10.3 9.2l4.8 2.8-4.8 2.8z" fill="currentColor" stroke="none"/></svg></a>
+  </div>
+  <div class="wrap hero__inner">
+    <div class="hero__cover">
+      <span class="hero__script" style="font-size: 33px; line-height: 1.12; margin: 0 0 4px; font-family: 'Cormorant Garamond', serif">Deux générations — deux chemins différents — une seule histoire</span>
+      <h1 class="hero__cover-title" style="font-size: clamp(14px, 1.4vw, 18px); letter-spacing: 0.22em; margin: 20px 0 0">HISTOIRES • IDÉES • PROJETS</h1>
+      <a href="#stories" class="hero__read" style="margin: 30px 0 0"><span class="line"></span> Lire</a>
+    </div>
+  </div>
+  <div class="hero__scroll">SCROLL<i></i></div>
+</header>
+
+<!-- PERSONAL INTRO -->
+<section class="section intro intro--split" style="padding-bottom:clamp(80px,10vw,140px);">
+  <div class="intro__grid">
+    <figure class="intro__img reveal">
+      <div class="ph"><img class="slot-fill" src="/images/intro-portrait.jpg.jpeg" alt="Portrait — Tamari et Léo" style="object-fit:cover" /></div>
+      <figcaption>Géorgie, 2026</figcaption>
+    </figure>
+    <div class="intro__body reveal">
+      <span class="eyebrow">Bonjour</span>
+      <p class="intro__lead" style="font-size: 22px"><span style="font-size: 78px; color: #b8aa98; float: left; line-height: 0.78; margin: -6px 8px 0 0">T</span>amari et Léo — une mère et son fils. Deux générations, deux chemins différents, et une même conviction : que le savoir, la croissance et la créativité peuvent changer une vie pour le mieux.</p>
+      <p style="color: var(--charcoal-70); font-size: 17px">Ceci est notre journal — un espace où se rencontrent l'expérience et l'innovation, le passé et l'avenir, les histoires humaines et les idées nouvelles.</p>
+      <div class="intro__actions">
+        <a href="/fr/about.html" class="link-more">Qui sommes-nous →</a>
+        <span class="intro__sign">— Tamari <span style="color:var(--taupe)">&amp;</span> Léo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE PROMO -->
+<section class="section" style="padding-top:clamp(72px,9vw,120px);">
+  <div class="wrap">
+    <div class="reveal guide-promo-grid">
+
+      <div>
+        <span class="eyebrow eyebrow--plain">Guide numérique · PDF</span>
+        <h2 style="font-family:'Noto Serif Georgian',serif; font-size:clamp(24px,2.8vw,36px); font-weight:600; line-height:1.15; margin:18px 0 0; color:var(--charcoal)">Le Guide de l'émigrant<br>en France</h2>
+        <p style="font-size:17px; line-height:1.78; color:var(--charcoal-70); margin:20px 0 0; max-width:52ch">Sur la procédure d'asile en France, les démarches administratives et la vie pratique au quotidien — un guide de 94 pages, fruit de 15 ans d'expérience.</p>
+        <div style="display:flex; align-items:center; gap:20px; margin-top:30px; flex-wrap:wrap;">
+          <a href="/emigrantis-gzamkvlevi-safrangetshi.html" class="btn">Obtenir le guide →</a>
+          <span style="font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:600; color:var(--charcoal)">49€</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0; margin-top:28px; padding-top:24px; border-top:1px solid var(--line-soft);">
+          <div style="padding-right:24px;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:600; line-height:1; color:var(--charcoal)">94</div>
+            <div style="font-size:10px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--charcoal-45); margin-top:4px">pages</div>
+          </div>
+          <div style="width:1px; height:36px; background:var(--line-soft);"></div>
+          <div style="padding:0 24px;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:600; line-height:1; color:var(--charcoal)">15+</div>
+            <div style="font-size:10px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--charcoal-45); margin-top:4px">ans d'expérience</div>
+          </div>
+          <div style="width:1px; height:36px; background:var(--line-soft);"></div>
+          <div style="padding-left:24px;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:600; line-height:1; color:var(--charcoal)">8</div>
+            <div style="font-size:10px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--charcoal-45); margin-top:4px">thèmes clés</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:center;">
+        <img src="/images/guide-cover.jpg" alt="Le Guide de l'émigrant en France" style="width:100%; max-width:400px; display:block; border-radius:3px; box-shadow:0 24px 64px rgba(43,43,43,.18), 0 6px 20px rgba(43,43,43,.10), -8px 0 0 #c4b49a, -16px 0 0 #b8a88e; transform:perspective(900px) rotateY(-5deg); transition:transform .5s ease;" onmouseover="this.style.transform='perspective(900px) rotateY(-1deg)'" onmouseout="this.style.transform='perspective(900px) rotateY(-5deg)'" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED STORIES -->
+<section class="section" id="stories">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Journal</span>
+      <h2 class="h-xl" style="font-size: 33px; font-family: 'Cormorant Garamond', serif">Une photo, un vœu, et la route vers l'Italie</h2>
+    </div>
+
+    <div class="feature-lead reveal" style="margin-top: clamp(44px,6vw,84px)">
+      <div class="ph"><img class="slot-fill" src="/images/hero-sanfruttuozo.jpg" alt="article à la une — 4:3" style="object-fit:cover" /></div>
+      <div class="feature-lead__body">
+        <span class="eyebrow eyebrow--plain" style="color:var(--taupe); margin-bottom: 20px">Voyage</span>
+        <p class="lede" style="font-size: 17px">Dans une salle d'attente de dentiste, je suis tombée par hasard sur une page de Vogue montrant un lieu qui semblait tout droit sorti d'un conte de fées — et quelques mois plus tard, je m'y trouvais moi-même.</p>
+        <p class="lede" style="font-size: 17px">Une histoire sur la façon dont les rêves trouvent parfois leur propre chemin jusqu'à nous.</p>
+        <a href="/article-sanfruttuozo.html" class="link-more" style="margin-top: 8px">Lire la suite →</a>
+      </div>
+    </div>
+
+    <div class="stories-grid">
+      <article class="story reveal">
+        <a href="/article-versali.html" style="display:block;color:inherit;text-decoration:none">
+        <div class="ph"><img class="slot-fill" src="/images/versali-2.jpg" alt="Versailles" style="object-fit:cover" /></div>
+        <div class="story__cat">Voyage</div>
+        <h3 class="h-md">Versailles — un lieu où l'on veut toujours revenir</h3>
+        <p>Première visite en 1998, retour en 2021 — un lieu qui reste à jamais gravé dans le cœur.</p>
+        <div class="meta">8 min de lecture</div>
+        </a>
+      </article>
+      <article class="story reveal">
+        <a href="/article-parizi.html" style="display:block;color:inherit;text-decoration:none">
+        <div class="ph"><img class="slot-fill" src="/images/parizi-hero.jpg" alt="Paris" style="object-fit:cover" /></div>
+        <div class="story__cat">Voyage</div>
+        <h3 class="h-md">Le Paris que les guides touristiques ne montrent pas</h3>
+        <p>La tour Eiffel, le Louvre, les Champs-Élysées — et ensuite, ce que les guides touristiques montrent rarement.</p>
+        <div class="meta">5 min de lecture</div>
+        </a>
+      </article>
+      <article class="story reveal">
+        <a href="/article-nabijebi.html" style="display:block;color:inherit;text-decoration:none">
+        <div class="ph"><img class="slot-fill" src="/images/story-nabiji.jpg" alt="La méthode des petits pas" style="object-fit:cover" /></div>
+        <div class="story__cat">Développement personnel</div>
+        <h3 class="h-md">La méthode des petits pas</h3>
+        <p>Comment atteindre ses objectifs sans épuisement ni procrastination — un petit pas à la fois.</p>
+        <div class="meta">7 min de lecture</div>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENT PROJECTS -->
+<section class="section band" id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Projets en cours</span>
+      <h2 class="h-xl" style="font-size: 33px; font-family: 'Cormorant Garamond', serif">Ce que nous construisons aujourd'hui</h2>
+    </div>
+    <div class="projects-grid" style="margin-top: clamp(44px,5vw,72px)">
+      <article class="project reveal">
+        <div class="ph"><img class="slot-fill" src="/images/guide-cover.jpg" alt="Le Guide de l'émigrant en France" style="object-fit:cover;object-position:center top" /></div>
+        <div class="project__body">
+          <div class="project__tag">Guide · PDF</div>
+          <h3 class="h-lg" style="font-size: 33px"><a href="/emigrantis-gzamkvlevi-safrangetshi.html">Le Guide de l'émigrant en France</a></h3>
+          <p>Un guide pratique complet pour toute personne qui commence une nouvelle vie en France — 94 pages, 15 ans d'expérience.</p>
+        </div>
+      </article>
+      <article class="project reveal">
+        <div class="ph"><img class="slot-fill" src="/images/ritualis-hero.png" alt="Ritualis" style="object-fit:cover" /></div>
+        <div class="project__body">
+          <div class="project__tag">Application</div>
+          <h3 class="h-lg" style="font-size: 33px">Ritualis</h3>
+          <p>Une application de suivi d'habitudes qui montre vos progrès au lieu de vous juger. La motivation ne vient pas de la pression — elle vient du progrès.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PULL-QUOTE BAND -->
+<section class="quote-band reveal">
+  <div class="ph ph--dark"><img class="slot-fill" src="/images/quote-bg.jpg" alt="Photo pleine page" style="object-fit:cover;object-position:center 40%" /></div>
+  <div class="quote-band__scrim"></div>
+  <div class="quote-band__inner wrap">
+    <span class="mark">"</span>
+    <blockquote style="font-size: 33px; font-family: 'Noto Serif Georgian', serif">« Le monde est plus grand quand on le découvre ensemble. »</blockquote>
+    <cite>Tamari's Journal</cite>
+  </div>
+</section>
+
+<!-- LATEST VIDEOS -->
+<section class="section" id="videos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Vidéo</span>
+      <h2 class="h-xl" style="font-family: 'Cormorant Garamond', serif; font-size: 33px">Derniers vlogs</h2>
+    </div>
+    <div class="videos-grid reveal">
+      <div class="video video--main" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:4px;">
+        <iframe src="https://www.youtube.com/embed/rxf29YPvWoc" title="Tamari's Journal — vlog" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+      </div>
+      <div class="video__col">
+        <a href="https://www.youtube.com/watch?v=7fdum4l3i7k" class="video video--side" target="_blank" rel="noopener" data-social="youtube">
+          <div class="ph ph--dark" style="position:relative;overflow:hidden;border-radius:3px;">
+            <img src="https://img.youtube.com/vi/7fdum4l3i7k/mqdefault.jpg" alt="Vlog YouTube" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <span class="video__play"></span>
+          </div>
+          <div class="video__meta"><span class="video__tag">YouTube</span><h4>Vlog</h4></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=LnDZVCMf2Y8" class="video video--side" target="_blank" rel="noopener" data-social="youtube">
+          <div class="ph ph--dark" style="position:relative;overflow:hidden;border-radius:3px;">
+            <img src="https://img.youtube.com/vi/LnDZVCMf2Y8/mqdefault.jpg" alt="Vlog YouTube" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <span class="video__play"></span>
+          </div>
+          <div class="video__meta"><span class="video__tag">YouTube</span><h4>Vlog</h4></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=Itc9UQtQm70" class="video video--side" target="_blank" rel="noopener" data-social="youtube">
+          <div class="ph ph--dark" style="position:relative;overflow:hidden;border-radius:3px;">
+            <img src="https://img.youtube.com/vi/Itc9UQtQm70/mqdefault.jpg" alt="Vlog YouTube" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <span class="video__play"></span>
+          </div>
+          <div class="video__meta"><span class="video__tag">YouTube</span><h4>Vlog</h4></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL CATEGORIES -->
+<section class="section band">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Thèmes</span>
+      <h2 class="h-xl" style="font-size: 33px; font-family: 'Cormorant Garamond', serif">Journal</h2>
+    </div>
+    <div class="cats reveal">
+      <a href="/fr/journal.html#travel" class="cat" style="font-size: 17px">Voyage</a>
+      <a href="/fr/journal.html#france" class="cat" style="font-size: 17px">France</a>
+      <a href="/fr/journal.html#growth" class="cat" style="font-size: 17px">Développement personnel</a>
+      <a href="/fr/journal.html#immigration" class="cat" style="font-size: 17px">Immigration</a>
+      <a href="/fr/journal.html#tech" class="cat" style="font-size: 17px">Technologie</a>
+      <a href="/fr/journal.html#ai" class="cat" style="font-size: 17px">Intelligence artificielle</a>
+      <a href="/fr/journal.html" class="cat" style="font-size: 17px">Expérience de vie</a>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE PROJECTS -->
+<section class="section">
+  <div class="wrap future">
+    <div class="section-head reveal">
+      <span class="eyebrow">À venir</span>
+      <h2 class="h-xl" style="font-size: 36px; font-family: 'Cormorant Garamond', serif">L'espace de demain</h2>
+      <p class="lede" style="margin-top: 18px; font-size: 17px">Idées • Projets • Objectifs</p>
+    </div>
+    <div class="future-list reveal">
+      <div class="fp" style="font-size: 17px"><span class="num">01</span><h4 style="font-size: 17px">Cosmétiques</h4></div>
+      <div class="fp"><span class="num">02</span><h4 style="font-size: 17px">Soins de la peau</h4></div>
+      <div class="fp" style="font-size: 17px"><span class="num">03</span><h4 style="font-size: 17px">Photographie</h4></div>
+      <div class="fp"><span class="num">04</span><h4 style="font-size: 17px">Médias</h4></div>
+      <div class="fp"><span class="num">05</span><h4 style="font-size: 17px">Mode</h4></div>
+      <div class="fp"><span class="num">06</span><h4 style="font-size: 17px">Livres</h4></div>
+      <div class="fp" style="font-size: 17px"><span class="num">07</span><h4 style="font-size: 17px">Formations</h4></div>
+      <div class="fp"><span class="num">08</span><h4 style="font-size: 17px">Applications</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section newsletter newsletter--letters" id="newsletter" style="background-color:rgb(250,247,243)">
+  <div class="wrap">
+    <div class="news-inner reveal">
+      <span class="news-label">Journal Letters</span>
+      <h2 class="news-title" style="font-size:17px;font-family:Nunito">Tamari's Journal</h2>
+      <p class="news-sub" style="font-size:12px">Voyages, découvertes et histoires qui ne sont pas toujours publiées sur le site.</p>
+      <form class="news-form" data-newsletter>
+        <input type="email" placeholder="Votre e-mail" aria-label="E-mail" required />
+        <button class="btn" type="submit">S'abonner</button>
+      </form>
+      <p class="news-note" data-news-note>Désabonnement possible à tout moment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOLLOW + INSTAGRAM -->
+<section class="follow">
+  <div class="wrap follow__inner">
+    <span class="follow__script" style="font-family: 'Dancing Script', cursive">Suivre</span>
+    <a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram" class="follow__handle">@tamara_maisashvili</a>
+    <span class="follow__line"></span>
+  </div>
+</section>
+<div class="ig-grid reveal">
+  <a href="https://www.instagram.com/p/DLnbzeAiirq/" target="_blank" rel="noopener" class="ig" data-social="instagram"><div class="ph"><img class="slot-fill" src="/images/ig-1.jpg" alt="Instagram" style="object-fit:cover" /></div><span class="ig__tag">Instagram</span></a>
+  <a href="https://www.instagram.com/p/DY0GoFWJn98/" target="_blank" rel="noopener" class="ig" data-social="instagram"><div class="ph"><img class="slot-fill" src="/images/ig-2.jpg" alt="Instagram" style="object-fit:cover" /></div><span class="ig__tag">Instagram</span></a>
+  <a href="https://www.instagram.com/p/DFVu7VMiEtD/" target="_blank" rel="noopener" class="ig" data-social="instagram"><div class="ph"><img class="slot-fill" src="/images/ig-3.jpg" alt="Instagram" style="object-fit:cover" /></div><span class="ig__tag">Instagram</span></a>
+  <a href="https://www.instagram.com/p/DL3fCqHidWV/" target="_blank" rel="noopener" class="ig" data-social="instagram"><div class="ph"><img class="slot-fill" src="/images/ig-4.jpg" alt="Instagram" style="object-fit:cover" /></div><span class="ig__tag">Instagram</span></a>
+  <a href="https://www.instagram.com/p/DOyMJz2iOOr/" target="_blank" rel="noopener" class="ig" data-social="instagram"><div class="ph"><img class="slot-fill" src="/images/ig-5.jpg" alt="Instagram" style="object-fit:cover" /></div><span class="ig__tag">Instagram</span></a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top" style="font-size: 12px">
+      <div>
+        <div class="footer__brand" style="font-family: Nunito; font-size: 15px">Tamari's Journal</div>
+        <p style="font-size: 12px">Un journal vivant — histoires, idées, projets</p>
+      </div>
+      <div class="footer__col">
+        <h5>Le site</h5>
+        <ul>
+          <li><a href="/fr/about.html" style="font-size: 12px">À propos</a></li>
+          <li><a href="#projects" style="font-size: 12px">Projets</a></li>
+          <li><a href="/fr/journal.html" style="font-size: 12px">Journal</a></li>
+          <li><a href="#newsletter" style="font-size: 12px">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Réseaux</h5>
+        <ul>
+          <li><a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram" style="font-size: 12px">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="tiktok" style="font-size: 12px">TikTok</a></li>
+          <li><a href="https://www.youtube.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="youtube" style="font-size: 12px">YouTube</a></li>
+          <li><a href="https://www.facebook.com/tam.maisashvili" target="_blank" rel="noopener" data-social="facebook" style="font-size: 12px">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Langue</h5>
+        <ul>
+          <li><a href="/index.html" style="font-size: 12px">ქართული</a></li>
+          <li><a href="#" class="is-active" style="font-size: 12px">Français</a></li>
+          <li><a href="/en/index.html" style="font-size: 12px">English</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="copy">© <span data-year>2026</span> Tamari's Journal — Tous droits réservés</span>
+      <div class="footer__legal">
+        <a href="/privacy.html">Confidentialité</a>
+        <a href="/conditions.html">Conditions générales</a>
+        <a href="/mentions-legales.html">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/site.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>

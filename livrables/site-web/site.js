@@ -1,5 +1,22 @@
 /* Tamari & Léo — shared behaviour (all directions) */
 (function () {
+  var SITE_I18N = {
+    ka: {
+      newsletterConfirm: 'მადლობა! გთხოვთ, ელფოსტაზე მიღებული ბმულით დაადასტუროთ გამოწერა.',
+      lbClose: 'დახურვა', lbPrev: 'წინა', lbNext: 'შემდეგი'
+    },
+    en: {
+      newsletterConfirm: 'Thank you! Please confirm your subscription via the link sent to your email.',
+      lbClose: 'Close', lbPrev: 'Previous', lbNext: 'Next'
+    },
+    fr: {
+      newsletterConfirm: 'Merci ! Veuillez confirmer votre inscription via le lien envoyé à votre adresse e-mail.',
+      lbClose: 'Fermer', lbPrev: 'Précédent', lbNext: 'Suivant'
+    }
+  };
+  var SITE_LANG = SITE_I18N[document.documentElement.lang] ? document.documentElement.lang : 'ka';
+  var ST = SITE_I18N[SITE_LANG];
+
   // Vercel Web Analytics (static site — tracks page views automatically)
   (function () {
     var va = document.createElement('script');
@@ -94,7 +111,7 @@
       hidden.submit();
       setTimeout(function () { hidden.remove(); }, 2000);
       var note = form.parentNode.querySelector('[data-news-note]');
-      if (note) note.textContent = 'მადლობა! გთხოვთ, ელფოსტაზე მიღებული ბმულით დაადასტუროთ გამოწერა.';
+      if (note) note.textContent = ST.newsletterConfirm;
       form.reset();
     });
   });
@@ -145,10 +162,10 @@
     var lb = document.createElement('div');
     lb.className = 'lightbox';
     lb.innerHTML =
-      '<button class="lightbox__close" aria-label="დახურვა">×</button>' +
-      '<button class="lightbox__nav lightbox__nav--prev" aria-label="წინა">‹</button>' +
+      '<button class="lightbox__close" aria-label="' + ST.lbClose + '">×</button>' +
+      '<button class="lightbox__nav lightbox__nav--prev" aria-label="' + ST.lbPrev + '">‹</button>' +
       '<img alt="">' +
-      '<button class="lightbox__nav lightbox__nav--next" aria-label="შემდეგი">›</button>';
+      '<button class="lightbox__nav lightbox__nav--next" aria-label="' + ST.lbNext + '">›</button>';
     document.body.appendChild(lb);
     var lbImg = lb.querySelector('img');
     var lbPrev = lb.querySelector('.lightbox__nav--prev');
