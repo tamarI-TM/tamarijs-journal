@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="robots" content="noindex, follow" />
+<title>Paiement — Le Guide de l’émigrant en France</title>
+<link rel="stylesheet" href="/styles.css" />
+<link rel="stylesheet" href="/consent.css" />
+<link rel="stylesheet" href="/dir-a.css" />
+<link rel="stylesheet" href="/journal.css" />
+<link rel="stylesheet" href="/article.css" />
+<link id="gfont-Nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap">
+<style>
+/* ===== Checkout page — built on Charte Graphique tokens ===== */
+.co-head{
+  background:var(--charcoal); color:var(--ivory);
+  padding-top:clamp(120px,15vh,170px); padding-bottom:clamp(40px,6vw,70px);
+  position:relative; overflow:hidden;
+}
+.co-head::before{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(110% 90% at 85% 0%, rgba(214,195,165,.14), transparent 58%);
+  pointer-events:none;
+}
+.co-head__steps{display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin-bottom:24px;}
+.co-step{display:inline-flex; align-items:center; gap:9px; font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(250,248,244,.45);}
+.co-step b{width:22px; height:22px; border-radius:50%; border:1px solid rgba(250,248,244,.28); display:inline-flex; align-items:center; justify-content:center; font-weight:500;}
+.co-step.is-on{color:var(--ivory);}
+.co-step.is-on b{border-color:var(--taupe); background:var(--taupe); color:var(--charcoal);}
+.co-step .arr{color:rgba(250,248,244,.25);}
+.co-head h1{font-family:var(--serif); font-weight:600; color:var(--ivory); font-size:33px; line-height:1.12; margin:0;}
+.co-head p{font-family:var(--sans); font-weight:300; font-size:16px; color:rgba(250,248,244,.78); margin:16px 0 0; max-width:54ch;}
+
+/* layout */
+.co-checkout{max-width:780px; margin:0 auto;}
+.co-block{margin-bottom:clamp(40px,5vw,60px);}
+.co-block__head{display:flex; align-items:baseline; gap:14px; margin-bottom:22px;}
+.co-block__no{font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; color:var(--taupe);}
+.co-block__head h2{font-family:var(--serif); font-weight:500; font-size:22px; line-height:1.2; color:var(--charcoal); margin:0;}
+
+/* packages */
+.pkgs{display:flex; flex-direction:column; gap:14px;}
+.pkg__name{font-family:var(--serif); font-weight:600; font-size:18px; color:var(--charcoal); margin:0 0 6px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+.pkg__tag{font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--charcoal); background:var(--beige); padding:3px 9px; border-radius:100px;}
+.pkg__desc{font-size:13px; line-height:1.6; color:var(--charcoal-70); margin:0;}
+
+/* package cards with buy button (Lemon Squeezy) */
+.pkg-buy{
+  display:grid; grid-template-columns:1fr auto auto; gap:24px; align-items:center;
+  padding:clamp(22px,2.6vw,30px); border:1px solid var(--line); background:var(--ivory);
+  border-radius:3px; transition:border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.pkg-buy:hover{border-color:var(--taupe);}
+.pkg-buy--featured{border-color:var(--charcoal); box-shadow:0 0 0 1px var(--charcoal);}
+.pkg-buy__price{text-align:right; white-space:nowrap;}
+.pkg-buy__price b{font-family:var(--serif); font-weight:600; font-size:24px; color:var(--charcoal); display:block; line-height:1;}
+.pkg-buy__price span{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--charcoal-45);}
+.pkg-buy__btn{white-space:nowrap;}
+@media(max-width:720px){
+  .pkg-buy{grid-template-columns:1fr auto; row-gap:16px;}
+  .pkg-buy__info{grid-column:1 / -1;}
+  .pkg-buy__btn{justify-self:end;}
+}
+@media(max-width:480px){
+  .pkg-buy{grid-template-columns:1fr;}
+  .pkg-buy__price{text-align:left;}
+  .pkg-buy__btn{justify-self:stretch; text-align:center; justify-content:center;}
+}
+
+/* trust strip */
+.trust{margin-top:24px; display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden;}
+.trust__row{background:var(--ivory); padding:16px 20px; display:flex; gap:14px; align-items:center;}
+.trust__ico{flex:0 0 auto; width:24px; height:24px; color:var(--taupe);}
+.trust__row b{font-family:var(--serif); font-weight:600; font-size:14px; color:var(--charcoal); display:block; margin-bottom:2px;}
+.trust__row p{margin:0; font-size:12px; color:var(--charcoal-70); line-height:1.5;}
+</style>
+<link rel="stylesheet" href="/responsive.css" />
+</head>
+<body class="page-article" data-screen-label="Page de paiement — Guide de l'émigrant">
+
+<!-- NAV -->
+<nav class="nav nav--cover" data-nav>
+  <button class="nav__burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+  <a class="nav__brand" href="/fr/index.html" style="font-family: Nunito; font-size: 33px">TAMARI'S JOURNAL</a>
+  <div class="nav__right">
+    <div class="lang">
+      <a href="/emigrantis-gzamkvlevi-safrangetshi.html">KA</a><span class="sep">/</span>
+      <a href="#" class="is-active">FR</a><span class="sep">/</span>
+      <a href="/en/index.html">EN</a>
+    </div>
+    <button class="nav__search" aria-label="Rechercher">⌕</button>
+  </div>
+  <div class="nav__menu" data-links>
+    <button class="menu__close" data-close aria-label="Fermer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <div class="menu__group">
+      <a href="/fr/index.html">Accueil</a>
+      <a href="/fr/journal.html">Journal</a>
+      <a href="/fr/index.html#videos">Vlog</a>
+      <a href="/fr/index.html#projects">Projets</a>
+    </div>
+    <div class="menu__group">
+      <a href="/fr/guide.html">Guide</a>
+      <a href="/fr/guide.html">Boutique</a>
+    </div>
+    <div class="menu__group">
+      <a href="/fr/about.html">À propos</a>
+      <a href="/fr/index.html#newsletter">Contact</a>
+    </div>
+    <div class="menu__group">
+      <button class="menu__acc" aria-expanded="false">Nous suivre <span class="chev">⌄</span></button>
+      <div class="menu__sub"><div class="menu__sub-in">
+        <a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="tiktok">TikTok</a>
+        <a href="https://www.youtube.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="youtube">YouTube</a>
+      </div></div>
+    </div>
+  </div>
+  <div class="menu__backdrop" data-close></div>
+</nav>
+
+<!-- ===== HEADER ===== -->
+<header class="co-head">
+  <div class="wrap">
+    <div class="co-head__steps">
+      <span class="co-step is-on"><b>1</b>Choisir une formule</span>
+      <span class="arr">→</span>
+      <span class="co-step is-on"><b>2</b>Paiement</span>
+      <span class="arr">→</span>
+      <span class="co-step"><b>3</b>Accès</span>
+    </div>
+    <h1>Finaliser votre commande</h1>
+    <p>Choisissez votre formule et accédez immédiatement aux contenus dès votre paiement sécurisé.</p>
+  </div>
+</header>
+
+<!-- ===== CHECKOUT ===== -->
+<section class="section" style="padding-top:clamp(48px,6vw,80px);">
+  <div class="wrap co-checkout">
+
+    <div class="co-block">
+      <div class="co-block__head"><span class="co-block__no">01</span><h2>Choisissez une formule</h2></div>
+      <div class="pkgs">
+
+        <div class="pkg-buy reveal">
+          <div class="pkg-buy__info">
+            <p class="pkg__name">Guide + bonus</p>
+            <p class="pkg__desc">« Le Guide de l’émigrant en France » — PDF, 94 pages + « Le nouveau pacte migratoire européen 2026-2027 ». Accès immédiat.</p>
+          </div>
+          <div class="pkg-buy__price"><b>49€</b><span>Paiement unique</span></div>
+          <a href="https://tamarisjournal.lemonsqueezy.com/checkout/buy/95a9c93c-be01-4027-abea-e75503481580?embed=1" class="btn lemonsqueezy-button pkg-buy__btn">Acheter <span class="arr">→</span></a>
+        </div>
+
+        <div class="pkg-buy pkg-buy--featured reveal">
+          <div class="pkg-buy__info">
+            <p class="pkg__name">Guide + bonus + 5 vidéos <span class="pkg__tag">Populaire</span></p>
+            <p class="pkg__desc">« Le Guide de l’émigrant en France » — PDF, 94 pages + « Le nouveau pacte migratoire européen 2026-2027 » + 5 leçons vidéo. Un accès immédiat à l’ensemble.</p>
+          </div>
+          <div class="pkg-buy__price"><b>69€</b><span>Paiement unique</span></div>
+          <a href="https://tamarisjournal.lemonsqueezy.com/checkout/buy/dfd1e393-4647-42c2-b4cf-851552b9248a?embed=1" class="btn lemonsqueezy-button pkg-buy__btn">Acheter <span class="arr">→</span></a>
+        </div>
+
+        <div class="pkg-buy reveal">
+          <div class="pkg-buy__info">
+            <p class="pkg__name">Guide + bonus + 5 vidéos + consultation</p>
+            <p class="pkg__desc">Pour celles et ceux qui souhaitent, en plus de la bonne information, un accompagnement individuel — le guide, le contenu bonus, 5 leçons vidéo et une consultation en ligne de 45 minutes avec Tamari.</p>
+          </div>
+          <div class="pkg-buy__price"><b>119€</b><span>Paiement unique</span></div>
+          <a href="https://tamarisjournal.lemonsqueezy.com/checkout/buy/ea444ec5-61ab-4d90-a5fe-fdb8935dfc88?embed=1" class="btn lemonsqueezy-button pkg-buy__btn">Acheter <span class="arr">→</span></a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- trust -->
+    <div class="trust reveal">
+      <div class="trust__row">
+        <span class="trust__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div><b>Paiement sécurisé</b><p>Transaction protégée et chiffrée (Lemon Squeezy)</p></div>
+      </div>
+      <div class="trust__row">
+        <span class="trust__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></span>
+        <div><b>Accès immédiat</b><p>Fichiers envoyés par e-mail dès le paiement</p></div>
+      </div>
+      <div class="trust__row">
+        <span class="trust__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div><b>Garantie 14 jours</b><p>Remboursement sans condition</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand" style="font-family: Nunito; font-size: 15px">Tamari's Journal</div>
+        <p style="font-size: 12px">Un journal vivant, sur le chemin de deux créateurs — histoires, projets et vie.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Le site</h5>
+        <ul>
+          <li style="font-size: 12px"><a href="/fr/about.html" style="font-size: 12px">À propos</a></li>
+          <li><a href="/fr/index.html#projects" style="font-size: 12px">Projets</a></li>
+          <li><a href="/fr/journal.html" style="font-size: 12px">Journal</a></li>
+          <li><a href="/fr/index.html#newsletter" style="font-size: 12px">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Réseaux</h5>
+        <ul>
+          <li><a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram" style="font-size: 12px">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="tiktok" style="font-size: 12px">TikTok</a></li>
+          <li><a href="https://www.youtube.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="youtube" style="font-size: 12px">YouTube</a></li>
+          <li><a href="https://www.facebook.com/tam.maisashvili" target="_blank" rel="noopener" data-social="facebook" style="font-size: 12px">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer__col" style="font-size: 12px">
+        <h5>Langue</h5>
+        <ul>
+          <li><a href="/გადახდა.html" style="font-size: 12px">ქართული</a></li>
+          <li><a href="#" class="is-active" style="font-size: 12px">Français</a></li>
+          <li><a href="/en/index.html" style="font-size: 12px">English</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="copy">© <span data-year>2026</span> Tamari's Journal — Tous droits réservés</span>
+      <div class="footer__legal">
+        <a href="/privacy.html">Confidentialité</a>
+        <a href="/conditions.html">Conditions générales</a>
+        <a href="/mentions-legales.html">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+<script src="/site.js"></script>
+<script src="/consent.js"></script>
+</body>
+</html>
