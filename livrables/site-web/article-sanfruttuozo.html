@@ -24,6 +24,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap">
+<style>
+  /* ტექსტი ერთგვაროვანი 16px + ერთი მუქი ფერი (!important — მობილურის გამო) */
+  .art-body p, .art-passage p, .art-body li, .art-passage li,
+  .art-body .art-lede, .art-body .art-stanza, .art-passage .art-stanza { font-size: 16px !important; line-height: 1.85; }
+  .art-body .art-stanza, .art-passage .art-stanza { line-height: 1.95; }
+  .art-body p, .art-passage p, .art-body li, .art-passage li, .art-body .art-lede,
+  .art-body .art-stanza, .art-passage .art-stanza,
+  .art-body .art-stanza--soft, .art-passage .art-stanza--soft { color: var(--charcoal); }
+  /* ლეტრინი — taupe. თხრობითში: .art-lede .drop | how-to-ში: .intro-drop::first-letter */
+  .art-body .art-lede .drop, .intro-drop::first-letter {
+    float: left; font-family: 'Noto Serif Georgian', serif; font-weight: 600;
+    font-size: 3.4em; line-height: 0.82; padding: 4px 12px 0 0; color: var(--taupe);
+  }
+  /* განსხვავებული: სათაური / ქვესათაური / სექცია / ციტატა */
+  .art-head h1 { font-size: clamp(26px, 3.4vw, 40px); line-height: 1.18; }
+  .art-head__dek { font-size: clamp(16px, 1.6vw, 20px); }
+  .art-body h2, .art-passage h2 { font-size: clamp(21px, 2.2vw, 26px); }
+  .art-pull p { font-size: 22px; max-width: 32ch; }
+</style>
 </head>
 <body class="page-article" data-screen-label="Article — San Fruttuoso">
 
@@ -78,9 +97,9 @@
   <div class="wrap">
     <div class="art-head__inner reveal">
       <span class="eyebrow">მოგზაურობა</span>
-      <h1 style="font-size: 42px; font-family: &quot;Noto Serif Georgian&quot;; letter-spacing: 0px">ერთი ფოტო, ერთი სურვილი და იტალიისკენ მიმავალი გზა
+      <h1 style="font-family: &quot;Noto Serif Georgian&quot;; letter-spacing: 0px">ერთი ფოტო, ერთი სურვილი და იტალიისკენ მიმავალი გზა
 სან ფრუტუოზო — მოგზაურობა, რომელიც ჟურნალის ერთი გვერდიდან დაიწყო </h1>
-      <p class="art-head__dek" style="font-size: 21px">სტომატოლოგის მოსაცდელში, Vogue-ის ერთ გვერდზე შემთხვევით დავინახე ადგილი, რომელიც ზღაპრის პეიზაჟს ჰგავდა — და სულ რამდენიმე თვეში მეც იქ აღმოვჩნდი. ისტორია იმაზე, თუ როგორ პოულობენ ზოგჯერ ოცნებები ჩვენს გზას.</p>
+      <p class="art-head__dek">სტომატოლოგის მოსაცდელში, Vogue-ის ერთ გვერდზე შემთხვევით დავინახე ადგილი, რომელიც ზღაპრის პეიზაჟს ჰგავდა — და სულ რამდენიმე თვეში მეც იქ აღმოვჩნდი. ისტორია იმაზე, თუ როგორ პოულობენ ზოგჯერ ოცნებები ჩვენს გზას.</p>
       <div class="art-head__meta">
         <div class="byline">
           <span class="byline__av">თ</span>
