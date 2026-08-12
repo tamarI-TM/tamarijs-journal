@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<title>La méthode des petits pas · Tamari's Journal</title>
+<meta name="description" content="Comment atteindre ses objectifs sans s’épuiser ni procrastiner" />
+<link rel="canonical" href="https://tamarisjournal.com/fr/article-nabijebi.html" />
+<link rel="alternate" hreflang="ka" href="https://tamarisjournal.com/article-nabijebi.html" />
+<link rel="alternate" hreflang="fr" href="https://tamarisjournal.com/fr/article-nabijebi.html" />
+<link rel="alternate" hreflang="x-default" href="https://tamarisjournal.com/article-nabijebi.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Tamari's Journal" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:title" content="La méthode des petits pas" />
+<meta property="og:description" content="Comment atteindre ses objectifs sans s’épuiser ni procrastiner" />
+<meta property="og:url" content="https://tamarisjournal.com/fr/article-nabijebi.html" />
+<meta property="og:image" content="https://tamarisjournal.com/images/story-nabiji.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="/styles.css" />
+<link rel="stylesheet" href="/consent.css" />
+<link rel="stylesheet" href="/dir-a.css" />
+<link rel="stylesheet" href="/responsive.css" />
+<link rel="stylesheet" href="/journal.css" />
+<link rel="stylesheet" href="/article.css" />
+<link rel="stylesheet" href="/article-mogzauroba.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap">
+<style>
+  /* ტექსტი ერთგვაროვანი 16px + ერთი მუქი ფერი (!important — მობილურის გამო) */
+  .art-body p, .art-passage p, .art-body li, .art-passage li,
+  .art-body .art-lede, .art-body .art-stanza, .art-passage .art-stanza { font-size: 16px !important; line-height: 1.85; }
+  .art-body .art-stanza, .art-passage .art-stanza { line-height: 1.95; }
+  .art-body p, .art-passage p, .art-body li, .art-passage li, .art-body .art-lede,
+  .art-body .art-stanza, .art-passage .art-stanza,
+  .art-body .art-stanza--soft, .art-passage .art-stanza--soft { color: var(--charcoal); }
+  /* ლეტრინი — taupe. თხრობითში: .art-lede .drop | how-to-ში: .intro-drop::first-letter */
+  .art-body .art-lede .drop, .intro-drop::first-letter {
+    float: left; font-family: 'Noto Serif Georgian', serif; font-weight: 600;
+    font-size: 3.4em; line-height: 0.82; padding: 4px 12px 0 0; color: var(--taupe);
+  }
+  /* განსხვავებული: სათაური / ქვესათაური / სექცია / ციტატა */
+  .art-head h1 { font-size: clamp(26px, 3.4vw, 40px); line-height: 1.18; }
+  .art-head__dek { font-size: clamp(16px, 1.6vw, 20px); }
+  .art-body h2, .art-passage h2, .art-split__body h2 { font-size: clamp(19px, 2vw, 23px); }
+  .art-body h3, .art-passage h3, .art-split__body h3 { font-size: clamp(16px, 1.4vw, 18px); line-height: 1.35; }
+  .art-pull p { font-size: 22px; max-width: 32ch; }
+
+  /* HERO — ყვავილი ცენტრში, ყველა ეკრანზე მორგებული */
+  .hero-img { object-position: center 22%; }               /* desktop */
+  @media (max-width: 1000px) { .hero-img { object-position: center 27%; } } /* tablet */
+  @media (max-width: 640px)  { .hero-img { object-position: center 32%; } } /* mobile */
+</style>
+</head>
+<body class="page-article" data-screen-label="Article — La méthode des petits pas">
+
+<!-- NAV -->
+<nav class="nav nav--cover scrolled" data-nav>
+  <button class="nav__burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+  <a class="nav__brand" href="/fr/index.html" style="font-family: Nunito; font-size: 33px">TAMARI'S JOURNAL</a>
+  <div class="nav__right">
+    <div class="lang">
+      <a href="/article-nabijebi.html">KA</a><span class="sep">/</span>
+      <a href="#" class="is-active">FR</a><span class="sep">/</span>
+      <a href="/en/index.html">EN</a>
+    </div>
+    <button class="nav__search" aria-label="Rechercher">⌕</button>
+  </div>
+  <div class="nav__menu" data-links>
+    <button class="menu__close" data-close aria-label="Fermer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <div class="menu__group">
+      <a href="/fr/index.html">Accueil</a>
+      <a href="/fr/journal.html">Journal</a>
+      <a href="/fr/index.html#videos">Vlog</a>
+      <a href="/fr/index.html#projects">Projets</a>
+    </div>
+    <div class="menu__group">
+      <a href="/fr/guide.html">Guide</a>
+      <a href="/fr/guide.html">Boutique</a>
+    </div>
+    <div class="menu__group">
+      <a href="/fr/about.html">À propos</a>
+      <a href="#newsletter">Contact</a>
+    </div>
+    <div class="menu__group">
+      <button class="menu__acc" aria-expanded="false">Nous suivre <span class="chev">⌄</span></button>
+      <div class="menu__sub"><div class="menu__sub-in">
+        <a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="tiktok">TikTok</a>
+        <a href="https://www.youtube.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="youtube">YouTube</a>
+      </div></div>
+    </div>
+  </div>
+  <div class="menu__backdrop" data-close></div>
+</nav>
+
+<!-- HERO (full-cover) -->
+<figure class="art-hero art-hero--cover reveal">
+  <div class="ph"><img src="/images/story-nabiji.jpg" class="slot-fill hero-img" alt="La méthode des petits pas" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+  <figcaption>Développement personnel</figcaption>
+</figure>
+
+<!-- ARTICLE HEADER -->
+<header class="section art-head art-head--flush">
+  <div class="wrap">
+    <div class="art-head__inner reveal">
+      <span class="eyebrow">Développement personnel</span>
+      <h1 style="font-family:'Noto Serif Georgian',serif; letter-spacing:0">La méthode des petits pas</h1>
+      <p class="art-head__dek">Comment atteindre ses objectifs sans s’épuiser ni procrastiner</p>
+      <div class="art-head__meta">
+        <div class="byline">
+          <span class="byline__av">L</span>
+          <span class="byline__meta">
+            <span class="byline__name">Léo</span>
+            <span class="byline__sub">Auteur</span>
+          </span>
+        </div>
+        <span class="sep"></span>
+        <span class="byline__sub" style="font-family:var(--mono)">7 min de lecture</span>
+        <span class="sep"></span>
+        <span class="byline__sub" style="font-family:var(--mono)">2 juillet 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<article class="section art-body" style="padding-top:clamp(8px,2vw,24px);padding-bottom:0">
+  <div class="art-passage reveal">
+    <p class="art-lede"><span class="drop">N</span>ous avons souvent envie de changer quelque chose d’important dans notre vie : commencer à écrire un livre, apprendre un nouveau métier, remettre de l’ordre chez soi, prendre soin de sa santé ou développer une activité professionnelle.</p>
+    <p>Mais un grand objectif peut parfois sembler si vaste qu’il finit par nous déstabiliser, nous fatiguer et rendre le passage à l’action plus difficile.</p>
+    <p>L’idée centrale de la méthode des petits pas est simple :</p>
+  </div>
+
+  <blockquote class="art-pull reveal">
+    <p>Un grand objectif doit être décomposé en actions très petites, réalistes et faciles à accomplir.</p>
+  </blockquote>
+</article>
+
+<!-- KAIZEN / ORIGINS + PHOTO 5 (split — photo left) -->
+<section class="art-split">
+  <div class="wrap">
+    <div class="art-split__grid reveal">
+      <div class="art-split__media" style="align-self:center;text-align:center">
+        <img src="/images/8c41a538-eccd-43ef-9bfb-8f4937e26c0d.png" alt="Pourquoi les petits pas fonctionnent — infographie" style="width:100%;max-width:420px;height:auto;display:inline-block;border-radius:10px;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.10)">
+      </div>
+      <div class="art-split__body">
+        <span class="art-kicker">Le principe</span>
+        <p>Il n’est pas nécessaire de tout changer en une seule journée. L’essentiel est d’avancer chaque jour d’un petit pas qui vous rapproche de votre objectif final.</p>
+        <p>Cette approche s’inspire du kaizen, une philosophie japonaise fondée sur l’amélioration continue et progressive. Son principe est simple : de petits changements réguliers produisent souvent des résultats plus durables que des efforts rares et excessifs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT WORKS + PHOTO 1 (split — photo right) -->
+<section class="art-split art-split--rev">
+  <div class="wrap">
+    <div class="art-split__grid reveal">
+      <div class="art-split__media" style="align-self:center;text-align:center">
+        <img src="/images/a12e09e6-3eee-4c22-8d2e-20963925fb23.png" alt="La méthode des petits pas — infographie" style="width:100%;max-width:440px;height:auto;display:inline-block;border-radius:10px;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.10)">
+      </div>
+      <div class="art-split__body">
+        <h2 style="margin-top:0">Pourquoi cette méthode fonctionne</h2>
+        <p>Les grands objectifs provoquent souvent une forme de résistance intérieure. On peut se dire :</p>
+        <p class="art-stanza art-stanza--soft" style="font-style:italic">« C’est trop difficile. »<br>« Je n’ai pas le temps. »<br>« Je ne sais pas par où commencer. »<br>« Je ne suis pas encore suffisamment prêt. »<br>« Je le ferai plus tard. »</p>
+        <p>C’est ainsi que commencent la procrastination, la culpabilité et, finalement, l’abandon.</p>
+        <p>Lorsqu’un objectif est transformé en une toute petite action, il paraît immédiatement moins intimidant. Par exemple, au lieu de se dire : « Aujourd’hui, je dois commencer à écrire mon livre », on peut simplement décider : « Aujourd’hui, je vais réfléchir au titre et à trois idées principales. »</p>
+        <p>L’action devient alors suffisamment simple pour que le cerveau ne la perçoive plus comme une difficulté insurmontable. Il devient plus facile de commencer, et le simple fait de passer à l’action donne souvent naturellement envie de continuer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIVE PRINCIPLES intro + PHOTO 2 (split — photo left) -->
+<section class="art-split">
+  <div class="wrap">
+    <div class="art-split__grid reveal">
+      <div class="art-split__media" style="align-self:center;text-align:center">
+        <img src="/images/a68fc596-15ed-434b-916d-e8244cc85a2f.png" alt="Cinq principes essentiels — infographie" style="width:100%;max-width:460px;height:auto;display:inline-block;border-radius:10px;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.10)">
+      </div>
+      <div class="art-split__body">
+        <h2 style="margin-top:0">Cinq principes essentiels</h2>
+        <h3>1. Commencez par le plus simple</h3>
+        <p>Ne commencez pas par la tâche la plus difficile. Cherchez plutôt le plus petit pas que vous pouvez faire dès maintenant.</p>
+        <p>Par exemple :</p>
+        <ul>
+          <li>ranger la maison — commencez par un tiroir ou une étagère ;</li>
+          <li>écrire un livre — écrivez simplement un titre ou un paragraphe ;</li>
+          <li>commencer le sport — enfilez vos chaussures et marchez cinq minutes ;</li>
+          <li>lancer un nouveau projet — notez les trois premières étapes.</li>
+        </ul>
+        <p>Peu importe à quel point l’action semble petite. Ce qui compte, c’est qu’elle crée du mouvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES 2-5 (full width) -->
+<section class="section art-body" style="padding-block:0">
+  <div class="art-passage reveal">
+    <h3 style="margin-top:0">2. Intégrez les petites actions à votre routine quotidienne</h3>
+    <p>Une nouvelle habitude s’installe plus facilement lorsqu’elle est associée à une habitude déjà présente dans votre quotidien.</p>
+    <p>Par exemple :</p>
+    <ul>
+      <li>après le petit-déjeuner — 10 minutes de lecture ;</li>
+      <li>en rentrant du travail — trois phrases pour un futur texte ;</li>
+      <li>avant de dormir — noter les trois priorités du lendemain ;</li>
+      <li>après le café — envoyer un e-mail important.</li>
+    </ul>
+    <p>Lorsque vous associez une action à un moment précis et récurrent, vous avez moins besoin d’y penser ou de vous en souvenir. Avec le temps, elle peut devenir une habitude presque automatique.</p>
+
+    <h3>3. Utilisez la règle des deux minutes</h3>
+    <p>Si une tâche demande moins de deux minutes, il vaut généralement mieux la faire immédiatement.</p>
+    <p>Par exemple :</p>
+    <ul>
+      <li>répondre à un message court ;</li>
+      <li>appeler pour prendre un rendez-vous ;</li>
+      <li>sortir les poubelles ;</li>
+      <li>noter une idée ;</li>
+      <li>envoyer un e-mail important.</li>
+    </ul>
+    <p>Reporter ces petites tâches crée souvent une forme de « charge invisible » : les choses inachevées s’accumulent dans notre esprit et finissent par nous fatiguer mentalement.</p>
+    <p>La règle des deux minutes aide à régler rapidement les petites tâches et à libérer de l’espace mental.</p>
+
+    <h3>4. Créez de courts rituels de concentration</h3>
+    <p>Souvent, ce n’est pas le temps qui nous manque, mais notre capacité à maintenir notre attention. Le téléphone, les notifications, les réseaux sociaux et les tâches du quotidien nous dispersent.</p>
+    <p>De courts rituels de concentration peuvent alors être utiles. Par exemple :</p>
+    <ul>
+      <li><strong>la méthode Pomodoro :</strong> 25 minutes consacrées à une seule tâche, suivies de 5 minutes de pause ;</li>
+      <li><strong>une priorité essentielle :</strong> le matin, choisissez une seule tâche dont l’accomplissement compte vraiment pour vous ce jour-là ;</li>
+      <li><strong>deux minutes pour revenir à soi :</strong> lorsque vous vous sentez dispersé, arrêtez-vous, respirez calmement et demandez-vous : « Quelle action produira le résultat le plus important maintenant ? »</li>
+    </ul>
+    <p>Cette simple question aide souvent à retrouver l’essentiel.</p>
+
+    <h3>5. Évaluez vos progrès sans culpabilité</h3>
+    <p>La méthode des petits pas ne signifie pas qu’il faut être parfait chaque jour. Son objectif est d’adapter le progrès à la réalité de votre vie.</p>
+    <p>Aujourd’hui, vous n’avez peut-être que cinq minutes. Demain, vous n’aurez peut-être pas le temps de faire ce que vous aviez prévu. Ce n’est pas un échec.</p>
+    <p>Deux petits rituels peuvent être utiles :</p>
+    <ul>
+      <li>chaque soir, notez trois petites victoires ;</li>
+      <li>à la fin de la semaine, demandez-vous ce qui a fonctionné et ce qui mérite d’être ajusté.</li>
+    </ul>
+    <p>Il n’est pas nécessaire de vous punir ni de vous juger sévèrement. La question essentielle devrait plutôt être : « Que puis-je changer pour que cela devienne plus facile la semaine prochaine ? »</p>
+  </div>
+</section>
+
+<!-- BIG PROJECTS + PHOTO 4 (split — photo right) -->
+<section class="art-split art-split--rev">
+  <div class="wrap">
+    <div class="art-split__grid reveal">
+      <div class="art-split__media" style="align-self:center;text-align:center">
+        <img src="/images/0cf5b802-5268-445f-bf4d-f25780aeccbc.png" alt="Comment utiliser cette méthode pour de grands projets — infographie" style="width:100%;max-width:420px;height:auto;display:inline-block;border-radius:10px;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.10)">
+      </div>
+      <div class="art-split__body">
+        <h2 style="margin-top:0">Comment utiliser cette méthode pour de grands projets</h2>
+        <p>Cette approche est particulièrement utile pour les objectifs qui semblent, au départ, très complexes ou très éloignés :</p>
+        <ul>
+          <li>écrire un livre ;</li>
+          <li>apprendre une langue étrangère ;</li>
+          <li>créer une entreprise ;</li>
+          <li>créer un site web ;</li>
+          <li>changer de métier ;</li>
+          <li>remettre ses finances en ordre ;</li>
+          <li>améliorer sa santé.</li>
+        </ul>
+        <p>Par exemple, au lieu de se dire : « Je dois créer mon site web », on peut décomposer le projet ainsi :</p>
+        <ul>
+          <li>aujourd’hui — lister les pages principales du site ;</li>
+          <li>demain — choisir un titre principal ;</li>
+          <li>ensuite — préparer un court texte pour la page « À propos » ;</li>
+          <li>puis — sélectionner trois photos ;</li>
+          <li>enfin — créer une première ébauche de la page d’accueil.</li>
+        </ul>
+        <p>Ainsi, un grand projet ne ressemble plus à un mur. Il devient un escalier que l’on gravit marche après marche.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCLUSION + PHOTO 3 (split — photo left) -->
+<section class="art-split">
+  <div class="wrap">
+    <div class="art-split__grid reveal">
+      <div class="art-split__media" style="align-self:center;text-align:center">
+        <img src="/images/e2e5c53e-f61e-4c69-adf5-0e6f7cc71f21.png" alt="Un grand pas ou plusieurs petits — infographie" style="width:100%;max-width:420px;height:auto;display:inline-block;border-radius:10px;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.10)">
+      </div>
+      <div class="art-split__body">
+        <h2 style="margin-top:0">L’idée essentielle</h2>
+        <p>La méthode des petits pas n’est ni une excuse pour ne pas agir ni une manière de réduire ses ambitions. Au contraire, c’est une approche plus réaliste pour progresser sur le long terme.</p>
+        <p>Les grands changements se produisent rarement en une seule journée. Ils se construisent grâce à des actions quotidiennes, souvent très petites, mais répétées avec régularité.</p>
+        <p>Aujourd’hui, vous n’avez pas besoin de parcourir tout le chemin. Il suffit de vous poser une question :</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING QUOTE + FOOT (full width) -->
+<article class="section art-body" style="padding-top:clamp(20px,3vw,40px)">
+  <blockquote class="art-pull reveal">
+    <p>« Quel est le tout petit pas que je peux réellement faire aujourd’hui ? »</p>
+  </blockquote>
+
+  <div class="art-passage reveal">
+    <p style="text-align:center">Puis, simplement, faites ce pas.</p>
+  </div>
+
+  <!-- AUTHOR + SHARE + BACK -->
+  <div class="art-foot">
+    <div class="art-author">
+      <span class="byline__av">L</span>
+      <div>
+        <div class="art-author__name">Léo</div>
+        <p class="art-author__bio" style="font-size:12px">Développeur indépendant et entrepreneur, créateur de Ritualis. Il écrit sur les habitudes, la productivité et le développement personnel — à partir de ce qu’il expérimente lui-même.</p>
+      </div>
+    </div>
+    <div class="art-share">
+      <span class="art-share__label">Partager</span>
+      <a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="#" aria-label="Copier le lien"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 12h6M10.5 8.5H8a3.5 3.5 0 0 0 0 7h2.5M13.5 8.5H16a3.5 3.5 0 0 1 0 7h-2.5"/></svg></a>
+    </div>
+    <div class="art-back">
+      <a href="/fr/journal.html" class="link-more">← Retour au Journal</a>
+    </div>
+  </div>
+</article>
+
+<!-- NEWSLETTER -->
+<section class="section newsletter newsletter--letters" id="newsletter" style="background-color:rgb(250,247,243)">
+  <div class="wrap">
+    <div class="news-inner reveal">
+      <span class="news-label">Les lettres du Journal</span>
+      <h2 class="news-title" style="font-size:17px;font-family:Nunito">Tamari's Journal</h2>
+      <p class="news-sub" style="font-size:12px">Idées, habitudes et histoires que nous ne partageons pas toujours sur le site.</p>
+      <form class="news-form" data-newsletter>
+        <input type="email" placeholder="Votre e-mail" aria-label="E-mail" required />
+        <button class="btn" type="submit">S’abonner</button>
+      </form>
+      <p class="news-note" data-news-note>Désabonnement possible à tout moment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap" style="font-size:12px">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand" style="font-family:Nunito;font-size:15px">Tamari's Journal</div>
+        <p style="font-size:12px">Un journal vivant, sur le chemin de deux créateurs — histoires, projets et vie.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Le site</h5>
+        <ul>
+          <li><a href="/fr/about.html" style="font-size:12px">À propos</a></li>
+          <li><a href="/fr/index.html#projects" style="font-size:12px">Projets</a></li>
+          <li><a href="/fr/journal.html" style="font-size:12px">Journal</a></li>
+          <li><a href="#newsletter" style="font-size:12px">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Réseaux</h5>
+        <ul>
+          <li><a href="https://www.instagram.com/tamara_maisashvili/" target="_blank" rel="noopener" data-social="instagram" style="font-size:12px">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="tiktok" style="font-size:12px">TikTok</a></li>
+          <li><a href="https://www.youtube.com/@tamarimaisashvili1" target="_blank" rel="noopener" data-social="youtube" style="font-size:12px">YouTube</a></li>
+          <li><a href="https://www.facebook.com/tam.maisashvili" target="_blank" rel="noopener" data-social="facebook" style="font-size:12px">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Langues</h5>
+        <ul>
+          <li><a href="/article-nabijebi.html" style="font-size:12px">ქართული</a></li>
+          <li><a href="#" class="is-active" style="font-size:12px">Français</a></li>
+          <li><a href="/en/index.html" style="font-size:12px">English</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="copy">© <span data-year>2026</span> Tamari's Journal — Tous droits réservés</span>
+      <div class="footer__legal">
+        <a href="/privacy.html">Politique de confidentialité</a>
+        <a href="/conditions.html">Conditions générales</a>
+        <a href="/mentions-legales.html">Mentions légales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/site.js"></script>
+<script src="/consent.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight) el.classList.add('in');
+      });
+    }, 1400);
+  });
+</script>
+</body>
+</html>
