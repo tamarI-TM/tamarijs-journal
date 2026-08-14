@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/smokido-privacy", "destination": "/smokido-privacy.html" }
+  ]
+}
