@@ -11,3 +11,20 @@
 
 # Dépendances
 node_modules/
+
+# =============================================================================
+# Clés de signature Android — NE JAMAIS commiter
+# Un keystore poussé sur GitHub permet à quiconque de signer une mise à jour
+# à notre place. Irrécupérable : la clé ne peut pas être changée après coup
+# sur une fiche Play Store existante.
+# =============================================================================
+*.jks
+*.keystore
+key.properties
+local.properties
+
+# =============================================================================
+# Projet Smokido — suivi dans son propre dépôt (tamarI-TM/smokido)
+# Contient le keystore de release, à ne pas dupliquer ici.
+# =============================================================================
+livrables/SMOKIDO/
