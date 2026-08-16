@@ -46,3 +46,11 @@ context/**/*.pptx
 context/**/Proforma*
 context/**/*Invoice*
 context/**/*facture*
+
+# =============================================================================
+# Fichiers de contexte interne — conservés en local uniquement
+# Décrivent en détail nos projets, objectifs et avancées : rien à publier
+# sur un dépôt public. Retirés du suivi Git, gardés sur disque.
+# =============================================================================
+context/CONTEXT.md
+context/HISTORY.md
