@@ -28,3 +28,21 @@ local.properties
 # Contient le keystore de release, à ne pas dupliquer ici.
 # =============================================================================
 livrables/SMOKIDO/
+
+# =============================================================================
+# Documents importés — commerciaux, fournisseurs, personnels
+# Ce dépôt est PUBLIC : factures, devis, rapports de tests fournisseur,
+# plans marketing et médias bruts ne doivent jamais y être publiés.
+# =============================================================================
+context/import/
+
+# Filet de sécurité : mêmes types de documents ailleurs dans context/
+context/**/*.pdf
+context/**/*.mp4
+context/**/*.mov
+context/**/*.xlsx
+context/**/*.docx
+context/**/*.pptx
+context/**/Proforma*
+context/**/*Invoice*
+context/**/*facture*
