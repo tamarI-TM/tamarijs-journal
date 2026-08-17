@@ -83,6 +83,18 @@
     .guide-promo-grid > div:first-child{ order: 2; }
     .guide-promo-grid > div:last-child{ order: 1; }
   }
+
+  /* HERO — meme echelle que la version georgienne sur mobile. La regle
+     partagee de responsive.css descendait la phrase a 21,45px sur un
+     telephone de 390px, soit 35% de moins que le desktop, alors que la
+     version georgienne ne perd que 11%. Police inchangee (Cormorant
+     Garamond, deja en place) et desktop inchange (33px). */
+  @media (max-width: 640px){
+    .hero--cover .hero__script{
+      font-size: clamp(19px, 6.5vw, 25px) !important;
+      line-height: 1.22 !important;
+    }
+  }
 </style>
 </head>
 <body>

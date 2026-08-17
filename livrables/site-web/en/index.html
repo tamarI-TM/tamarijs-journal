@@ -83,6 +83,17 @@
     .guide-promo-grid > div:first-child{ order: 2; }
     .guide-promo-grid > div:last-child{ order: 1; }
   }
+
+  /* HERO — same scale as the Georgian version on mobile. The shared rule in
+     responsive.css dropped the phrase to 21.45px on a 390px phone, 35% below
+     desktop, while the Georgian version only loses 11%. Typeface unchanged
+     (Cormorant Garamond, already in place) and desktop unchanged (33px). */
+  @media (max-width: 640px){
+    .hero--cover .hero__script{
+      font-size: clamp(19px, 6.5vw, 25px) !important;
+      line-height: 1.22 !important;
+    }
+  }
 </style>
 </head>
 <body>
