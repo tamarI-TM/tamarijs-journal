@@ -78,6 +78,17 @@
   @keyframes heroIntroFade{ 0%,66.67%{ opacity:1; visibility:visible; } 100%{ opacity:0; visibility:hidden; } }
   @keyframes heroIntroText{ 0%{ opacity:0; transform:translateY(12px); } 100%{ opacity:1; transform:translateY(0); } }
   @media (prefers-reduced-motion: reduce){ .hero-intro{ display:none; } }
+
+  /* HERO ფრაზა — მხოლოდ მობილურზე: ხაზი უნდა გადავიდეს (inline white-space:nowrap
+     ტექსტს ერთ ხაზზე ტოვებდა და ეკრანიდან გაჰქონდა). დესკტოპი უცვლელია. */
+  @media (max-width: 640px){
+    .hero--cover .hero__script{
+      white-space: normal !important;
+      font-size: clamp(21px, 7.2vw, 28px) !important;
+      line-height: 1.22 !important;
+      top: 0 !important;
+    }
+  }
 </style>
 </head>
 <body>

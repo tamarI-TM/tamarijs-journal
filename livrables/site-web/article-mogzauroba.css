@@ -69,9 +69,10 @@
   }
 }
 
-/* Nav brand size on mobile */
+/* Nav brand size on mobile — aligné sur responsive.css (les autres pages).
+   Au-dessus (5vw), le titre poussait le bouton recherche hors de l'écran. */
 @media (max-width: 480px) {
   .nav__brand {
-    font-size: clamp(16px, 5vw, 24px) !important;
+    font-size: clamp(15px, 4.2vw, 22px) !important;
   }
 }

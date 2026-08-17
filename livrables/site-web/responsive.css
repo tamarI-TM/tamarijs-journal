@@ -89,7 +89,15 @@
     gap: 12px;
     text-align: center;
   }
-  .footer__legal { justify-content: center; }
+  /* 4 liens (le 4e "ქუქიების მართვა" est injecté par consent.js) : sur une seule
+     ligne ils font 445px pour 346px disponibles, donc coupés à droite. Sur mobile
+     on les empile, un par ligne, comme les autres listes du footer. */
+  .footer__legal {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+  }
 }
 @media (max-width: 320px) {
   .footer__top { grid-template-columns: 1fr !important; }

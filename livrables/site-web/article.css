@@ -238,7 +238,10 @@
 
 @media (max-width: 880px) {
   .art-related .jgrid { grid-template-columns: 1fr; }
-  .art-hero .ph { aspect-ratio: 4 / 3; }
+  /* :not(--cover) : sinon cette règle écrase le "aspect-ratio: auto" du hero
+     pleine hauteur (même spécificité, déclarée plus bas) et la photo devient
+     plus large que l'écran (675px pour 390px), donc coupée à droite. */
+  .art-hero:not(.art-hero--cover) .ph { aspect-ratio: 4 / 3; }
 }
 
 /* =========================================================
