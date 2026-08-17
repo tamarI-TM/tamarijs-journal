@@ -75,6 +75,14 @@
   @keyframes heroIntroFade{ 0%,66.67%{ opacity:1; visibility:visible; } 100%{ opacity:0; visibility:hidden; } }
   @keyframes heroIntroText{ 0%{ opacity:0; transform:translateY(12px); } 100%{ opacity:1; transform:translateY(0); } }
   @media (prefers-reduced-motion: reduce){ .hero-intro{ display:none; } }
+
+  /* GUIDE PROMO — on mobile the cover comes first, then the text and button.
+     Same breakpoint as the single-column switch (see responsive.css).
+     Desktop keeps its two columns unchanged. */
+  @media (max-width: 860px){
+    .guide-promo-grid > div:first-child{ order: 2; }
+    .guide-promo-grid > div:last-child{ order: 1; }
+  }
 </style>
 </head>
 <body>

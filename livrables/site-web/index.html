@@ -89,6 +89,14 @@
       top: 0 !important;
     }
   }
+
+  /* ემიგრანტის გზამკვლევი — მობილურზე ჯერ წიგნის ყდა, მერე აღწერილობა და
+     შეძენის ღილაკი. იგივე breakpoint, რომელზეც grid ერთ სვეტად იშლება
+     (იხ. responsive.css). დესკტოპზე ორი სვეტი უცვლელი რჩება. */
+  @media (max-width: 860px){
+    .guide-promo-grid > div:first-child{ order: 2; }
+    .guide-promo-grid > div:last-child{ order: 1; }
+  }
 </style>
 </head>
 <body>
