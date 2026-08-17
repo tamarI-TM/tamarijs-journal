@@ -66,6 +66,14 @@ body { --ivory: #FFFFFF; --ivory-2: #F0E7DA; }
 .menu__sub.open .menu__sub-in { padding-top: 15px; }
 .menu__sub a { font-size: 11px; letter-spacing: .16em; color: var(--charcoal-70); }
 
+/* Groupe langues du drawer, ajouté par site.js. Masqué par défaut : au-dessus
+   de 600px le sélecteur de la barre du haut est déjà visible. Le filet du
+   groupe précédent est neutralisé ici pour que le desktop reste identique
+   (sans ça, ce groupe perdrait son :last-child et gagnerait une bordure). */
+.menu__group--lang { display: none; border-bottom: 0; }
+.menu__group:has(+ .menu__group--lang) { border-bottom: 0; }
+.menu__group--lang a[aria-disabled="true"] { cursor: default; }
+
 /* backdrop dims the rest of the page */
 .menu__backdrop {
   position: fixed; inset: 0; z-index: 55; background: rgba(28,24,20,.22);
@@ -107,6 +115,9 @@ body { --ivory: #FFFFFF; --ivory-2: #F0E7DA; }
 @media (max-width: 600px) {
   .nav--cover .nav__right .lang { display: none; }
   .hero__social { gap: 16px; right: 12px; }
+  /* le sélecteur du haut disparaît : le drawer prend le relais */
+  .menu__group--lang { display: flex; }
+  .menu__group:has(+ .menu__group--lang) { border-bottom: 1px solid var(--line); }
 }
 
 /* image-slot fills its placeholder frame */

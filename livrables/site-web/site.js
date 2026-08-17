@@ -47,6 +47,41 @@
     });
   }
 
+  // Drawer: language group. The top-bar switcher is hidden under 600px, so the
+  // drawer carries its own copy on mobile. Built from the page's own .lang links,
+  // which already hold the correct per-page targets — nothing to maintain here
+  // when a new page or a new translation is added.
+  if (menu) {
+    var navLang = document.querySelector('.nav__right .lang');
+    var srcLinks = navLang ? navLang.querySelectorAll('a') : [];
+    if (srcLinks.length === 3 && !menu.querySelector('.menu__group--lang')) {
+      var LANG_NAMES = ['ქართული', 'Français', 'English']; // ordre KA, FR, EN sur toutes les pages
+      var SOON = { ka: '— მალე', fr: '— bientôt', en: '— soon' };
+      var langGroup = document.createElement('div');
+      langGroup.className = 'menu__group menu__group--lang';
+      for (var li = 0; li < 3; li++) {
+        var src = srcLinks[li];
+        var href = src.getAttribute('href') || '#';
+        var isActive = src.classList.contains('is-active');
+        var a = document.createElement('a');
+        a.setAttribute('href', href);
+        if (isActive) a.className = 'is-active';
+        a.textContent = LANG_NAMES[li];
+        // pas encore traduit : même mention que dans le pied de page
+        if (!isActive && href === '#') {
+          var dim = document.createElement('span');
+          dim.className = 'dim';
+          dim.textContent = ' ' + SOON[SITE_LANG];
+          a.appendChild(dim);
+          a.setAttribute('aria-disabled', 'true');
+          a.addEventListener('click', function (e) { e.preventDefault(); });
+        }
+        langGroup.appendChild(a);
+      }
+      menu.appendChild(langGroup);
+    }
+  }
+
   // Close affordances (X button, backdrop, nav links)
   document.querySelectorAll('[data-close]').forEach(function (el) {
     el.addEventListener('click', function () { if (menu) menu.classList.remove('open'); });
