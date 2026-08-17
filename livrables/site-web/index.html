@@ -79,14 +79,21 @@
   @keyframes heroIntroText{ 0%{ opacity:0; transform:translateY(12px); } 100%{ opacity:1; transform:translateY(0); } }
   @media (prefers-reduced-motion: reduce){ .hero-intro{ display:none; } }
 
-  /* HERO ფრაზა — მხოლოდ მობილურზე: ხაზი უნდა გადავიდეს (inline white-space:nowrap
-     ტექსტს ერთ ხაზზე ტოვებდა და ეკრანიდან გაჰქონდა). დესკტოპი უცვლელია. */
-  @media (max-width: 640px){
+  /* HERO ფრაზა — inline white-space:nowrap ტექსტს ერთ ხაზზე ტოვებდა (820px),
+     ამიტომ 880px-ზე ვიწრო ყველა ეკრანზე იჭრებოდა: ტელეფონზე, iPad-ზე
+     ვერტიკალურად (768px) და პატარა ლეპტოპებზე. 880px-მდე ხაზი გადადის,
+     ზომა კი უცვლელი რჩება. დესკტოპი (900px-დან) სრულიად უცვლელია. */
+  @media (max-width: 880px){
     .hero--cover .hero__script{
       white-space: normal !important;
+      top: 0 !important;
+    }
+  }
+  /* ტელეფონზე დამატებით ოდნავ პატარა ზომა, სამ ხაზზე */
+  @media (max-width: 640px){
+    .hero--cover .hero__script{
       font-size: clamp(19px, 6.5vw, 25px) !important;
       line-height: 1.22 !important;
-      top: 0 !important;
     }
   }
 
