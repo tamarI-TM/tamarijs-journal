@@ -58,8 +58,9 @@
   <url><loc>https://tamarisjournal.com/fr/article-ritualis-istoria.html</loc></url>
 
   <!-- English — home and main pages -->
+  <!-- en/journal.html retire temporairement : noindex tant que les articles
+       ne sont pas traduits (ses 18 cartes menent a des pages georgiennes) -->
   <url><loc>https://tamarisjournal.com/en/</loc></url>
-  <url><loc>https://tamarisjournal.com/en/journal.html</loc></url>
   <url><loc>https://tamarisjournal.com/en/about.html</loc></url>
 
 </urlset>
